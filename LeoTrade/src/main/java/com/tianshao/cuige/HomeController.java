@@ -5,10 +5,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
+
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.Reference;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -26,32 +30,21 @@ import com.tianshao.cuige.services.ProductService;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/test")
+@RequestMapping("/")
 public class HomeController {
-    @Autowired
-    ProductService service;
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	//@Transactional
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		Product p=new Product("perfect stone", 10, "red;green");
-		service.addProductWithCatId(p, 1);
-		
-		//service.removeEvent(e.id);
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", "Test");//formattedDate );
-		
-		return "home";
-	}
+	  private final Facebook facebook;
+
+	    @Inject
+	    public HomeController(Facebook facebook) {
+	        this.facebook = facebook;
+	    }
+
+	    @RequestMapping( method=RequestMethod.GET)
+	    public String home(Model model) {
+	        List<Reference> friends = facebook.friendOperations().getFriends();
+	        model.addAttribute("friends", friends);
+	        return "home";
+	    }
+
 	
 }
