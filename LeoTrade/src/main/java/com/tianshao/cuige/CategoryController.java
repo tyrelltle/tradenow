@@ -25,9 +25,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.database.DAO;
 import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Event;
 import com.tianshao.cuige.services.CategoryService;
-import com.tianshao.cuige.services.EventService;
+
 
 @Controller
 @RequestMapping("/category")

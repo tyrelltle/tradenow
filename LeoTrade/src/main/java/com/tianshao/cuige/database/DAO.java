@@ -26,6 +26,12 @@ public class DAO {
 			sessionFactory.getCurrentSession().delete(obj);
 	}
 	
+	@Transactional
+	public void remove(Object obj){
+		
+	    sessionFactory.getCurrentSession().delete(obj);
+	}
+	
 	/**
 	 * 
 	 * @param tablenm  name of the class of the entity, ex, Product
@@ -41,17 +47,21 @@ public class DAO {
 		if(obj != null)
 		sessionFactory.getCurrentSession().update(obj);
 	}
+
+	
 	@Transactional
-	public Object getById(String tablenm,int id){
+	public Object getByColumn(String tablenm,String columnnm, String columnval){
 		Session session = sessionFactory.getCurrentSession();
-		List<Object> list = session.createQuery("from "+tablenm+" b where b.id = :id")
-			.setParameter("id", id)
+		List<Object> list = session.createQuery("from "+tablenm+" b where b."+columnnm+" = :"+columnnm)
+			.setParameter(columnnm, columnval)
 			.list();
-		return list.size() > 0 ?list.get(0): null;
+		if(list==null || list.size()==0)
+			return null;
+		return list.get(0);
 	}
 	
 	@Transactional
-	public List<? extends Object> getByColumn(String tablenm,String columnnm, String columnval){
+	public List<? extends Object> getListByColumn(String tablenm,String columnnm, String columnval){
 		Session session = sessionFactory.getCurrentSession();
 		List<Object> list = session.createQuery("from "+tablenm+" b where b."+columnnm+" = :"+columnnm)
 			.setParameter(columnnm, columnval)

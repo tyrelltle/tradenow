@@ -20,10 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tianshao.cuige.database.DAO;
-import com.tianshao.cuige.models.Event;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.services.EventService;
-import com.tianshao.cuige.services.ProductService;
+
 
 
 /**

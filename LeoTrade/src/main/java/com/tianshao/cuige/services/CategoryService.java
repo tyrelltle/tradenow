@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.database.DAO;
 import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Event;
 
 @Service
 public class CategoryService {
@@ -29,7 +28,7 @@ public class CategoryService {
 
 	public Category getCategory(int id) {
 		
-		return (Category)dao.getById("Category", id);
+		return (Category)dao.getByColumn("Category", "catid", String.valueOf(id));
 	}
 
 

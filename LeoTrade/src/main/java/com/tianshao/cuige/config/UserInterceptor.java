@@ -21,6 +21,8 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	}
 	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		if(request.getRequestURI().contains("resources/"))
+			return true;
 		rememberUser(request, response);
 		handleSignOut(request, response);			
 		if (SecurityContext.userSignedIn() || requestForSignIn(request)) {

@@ -7,8 +7,14 @@
 <!-- 	</head> -->
 <!-- 	<body> -->
 
-
+	
 <tiles:insertDefinition name="template">
+
+	<tiles:putAttribute name="header">
+	
+	</tiles:putAttribute>
+
+
     <tiles:putAttribute name="main">
 	<ul>
 		<li><a href="<c:url value="/signout" />">Sign Out</a></li>

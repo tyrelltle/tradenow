@@ -5,6 +5,7 @@
 <tiles-definitions>
   
     <definition name="template" template="/WEB-INF/views/tiles/template.jsp">
+    
     </definition>
   
 </tiles-definitions>
