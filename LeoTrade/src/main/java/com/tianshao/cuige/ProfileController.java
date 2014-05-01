@@ -59,7 +59,7 @@ public class ProfileController {
 		@RequestMapping(value="api/user",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody ProfileWrapper get( HttpServletResponse resp) throws IOException {
 	    	FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	Profile prof=serv.getBySocialId(facebookprofile.getId());
+	    	Profile prof=serv.get_create_Profile(facebookprofile.getId());
 	    	ProfileWrapper profwrap=new ProfileWrapper();
 	        profwrap.setEmail(facebookprofile.getEmail());
 	        profwrap.setFirstname(facebookprofile.getFirstName());
@@ -82,7 +82,7 @@ public class ProfileController {
 	            return null;
 	    	}
 	    	try{
-	    		Profile prof=serv.getBySocialId(facebookprofile.getId());
+	    		Profile prof=serv.get_create_Profile(facebookprofile.getId());
 	    		prof.setAboutme(wrap.getAboutme());
 	    		prof.setLocation(wrap.getLocation());
 	    		serv.update(prof);

@@ -38,7 +38,7 @@ public class ProfileTest {
 		String fackFacebookId="helloworld";
 		Profile p=(Profile) serv.get("social_id",fackFacebookId);
 		assertTrue(p==null);
-		p=(Profile)serv.getBySocialId(fackFacebookId);
+		p=(Profile)serv.get_create_Profile(fackFacebookId);
 		assertTrue(p!=null);
 		//see the new record has same social id
 		assertEquals(p.getSocial_id(),fackFacebookId);
@@ -59,7 +59,7 @@ public class ProfileTest {
 		String fackFacebookId="helloworld";
 		Profile p=(Profile) serv.get("social_id",fackFacebookId);
 		assertTrue(p==null);
-		p=(Profile)serv.getBySocialId(fackFacebookId);
+		p=(Profile)serv.get_create_Profile(fackFacebookId);
 		assertTrue(p!=null);
 		//see the new record has same social id
 		assertEquals(p.getSocial_id(),fackFacebookId);
@@ -69,7 +69,7 @@ public class ProfileTest {
 		//remember old facebook/profile id. assert calling 'get' dosent create new record but retrieves existing record
 		String fid=p.getSocial_id();
 		int pid=p.getProf_id();
-		p=(Profile)serv.getBySocialId(fackFacebookId);
+		p=(Profile)serv.get_create_Profile(fackFacebookId);
 		assertEquals(p.getSocial_id(),fid);
 		assertEquals(p.getProf_id(),pid);
 

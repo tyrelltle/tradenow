@@ -16,7 +16,7 @@ public class ProfileService extends AbstractService{
 		super();
 	}
 	
-	public Profile getBySocialId(String profileId){
+	public Profile get_create_Profile(String profileId){
 		Profile ret=(Profile) this.get("social_id", profileId);
 		if(null == ret){
 			/*user first time logon, store his social id 

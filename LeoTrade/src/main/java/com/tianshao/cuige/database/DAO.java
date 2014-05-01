@@ -61,6 +61,17 @@ public class DAO {
 	}
 	
 	@Transactional
+	public Object getByColumn(String tablenm,String columnnm, int columnval){
+		Session session = sessionFactory.getCurrentSession();
+		List<Object> list = session.createQuery("from "+tablenm+" b where b."+columnnm+" = :"+columnnm)
+			.setParameter(columnnm, columnval)
+			.list();
+		if(list==null || list.size()==0)
+			return null;
+		return list.get(0);
+	}
+	
+	@Transactional
 	public List<? extends Object> getListByColumn(String tablenm,String columnnm, String columnval){
 		Session session = sessionFactory.getCurrentSession();
 		List<Object> list = session.createQuery("from "+tablenm+" b where b."+columnnm+" = :"+columnnm)
@@ -68,9 +79,19 @@ public class DAO {
 			.list();
 		return list;
 	}
-
+	
 	@Transactional
-	public List<? extends Object> getByColumnByFoeignKey(String tablenm,String tablenm2, String columnnm, int columnval){
+	public List<? extends Object> getListByColumn(String tablenm,String columnnm, int columnval){
+		Session session = sessionFactory.getCurrentSession();
+		List<Object> list = session.createQuery("from "+tablenm+" b where b."+columnnm+" = :"+columnnm)
+			.setParameter(columnnm, columnval)
+			.list();
+		return list;
+	}
+
+	
+	@Transactional
+	public List<? extends Object> getByFoeignColumn(String tablenm,String tablenm2, String columnnm, String columnval){
 		Session session = sessionFactory.getCurrentSession();
 		List<Object> list = session.createQuery("from "+tablenm+" b where b."+tablenm2+"."+columnnm+" = :"+columnnm)
 			.setParameter(columnnm, columnval)

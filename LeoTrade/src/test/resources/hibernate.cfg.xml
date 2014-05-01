@@ -10,6 +10,9 @@
         
     	<property name="format_sql">true</property>
 		<mapping class="com.tianshao.cuige.models.Profile" />
+		<mapping class="com.tianshao.cuige.models.Category" />
+        <mapping class="com.tianshao.cuige.models.Product" />
+
     </session-factory>
 	
 </hibernate-configuration>
