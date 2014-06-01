@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.database.DAO;
 import com.tianshao.cuige.models.Category;
+import com.tianshao.cuige.models.Image;
 import com.tianshao.cuige.models.Product;
 import com.tianshao.cuige.models.Profile;
 
@@ -50,11 +51,38 @@ public class ProductService extends AbstractService {
 		
 		return prod;
 	}
+	
 
+	public List<Image> getProductImages(int prod_id){
+		List<Image> img=(List<Image>) dao.getByFoeignColumn("Image", "product", "prod_id", prod_id);
+		return img;
+	}
+	public long countProductImage(int prod_id){
+		return (Long) dao.directSql("select count(*) from Image i where i.product.prod_id="+prod_id);
+	}
+	public Image getProductImageByImgId(int img_id){
+		return (Image) dao.getByColumn("Image", "img_id", img_id);
+		
+	}
+	
+
+	/**
+	 * return: image table record id of the new image 
+	 */
+	public int addProductImage(Image img){
+		dao.addNew(img);
+		
+		if(this.countProductImage(img.getProduct().getProd_id())==1){
+			//this is the first image uploaded for the product. make it thumbail
+			Product ownerPro=img.getProduct();
+			ownerPro.setThumurl("http://localhost:8080/cuige/api/product/img/"+img.getImg_id());
+			dao.update(ownerPro);
+		}
+		return img.getImg_id();
+	}
 	@Override
 	public String getTableName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Product";
 	}
 
 	

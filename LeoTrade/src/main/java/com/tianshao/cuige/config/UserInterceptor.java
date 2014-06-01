@@ -64,6 +64,7 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	
 	private boolean requireSignIn(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		new RedirectView("/signin", true).render(null, request, response);
+
 		return false;
 	}
 

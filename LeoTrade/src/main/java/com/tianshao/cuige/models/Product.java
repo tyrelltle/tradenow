@@ -1,17 +1,23 @@
 package com.tianshao.cuige.models;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="product")
-public class Product {
+public class Product{
 	@Id
 	@Column(name="prod_id")
 	@GeneratedValue
@@ -28,6 +34,9 @@ public class Product {
 	@Column(name="title")
 	String title="";
 	
+	@Column(name="tradefor")
+	String tradefor="";
+	
 	@Column(name="detail")
 	String detail="";
 	
@@ -40,6 +49,8 @@ public class Product {
 	@Column(name="status")
 	String status="";
 	
+	@Column(name="thumurl")
+	String thumurl="";
 	public Product(){}
 
 	public int getProd_id() {
@@ -105,6 +116,24 @@ public class Product {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public String getTradefor() {
+		return tradefor;
+	}
+
+	public void setTradefor(String tradefor) {
+		this.tradefor = tradefor;
+	}
+
+	public String getThumurl() {
+		return thumurl;
+	}
+
+	public void setThumurl(String thumurl) {
+		this.thumurl = thumurl;
+	}
+
+	
 	
 	
 	

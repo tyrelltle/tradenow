@@ -1135,11 +1135,16 @@
 
   // By default, Underscore uses ERB-style template delimiters, change the
   // following template settings to use alternative delimiters.
-  _.templateSettings = {
-    evaluate    : /<%([\s\S]+?)%>/g,
-    interpolate : /<%=([\s\S]+?)%>/g,
-    escape      : /<%-([\s\S]+?)%>/g
-  };
+//  _.templateSettings = {
+//    evaluate    : /<%([\s\S]+?)%>/g,
+//    interpolate : /<%=([\s\S]+?)%>/g,
+//    escape      : /<%-([\s\S]+?)%>/g
+//  };
+	_.templateSettings = {
+		    interpolate: /\{\{(.+?)\}\}/gim,
+		    evaluate: /\{\{(.+?)\}\}/gim,
+		    escape: /\{\{\-(.+?)\}\}/gim
+		};
 
   // When customizing `templateSettings`, if you don't want to define an
   // interpolation, evaluation or escaping regex, we need one that is

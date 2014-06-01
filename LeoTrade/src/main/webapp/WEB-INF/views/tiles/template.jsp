@@ -7,7 +7,9 @@
         <title>Bootply.com - Bootstrap Google Plus Theme</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+        
+		<link href="resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">        
         
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -50,6 +52,8 @@ body {
 .btn-danger,.label-danger,.progress-bar-danger{background-color:#dd4b39;}
 .btn-warning,.label-warning,.progress-bar-warning{background-color:#f4b400;color:#444444;}
 
+
+.tooltip {z-index: 2000 !important;}
 hr {border-color:#ececec;}
 button {
 	outline: 0;
@@ -92,9 +96,9 @@ h3,h4,h5 {
   padding-bottom:10px;
 }
 
-.modal-dialog {
- width: 450px;
-}
+/* .modal-dialog { */
+/*  width: 450px; */
+/* } */
 
 .modal-footer {
  border-width:0;
@@ -263,10 +267,10 @@ h3,h4,h5 {
 
         
         
-        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type='text/javascript' src="resources/scripts/jquery-1.10.2.js"></script>
 
 
-        <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src="resources/themes/bootstrap-3.1.1/js/bootstrap.min.js"></script>
 
 
 

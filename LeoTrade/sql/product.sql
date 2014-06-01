@@ -7,6 +7,8 @@ create table product(
 	price float default 0,
 	quantity int not null default 0,
 	status varchar (3) not null default '',
+	tradefor varchar(200) default '',
+	thumurl varchar(200) default '',
 	primary key (prod_id),
 	foreign key (catid) references category(catid),
 	foreign key (ownerid) references profile(prof_id)

@@ -26,7 +26,10 @@ public abstract class AbstractService {
 		return dao.getByColumn(this.getTableName(), column, val);
 	}
 
-
+	public Object get(String column, int val) {
+		
+		return dao.getByColumn(this.getTableName(), column, val);
+	}
 	
 	public void remove(Object obj) {
 		dao.remove(obj);

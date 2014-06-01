@@ -2,6 +2,7 @@ package com.tianshao.cuige.database;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,5 +98,20 @@ public class DAO {
 			.setParameter(columnnm, columnval)
 			.list();
 		return list;
+	}
+	
+	@Transactional
+	public List<? extends Object> getByFoeignColumn(String tablenm,String tablenm2, String columnnm, int columnval){
+		Session session = sessionFactory.getCurrentSession();
+		List<Object> list = session.createQuery("from "+tablenm+" b where b."+tablenm2+"."+columnnm+" = :"+columnnm)
+			.setParameter(columnnm, columnval)
+			.list();
+		return list;	}
+	
+
+	@Transactional
+	public Object directSql(String sql){
+		Session session = sessionFactory.getCurrentSession();
+		return session.createQuery(sql).uniqueResult();			
 	}
 }

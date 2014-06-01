@@ -1,0 +1,4 @@
+changes to bypass facebook signin
+
+UsercookieGenerator: requestForSignIn, requireSignIn
+all autotated with //TODO de-facebook bypass

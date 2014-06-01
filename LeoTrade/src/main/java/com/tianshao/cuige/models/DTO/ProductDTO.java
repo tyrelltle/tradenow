@@ -1,13 +1,6 @@
 package com.tianshao.cuige.models.DTO;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Profile;
-
-public class ProductDTO {
+public class ProductDTO{
 	int prod_id;
 	
 	
@@ -26,10 +19,25 @@ public class ProductDTO {
 	
 	String status="";
 	
+	String tradefor="";
+	
+	String thumurl="";
 	public ProductDTO(){}
 
 	
 	
+	public String getTradefor() {
+		return tradefor;
+	}
+
+
+
+	public void setTradefor(String tradefor) {
+		this.tradefor = tradefor;
+	}
+
+
+
 	public int getCatid() {
 		return catid;
 	}
@@ -96,6 +104,14 @@ public class ProductDTO {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getThumurl() {
+		return thumurl;
+	}
+
+	public void setThumurl(String thumurl) {
+		this.thumurl = thumurl;
 	}
 	
 	
