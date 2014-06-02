@@ -55,7 +55,9 @@
 	 		<script type="text/template" id="prodlisttmp">
 				<div class = "masconrycontainer"   style="margin-top: 60px;">
 				</div>
-
+				<center>
+				<button type="button" id="loadmore" class="btn btn-default">Load More</button>
+				</center>
 
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
@@ -79,31 +81,31 @@
 				<div style="height:500px;">
 				<div class="col-md-6">
 					<div class="input-group input-group-md">
-  							<span class="input-group-addon glyphicon glyphicon-pushpin"></span>
- 						 	<input type="text" id="title" class="form-control" value="{{title}}" placeholder="Enter Item Title">
+  							<span class="input-group-addon">Title</span>
+ 						 	<label class="form-control"  > {{title}} </label>
 					</div>
 					</br>
 					<div class="input-group input-group-md">
-  							<span class="input-group-addon glyphicon glyphicon-pushpin"></span>
+  							<span class="input-group-addon">Category</span>
  						 	<div id="catlistholder"></div>
 					</div>
 					
 
 					</br>
 					<div class="input-group input-group-md">
-  							<span class="input-group-addon glyphicon glyphicon-list-alt"></span>
- 						 	<textarea id="detail" rows=6 class="form-control" placeholder="Detailed description of the item"> {{detail}}</textarea>
+  							<span class="input-group-addon">Description</span>
+ 						 	<textarea id="detail" rows=6 class="form-control" placeholder="Detailed description of the item" readonly> {{detail}}</textarea>
 					</div>
 					</br>
 					
 					<div class="input-group input-group-md">
-  							<span class="input-group-addon glyphicon glyphicon-th-list"></span>
- 						 	<input type="text" id="quantity" class="form-control" value="{{quantity}}" placeholder="Enter Item Quantity">
+  							<span class="input-group-addon">Quantity</span>
+ 						 	<label class="form-control"  > {{quantity}}</label>
 					</div>
 					</br>
 					<div class="input-group input-group-md">
-  							<span class="input-group-addon glyphicon glyphicon-usd"></span>
- 						 	<input type="text" id="price" class="form-control" value="{{price}}" placeholder="Enter Item Price">
+  							<span class="input-group-addon">Price</span>
+						 	<label class="form-control"  > {{price}}</label>
 					</div>
 					</br>
 					<div class="input-group input-group-md">
@@ -113,18 +115,13 @@
 					</br>
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Trade For</span>
- 						 	<textarea id="tradefor" rows=6 class="form-control"  placeholder="Trade for what">{{tradefor}}</textarea>
+ 						 	<textarea id="tradefor" rows=6 class="form-control"  placeholder="Trade for what" readonly>{{tradefor}}</textarea>
 					</div>
 			   </div> <!-- property holder-->
 			   <div class="col-md-6">
 			  	 	<!--img viewer and uploader -->
-			   		<center>image content</center>
-					<div id="imgform">
-		  					<form id="imgsubmit" method="post" enctype="multipart/form-data">  
-		     					<td><input type="file" id="prod_img_input" name="file" />     
-		     					<td><input type="submit" value="Upload" />   
-		  					</form>  
-					</div>
+			   		<center>Photos</center>
+					
 					<div id="imglis" style="overflow:scroll;height:500px"></div>
 				
 			   </div> <!-- img holder-->

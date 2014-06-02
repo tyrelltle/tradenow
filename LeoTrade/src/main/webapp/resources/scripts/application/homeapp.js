@@ -11,15 +11,21 @@ AppRouter=Backbone.Router.extend({
 	initTab:function(){		$('#tab_prof').click();},
 
 	prodlis:function(){
-
+		
 		this.productList = new ProductList();
 		this.productListView = new ProductListView({model:this.productList});
 		this.productList.fetch({
+
 			success:function(productList){
 				$('#prodlist').html(app.productListView.render().el);
+				$('#loadmore').click(function(e){
+					app.productList.addstart();
+					app.productList.fetch({remove:false});
+					
+				});
 				var container = document.querySelector('.masconrycontainer');
 				var msnry;
-				msnry= new Masonry( container,{isInitLayout: true});
+				this.msnry= new Masonry( container,{isInitLayout: true});
 				imagesLoaded( container, function() {
 					msnry= new Masonry( container,{isInitLayout: true});
 				
@@ -28,15 +34,13 @@ AppRouter=Backbone.Router.extend({
 			}
 		});
 	},
+
 	prodDetail:function(prod_id){
 		//display productView in popup modal
 		this.product=this.productList.get(prod_id);
 		this.productView=new ProductView({model:this.product});
 		$('.modal-body').html(this.productView.render().el);
 	},
-
-	
-	
 });
 
 	    

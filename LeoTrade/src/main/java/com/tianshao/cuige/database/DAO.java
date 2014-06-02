@@ -114,4 +114,29 @@ public class DAO {
 		Session session = sessionFactory.getCurrentSession();
 		return session.createQuery(sql).uniqueResult();			
 	}
+	
+	@Transactional
+	public List<? extends Object> getAll(String tablenm){
+		Session session = sessionFactory.getCurrentSession();
+		return session.createQuery("from "+tablenm).list();			
+	}
+	
+	/**
+	 * 
+	 * @param tablenm  
+	 * tablename
+	 * @param limitL  
+	 * first value used in LIMIT x,x
+	 * @param limitR
+	 * second value used in LIMIT x,x
+	 * @return
+	 */
+	@Transactional
+	public List<? extends Object> getAll(String tablenm, int limitL,int limitR){
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from "+tablenm);	
+		query.setFirstResult(limitL);
+		query.setMaxResults(limitR);
+		return query.list();
+	}
 }

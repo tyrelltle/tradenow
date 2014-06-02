@@ -17,6 +17,19 @@ public class ProductService extends AbstractService {
 	@Autowired
 	private ProfileService profileService;
 	
+	
+	/*
+	 * 
+	 * */
+	public List<Product> getAll(Integer ...limit) throws Exception{
+		if(limit.length!=0 && limit.length!=2)
+			throw new Exception("invalid LIMIT parameter for getting all records: neither 0 or 2 parameters ");
+		if(limit.length==0)
+			return (List<Product>) dao.getAll("Product");
+		else
+			return (List<Product>) dao.getAll("Product",limit[0],limit[1]);
+	}
+	
 	public List<Product> getBySocialId(String social_id){
 
 		List<Product> lis=(List<Product>) dao.getByFoeignColumn("Product", 

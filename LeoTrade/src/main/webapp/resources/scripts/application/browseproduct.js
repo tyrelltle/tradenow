@@ -10,7 +10,17 @@ Product=Backbone.Model.extend({
 
 ProductList=Backbone.Collection.extend({
 	model:Product,
-	url:"api/product"	
+	start: 0,
+	offset:5,
+	initialize:function(){
+		this.url="api/product/start/0/count/"+this.offset;
+	},
+	
+	addstart:function(){
+		this.start+=this.offset;
+		this.url="api/product/start/"+this.start+"/count/"+this.offset;
+
+	}
 });
 
 Imagee = Backbone.Model.extend({
@@ -33,14 +43,8 @@ ProductView=Backbone.View.extend({
 	template: _.template($('#proddetailtmp').html()),
 	
 	initialize:function(){
-		_.bindAll(this, "onGallerySubmit","onformsuccess");
-		this.model.bind("change",this.close,this);
-		this.model.bind("destroy",this.close,this);
-		$('#prod_save').click(this.sav);
-		$('#prod_del').click(this.del);
+//		$('#prod_save').click(this.sav);
 	},
-
-
 
 	render: function(){
 		
@@ -59,55 +63,16 @@ ProductView=Backbone.View.extend({
 			}
 		});
 
-		//image upload form initialize
-		$(this.el).find('#imgsubmit').submit(this.onGallerySubmit);
 		this.renderGallery(true);
 		return this;
 	},
 
 
-	sav: function(event){
-		
-		
-		
-		app.productView.model.set({
-			title:$('#title').val(),
-			price:$('#price').val(),
-			detail:$('#detail').val(),
-			quantity:$('#quantity').val(),
-			tradefor:$('#tradefor').val(),
-			catid:$('.'+app.productView.categorySelection.classnm).val()
-		});
-		if(app.productView.model.isNew()){
-			app.productList.create(app.productView.model,
-					              {success :app.productView.succ, 
-				 							error: app.productView.err});
-			
-		}else{
-			app.productView.model.save(null,{success :app.productView.succ, 
-							 error: app.productView.err});
-		}
-		app.productView.close();
-	},
 	
-	del:function(){
-		app.productView.model.destroy({success :app.productView.succ, 
-			   						   error: app.productView.err});
-		app.productView.close();	
-	},
+
 
 	
-	succ: function(){
-		alert("successed!");
-		app.navigate("prodlis",true);
 
-	},
-	
-	err: function(){
-		alert("failed!");
-		app.navigate("prodlis",true);
-		
-	},
 	
 	close: function(){
 		$(this.el).unbind();
@@ -142,54 +107,7 @@ ProductView=Backbone.View.extend({
 		});
 		
 	},
-	onGallerySubmit: function(e){
-		if(this.model.isNew()){
-			//model has to exist before uploading image to it
-			app.productView.model.set({
-				title:$('#title').val(),
-				price:$('#price').val(),
-				detail:$('#detail').val(),
-				quantity:$('#quantity').val(),
-				tradefor:$('#tradefor').val(),
-				catid:$('.'+this.categorySelection.classnm).val()
-			});
-			app.productList.create(this.model,
-					              {async:false});
-			
-		}
-		 var oMyForm = new FormData();
-		  oMyForm.append("file", $('#prod_img_input').prop("files")[0]);
-		  var self=this;
-		  $.ajax({
-			url: 'http://localhost:8080/cuige/api/product/img/upload/'+this.model.get("prod_id"),
-		    data: oMyForm,
-		    dataType: 'text',
-		    processData: false,
-		    contentType: false,
-		    type: 'POST',
-		    success: function(data){
-		    	alert("success!");
-		    	//app.navigate("prodDetail",true);
-		    	
-				self.onformsuccess();
-			},
-		    error: function(jqXHR, textStatus, errorThrown){
-	            console.log("FETCH FAILED: " + errorThrown);
-	        }
-		  });
 
-		  e.preventDefault();
-		
-	},
-	onformsuccess:function(e){
-		this.renderGallery(false);
-		
-		  //fetch model to get the new 
-		  this.model.fetch({async:false});
-		//after upload form sumibtted, somehow the modal save button click event doesnt work
-			//need to reinitialize 
-		this.initialize();
-	}
 		
 	
 
@@ -207,31 +125,28 @@ ProductListView=Backbone.View.extend({
 		//this.template=_.template($('#prodListTmp').html());
 		var self=this;
 		this.model.bind("create",function(e){
-			$(self.el).append(new ProductListItemView({model:e}).render().el)
+			$(self.el).append(new ProductListItemView({model:e}).render().el);
 			
+		});
+		this.model.bind("add",function(e){
+			var newelm=new ProductListItemView({model:e}).render().el;
+			$(self.el).find('.masconrycontainer').append(newelm);
+			if($('.masconrycontainer').length>0){
+				var container = document.querySelector('.masconrycontainer');
+				var msnry;
+				msnry= new Masonry(container);
+				msnry.appended([newelm]);
+				msnry.layout();
+				imagesLoaded( container, function() {
+					msnry.layout();
+				
+				});
+			}
 		});
 		this.template=_.template($("#prodlisttmp").html());
 	},
 	
 	render:function(){
-//		var self=this;
-//		var rowcontainer=document.createElement('div');
-//		rowcontainer.className='row';
-//		var columnshad=0;
-//		_.each(this.model.models,function(m){
-//			columnshad++;
-//			$(rowcontainer).append(new ProductListItemView({model:m}).render().el);
-//			if(columnshad==self.columnnum){
-//				
-//				$(self.el).append(rowcontainer);
-//				rowcontainer=document.createElement('div');
-//				rowcontainer.className='row';
-//			}
-//		});
-//		if($(rowcontainer).find('div').size()>0)
-//			//still remaining column divs
-//			$(self.el).append(rowcontainer);
-//		return this;
 		var self=this;
 		$(this.el).html(this.template());
 		_.each(this.model.models,function(m){
