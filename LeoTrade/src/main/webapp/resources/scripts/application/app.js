@@ -35,13 +35,6 @@ AppRouter=Backbone.Router.extend({
 		this.productList.fetch({
 			success:function(productList){
 				$('#prodlist').html(app.productListView.render().el);
-				var container = document.querySelector('.masconrycontainer');
-				var msnry;
-				msnry= new Masonry( container,{isInitLayout: true});
-				imagesLoaded( container, function() {
-					msnry= new Masonry( container,{isInitLayout: true});
-				
-				});
 			
 			}
 		});

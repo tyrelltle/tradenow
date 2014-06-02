@@ -11,28 +11,17 @@
 	    <script type="text/javascript" language="javascript" src="resources/scripts/backbone.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
-	    <style type="text/css">
-	    
-		    *, *:before, *:after {box-sizing:  border-box !important;}
-	
+	    <style type="text/css">	
 			.masconryitem{
-				width: 300px;
+				width: 200px;
 				margin: 10px;
 			}
-			.row {
-			 -moz-column-width: 18em;
-			-webkit-column-width: 25em;
-			-moz-column-gap: 1em;
-			-webkit-column-gap: 0em;
-			  
-			}
 			
-			.menu-category {
-			display: inline-block;
-			margin: 0.25rem;
-			padding: 1rem;
-			width: 320px;
+			.masconrycontainer{
+				width: 500px;
+				margin: 10px;
 			}
+		
 	    </style>
 	</tiles:putAttribute>
 
@@ -72,6 +61,7 @@
 						                
 						                
 						                </div><!-- end productlist -->
+						                <div style="height:300px"></div>
 						        </div>
 						  </div>
 						</div>
@@ -107,24 +97,23 @@
 	 		</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
-				<div class = "masconrycontainer"   style="margin-top: 60px;">
+				<div class = "masconrycontainer list-group" >
 				</div>
 
 
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
-				      <div class="masconryitem">			      
-				      	<div class="panel panel-default">
-				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>
-				          <div class="panel-body">
-				            <p class="lead">{{title}}</p>
-				          <!-- Button trigger modal -->
-								<button id="modalbtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  									Launch demo modal
+				      	<div class="row">
+				          <div id="thumbnail" class="col-md-3"  ><img style="width:30px" src="{{thumurl}}" class="img-responsive"></div>
+				          <div id="title" class="col-md-4" >{{title}}</div>
+				          <div id="button" style="float:right">
+								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+									Detail
 								</button>
-				          </div>
-				        </div>		        
-				      </div>																	     
+						  </div>
+						</div>
+				          
+				       	        
 			</script>
 			
 			<script type="text/template" id="proddetailtmp">
@@ -200,9 +189,9 @@
 	
 		
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="resources/scripts/product/product.js"></script>
-			 <script type="text/javascript" id="tmp" src="resources/scripts/profile/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/scripts/profile/app.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/scripts/application/product.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/scripts/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/app.js"></script>
 	 		<div>testtesttest</div>
 	<!--end bootstrap dependencies-->
 
