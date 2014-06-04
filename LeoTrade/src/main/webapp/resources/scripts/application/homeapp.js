@@ -12,6 +12,17 @@ AppRouter=Backbone.Router.extend({
 
 	prodlis:function(){
 		
+		//init category list
+		this.categoryList=new CategoryList();
+		this.categoryListView=new CategoryListView({model:this.categoryList});
+		this.categoryList.fetch({
+			success:function(lis){
+				$('.catlist').html(app.categoryListView.render().el);
+			}
+		});
+		
+		
+		//init product list
 		this.productList = new ProductList();
 		this.productListView = new ProductListView({model:this.productList});
 		this.productList.fetch({

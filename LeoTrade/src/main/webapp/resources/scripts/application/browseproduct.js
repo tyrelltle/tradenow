@@ -50,28 +50,9 @@ ProductView=Backbone.View.extend({
 		
 		
 		$(this.el).html(this.template(this.model.toJSON()));
-
-		//configure and show the category dropdown list	
-		this.categoryList=new CategoryList();
-		this.categorySelection = new CategorySelection({model:this.categoryList});
-		this.categorySelection.default_catid=this.model.get('catid');
-		var self=this;
-		this.categoryList.fetch({
-			async:false, 
-			success:function(lis){
-				$(self.el).find('#catlistholder').html(self.categorySelection.render().el);
-			}
-		});
-
 		this.renderGallery(true);
 		return this;
 	},
-
-
-	
-
-
-	
 
 	
 	close: function(){
@@ -195,40 +176,3 @@ ProductListItemView=Backbone.View.extend({
 });
 
 
-CategorySelection=Backbone.View.extend({
-	default_catid:0,
-	classnm:"dropdownlist",
-	render:function(){
-		
-		if(this.items == "")
-			return this;
-		$(this.el).append("<select class='"+this.classnm+" form-control'>");
-		//default first
-		if(this.default_catid >=0 && this.default_catid!=null){
-			var cat= this.model.where({ catid: this.default_catid })[0];
-			if(cat != null)
-				$(this.el).find('.'+this.classnm).append("<option value='"+cat.get('catid')+"'>"+cat.get('name')+"</option>");
-		}
-		_.each(this.model.models, function (m) {
-			if(this.default_catid!= m.get('catid')){
-				$(this.el).find('.'+this.classnm).append("<option value='"+m.get('catid')+"'>"+m.get('name')+"</option>");
-			}
-		}, this);
-		
-		$(this.el).append("</select>");
-		return this;
-	}
-	
-});
-
-Category=Backbone.Model.extend({
-	defaults:{"catid":1,"name":""},
-	urlRoot:"api/category",
-	idAttribute: "catid"
-		
-});
-
-CategoryList=Backbone.Collection.extend({
-	model:Product,
-	url:"api/category"	
-});

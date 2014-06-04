@@ -172,7 +172,10 @@ h3,h4,h5 {
      </div>	
 </div>
 
-
+<!--left -->
+<div id="leftpanel" style="float:left;margin-top:120px">
+	<tiles:insertAttribute name="left" />
+</div>
 <!--main-->
 <div class="container" id="main">
    <tiles:insertAttribute name="main" />

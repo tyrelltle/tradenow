@@ -16,21 +16,39 @@
 				width: 200px;
 				margin: 10px;
 			}
+			#catlistpanel{
+				float:left;
+			}
 		
 	    </style>
 	</tiles:putAttribute>
-
+	<tiles:putAttribute name="left">
+	
+			<div class="list-group" style="width:200px">
+			  <a href="#" class="list-group-item active">
+			    Categories
+			  </a>
+			  <div class="catlist">
+				  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+				  <a href="#" class="list-group-item">Morbi leo risus</a>
+				  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+				  <a href="#" class="list-group-item">Vestibulum at eros</a>
+			  </div>
+			</div>
+	
+	</tiles:putAttribute>
     <tiles:putAttribute name="main">
    
-
-		      <div id="prodlispanel" class="panel panel-default">
-		      		<div  class="panel-body">
-						<div id="prodlist" >
-							
+   			<div>
+				
+			      <div id="prodlispanel" class="panel panel-default">
+			      		<div  class="panel-body">
+							<div id="prodlist" >
+								
+							</div>
 						</div>
-					</div>
+				 </div>
 			 </div>
-			 
 		 	<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg modal-dialog">
@@ -85,11 +103,6 @@
  						 	<label class="form-control"  > {{title}} </label>
 					</div>
 					</br>
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">Category</span>
- 						 	<div id="catlistholder"></div>
-					</div>
-					
 
 					</br>
 					<div class="input-group input-group-md">
@@ -144,8 +157,10 @@
 		
 	<!--start bootstrap dependencies-->	
 			 <script type="text/javascript" id="tmp" src="resources/scripts/application/browseproduct.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/category.js"></script>
+			 
 			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/homeapp.js"></script>
-	 		<div>testtesttest</div>
+			 
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>
