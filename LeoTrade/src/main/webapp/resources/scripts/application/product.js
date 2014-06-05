@@ -71,7 +71,7 @@ ProductView=Backbone.View.extend({
 		
 		
 		app.productView.model.set({
-			title:$('#title').val(),
+			title:$('#titletxt').val(),
 			price:$('#price').val(),
 			detail:$('#detail').val(),
 			quantity:$('#quantity').val(),
@@ -145,7 +145,7 @@ ProductView=Backbone.View.extend({
 		if(this.model.isNew()){
 			//model has to exist before uploading image to it
 			app.productView.model.set({
-				title:$('#title').val(),
+				title:$('#titletxt').val(),
 				price:$('#price').val(),
 				detail:$('#detail').val(),
 				quantity:$('#quantity').val(),

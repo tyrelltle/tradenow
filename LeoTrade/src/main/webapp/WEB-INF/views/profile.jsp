@@ -24,7 +24,9 @@
 		
 	    </style>
 	</tiles:putAttribute>
-
+	<tiles:putAttribute name="left">
+			  <div></div>	
+	</tiles:putAttribute>
     <tiles:putAttribute name="main">
    
 
@@ -69,7 +71,7 @@
 			 </div>
 			 
 		 	<!-- product detail Modal -->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -123,7 +125,7 @@
 				<div class="col-md-6">
 					<div class="input-group input-group-md">
   							<span class="input-group-addon glyphicon glyphicon-pushpin"></span>
- 						 	<input type="text" id="title" class="form-control" value="{{title}}" placeholder="Enter Item Title">
+ 						 	<input type="text" id="titletxt" class="form-control" value="{{title}}" placeholder="Enter Item Title">
 					</div>
 					</br>
 					<div class="input-group input-group-md">

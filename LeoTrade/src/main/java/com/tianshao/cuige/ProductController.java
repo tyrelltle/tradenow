@@ -267,6 +267,7 @@ public class ProductController {
 			prod.setTitle(dto.getTitle());
 			prod.setTradefor(dto.getTradefor());
 			prod.setThumurl(dto.getThumurl());
+			prod.setCategory(serv.getCat(dto.getCatid()));
 		}		
 	
 		private void PROD_TO_DTO(Product prod, ProductDTO dto) {
@@ -279,5 +280,6 @@ public class ProductController {
 			dto.setCatid(prod.getCategory().getCatid());
 			dto.setTitle(prod.getTitle());
 			dto.setThumurl(prod.getThumurl());
+			dto.setTradefor(prod.getTradefor());
 		}
 }

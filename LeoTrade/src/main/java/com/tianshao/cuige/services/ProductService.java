@@ -93,12 +93,17 @@ public class ProductService extends AbstractService {
 		}
 		return img.getImg_id();
 	}
+
+
+	public Category getCat(int catid) {
+		// TODO Auto-generated method stub
+		return (Category) dao.getByColumn("Category", "catid", catid);
+	}
+
 	@Override
 	public String getTableName() {
 		return "Product";
-	}
-
-	
+	}	
 	
 
 	
