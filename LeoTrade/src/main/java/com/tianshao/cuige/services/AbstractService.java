@@ -35,7 +35,10 @@ public abstract class AbstractService {
 		dao.remove(obj);
 	}
 
-	
+	public void removeAll(){
+		
+		dao.truncateTable(this.getTableName());
+	}
 	public void update(Object e) {
 
 		
@@ -43,7 +46,10 @@ public abstract class AbstractService {
 	
 	}
 	
-
+	public long count(){
+		return (Long) dao.directSql("select count(*) from "+this.getTableName());
+		 
+	}
     public abstract String getTableName();
 
 }

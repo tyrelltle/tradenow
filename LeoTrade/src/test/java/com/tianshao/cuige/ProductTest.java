@@ -106,24 +106,33 @@ public class ProductTest {
 		
 		Product prod=prodserv.populate("test social id", cat.getCatid());
 		prodserv.add(prod);
-		assertEquals(0,prodserv.getProductImages(prod.getProd_id()).size());
+		assertEquals(0,prod.getImages().size());
+		assertEquals(0,prodserv.countProductImage(prod.getProd_id()));
 		
 		Image img = new Image();
 		img.setImage_name("image_name");
 		img.setImage_size(123456);
 		img.setImage_type("jpeg");
 		img.setProduct(prod);
-		prodserv.addProductImage(img);
+		prod.getImages().add(img);
+		dao.update(prod);
 		
 		//assert the new image id is set to normal key value
 		assertTrue(img.getImg_id()>=0);
 		
-		assertEquals(1,prodserv.getProductImages(prod.getProd_id()).size());
+		assertEquals(1,prod.getImages().size());
+		assertEquals(1,prodserv.countProductImage(prod.getProd_id()));
 
-		prodserv.addProductImage(img);
+		Image img2 = new Image();
+		img2.setImage_name("image_name");
+		img2.setImage_size(123456);
+		img2.setImage_type("jpeg");
+		img2.setProduct(prod);
+		prod.getImages().add(img2);
+		dao.update(prod);
 		
-		assertEquals(2,prodserv.getProductImages(prod.getProd_id()).size());
-
+		assertEquals(2,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(2,prod.getImages().size());
 		
 		prodserv.remove(prod);
 		profserv.remove(prof);

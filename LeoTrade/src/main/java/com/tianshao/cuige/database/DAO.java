@@ -115,6 +115,16 @@ public class DAO {
 		return session.createQuery(sql).uniqueResult();			
 	}
 	
+	
+	@Transactional
+	public List<? extends Object> directSqltoList(String sql){
+		Session session = sessionFactory.getCurrentSession();
+		return session.createQuery(sql).list();			
+	}
+	
+	
+	
+	
 	@Transactional
 	public List<? extends Object> getAll(String tablenm){
 		Session session = sessionFactory.getCurrentSession();
@@ -138,5 +148,13 @@ public class DAO {
 		query.setFirstResult(limitL);
 		query.setMaxResults(limitR);
 		return query.list();
+	}
+	@Transactional
+
+	public int truncateTable(String tab){
+		Session session = sessionFactory.getCurrentSession();
+	    String hql = String.format("delete from %s",tab);
+	    Query query = session.createQuery(hql);
+	    return query.executeUpdate();
 	}
 }

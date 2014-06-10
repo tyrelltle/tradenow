@@ -13,6 +13,8 @@
 		<mapping class="com.tianshao.cuige.models.Category" />
         <mapping class="com.tianshao.cuige.models.Product" />
         <mapping class="com.tianshao.cuige.models.Image" />
+        <mapping class="com.tianshao.cuige.models.Trade" />
+        
 
     </session-factory>
 	

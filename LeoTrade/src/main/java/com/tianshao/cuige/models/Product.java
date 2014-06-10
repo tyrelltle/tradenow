@@ -1,6 +1,7 @@
 package com.tianshao.cuige.models;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 
 @Entity
@@ -48,6 +52,27 @@ public class Product{
 	
 	@Column(name="status")
 	String status="";
+	
+	@OneToMany(fetch = FetchType.LAZY, 
+		       cascade = {CascadeType.ALL}, 
+		       mappedBy = "product")
+	@Fetch(FetchMode.SELECT)
+	Set<Image> images=new HashSet<Image>();
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, 
+		       cascade = {CascadeType.ALL}, 
+		       mappedBy = "prod1")
+	@Fetch(FetchMode.SELECT)
+	Set<Trade> trades1=new HashSet<Trade>();
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, 
+		       cascade = {CascadeType.ALL}, 
+		       mappedBy = "prod2")
+	@Fetch(FetchMode.SELECT)
+	Set<Trade> trades2=new HashSet<Trade>();
+	
 	
 	@Column(name="thumurl")
 	String thumurl="";
@@ -132,6 +157,36 @@ public class Product{
 	public void setThumurl(String thumurl) {
 		this.thumurl = thumurl;
 	}
+
+	public Set<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(Set<Image> images) {
+		this.images = images;
+	}
+
+	public Set<Trade> getTrades1() {
+		return trades1;
+	}
+
+	public void setTrades1(Set<Trade> trades1) {
+		this.trades1 = trades1;
+	}
+
+	public Set<Trade> getTrades2() {
+		return trades2;
+	}
+
+	public void setTrades2(Set<Trade> trades2) {
+		this.trades2 = trades2;
+	}
+
+
+	
+	
+
+
 
 	
 	
