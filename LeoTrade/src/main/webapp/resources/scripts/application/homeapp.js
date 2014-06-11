@@ -2,7 +2,7 @@
 //non route driven router, due to Spring controller
 AppRouter=Backbone.Router.extend({
 	initialize:function(){	
-	
+		
 	},
 	routes:{
 		"":"prodlis",
@@ -48,6 +48,7 @@ AppRouter=Backbone.Router.extend({
 
 	prodDetail:function(prod_id){
 		//display productView in popup modal
+		$('#btn_trade').click(function(){document.location.href = 'tradepage/toprod/'+prod_id;});
 		this.product=this.productList.get(prod_id);
 		this.productView=new ProductView({model:this.product});
 		$('.modal-body').html(this.productView.render().el);

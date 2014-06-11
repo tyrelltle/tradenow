@@ -26,7 +26,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.models.Category;
+import com.tianshao.cuige.models.Product;
 import com.tianshao.cuige.models.Profile;
+import com.tianshao.cuige.services.ProductService;
 import com.tianshao.cuige.services.ProfileService;
 
 
@@ -39,7 +41,7 @@ import com.tianshao.cuige.services.ProfileService;
 @RequestMapping("/tradepage")
 public class TradePageController {
 	    @Autowired
-	    private ProfileService serv;
+	    private ProductService serv;
 	   
 	    private final Facebook facebook;
 
@@ -48,9 +50,10 @@ public class TradePageController {
 	        this.facebook = facebook;
 	    }
 
-	    @RequestMapping( method=RequestMethod.GET)
-	    public String home(Model model) {
-	    	
+	    @RequestMapping(value="toprod/{toprod_id}", method=RequestMethod.GET)
+	    public String home(Model model,@PathVariable int toprod_id) {
+	    	Product toprod=serv.getByProdId(toprod_id);
+	    	model.addAttribute("toprod",toprod);
 	        return "tradepage";
 	    }
 

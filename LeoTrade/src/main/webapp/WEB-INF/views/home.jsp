@@ -61,8 +61,8 @@
 			      
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" id="prod_del" data-dismiss="modal" class="btn btn-default">Delete</button>
-			        <button type="button" id="prod_save" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+			       
+			        <button type="button" id="btn_trade" class="btn btn-primary">Trade!</button>
 			      </div>
 			    </div>
 			  </div>

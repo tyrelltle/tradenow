@@ -53,9 +53,9 @@ public class TradeTest {
 	@Before
 	public void init(){
 		truncate();
-		prof=profserv.get_create_Profile("test social id");
-		prof2=profserv.get_create_Profile("test social id2");
-		prof3=profserv.get_create_Profile("test social id3");
+		prof=profserv.create_Profile("test social id", "", "", "");
+		prof2=profserv.create_Profile("test social id2", "", "", "");
+		prof3=profserv.create_Profile("test social id3", "", "", "");
 		cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);

@@ -25,14 +25,18 @@ public class ProductService extends AbstractService {
 		if(limit.length!=0 && limit.length!=2)
 			throw new Exception("invalid LIMIT parameter for getting all records: neither 0 or 2 parameters ");
 		if(limit.length==0)
-			return (List<Product>) dao.getAll("Product");
+			return (List<Product>) dao.getAll(this.getTableName());
 		else
-			return (List<Product>) dao.getAll("Product",limit[0],limit[1]);
+			return (List<Product>) dao.getAll(this.getTableName(),limit[0],limit[1]);
+	}
+	
+	public Product getByProdId(int prodid){
+		return (Product) dao.getByColumn(this.getTableName(), "prod_id", prodid);
 	}
 	
 	public List<Product> getBySocialId(String social_id){
 
-		List<Product> lis=(List<Product>) dao.getByFoeignColumn("Product", 
+		List<Product> lis=(List<Product>) dao.getByFoeignColumn(this.getTableName(), 
 							  "owner", 
 							  "social_id", social_id);
 		

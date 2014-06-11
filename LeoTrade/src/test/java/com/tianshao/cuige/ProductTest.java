@@ -46,7 +46,7 @@ public class ProductTest {
 	 */
 	public void testadd() throws Exception{
 	
-		Profile prof=profserv.get_create_Profile("test social id");
+		Profile prof=profserv.create_Profile("test social id", "", "", "");
 		Category cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);
@@ -74,7 +74,7 @@ public class ProductTest {
 	 */
 	@Test
 	public void testupdate() throws Exception {
-		Profile prof=profserv.get_create_Profile("test social id");
+		Profile prof=profserv.create_Profile("test social id", "", "", "");
 		Category cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);
@@ -99,7 +99,7 @@ public class ProductTest {
 	
 	@Test
 	public void testImageAdd() throws Exception{
-		Profile prof=profserv.get_create_Profile("test social id");
+		Profile prof=profserv.create_Profile("test social id", "", "", "");
 		Category cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);
@@ -142,7 +142,7 @@ public class ProductTest {
 	
 	@Test
 	public void testImageCount() throws Exception{
-		Profile prof=profserv.get_create_Profile("test social id");
+		Profile prof=profserv.create_Profile("test social id", "", "", "");
 		Category cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);
@@ -175,7 +175,7 @@ public class ProductTest {
 	//test thumurl is added when first image is added
 	@Test
 	public void testThumUrlt() throws Exception{
-		Profile prof=profserv.get_create_Profile("test social id");
+		Profile prof=profserv.create_Profile("test social id", "", "", "");
 		Category cat=new Category();
 		cat.setName("testcat");
 		dao.addNew(cat);

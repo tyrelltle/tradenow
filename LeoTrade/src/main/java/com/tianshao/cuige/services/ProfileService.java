@@ -16,16 +16,19 @@ public class ProfileService extends AbstractService{
 		super();
 	}
 	
-	public Profile get_create_Profile(String profileId){
-		Profile ret=(Profile) this.get("social_id", profileId);
-		if(null == ret){
-			/*user first time logon, store his social id 
-			 *and create a profile record*/
-			ret=new Profile();
-			ret.setSocial_id(profileId);
-			this.add(ret);
-		}
+	public Profile create_Profile(String profileId,String firstname, String lastname,String email){
+		Profile ret=new Profile();
+		ret.setSocial_id(profileId);
+		ret.setFirstname(firstname);
+		ret.setLastname(lastname);
+		ret.setEmail(email);
+		this.add(ret);
+		
 		return ret;
+	}
+	
+	public Profile getByProfid(String profileId){
+		return (Profile) this.get("social_id", profileId);
 	}
 	
 	

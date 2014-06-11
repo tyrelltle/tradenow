@@ -13,6 +13,7 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.social.facebook.api.Reference;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Profile;
+import com.tianshao.cuige.models.DTO.ProfileDTO;
 import com.tianshao.cuige.services.ProfileService;
 
 
@@ -57,10 +59,23 @@ public class ProfileController {
 	    
 	    
 		@RequestMapping(value="api/user",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public @ResponseBody ProfileWrapper get( HttpServletResponse resp) throws IOException {
+		public @ResponseBody ProfileDTO get( HttpServletResponse resp) throws IOException {
 	    	FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	Profile prof=serv.get_create_Profile(facebookprofile.getId());
-	    	ProfileWrapper profwrap=new ProfileWrapper();
+	    	
+	    	Profile prof=serv.getByProfid(facebookprofile.getId());
+		    	if(prof==null){
+		    		//TODO solve later, cant just automatically add user and user image
+		    		serv.create_Profile(facebookprofile.getId(), 
+		    									 facebookprofile.getFirstName(), 
+		    									 facebookprofile.getLastName(), 
+		    									 facebookprofile.getEmail());
+		    	
+		    		prof.setImage(facebook.userOperations().getUserProfileImage());
+		    		serv.update(prof);
+		    	
+	    	}
+	    	
+	    	ProfileDTO profwrap=new ProfileDTO();
 	        profwrap.setEmail(facebookprofile.getEmail());
 	        profwrap.setFirstname(facebookprofile.getFirstName());
 	        profwrap.setLastname(facebookprofile.getLastName());
@@ -74,7 +89,7 @@ public class ProfileController {
 	    
 		
 		@RequestMapping(value="api/user/{social_id}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
-		public @ResponseBody ProfileWrapper update(@RequestBody ProfileWrapper wrap,@PathVariable String social_id, HttpServletResponse resp) throws IOException {
+		public @ResponseBody ProfileDTO update(@RequestBody ProfileDTO wrap,@PathVariable String social_id, HttpServletResponse resp) throws IOException {
 			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
 	    	if(!facebookprofile.getId().equals(social_id)){
 	    		//currently logged on user is not claimed user
@@ -82,7 +97,7 @@ public class ProfileController {
 	            return null;
 	    	}
 	    	try{
-	    		Profile prof=serv.get_create_Profile(facebookprofile.getId());
+	    		Profile prof=serv.getByProfid(facebookprofile.getId());
 	    		prof.setAboutme(wrap.getAboutme());
 	    		prof.setLocation(wrap.getLocation());
 	    		serv.update(prof);
@@ -95,70 +110,20 @@ public class ProfileController {
 	    	
 		}
 		
-		
-	    public static class ProfileWrapper{
-	    	/**
-	    	 * wrapper class of some attributes from facebookprofile
-	    	 * To be used in view
-	    	 */
-	    	private String social_id;
-	    	private String aboutme;
-	    	private String location;
-	    	private String lastname;
-	    	private String firstname;
-	    	private String email;
-	    	
-	    	public ProfileWrapper(){
-	    		
-	    	}
-	    	
-	    	
-	    	
-			public String getSocial_id() {
-				return social_id;
-			}
+		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+		public @ResponseBody byte[] getimg() {
+			
+			return facebook.userOperations().getUserProfileImage();
+			
 
-			public void setSocial_id(String social_id) {
-				this.social_id = social_id;
-			}
-
-
-			public String getAboutme() {
-				return aboutme;
-			}
-
-			public void setAboutme(String aboutme) {
-				this.aboutme = aboutme;
-			}
-
-			public String getLocation() {
-				return location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getLastname() {
-				return lastname;
-			}
-			public void setLastname(String lastname) {
-				this.lastname = lastname;
-			}
-			public String getFirstname() {
-				return firstname;
-			}
-			public void setFirstname(String firstname) {
-				this.firstname = firstname;
-			}
-			public String getEmail() {
-				return email;
-			}
-			public void setEmail(String email) {
-				this.email = email;
-			}
-	    	
-	    	
 	    }
+		
+		@RequestMapping(value="img/socid/{social_id}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+		public @ResponseBody byte[] getimg(@PathVariable String social_id) {
+			Profile prof=serv.getByProfid(social_id);
+			return prof.getImage();
+			
+
+	    }	    
 	
 }

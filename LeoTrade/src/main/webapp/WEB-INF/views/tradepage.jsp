@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link href="resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">  
+<link href="../../resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">  
 
 <style>
 /* CSS used here will be applied after bootstrap.css */
@@ -77,7 +77,8 @@ margin-top:50px;
                         </button>
                     </div>
                     <div id="prod_right" class="col-md-5">
-                        <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
+                    	<p>${toprod.title}</p>
+                        <img alt="pic" class="img-thumbnail prodpic" src="${toprod.thumurl}">
                     </div>
                 </div>
                 <div id="msg_row" class="row">
@@ -124,7 +125,10 @@ margin-top:50px;
         </div>
     	<div id="userpanel" class="sidepanel upblock col-md-2">
       		<ul class="list-group">
-              <li class="list-group-item"><img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></li>
+              <li class="list-group-item">
+              		<p>${toprod.owner.firstname} ${toprod.owner.lastname}</p>
+              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/profile/img/socid/${toprod.owner.social_id}">
+              </li>
               <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
               <li class="list-group-item">
                 Delivery Method

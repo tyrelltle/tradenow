@@ -23,11 +23,24 @@ public class Profile implements Serializable{
 	@Column(name="social_id")
 	private String social_id;
 	
+	@Column(name="firstname")
+	private String firstname;
+	
+	@Column(name="lastname")
+	private String lastname;
+
+	@Column(name="email")
+	private String email;
+	
 	@Column(name="aboutme")
 	private String aboutme;
 	
 	@Column(name="location")
 	private String location;
+	
+	@Column(name="image")
+	private byte[] image;
+	
 	
 	public Profile(){}
 
@@ -61,6 +74,38 @@ public class Profile implements Serializable{
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
     
