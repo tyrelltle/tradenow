@@ -52,7 +52,10 @@ margin-top:50px;
     <div id="block" class="panel col-md-12">
         <div id="userpanel" class="sidepanel col-md-2">
              <ul class="list-group">
-              <li class="list-group-item"><img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></li>
+              <li class="list-group-item">
+					<p>${fromprod.owner.firstname} ${fromprod.owner.lastname}</p>
+              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/profile/img/socid/${fromprod.owner.social_id}">
+                 </li>
               <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
               <li class="list-group-item">
                 Delivery Method
@@ -70,7 +73,8 @@ margin-top:50px;
             <div class="midcontainer container">
                 <div id="two_prod_row" class="row">
                     <div id="prod_left" class="col-md-5">
-                        <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
+                    	<p>${fromprod.title}</p>
+                        <img alt="pic" class="img-thumbnail prodpic" src="${fromprod.thumurl}">
                     </div>
                     <div class="col-md-2" style="margin-top:40px">
                         <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 

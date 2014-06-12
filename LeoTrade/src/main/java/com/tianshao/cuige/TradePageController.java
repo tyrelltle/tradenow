@@ -41,7 +41,8 @@ import com.tianshao.cuige.services.ProfileService;
 @RequestMapping("/tradepage")
 public class TradePageController {
 	    @Autowired
-	    private ProductService serv;
+	    private ProductService prodserv;
+	    @Autowired ProfileService profserv;
 	   
 	    private final Facebook facebook;
 
@@ -50,10 +51,18 @@ public class TradePageController {
 	        this.facebook = facebook;
 	    }
 
+	    /*called to first time start trade page, while fromprod is not choosen yet*/
 	    @RequestMapping(value="toprod/{toprod_id}", method=RequestMethod.GET)
 	    public String home(Model model,@PathVariable int toprod_id) {
-	    	Product toprod=serv.getByProdId(toprod_id);
+	    	Product toprod=prodserv.getByProdId(toprod_id);
+	    	Product fromprod=new Product();
+	    	Profile fromuser=profserv.getByProfid(facebook.userOperations().getUserProfile().getId());
+	    	fromprod.setOwner(fromuser);
+	    	fromprod.setThumurl("http://img.vip.xunlei.com/img/banner/201307291420313509.jpg");
+	    	fromprod.setTitle("Please select an Item");
 	    	model.addAttribute("toprod",toprod);
+	    	model.addAttribute("fromprod", fromprod);
+	    	
 	        return "tradepage";
 	    }
 
