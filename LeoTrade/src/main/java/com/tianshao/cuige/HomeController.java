@@ -1,11 +1,13 @@
 package com.tianshao.cuige;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -19,7 +21,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tianshao.cuige.database.DAO;
+import com.tianshao.cuige.config.SecurityContext;
+import com.tianshao.cuige.config.UserCookieGenerator;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.services.IUserService;
 
 
 
@@ -29,17 +35,28 @@ import com.tianshao.cuige.database.DAO;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	  private final Facebook facebook;
+	  @Inject
+      private final IUserRepository userRepository=null;
+	  private final UserCookieGenerator userCookieGenerator = new UserCookieGenerator();
+	   
+	    public HomeController(){}
+	    
+	 
+	    
 
-	    @Inject
-	    public HomeController(Facebook facebook) {
-	        this.facebook = facebook;
-	    }
-
+		@RequestMapping(value="nativelogon",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public String nativelogon( HttpServletResponse resp) throws IOException {
+			User user=new User();
+			userRepository.addNew(user);
+			SecurityContext.setCurrentUser(user);
+			userCookieGenerator.addCookie(String.valueOf(user.getUserid()), resp);
+			return "home";
+		}
+		
+	    
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
-	        List<Reference> friends = facebook.friendOperations().getFriends();
-	        model.addAttribute("friends", friends);
+	       
 	        return "home";
 	    }
 

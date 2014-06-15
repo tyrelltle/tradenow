@@ -4,84 +4,45 @@ package com.tianshao.cuige.services;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.repository.ITradeRepository;
 
 
-@Service
-public class TradeService extends AbstractService{
+@Service("tradeService")
+public class TradeService implements ITradeService{
+	@Autowired
+	ITradeRepository tradeRepository;
+	
 
 	
-	public static enum FROM_TO{
-		FROM,TO,BOTH
-	}
 	
-	
+	/* (non-Javadoc)
+	 * @see com.tianshao.cuige.services.ITradeService#validateAndAddTrade(java.lang.Object)
+	 */
 	@Override
-	public void add(Object obj) {
+	public boolean validateAndAddTrade(Object obj) {
 		Trade trade=(Trade) obj;
-		String socid=trade.getProd1().getOwner().getSocial_id();
-		String socid2=trade.getProd2().getOwner().getSocial_id();
+		int uid1=trade.getProd1().getOwner().getUserid();
+		int uid2=trade.getProd2().getOwner().getUserid();
 		int prodid=trade.getProd1().getProd_id();
 		int prodid2=trade.getProd2().getProd_id();
 		
-		if(socid.equals(socid2)||prodid==prodid2||pairexist(prodid,prodid2)){
+		if(uid1==uid2||prodid==prodid2||tradeRepository.pairexist(prodid,prodid2)){
 			//you cant trade with yourself
 			trade.setTrade_id(-1);
-			
+			return false;
 		}else{
 			trade.setTrans_date(new Date());
-			super.add(trade);
+			tradeRepository.addNew(trade);
+			return true;
 		}
 	}
 	
 	
-	public List<Trade> getByProdId(int prodid){
-		String str="from Trade t where  t.prod1.prod_id= %d or t.prod2.prod_id=%d";
-		String formstr=String.format(str, prodid,prodid);
-		return (List<Trade>) dao.directSqltoList(formstr);
-		
-	}
-	
-	
-	public List<Trade> getByUserId(int profid,FROM_TO fromto){
-		String str;
-		String formstr;
-		switch(fromto){
-			case FROM:str="from Trade t where t.prod1.owner.prof_id= %d";
-					  formstr=String.format(str, profid);
-					  break;
-			case TO: str="from Trade t where t.prod2.owner.prof_id= %d";
-			  		  formstr=String.format(str, profid);
-				      break;
-			case BOTH:
-					 str="from Trade t where  t.prod1.owner.prof_id= %d or t.prod2.owner.prof_id=%d";
-					 formstr=String.format(str, profid,profid);
-					 break;
-		    default:
-		    		 return null;
-		}
-		
-		return (List<Trade>) dao.directSqltoList(formstr);
-		
-	}
-	
-	/**
-	 * 
-	 * check if two prod already have trade record
-	 */
-	public boolean pairexist(int prod1_id,int prod2_id){
-		String str="Select count(*) from Trade t where ( t.prod1.prod_id= %d and t.prod2.prod_id=%d) or ( t.prod1.prod_id= %d and t.prod2.prod_id=%d)";
-		String formstr=String.format(str, prod1_id,prod2_id,prod2_id,prod1_id);
-		Long ret=(Long) dao.directSql(formstr);
-		return ret > 0;
-
-	}
-
-	@Override
-	public String getTableName() {
-		return "Trade";
-	}
 
 }

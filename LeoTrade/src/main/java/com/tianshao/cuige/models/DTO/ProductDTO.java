@@ -5,7 +5,7 @@ public class ProductDTO{
 	
 	
 	//owner's social id
-	String social_id;
+	int userid;
 	
 	int catid=0;
 
@@ -58,12 +58,12 @@ public class ProductDTO{
 		this.prod_id = prod_id;
 	}
 
-	public String getSocial_id() {
-		return social_id;
+	public int  getUserid() {
+		return userid;
 	}
 
-	public void setSocial_id(String social_id) {
-		this.social_id = social_id;
+	public void setUserid(int id) {
+		this.userid = id;
 	}
 
 	public String getTitle() {

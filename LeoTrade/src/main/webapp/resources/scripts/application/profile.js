@@ -2,10 +2,10 @@
 
 
 Profile=Backbone.Model.extend({
-	defaults:{"social_id":"","aboutme":"","location":"",
+	defaults:{"userid":0,"aboutme":"","location":"",
 			  "lastname":"", "firstname":"","email":""},
-	urlRoot:"profile/api/user",
-	idAttribute: "social_id"
+	urlRoot:"user/api/user",
+	idAttribute: "userid"
 		
 });
 

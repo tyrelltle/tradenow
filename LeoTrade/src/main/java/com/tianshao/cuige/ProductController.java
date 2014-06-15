@@ -30,14 +30,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Image;
 import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Profile;
+import com.tianshao.cuige.models.User;
 import com.tianshao.cuige.models.DTO.ProductDTO;
 import com.tianshao.cuige.models.DTO.ProductImageUrlDTP;
-import com.tianshao.cuige.services.ProductService;
-import com.tianshao.cuige.services.ProfileService;
+import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.services.IProductService;
+import com.tianshao.cuige.services.UserService;
 
 
 
@@ -49,25 +52,19 @@ import com.tianshao.cuige.services.ProfileService;
 @RequestMapping("/api/product")
 public class ProductController {
 	    @Autowired
-	    private ProductService serv;
+	    private IProductService productService;
 	   
-	   
-	    
-	    private final Facebook facebook;
-
-	    @Inject
-	    public ProductController(Facebook facebook) {
-	        this.facebook = facebook;
-	    }
-	    
-	    
+	    @Autowired
+	    private IUserRepository userRepository;
+	    @Autowired
+	    private IProductRepository productRepository;
 	  
 		@RequestMapping(value={"start/{st}/count/{ct}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> get(@PathVariable int st, @PathVariable int ct, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=serv.getAll(st,ct);
+	    	List<Product> prods=productRepository.getAllButMe(SecurityContext.getCurrentUser().getUserid(),st,ct);
 	    	
 	    	Iterator<Product> i=prods.iterator();
 	    
@@ -85,9 +82,8 @@ public class ProductController {
 		public @ResponseBody List<ProductDTO> get( HttpServletResponse resp) throws IOException {
 			
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
-	    	FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	String socialid=facebookprofile.getId();
-	    	List<Product> prods=serv.getBySocialId(socialid);
+	    	
+	    	List<Product> prods=productRepository.getByUserId(SecurityContext.getCurrentUser().getUserid());
 	    	if(null==prods)
 	    		return ret;
 	    	
@@ -106,7 +102,7 @@ public class ProductController {
 		@RequestMapping(value="{prod_id}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody ProductDTO get(@PathVariable int prod_id, HttpServletResponse resp) throws IOException {
 			
-			Product prod=(Product) serv.get("prod_id", prod_id);
+			Product prod=(Product) productRepository.getByProductId(prod_id);
 			ProductDTO dto=new ProductDTO();
 	    	if(null==prod){
 				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Item not exist");
@@ -124,14 +120,23 @@ public class ProductController {
 	    
 		@RequestMapping(method = RequestMethod.POST,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody ProductDTO post(@RequestBody ProductDTO dto,HttpServletResponse resp) throws IOException {
-			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	String socialid=facebookprofile.getId();
+			
 
 			try {
-				Product prod=serv.populate(socialid, dto.getCatid());
+				
+				if(SecurityContext.getCurrentUser().getUserid()!=dto.getUserid())
+				{
+					throw new Exception("you are not authorized!");
+				}
+				
+				User owner = userRepository.getByUserid(dto.getUserid());
+				Category cat=productRepository.getCategory(dto.getCatid());
+				Product prod=new Product();
+				prod.setCategory(cat);
+				prod.setOwner(owner);				
 				DTO_to_PROD(dto, prod);
-				serv.add(prod);
-				dto.setSocial_id(prod.getOwner().getSocial_id());
+				productRepository.addNew(prod);
+				dto.setUserid(prod.getOwner().getUserid());
 				dto.setProd_id(prod.getProd_id());
 				return dto;
 			} catch (Exception e) {
@@ -144,22 +149,17 @@ public class ProductController {
 		
 		@RequestMapping(value="{prod_id}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody ProductDTO put(@RequestBody ProductDTO dto, @PathVariable int prod_id, HttpServletResponse resp) throws IOException {
-			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
 			
-	    	String socialid=facebookprofile.getId();
-	    	
-			if(!socialid.equals(dto.getSocial_id())){
+			if(SecurityContext.getCurrentUser().getUserid()!=dto.getUserid()){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}
 			
 			try {
-				Product prod=(Product) serv.get("prod_id", prod_id);
+				Product prod=productRepository.getByProductId(prod_id);
 				DTO_to_PROD(dto, prod);
-				//prod.setProd_id(prod_id);
-				serv.update(prod);
-				
-				//dto.setProd_id(prod.getProd_id());
+				productRepository.update(prod);
+				dto.setProd_id(prod.getProd_id());
 				return dto;
 			} catch (Exception e) {
 				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
@@ -170,22 +170,21 @@ public class ProductController {
 
 		@RequestMapping(value="{prod_id}",method = RequestMethod.DELETE, produces="application/json")
 		public @ResponseBody ProductDTO del( @PathVariable int prod_id, HttpServletResponse resp) throws IOException {
-			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
 			
-	    	String socialid=facebookprofile.getId();
-	    	Product prod=(Product) serv.get("prod_id", prod_id);
-	    	ProductDTO ret=new ProductDTO();
+			
+			Product prod=productRepository.getByProductId(prod_id);
+			ProductDTO ret=new ProductDTO();
 	    	if(prod==null){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No such Item!");
 				 return null;
 	    	}
-			if(!socialid.equals(prod.getOwner().getSocial_id())){
+			if(SecurityContext.getCurrentUser().getUserid()!= prod_id){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}
 			
 			try {
-				serv.remove(prod);
+				productRepository.remove(prod);
 				PROD_TO_DTO(prod,ret);
 				return ret;
 			} catch (Exception e) {
@@ -197,14 +196,13 @@ public class ProductController {
 		
 		 @RequestMapping(value = "/img/upload/{prod_id}", method = RequestMethod.POST)
 		   public @ResponseBody String upload(@PathVariable int prod_id, MultipartHttpServletRequest request, HttpServletResponse resp) throws IOException {                 
-			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	String socialid=facebookprofile.getId();
-	    	Product prod=(Product) serv.get("prod_id", prod_id);
+			
+			 Product prod=productRepository.getByProductId(prod_id);
 	    	if(prod==null){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No such Item!");
 				 return null;
 	    	}
-			if(!socialid.equals(prod.getOwner().getSocial_id())){
+			if(SecurityContext.getCurrentUser().getUserid()!=prod.getOwner().getUserid()){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}
@@ -223,7 +221,7 @@ public class ProductController {
 		        prod_img.setImage_type(mpf.getContentType());
 		        prod_img.setImage_name(mpf.getOriginalFilename());
 		        prod_img.setProduct(prod);
-		        serv.addProductImage(prod_img);
+		        productService.addProductImage(prod_img);
 		 
 		    } catch (IOException e) {
 		        // TODO Auto-generated catch block
@@ -239,7 +237,7 @@ public class ProductController {
 			@RequestMapping(value="/img/{img_id}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 			public @ResponseBody byte[] getimg(@PathVariable int img_id) {
 				//serv.get
-				return serv.getProductImageByImgId(img_id).getImage();
+				return productRepository.getProductImageByImgId(img_id).getImage();
 				
 
 		    }
@@ -247,10 +245,10 @@ public class ProductController {
 			public @ResponseBody List<ProductImageUrlDTP> geturls(@PathVariable int prod_id) {
 				
 				@SuppressWarnings("unchecked")
-				List<Image> results = (List<Image>) serv.getProductImages(prod_id);
+				Product prod=productRepository.getProductWithImages(prod_id);
 				
 				List<ProductImageUrlDTP> ret=new ArrayList<ProductImageUrlDTP>();
-				for(Image i:results){
+				for(Image i:prod.getImages()){
 					ProductImageUrlDTP t=new ProductImageUrlDTP();
 					t.setImg_Id(i.getImg_id());
 					t.setUrl("http://localhost:8080/cuige/api/product/img/"+i.getImg_id());
@@ -267,7 +265,7 @@ public class ProductController {
 			prod.setTitle(dto.getTitle());
 			prod.setTradefor(dto.getTradefor());
 			prod.setThumurl(dto.getThumurl());
-			prod.setCategory(serv.getCat(dto.getCatid()));
+			prod.setCategory(productRepository.getCategory(dto.getCatid()));
 		}		
 	
 		private void PROD_TO_DTO(Product prod, ProductDTO dto) {
@@ -275,7 +273,7 @@ public class ProductController {
 			dto.setPrice(prod.getPrice());
 			dto.setProd_id(prod.getProd_id());
 			dto.setQuantity(prod.getQuantity());
-			dto.setSocial_id(prod.getOwner().getSocial_id());
+			dto.setUserid(prod.getOwner().getUserid());
 			dto.setStatus(prod.getStatus());
 			dto.setCatid(prod.getCategory().getCatid());
 			dto.setTitle(prod.getTitle());

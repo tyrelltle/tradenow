@@ -10,13 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tianshao.cuige.database.DAO;
 import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Image;
 import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Profile;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.repository.ProductRepository;
+import com.tianshao.cuige.repository.UserRepository;
+import com.tianshao.cuige.services.IProductService;
+import com.tianshao.cuige.services.IUserService;
 import com.tianshao.cuige.services.ProductService;
-import com.tianshao.cuige.services.ProfileService;
+import com.tianshao.cuige.services.UserService;
 
 
 
@@ -25,89 +30,92 @@ import com.tianshao.cuige.services.ProfileService;
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
 public class ProductTest {
 	@Autowired
-	ProductService prodserv;
+	IProductRepository productRepository;
 
 	@Autowired
-	ProfileService profserv;
+	IUserRepository userRepository;
 	
 	@Autowired
-	DAO dao;
-	
+	IProductService productService;
+
+	@Autowired
+	IUserService userService;
 	
 	
 
 	
 	
-	@Test
-	/**
-	 * test when user first time trying to get a 
-	 * profile record but dosent exist, see if profile service
-	 * create a new record
-	 */
 	public void testadd() throws Exception{
 	
-		Profile prof=profserv.create_Profile("test social id", "", "", "");
+		User prof=new User();
 		Category cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
+		productRepository.addNew(cat);
+		userRepository.addNew(prof);
+
+		Product prod= new Product();
+		prod.setOwner(prof);
+		productRepository.addNew(prod);
 		
-		Product prod=prodserv.populate("test social id", cat.getCatid());
-		prodserv.add(prod);
 		
-		
-		List<Product> lis=prodserv.getBySocialId("test social id");
+		List<Product> lis=productRepository.getByUserId(prof.getUserid());
 		assertEquals(lis.size(),1);
 		assertEquals(lis.get(0).getCategory().getName(), "testcat");
 		assertEquals(lis.get(0).getOwner().getSocial_id(), "test social id");
 		
-		prodserv.remove(prod);
-		profserv.remove(prof);
-		dao.remove(cat);
+		productRepository.remove(prod);
+		userRepository.remove(prof);
+		productRepository.remove(cat);
 		
 		
 	}
 	
 	
-	/**
-	 * test if update is not adding new record
-	 * @throws Exception 
-	 */
+	
 	@Test
 	public void testupdate() throws Exception {
-		Profile prof=profserv.create_Profile("test social id", "", "", "");
+
+		User prof=new User();
 		Category cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
+		productRepository.addNew(cat);
+		userRepository.addNew(prof);
+		Product prod= new Product();
+		prod.setOwner(prof);
+		prod.setCategory(cat);
+		productRepository.addNew(prod);
 		
-		Product prod=prodserv.populate("test social id", cat.getCatid());
-		prodserv.add(prod);
-		
-		List<Product> lis=prodserv.getBySocialId("test social id");
+		List<Product> lis=productRepository.getByUserId(prof.getUserid());
 		int numofrecords=lis.size();
 		
 		Product updatep=lis.get(0);
 		updatep.setDetail("detail updated");
-		prodserv.update(updatep);
+		productRepository.update(updatep);
 		
-		lis=prodserv.getBySocialId("test social id");
+		lis=productRepository.getByUserId(prof.getUserid());
 		assertEquals(numofrecords,lis.size());
-		prodserv.remove(prod);
-		profserv.remove(prof);
-		dao.remove(cat);
+		productRepository.remove(prod);
+		userRepository.remove(prof);
+		productRepository.remove(cat);
 		
 	}
 	
 	@Test
 	public void testImageAdd() throws Exception{
-		Profile prof=profserv.create_Profile("test social id", "", "", "");
+
+		User prof=new User();
 		Category cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
-		
-		Product prod=prodserv.populate("test social id", cat.getCatid());
-		prodserv.add(prod);
+		productRepository.addNew(cat);
+		userRepository.addNew(prof);
+
+		Product prod= new Product();
+		prod.setOwner(prof);
+		prod.setCategory(cat);
+
+		productRepository.addNew(prod);
 		assertEquals(0,prod.getImages().size());
-		assertEquals(0,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(0,productRepository.countProductImage(prod.getProd_id()));
 		
 		Image img = new Image();
 		img.setImage_name("image_name");
@@ -115,13 +123,13 @@ public class ProductTest {
 		img.setImage_type("jpeg");
 		img.setProduct(prod);
 		prod.getImages().add(img);
-		dao.update(prod);
+		productRepository.update(prod);
 		
 		//assert the new image id is set to normal key value
 		assertTrue(img.getImg_id()>=0);
 		
 		assertEquals(1,prod.getImages().size());
-		assertEquals(1,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(1,productRepository.countProductImage(prod.getProd_id()));
 
 		Image img2 = new Image();
 		img2.setImage_name("image_name");
@@ -129,45 +137,49 @@ public class ProductTest {
 		img2.setImage_type("jpeg");
 		img2.setProduct(prod);
 		prod.getImages().add(img2);
-		dao.update(prod);
+		productRepository.update(prod);
 		
-		assertEquals(2,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(2,productRepository.countProductImage(prod.getProd_id()));
 		assertEquals(2,prod.getImages().size());
 		
-		prodserv.remove(prod);
-		profserv.remove(prof);
-		dao.remove(cat);
+		productRepository.remove(prod);
+		userRepository.remove(prof);
+		productRepository.remove(cat);
 		
 	}
 	
 	@Test
 	public void testImageCount() throws Exception{
-		Profile prof=profserv.create_Profile("test social id", "", "", "");
+		User prof=new User();
 		Category cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
-		
-		Product prod=prodserv.populate("test social id", cat.getCatid());
-		prodserv.add(prod);
-		assertEquals(0,prodserv.countProductImage(prod.getProd_id()));
+		productRepository.addNew(cat);
+		userRepository.addNew(prof);
+
+		Product prod= new Product();
+		prod.setOwner(prof);
+		prod.setCategory(cat);
+
+		productRepository.addNew(prod);
+		assertEquals(0,productRepository.countProductImage(prod.getProd_id()));
 		
 		Image img = new Image();
 		img.setImage_name("image_name");
 		img.setImage_size(123456);
 		img.setImage_type("jpeg");
 		img.setProduct(prod);
-		prodserv.addProductImage(img);
+		productService.addProductImage(img);
 		
-		assertEquals(1,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(1,productRepository.countProductImage(prod.getProd_id()));
 
-		prodserv.addProductImage(img);
+		productService.addProductImage(img);
 		
-		assertEquals(2,prodserv.countProductImage(prod.getProd_id()));
+		assertEquals(2,productRepository.countProductImage(prod.getProd_id()));
 
 		
-		prodserv.remove(prod);
-		profserv.remove(prof);
-		dao.remove(cat);
+		productRepository.remove(prod);
+		userRepository.remove(prof);
+		productRepository.remove(cat);
 		
 	}
 	
@@ -175,13 +187,17 @@ public class ProductTest {
 	//test thumurl is added when first image is added
 	@Test
 	public void testThumUrlt() throws Exception{
-		Profile prof=profserv.create_Profile("test social id", "", "", "");
+		User prof=new User();
 		Category cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
-		
-		Product prod=prodserv.populate("test social id", cat.getCatid());
-		prodserv.add(prod);
+		productRepository.addNew(cat);
+		userRepository.addNew(prof);
+
+		Product prod= new Product();
+		prod.setOwner(prof);
+		prod.setCategory(cat);
+
+		productRepository.addNew(prod);
 		assertEquals("",prod.getThumurl());
 		
 		Image img = new Image();
@@ -189,14 +205,14 @@ public class ProductTest {
 		img.setImage_size(123456);
 		img.setImage_type("jpeg");
 		img.setProduct(prod);
-		prodserv.addProductImage(img);
+		productService.addProductImage(img);
 		
 		assertEquals("http://localhost:8080/cuige/api/product/img/"+img.getImg_id(),prod.getThumurl());
 
 		
-		prodserv.remove(prod);
-		profserv.remove(prof);
-		dao.remove(cat);
+		productRepository.remove(prod);
+		userRepository.remove(prof);
+		productRepository.remove(cat);
 		
 	}
 }

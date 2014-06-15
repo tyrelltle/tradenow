@@ -1,7 +1,7 @@
 
 
 Product=Backbone.Model.extend({
-	defaults:{"prod_id":null,"social_id":"","catid":0,"title":"no title",
+	defaults:{"prod_id":null,"userid":0,"catid":0,"title":"no title",
 			  "detail":"", "price":0,"quantity":0,"status":"","tradefor":"","thumurl":""},
 	urlRoot:"api/product",
 	idAttribute: "prod_id"

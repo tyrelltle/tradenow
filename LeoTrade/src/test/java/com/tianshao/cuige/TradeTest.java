@@ -16,16 +16,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tianshao.cuige.database.DAO;
 import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Image;
 import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Profile;
 import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.ProductRepository;
+import com.tianshao.cuige.repository.TradeRepository;
+import com.tianshao.cuige.repository.UserRepository;
 import com.tianshao.cuige.services.ProductService;
-import com.tianshao.cuige.services.ProfileService;
 import com.tianshao.cuige.services.TradeService;
-import com.tianshao.cuige.services.TradeService.FROM_TO;
+import com.tianshao.cuige.services.UserService;
+
+
 
 
 
@@ -34,31 +36,38 @@ import com.tianshao.cuige.services.TradeService.FROM_TO;
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
 public class TradeTest {
 	@Autowired
-	ProductService prodserv;
+	ProductService productserv;
 
 	@Autowired
-	ProfileService profserv;
+	UserService userService;
 	
 	@Autowired
-	TradeService tradeserv;
+	TradeService tradeService;
 	
 	@Autowired
-	DAO dao;
+	ProductRepository productRepository;
+
+	@Autowired
+	UserRepository userRepository;
 	
-	Profile prof;
-	Profile prof2;
-	Profile prof3;
+	@Autowired
+	TradeRepository tradeRepository;
+	
+	
+	User prof;
+	User prof2;
+	User prof3;
 	Category cat;
 	
 	@Before
 	public void init(){
 		truncate();
-		prof=profserv.create_Profile("test social id", "", "", "");
-		prof2=profserv.create_Profile("test social id2", "", "", "");
-		prof3=profserv.create_Profile("test social id3", "", "", "");
+		prof=new User();
+		prof2=new User();
+		prof3=new User();
 		cat=new Category();
 		cat.setName("testcat");
-		dao.addNew(cat);
+		productRepository.addNew(cat);
 	}
 	
 
@@ -69,17 +78,17 @@ public class TradeTest {
 		Product prod1= new Product();
 		prod1.setCategory(cat);
 		prod1.setOwner(prof);
-		prodserv.add(prod1);
+		productRepository.addNew(prod1);
 		
 		Product prod2= new Product();
 		prod2.setCategory(cat);
 		prod2.setOwner(prof2);
-		prodserv.add(prod2);
+		productRepository.addNew(prod2);
 		
 		Trade trade=new Trade();
 		trade.setProd1(prod1);
 		trade.setProd2(prod1);
-		tradeserv.add(trade);
+		tradeRepository.addNew(trade);
 		//make sure prevent trading with self
 		assertEquals(-1,trade.getTrade_id());
 		assertEquals(0,tradeserv.count());
@@ -156,16 +165,16 @@ public class TradeTest {
 		tradeserv.add(trade3);
 		
 		//test there are totally 3 trades
-		assertEquals(3,tradeserv.getByUserId(prof.getProf_id(),FROM_TO.BOTH).size());
-		assertEquals(3,tradeserv.getByUserId(prof2.getProf_id(),FROM_TO.BOTH).size());
+		assertEquals(3,tradeserv.getByUserId(prof.getUserid(),FROM_TO.BOTH).size());
+		assertEquals(3,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.BOTH).size());
 		//test 2 trades are from user 1
-		assertEquals(2,tradeserv.getByUserId(prof.getProf_id(),FROM_TO.FROM).size());
+		assertEquals(2,tradeserv.getByUserId(prof.getUserid(),FROM_TO.FROM).size());
 		//test 1 trade is from user 2
-		assertEquals(1,tradeserv.getByUserId(prof2.getProf_id(),FROM_TO.FROM).size());
+		assertEquals(1,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.FROM).size());
 		//test 2 trades are to user 2
-		assertEquals(2,tradeserv.getByUserId(prof2.getProf_id(),FROM_TO.TO).size());
+		assertEquals(2,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.TO).size());
 		//test 1 trade is to user 1
-		assertEquals(1,tradeserv.getByUserId(prof.getProf_id(),FROM_TO.TO).size());
+		assertEquals(1,tradeserv.getByUserId(prof.getUserid(),FROM_TO.TO).size());
 
 
 	}

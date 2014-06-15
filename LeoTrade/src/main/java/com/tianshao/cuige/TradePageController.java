@@ -25,11 +25,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Profile;
-import com.tianshao.cuige.services.ProductService;
-import com.tianshao.cuige.services.ProfileService;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.services.IProductService;
+import com.tianshao.cuige.services.IUserService;
 
 
 
@@ -41,22 +44,18 @@ import com.tianshao.cuige.services.ProfileService;
 @RequestMapping("/tradepage")
 public class TradePageController {
 	    @Autowired
-	    private ProductService prodserv;
-	    @Autowired ProfileService profserv;
-	   
-	    private final Facebook facebook;
-
-	    @Inject
-	    public TradePageController(Facebook facebook) {
-	        this.facebook = facebook;
-	    }
+	    private IProductService productService;
+	    @Autowired 
+	    private IUserRepository userRepository;
+	    @Autowired
+	    private IProductRepository productRepository;
 
 	    /*called to first time start trade page, while fromprod is not choosen yet*/
 	    @RequestMapping(value="toprod/{toprod_id}", method=RequestMethod.GET)
 	    public String home(Model model,@PathVariable int toprod_id) {
-	    	Product toprod=prodserv.getByProdId(toprod_id);
+	    	Product toprod=productRepository.getByProductId(toprod_id);
 	    	Product fromprod=new Product();
-	    	Profile fromuser=profserv.getByProfid(facebook.userOperations().getUserProfile().getId());
+	    	User fromuser=userRepository.getByUserid(SecurityContext.getCurrentUser().getUserid());
 	    	fromprod.setOwner(fromuser);
 	    	fromprod.setThumurl("http://img.vip.xunlei.com/img/banner/201307291420313509.jpg");
 	    	fromprod.setTitle("Please select an Item");

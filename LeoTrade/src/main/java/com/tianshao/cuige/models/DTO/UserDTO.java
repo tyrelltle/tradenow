@@ -1,8 +1,8 @@
 package com.tianshao.cuige.models.DTO;
 
-public class ProfileDTO {
+public class UserDTO {
 	
-    	private String social_id;
+    	private int userid;
     	private String aboutme;
     	private String location;
     	private String lastname;
@@ -10,17 +10,22 @@ public class ProfileDTO {
     	private String email;
     	
     	
-    	public ProfileDTO(){
+    	public UserDTO(){
     		
     	}
     	
-		public String getSocial_id() {
-			return social_id;
+    	
+
+		public int getUserid() {
+			return userid;
 		}
 
-		public void setSocial_id(String social_id) {
-			this.social_id = social_id;
+
+
+		public void setUserid(int userid) {
+			this.userid = userid;
 		}
+
 
 
 		public String getAboutme() {

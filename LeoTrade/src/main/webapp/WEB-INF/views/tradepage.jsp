@@ -54,7 +54,7 @@ margin-top:50px;
              <ul class="list-group">
               <li class="list-group-item">
 					<p>${fromprod.owner.firstname} ${fromprod.owner.lastname}</p>
-              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/profile/img/socid/${fromprod.owner.social_id}">
+              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${fromprod.owner.userid}">
                  </li>
               <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
               <li class="list-group-item">
@@ -131,7 +131,7 @@ margin-top:50px;
       		<ul class="list-group">
               <li class="list-group-item">
               		<p>${toprod.owner.firstname} ${toprod.owner.lastname}</p>
-              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/profile/img/socid/${toprod.owner.social_id}">
+              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${toprod.owner.userid}">
               </li>
               <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
               <li class="list-group-item">

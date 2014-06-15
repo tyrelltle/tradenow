@@ -166,7 +166,7 @@ h3,h4,h5 {
                 </ul>
              </li>
              <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large"></i></a></li>
-             <li><a href="profile"><i class="glyphicon glyphicon-user"></i></a></li>
+             <li><a href="user"><i class="glyphicon glyphicon-user"></i></a></li>
            </ul>
         </div>	
      </div>	

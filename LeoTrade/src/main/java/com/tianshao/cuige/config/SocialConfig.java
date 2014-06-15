@@ -49,7 +49,7 @@ public class SocialConfig {
 	@Scope(value="request", proxyMode=ScopedProxyMode.INTERFACES)
 	public ConnectionRepository connectionRepository() {
 	    User user = SecurityContext.getCurrentUser();
-	    return usersConnectionRepository().createConnectionRepository(user.getId());
+	    return usersConnectionRepository().createConnectionRepository(String.valueOf(user.getUserid()));
 	}
 	
 	@Bean

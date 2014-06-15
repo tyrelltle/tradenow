@@ -2,6 +2,7 @@ package com.tianshao.cuige;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.services.CategoryService;
+import com.tianshao.cuige.repository.IProductRepository;
+
 
 
 
@@ -23,13 +25,13 @@ import com.tianshao.cuige.services.CategoryService;
 @RequestMapping("/api/category")
 public class CategoryController {
 	    @Autowired
-	    private CategoryService serv;
+	    private IProductRepository productRepository;
 	   
 	    
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<Category> get( HttpServletResponse resp) throws IOException {
 			
-			return (List<Category>) serv.get();
+			return  productRepository.getCategories();
 	    	
 		}
 	 

@@ -8,14 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="profile")
-public class Profile implements Serializable{
+@Table(name="user")
+public class User implements IEntity{
 	
-
 	@Id
-    @Column(name="prof_id")
+    @Column(name="userid")
     @GeneratedValue
-	private int prof_id;
+	private int userid;
+
 	
 	/**
 	 * facebook id. or later other social network ids
@@ -42,15 +42,9 @@ public class Profile implements Serializable{
 	private byte[] image;
 	
 	
-	public Profile(){}
+	public User(int userid){this.userid=userid;}
 
-	public int getProf_id() {
-		return prof_id;
-	}
-
-	public void setProf_id(int prof_id) {
-		this.prof_id = prof_id;
-	}
+	public User(){}
 
 	public String getSocial_id() {
 		return social_id;
@@ -106,6 +100,14 @@ public class Profile implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 	
     

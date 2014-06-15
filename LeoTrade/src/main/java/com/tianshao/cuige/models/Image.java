@@ -14,7 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="image")
-public class Image {
+public class Image{
 	
 	@Id
 	@Column(name="img_id")

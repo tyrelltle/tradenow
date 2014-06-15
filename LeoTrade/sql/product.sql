@@ -11,5 +11,5 @@ create table product(
 	thumurl varchar(200) default '',
 	primary key (prod_id),
 	foreign key (catid) references category(catid),
-	foreign key (ownerid) references profile(prof_id)
+	foreign key (ownerid) references user(userid)
 )

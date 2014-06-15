@@ -9,13 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="category")
-public class Category implements Serializable{
+public class Category implements IEntity{
 	
 
 	@Id
     @Column(name="catid")
     @GeneratedValue
-	public int catid;
+	public int catid=0;
 	
 	
 	@Column(name="name")

@@ -15,8 +15,12 @@ import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name="trade")
-public class Trade implements Serializable {
+public class Trade implements IEntity{
 
+	public static enum FROM_TO{
+		FROM,TO,BOTH
+	}
+	
 	@Id
 	@Column(name="trade_id")
 	@GeneratedValue
@@ -46,6 +50,9 @@ public class Trade implements Serializable {
 	@Column(name="method2")
 	String method2;
 
+	public Trade(){}
+	
+	
 	public int getTrade_id() {
 		return trade_id;
 	}
@@ -109,6 +116,7 @@ public class Trade implements Serializable {
 	public void setMethod2(String method2) {
 		this.method2 = method2;
 	}
+	
 	
 
 

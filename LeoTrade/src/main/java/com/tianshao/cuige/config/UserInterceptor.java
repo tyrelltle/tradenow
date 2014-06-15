@@ -1,17 +1,26 @@
 package com.tianshao.cuige.config;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.social.connect.NotConnectedException;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.services.IUserService;
 
 public final class UserInterceptor extends HandlerInterceptorAdapter {
 
+	@Inject
+	IUserRepository userRepository=null;
+	
+	@Inject 
+	Facebook facebook=null;
 	private final UsersConnectionRepository connectionRepository;
 	
 	private final UserCookieGenerator userCookieGenerator = new UserCookieGenerator();
@@ -21,7 +30,7 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	}
 	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		if(request.getRequestURI().contains("resources/"))
+		if(request.getRequestURI().contains("resources/") || request.getRequestURI().contains("nativelogon"))
 			return true;
 		rememberUser(request, response);
 		handleSignOut(request, response);			
@@ -47,12 +56,14 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 			userCookieGenerator.removeCookie(response);
 			return;
 		}
-		SecurityContext.setCurrentUser(new User(userId));
+		SecurityContext.setCurrentUser(new User(Integer.valueOf(userId)));
 	}
 
 	private void handleSignOut(HttpServletRequest request, HttpServletResponse response) {
 		if (SecurityContext.userSignedIn() && request.getServletPath().startsWith("/signout")) {
-			connectionRepository.createConnectionRepository(SecurityContext.getCurrentUser().getId()).removeConnections("facebook");
+			try{
+				connectionRepository.createConnectionRepository(String.valueOf(SecurityContext.getCurrentUser().getUserid())).removeConnections("facebook");
+			}catch(NotConnectedException e){}
 			userCookieGenerator.removeCookie(response);
 			SecurityContext.remove();			
 		}
@@ -70,7 +81,11 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 
 	private boolean userNotFound(String userId) {
 		// doesn't bother checking a local user database: simply checks if the userId is connected to Facebook
-		return connectionRepository.createConnectionRepository(userId).findPrimaryConnection(Facebook.class) != null;
+		boolean infacebook= connectionRepository.createConnectionRepository(userId).findPrimaryConnection(Facebook.class) != null;
+		if(userId=="")
+			return infacebook;
+		boolean innative=userRepository.getByUserid(Integer.valueOf(userId))!=null;
+		return infacebook || innative;
 	}
 	
 }

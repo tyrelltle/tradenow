@@ -21,7 +21,7 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="product")
-public class Product{
+public class Product implements IEntity{
 	@Id
 	@Column(name="prod_id")
 	@GeneratedValue
@@ -29,7 +29,7 @@ public class Product{
 	
 	@ManyToOne
 	@JoinColumn(name="ownerid")
-	Profile owner;
+	User owner;
 	
 	@ManyToOne
 	@JoinColumn(name="catid")
@@ -78,6 +78,9 @@ public class Product{
 	String thumurl="";
 	public Product(){}
 
+	
+	
+	
 	public int getProd_id() {
 		return prod_id;
 	}
@@ -86,11 +89,11 @@ public class Product{
 		this.prod_id = prod_id;
 	}
 
-	public Profile getOwner() {
+	public User getOwner() {
 		return owner;
 	}
 
-	public void setOwner(Profile owner) {
+	public void setOwner(User owner) {
 		this.owner = owner;
 	}
 

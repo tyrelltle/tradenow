@@ -26,10 +26,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Profile;
-import com.tianshao.cuige.models.DTO.ProfileDTO;
-import com.tianshao.cuige.services.ProfileService;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.models.DTO.UserDTO;
+import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.services.IUserService;
 
 
 
@@ -38,17 +41,10 @@ import com.tianshao.cuige.services.ProfileService;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/profile")
-public class ProfileController {
+@RequestMapping("/user")
+public class UserController {
 	    @Autowired
-	    private ProfileService serv;
-	   
-	    private final Facebook facebook;
-
-	    @Inject
-	    public ProfileController(Facebook facebook) {
-	        this.facebook = facebook;
-	    }
+	    private IUserRepository userRepository;
 
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
@@ -57,50 +53,39 @@ public class ProfileController {
 	    }
 
 	    
-	    
-		@RequestMapping(value="api/user",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public @ResponseBody ProfileDTO get( HttpServletResponse resp) throws IOException {
-	    	FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	
-	    	Profile prof=serv.getByProfid(facebookprofile.getId());
-		    	if(prof==null){
-		    		//TODO solve later, cant just automatically add user and user image
-		    		serv.create_Profile(facebookprofile.getId(), 
-		    									 facebookprofile.getFirstName(), 
-		    									 facebookprofile.getLastName(), 
-		    									 facebookprofile.getEmail());
-		    	
-		    		prof.setImage(facebook.userOperations().getUserProfileImage());
-		    		serv.update(prof);
-		    	
-	    	}
-	    	
-	    	ProfileDTO profwrap=new ProfileDTO();
-	        profwrap.setEmail(facebookprofile.getEmail());
-	        profwrap.setFirstname(facebookprofile.getFirstName());
-	        profwrap.setLastname(facebookprofile.getLastName());
-	        profwrap.setLocation(prof.getLocation());
-	        profwrap.setSocial_id(prof.getSocial_id());
-	        profwrap.setAboutme(prof.getAboutme());
+
+		
+		@RequestMapping(value="api/user/{userid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody UserDTO get( @PathVariable int userid,HttpServletResponse resp) throws IOException {
+	    	User user=SecurityContext.getCurrentUser();
+	   
+		   
+	    	UserDTO profwrap=new UserDTO();
+	        profwrap.setEmail(user.getEmail());
+	        profwrap.setFirstname(user.getFirstname());
+	        profwrap.setLastname(user.getLastname());
+	        profwrap.setLocation(user.getLocation());
+	        profwrap.setUserid(user.getUserid());
+	        profwrap.setAboutme(user.getAboutme());
 	        return profwrap;
 	    	
 	    	
 		}
 	    
 		
-		@RequestMapping(value="api/user/{social_id}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
-		public @ResponseBody ProfileDTO update(@RequestBody ProfileDTO wrap,@PathVariable String social_id, HttpServletResponse resp) throws IOException {
-			FacebookProfile facebookprofile=facebook.userOperations().getUserProfile();
-	    	if(!facebookprofile.getId().equals(social_id)){
+		@RequestMapping(value="api/user/{userid}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
+		public @ResponseBody UserDTO update(@RequestBody UserDTO wrap,@PathVariable int userid, HttpServletResponse resp) throws IOException {
+			User user=SecurityContext.getCurrentUser();
+			if(user.getUserid()!=(userid)){
 	    		//currently logged on user is not claimed user
 	            resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
 	            return null;
 	    	}
 	    	try{
-	    		Profile prof=serv.getByProfid(facebookprofile.getId());
-	    		prof.setAboutme(wrap.getAboutme());
-	    		prof.setLocation(wrap.getLocation());
-	    		serv.update(prof);
+	    		
+	    		user.setAboutme(wrap.getAboutme());
+	    		user.setLocation(wrap.getLocation());
+	    		userRepository.update(user);
 	    		return wrap;
 	    		
 	    	}catch(Exception e){
@@ -113,15 +98,14 @@ public class ProfileController {
 		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 		public @ResponseBody byte[] getimg() {
 			
-			return facebook.userOperations().getUserProfileImage();
+			return SecurityContext.getCurrentUser().getImage();
 			
 
-	    }
+		}
 		
-		@RequestMapping(value="img/socid/{social_id}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-		public @ResponseBody byte[] getimg(@PathVariable String social_id) {
-			Profile prof=serv.getByProfid(social_id);
-			return prof.getImage();
+		@RequestMapping(value="img/userid/{userid}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletResponse resp) {
+			return userRepository.getByUserid(userid).getImage();
 			
 
 	    }	    

@@ -9,7 +9,7 @@
     <session-factory>
         
     	<property name="format_sql">true</property>
-		<mapping class="com.tianshao.cuige.models.Profile" />
+		<mapping class="com.tianshao.cuige.models.User" />
 		<mapping class="com.tianshao.cuige.models.Category" />
         <mapping class="com.tianshao.cuige.models.Product" />
         <mapping class="com.tianshao.cuige.models.Image" />
