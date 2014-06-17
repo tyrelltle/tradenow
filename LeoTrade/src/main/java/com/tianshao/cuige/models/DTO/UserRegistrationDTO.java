@@ -1,48 +1,17 @@
 package com.tianshao.cuige.models.DTO;
 
-public class UserDTO {
+public class UserRegistrationDTO {
 	
-    	private int userid;
-    	private String aboutme;
-    	private String location;
+    	private String password;
     	private String lastname;
     	private String firstname;
     	private String email;
     	
     	
-    	public UserDTO(){
+    	public UserRegistrationDTO(){
     		
     	}
     	
-    	
-
-		public int getUserid() {
-			return userid;
-		}
-
-
-
-		public void setUserid(int userid) {
-			this.userid = userid;
-		}
-
-
-
-		public String getAboutme() {
-			return aboutme;
-		}
-
-		public void setAboutme(String aboutme) {
-			this.aboutme = aboutme;
-		}
-
-		public String getLocation() {
-			return location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
 
 		public String getLastname() {
 			return lastname;
@@ -64,6 +33,18 @@ public class UserDTO {
 		}
 
 
+
+		public String getPassword() {
+			return password;
+		}
+
+
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		
     	
     
 }

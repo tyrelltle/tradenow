@@ -280,12 +280,16 @@ section {
       </div>
       <div class="col-sm-6">
         <div class="pull-right  hidden-xs">    
-			<h3>
+			<h>
 			<form action="<c:url value="/signin/facebook" />" method="POST">
 		    	 <button type="submit">Sign in with Facebook</button>
-		   		 <input type="hidden" name="scope" value="email,publish_stream,offline_access" />		    
+		   		 <input type="hidden" name="scope" value="email,publish_stream,offline_access" />	
+		   		 	    
 			</form>
-			</h3>          
+			<form action="<c:url value="/nativelogon" />" method="GET">
+		    	 <button type="submit">Regular signon</button>		   		 	    
+			</form>
+			</h>          
         </div>
       </div>
     </div>

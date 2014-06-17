@@ -93,7 +93,7 @@ public class UserController {
 	            return null;
 	    	}
 	    	
-		}
+		} 
 		
 		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 		public @ResponseBody byte[] getimg() {

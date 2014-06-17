@@ -20,9 +20,9 @@ import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Product;
 import com.tianshao.cuige.models.Trade;
 import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.repository.ProductRepository;
 import com.tianshao.cuige.repository.TradeRepository;
-import com.tianshao.cuige.repository.UserRepository;
 import com.tianshao.cuige.services.ProductService;
 import com.tianshao.cuige.services.TradeService;
 import com.tianshao.cuige.services.UserService;
@@ -48,7 +48,7 @@ public class TradeTest {
 	ProductRepository productRepository;
 
 	@Autowired
-	UserRepository userRepository;
+	IUserRepository userRepository;
 	
 	@Autowired
 	TradeRepository tradeRepository;

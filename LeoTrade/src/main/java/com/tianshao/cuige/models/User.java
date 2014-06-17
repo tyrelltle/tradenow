@@ -7,22 +7,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.tianshao.cuige.models.DTO.UserRegistrationDTO;
 @Entity
 @Table(name="user")
 public class User implements IEntity{
-	
+
 	@Id
     @Column(name="userid")
     @GeneratedValue
 	private int userid;
+	
+	@Column(name="userconid")
+	String userconid;
+	
+	@Column(name="providerid")
+	String providerid;
+	
+	@Column(name="provideruserid")
+	String provideruserid;
+	
+	@Column(name="password")
+	private String password;
 
-	
-	/**
-	 * facebook id. or later other social network ids
-	 */
-	@Column(name="social_id")
-	private String social_id;
-	
 	@Column(name="firstname")
 	private String firstname;
 	
@@ -46,14 +53,21 @@ public class User implements IEntity{
 
 	public User(){}
 
-	public String getSocial_id() {
-		return social_id;
+	public User(UserRegistrationDTO dto){
+		this.email=dto.getEmail();
+		this.firstname=dto.getFirstname();
+		this.lastname=dto.getLastname();
+		this.password=dto.getPassword();
+		
 	}
 
-	public void setSocial_id(String social_id) {
-		this.social_id = social_id;
+	public boolean signedinAsFacebookUser(){
+		return this.userconid!="";
 	}
-
+	
+	public void signoutFacebook(){
+		this.userconid="";
+	}
 	public String getAboutme() {
 		return aboutme;
 	}
@@ -108,6 +122,38 @@ public class User implements IEntity{
 
 	public void setUserid(int userid) {
 		this.userid = userid;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUserconid() {
+		return userconid;
+	}
+
+	public void setUserconid(String userconid) {
+		this.userconid = userconid;
+	}
+
+	public String getProviderid() {
+		return providerid;
+	}
+
+	public void setProviderid(String providerid) {
+		this.providerid = providerid;
+	}
+
+	public String getProvideruserid() {
+		return provideruserid;
+	}
+
+	public void setProvideruserid(String provideruserid) {
+		this.provideruserid = provideruserid;
 	}
 	
     

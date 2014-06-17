@@ -30,7 +30,10 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	}
 	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		if(request.getRequestURI().contains("resources/") || request.getRequestURI().contains("nativelogon"))
+		if(request.getRequestURI().contains("resources/") || 
+		   request.getRequestURI().contains("nativelogon")||
+		   request.getRequestURI().contains("nativesignin")||
+		   request.getRequestURI().contains("nativeregister"))
 			return true;
 		rememberUser(request, response);
 		handleSignOut(request, response);			

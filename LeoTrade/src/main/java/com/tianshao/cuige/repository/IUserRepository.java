@@ -1,16 +1,27 @@
 package com.tianshao.cuige.repository;
 
+import java.util.List;
+
 import com.tianshao.cuige.models.IEntity;
 import com.tianshao.cuige.models.User;
 
 public interface IUserRepository{
 
-	void addNew(IEntity user);
+	public void addNew(IEntity user);
 
-	User getByUserid(int userid);
+	public User getByUserid(int userid);
 
-	void update(IEntity user);
+	public void update(IEntity user);
 
-	void remove(IEntity prof);
+	public void remove(IEntity prof);
+
+	public List<User> getByEmail(String email);
+
+	User getByEmailPassword(String email, String password);
+
+	int getUserNextId();
+
+	List<User> getByProvIdProvUserId(String providerid, String provideruserid);
+
 
 }
