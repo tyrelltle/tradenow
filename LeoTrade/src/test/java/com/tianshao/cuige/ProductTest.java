@@ -29,7 +29,7 @@ import com.tianshao.cuige.services.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
 public class ProductTest {
-	@Autowired
+/*	@Autowired
 	IProductRepository productRepository;
 
 	@Autowired
@@ -214,5 +214,5 @@ public class ProductTest {
 		userRepository.remove(prof);
 		productRepository.remove(cat);
 		
-	}
+	}*/
 }

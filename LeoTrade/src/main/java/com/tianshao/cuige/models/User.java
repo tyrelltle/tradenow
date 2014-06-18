@@ -16,7 +16,7 @@ public class User implements IEntity{
 	@Id
     @Column(name="userid")
     @GeneratedValue
-	private int userid;
+	private int userid=-1;
 	
 	@Column(name="userconid")
 	String userconid;
@@ -65,9 +65,6 @@ public class User implements IEntity{
 		return this.userconid!="";
 	}
 	
-	public void signoutFacebook(){
-		this.userconid="";
-	}
 	public String getAboutme() {
 		return aboutme;
 	}

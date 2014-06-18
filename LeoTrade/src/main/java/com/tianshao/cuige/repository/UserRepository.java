@@ -63,7 +63,7 @@ public class UserRepository extends BaseRepository implements IUserRepository{
 	@Transactional
 	public List<User> getByProvIdProvUserId(String providerid, String provideruserid){
 		Session seesion = sessionFactory.getCurrentSession();
-		Query query=seesion.createQuery("from User where providerid="+providerid+" and provideruserid="+provideruserid);
+		Query query=seesion.createQuery("from User where providerid='"+providerid+"' and provideruserid='"+provideruserid+"'");
 		return query.list();
 	}
 

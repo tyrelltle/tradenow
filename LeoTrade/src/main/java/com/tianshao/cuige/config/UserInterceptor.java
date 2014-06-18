@@ -1,5 +1,7 @@
 package com.tianshao.cuige.config;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,9 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.social.connect.NotConnectedException;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.tianshao.cuige.config.UserCookieGenerator.ProviderInfo;
 import com.tianshao.cuige.models.User;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IUserService;
@@ -31,6 +35,8 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		if(request.getRequestURI().contains("resources/") || 
+				request.getRequestURI().contains("signin") ||	
+//				request.getRequestURI().contains("signout") ||
 		   request.getRequestURI().contains("nativelogon")||
 		   request.getRequestURI().contains("nativesignin")||
 		   request.getRequestURI().contains("nativeregister"))
@@ -50,23 +56,67 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 
 	// internal helpers
 
-	private void rememberUser(HttpServletRequest request, HttpServletResponse response) {
-		String userId = userCookieGenerator.readCookieValue(request);
-		if (userId == null) {
+	
+	/*
+	 * reload securitycontext.user.  
+	 * user always has userid= user table's id, not userconnection id
+	 * When user logon to repository, userid cookie always there
+	 * when user logon to facebook etc, provinfo cookie is added but not userid.  
+	 * 
+	 * */
+	private void rememberUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ProviderInfo provinfo = userCookieGenerator.readProviderInfoCookieValue(request);
+		String userid = userCookieGenerator.readUserIdCookieValue(request);
+
+		if(provinfo==null && userid==null)
 			return;
-		}
-		if (!userNotFound(userId)) {
+		if (provinfo!=null && userNotFound(provinfo.userconid)) {
 			userCookieGenerator.removeCookie(response);
 			return;
 		}
-		SecurityContext.setCurrentUser(new User(Integer.valueOf(userId)));
+		
+		
+		if (provinfo == null) {
+			//user signedin as repository
+			
+			
+		}else if(provinfo != null) {
+			//user signedin as social
+			if(provinfo.justloggedin.equals("1")){
+				//user just logged on, check if need to persist it
+				User u=null;
+				List<User> ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
+				if(ulis==null||ulis.size()==0){
+					//user first time signedin as social user
+					u=new User();
+					u.setProviderid(provinfo.providerid);
+					u.setProvideruserid(provinfo.provideruserid);
+					userRepository.addNew(u);
+					
+					
+					userid=String.valueOf(u.getUserid());
+					userCookieGenerator.addProviderInfoCookie(provinfo, response);
+					userCookieGenerator.addUserIdCookie(userid, response);
+					ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
+				}//if(ulis==null||ulis.size()==0)
+				
+				userid=String.valueOf(ulis.get(0).getUserid());
+			}//if(provinfo.justloggedin=="1")
+		}//else if(provinfo != null)
+		SecurityContext.setCurrentUser(new User(Integer.valueOf(userid)));
+
+		
 	}
 
 	private void handleSignOut(HttpServletRequest request, HttpServletResponse response) {
 		if (SecurityContext.userSignedIn() && request.getServletPath().startsWith("/signout")) {
 			try{
-				connectionRepository.createConnectionRepository(String.valueOf(SecurityContext.getCurrentUser().getUserid())).removeConnections("facebook");
-			}catch(NotConnectedException e){}
+				ProviderInfo provinfo = userCookieGenerator.readProviderInfoCookieValue(request);
+				if(provinfo!=null)
+					connectionRepository.createConnectionRepository(provinfo.userconid).removeConnections("facebook");
+			}catch(NotConnectedException e){} catch (Exception e) {
+				e.printStackTrace();
+			}
 			userCookieGenerator.removeCookie(response);
 			SecurityContext.remove();			
 		}
@@ -84,11 +134,8 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 
 	private boolean userNotFound(String userId) {
 		// doesn't bother checking a local user database: simply checks if the userId is connected to Facebook
-		boolean infacebook= connectionRepository.createConnectionRepository(userId).findPrimaryConnection(Facebook.class) != null;
-		if(userId=="")
-			return infacebook;
-		boolean innative=userRepository.getByUserid(Integer.valueOf(userId))!=null;
-		return infacebook || innative;
+		boolean infacebook= connectionRepository.createConnectionRepository(userId).findPrimaryConnection(Facebook.class) == null;
+		return infacebook;
 	}
 	
 }

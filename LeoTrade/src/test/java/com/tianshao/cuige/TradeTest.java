@@ -35,7 +35,7 @@ import com.tianshao.cuige.services.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
 public class TradeTest {
-	@Autowired
+/*	@Autowired
 	ProductService productserv;
 
 	@Autowired
@@ -199,6 +199,6 @@ public class TradeTest {
 		dao.truncateTable("Profile");
 		}catch(Exception e){}
 
-	}
+	}*/
 	
 }

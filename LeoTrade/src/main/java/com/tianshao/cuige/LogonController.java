@@ -70,7 +70,7 @@ public class LogonController  {
 				if(null!=user)
 				{
 					SecurityContext.setCurrentUser(user);
-					userCookieGenerator.addCookie(String.valueOf(user.getUserid()), resp);
+					userCookieGenerator.addUserIdCookie(String.valueOf(user.getUserid()), resp);
 					return "home";
 				}else{
 					throw new Exception("user does not exists");
