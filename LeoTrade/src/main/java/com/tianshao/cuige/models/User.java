@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.tianshao.cuige.models.DTO.ProviderInfo;
 import com.tianshao.cuige.models.DTO.UserRegistrationDTO;
 @Entity
 @Table(name="user")
@@ -59,6 +60,15 @@ public class User implements IEntity{
 		this.lastname=dto.getLastname();
 		this.password=dto.getPassword();
 		
+	}
+	
+	public User(ProviderInfo provinfo){
+		this.setProviderid(provinfo.providerid);
+		this.setProvideruserid(provinfo.provideruserid);
+		this.setFirstname(provinfo.firstname);
+		this.setLastname(provinfo.lastname);
+		this.setEmail(provinfo.email);
+		this.setUserconid(provinfo.userconid);
 	}
 
 	public boolean signedinAsFacebookUser(){

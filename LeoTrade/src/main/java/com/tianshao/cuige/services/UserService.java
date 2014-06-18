@@ -15,11 +15,12 @@ import com.tianshao.cuige.repository.UserRepository;
 
 @Service("userService")
 public class UserService implements IUserService{
-
-	@Override
-	public void userSocialInitialize() {
-		// TODO Auto-generated method stub
+	@Autowired
+	IUserRepository userRepository;
+	public User currentUser(){
+		User user=userRepository.getByUserid(SecurityContext.getCurrentUser().getUserid());
+		return user;
 		
 	}
-
+	
 }

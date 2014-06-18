@@ -43,10 +43,9 @@ import com.tianshao.cuige.services.IUserService;
 @Controller
 @RequestMapping("/tradepage")
 public class TradePageController {
-	    @Autowired
-	    private IProductService productService;
+
 	    @Autowired 
-	    private IUserRepository userRepository;
+	    private IUserService userService;
 	    @Autowired
 	    private IProductRepository productRepository;
 
@@ -55,7 +54,7 @@ public class TradePageController {
 	    public String home(Model model,@PathVariable int toprod_id) {
 	    	Product toprod=productRepository.getByProductId(toprod_id);
 	    	Product fromprod=new Product();
-	    	User fromuser=userRepository.getByUserid(SecurityContext.getCurrentUser().getUserid());
+	    	User fromuser=userService.currentUser();
 	    	fromprod.setOwner(fromuser);
 	    	fromprod.setThumurl("http://img.vip.xunlei.com/img/banner/201307291420313509.jpg");
 	    	fromprod.setTitle("Please select an Item");

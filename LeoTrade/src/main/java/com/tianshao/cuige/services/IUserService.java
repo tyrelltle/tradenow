@@ -1,7 +1,8 @@
 package com.tianshao.cuige.services;
 
+import com.tianshao.cuige.models.User;
+
 public interface IUserService {
 
-	void userSocialInitialize();
-
+	public User currentUser();
 }

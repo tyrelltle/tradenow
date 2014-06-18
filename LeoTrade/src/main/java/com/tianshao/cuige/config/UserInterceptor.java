@@ -13,8 +13,8 @@ import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.tianshao.cuige.config.UserCookieGenerator.ProviderInfo;
 import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.models.DTO.ProviderInfo;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IUserService;
 
@@ -67,8 +67,8 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	private void rememberUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ProviderInfo provinfo = userCookieGenerator.readProviderInfoCookieValue(request);
 		String userid = userCookieGenerator.readUserIdCookieValue(request);
-
-		if(provinfo==null && userid==null)
+		User newcuruser = new User();
+		if((provinfo==null || provinfo.equals("")) && (userid==null  || userid.equals("")))
 			return;
 		if (provinfo!=null && userNotFound(provinfo.userconid)) {
 			userCookieGenerator.removeCookie(response);
@@ -88,22 +88,23 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 				List<User> ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
 				if(ulis==null||ulis.size()==0){
 					//user first time signedin as social user
-					u=new User();
-					u.setProviderid(provinfo.providerid);
-					u.setProvideruserid(provinfo.provideruserid);
+					u=new User(provinfo);
 					userRepository.addNew(u);
-					
-					
 					userid=String.valueOf(u.getUserid());
-					userCookieGenerator.addProviderInfoCookie(provinfo, response);
+					
 					userCookieGenerator.addUserIdCookie(userid, response);
 					ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
 				}//if(ulis==null||ulis.size()==0)
-				
+				provinfo.justloggedin="0";
+				userCookieGenerator.addProviderInfoCookie(provinfo, response);
 				userid=String.valueOf(ulis.get(0).getUserid());
 			}//if(provinfo.justloggedin=="1")
+
+			newcuruser.setUserid(Integer.valueOf(userid));
+			newcuruser.setUserconid(provinfo.userconid);
+			newcuruser.setProviderid(provinfo.providerid);
 		}//else if(provinfo != null)
-		SecurityContext.setCurrentUser(new User(Integer.valueOf(userid)));
+		SecurityContext.setCurrentUser(newcuruser);
 
 		
 	}

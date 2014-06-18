@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.util.CookieGenerator;
 
+import com.tianshao.cuige.models.DTO.ProviderInfo;
+
 public class UserCookieGenerator {
 
 
@@ -23,7 +25,7 @@ public class UserCookieGenerator {
 
 		public void addProviderInfoCookie(ProviderInfo info,HttpServletResponse response) {
 			providerinfoCookieGenerator.addCookie(response, 
-												  info.userconid+"-"+info.providerid+"-"+info.provideruserid+"-"+info.justloggedin);
+												  info.toCookieString());
 		}
 
 		
@@ -62,27 +64,6 @@ public class UserCookieGenerator {
 			return null;
 		}
 
-		public static class ProviderInfo{
-			public String justloggedin;
-			public String userconid;
-			public String providerid;
-			public String provideruserid;
-			
-			public ProviderInfo(String uid, String provid, String provuid,String justin){
-				userconid=uid;
-				providerid=provid;
-				provideruserid=provuid;
-				justloggedin=justin;
-			}
-			public ProviderInfo(String input) throws Exception{
-				String[] lis=input.split("-");
-				if(lis==null || lis.length!=4)
-					throw new Exception("wrongly formatted providerinfo from cookie");
-				userconid=lis[0];
-				providerid=lis[1];
-				provideruserid=lis[2];
-				justloggedin=lis[3];
-			}
-		}
+
 	
 }

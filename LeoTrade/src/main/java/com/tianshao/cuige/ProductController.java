@@ -40,6 +40,7 @@ import com.tianshao.cuige.models.DTO.ProductImageUrlDTP;
 import com.tianshao.cuige.repository.IProductRepository;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IProductService;
+import com.tianshao.cuige.services.IUserService;
 import com.tianshao.cuige.services.UserService;
 
 
@@ -55,7 +56,7 @@ public class ProductController {
 	    private IProductService productService;
 	   
 	    @Autowired
-	    private IUserRepository userRepository;
+	    private IUserService userService;
 	    @Autowired
 	    private IProductRepository productRepository;
 	  
@@ -123,13 +124,8 @@ public class ProductController {
 			
 
 			try {
-				
-				if(SecurityContext.getCurrentUser().getUserid()!=dto.getUserid())
-				{
-					throw new Exception("you are not authorized!");
-				}
-				
-				User owner = userRepository.getByUserid(dto.getUserid());
+				User owner=userService.currentUser();
+			
 				Category cat=productRepository.getCategory(dto.getCatid());
 				Product prod=new Product();
 				prod.setCategory(cat);

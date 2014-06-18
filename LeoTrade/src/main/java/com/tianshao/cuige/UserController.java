@@ -45,10 +45,15 @@ import com.tianshao.cuige.services.IUserService;
 public class UserController {
 	    @Autowired
 	    private IUserRepository userRepository;
-
+	    @Autowired
+	    Facebook facebook;
+	    @Autowired
+	    private IUserService userService;
+	    
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
-	    	
+			
+
 	        return "profile";
 	    }
 
@@ -57,7 +62,12 @@ public class UserController {
 		
 		@RequestMapping(value="api/user/{userid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody UserDTO get( @PathVariable int userid,HttpServletResponse resp) throws IOException {
-	    	User user=SecurityContext.getCurrentUser();
+	    	User user=userService.currentUser();
+	    	user= userRepository.getByUserid(user.getUserid());
+	    	if(user.getProviderid().equals("facebook")&&user.getImage()==null){
+	    		user.setImage(facebook.userOperations().getUserProfileImage());
+	    		userRepository.update(user);
+	    	}
 	   
 		   
 	    	UserDTO profwrap=new UserDTO();
@@ -75,7 +85,7 @@ public class UserController {
 		
 		@RequestMapping(value="api/user/{userid}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody UserDTO update(@RequestBody UserDTO wrap,@PathVariable int userid, HttpServletResponse resp) throws IOException {
-			User user=SecurityContext.getCurrentUser();
+			User user=userService.currentUser();
 			if(user.getUserid()!=(userid)){
 	    		//currently logged on user is not claimed user
 	            resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
@@ -98,7 +108,7 @@ public class UserController {
 		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 		public @ResponseBody byte[] getimg() {
 			
-			return SecurityContext.getCurrentUser().getImage();
+			return userService.currentUser().getImage();
 			
 
 		}
