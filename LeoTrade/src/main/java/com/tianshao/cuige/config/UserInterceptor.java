@@ -82,7 +82,7 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 			
 		}else if(provinfo != null) {
 			//user signedin as social
-			if(provinfo.justloggedin.equals("1")){
+			if(provinfo.justloggedin.equals("1")||userid.equals("")){
 				//user just logged on, check if need to persist it
 				User u=null;
 				List<User> ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
