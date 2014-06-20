@@ -221,7 +221,10 @@
 				            <p class="lead">{{title}}</p>
 				          <!-- Button trigger modal -->
 								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#proddetail">
-  									Launch demo modal
+  									Detail
+								</button>
+								<button id="modalbtn" class="btn btn-primary btn-sm" data-dismiss="modal" data-target="#prodlismodel">
+  									Select Item!
 								</button>
 				          </div>
 				        </div>		        
