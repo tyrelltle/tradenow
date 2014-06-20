@@ -34,4 +34,8 @@ public interface IProductRepository{
 
 	void addImage_(Image obj);
 
+
+	List<Product> getAllMine(int userid, int limitL, int limitR)
+			throws Exception;
+
 }

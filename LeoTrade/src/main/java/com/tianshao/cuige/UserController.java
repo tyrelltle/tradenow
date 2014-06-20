@@ -64,7 +64,7 @@ public class UserController {
 		public @ResponseBody UserDTO get( @PathVariable int userid,HttpServletResponse resp) throws IOException {
 	    	User user=userService.currentUser();
 	    	user= userRepository.getByUserid(user.getUserid());
-	    	if(user.getProviderid().equals("facebook")&&user.getImage()==null){
+	    	if(user.isSocialUserAndNeedImage()){
 	    		user.setImage(facebook.userOperations().getUserProfileImage());
 	    		userRepository.update(user);
 	    	}

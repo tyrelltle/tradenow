@@ -29,6 +29,17 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	}
 	
 	@Override
+	@Transactional
+	public List<Product> getAllMine(int userid, int limitL, int limitR) throws Exception{
+	
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from Product where owner.userid = "+userid);
+		query.setFirstResult(limitL);
+		query.setMaxResults(limitR);
+		return query.list();		
+	}
+	
+	@Override
 	@Transactional	
 	public Product getProductWithImages(int prod_id){
 		Session session = sessionFactory.getCurrentSession();

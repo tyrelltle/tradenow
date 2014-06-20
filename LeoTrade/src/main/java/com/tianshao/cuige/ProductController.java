@@ -67,18 +67,28 @@ public class ProductController {
 	    	
 	    	List<Product> prods=productRepository.getAllButMe(SecurityContext.getCurrentUser().getUserid(),st,ct);
 	    	
-	    	Iterator<Product> i=prods.iterator();
-	    
-	    	while(i.hasNext()){
-	    		Product prod=i.next();
-	    		ProductDTO dto = new ProductDTO();
-	    		PROD_TO_DTO(prod, dto);
-	    		ret.add(dto);
-	    	}
+	    	toRrodListDTO(ret, prods);
 	    	return ret;
 	    	
 		}
-	    
+
+		
+
+		@RequestMapping(value={"start/{st}/count/{ct}/me"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody List<ProductDTO> getmine(@PathVariable int st, @PathVariable int ct, HttpServletResponse resp) throws Exception {
+			//st and ct are used in LIMIT st,ct
+			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+	    	
+	    	List<Product> prods=productRepository.getAllMine(SecurityContext.getCurrentUser().getUserid(),st,ct);
+	    	
+	    	toRrodListDTO(ret, prods);
+	    	return ret;
+	    	
+		}
+		
+		
+		
+		
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> get( HttpServletResponse resp) throws IOException {
 			
@@ -88,14 +98,7 @@ public class ProductController {
 	    	if(null==prods)
 	    		return ret;
 	    	
-	    	Iterator<Product> i=prods.iterator();
-	    
-	    	while(i.hasNext()){
-	    		Product prod=i.next();
-	    		ProductDTO dto = new ProductDTO();
-	    		PROD_TO_DTO(prod, dto);
-	    		ret.add(dto);
-	    	}
+	    	toRrodListDTO(ret, prods);
 	    	return ret;
 	    	
 		}
@@ -253,6 +256,17 @@ public class ProductController {
 
 		        return  ret;
 		    }
+			
+			private void toRrodListDTO(List<ProductDTO> ret, List<Product> prods) {
+				Iterator<Product> i=prods.iterator();
+		    
+		    	while(i.hasNext()){
+		    		Product prod=i.next();
+		    		ProductDTO dto = new ProductDTO();
+		    		PROD_TO_DTO(prod, dto);
+		    		ret.add(dto);
+		    	}
+			}
 		private void DTO_to_PROD(ProductDTO dto, Product prod) {
 			prod.setDetail(dto.getDetail());
 			prod.setPrice(dto.getPrice());

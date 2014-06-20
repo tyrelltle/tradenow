@@ -13,13 +13,18 @@ ProductList=Backbone.Collection.extend({
 	start: 0,
 	offset:5,
 	initialize:function(){
-		this.url="api/product/start/0/count/"+this.offset;
+		
+		this.url=ctx+"api/product/start/0/count/"+this.offset;
 	},
 	
 	addstart:function(){
 		this.start+=this.offset;
-		this.url="api/product/start/"+this.start+"/count/"+this.offset;
+		this.url=ctx+"api/product/start/"+this.start+"/count/"+this.offset;
 
+	},
+	melize:function(){
+		//make the model fetch only my products
+		this.url=this.url+"/me";
 	}
 });
 
@@ -32,9 +37,9 @@ Imagee = Backbone.Model.extend({
 ImageList = Backbone.Collection.extend({
 	model:Imagee,
 	prod_id:0,
-	url:"api/product/prod_id/img/",
+	url:ctx+"api/product/prod_id/img/",
 	init:function(){
-		this.url="api/product/"+this.prod_id+"/img/";
+		this.url=ctx+"api/product/"+this.prod_id+"/img/";
 	}
 });
 

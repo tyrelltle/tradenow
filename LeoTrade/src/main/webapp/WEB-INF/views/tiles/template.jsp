@@ -9,7 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
         
-		<link href="resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">        
+		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">        
+		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet">        
         
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -125,7 +126,7 @@ h3,h4,h5 {
 }
 
 #main {
-	padding-top:120px;
+	padding-top:56px;
 }
         </style>
     </head>
@@ -166,14 +167,14 @@ h3,h4,h5 {
                 </ul>
              </li>
              <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large"></i></a></li>
-             <li><a href="user"><i class="glyphicon glyphicon-user"></i></a></li>
+             <li><a href="${pageContext.request.contextPath}/user"><i class="glyphicon glyphicon-user"></i></a></li>
            </ul>
         </div>	
      </div>	
 </div>
 
 <!--left -->
-<div id="leftpanel" style="float:left;margin-top:120px">
+<div id="leftpanel" style="float:left;margin-top:56px">
 	<tiles:insertAttribute name="left" />
 </div>
 <!--main-->
@@ -239,10 +240,10 @@ h3,h4,h5 {
 
         
         
-        <script type='text/javascript' src="resources/scripts/jquery-1.10.2.js"></script>
+        <script type='text/javascript' src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
 
 
-        <script type='text/javascript' src="resources/themes/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js"></script>
 
 
 

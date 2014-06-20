@@ -163,7 +163,9 @@ public class User implements IEntity{
 		this.provideruserid = provideruserid;
 	}
 	
-    
+    public boolean isSocialUserAndNeedImage(){
+    	return this.providerid!=null && this.providerid.equals("facebook")&&this.image==null;
+    }
 	
 
 

@@ -65,6 +65,7 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 	 * 
 	 * */
 	private void rememberUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		ProviderInfo provinfo = userCookieGenerator.readProviderInfoCookieValue(request);
 		String userid = userCookieGenerator.readUserIdCookieValue(request);
 		User newcuruser = new User();
@@ -78,11 +79,11 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 		
 		if (provinfo == null) {
 			//user signedin as repository
-			
+			newcuruser.setUserid(Integer.valueOf(userid));
 			
 		}else if(provinfo != null) {
 			//user signedin as social
-			if(provinfo.justloggedin.equals("1")||userid.equals("")){
+			if(provinfo.justloggedin.equals("1")||userid==null||userid.equals("")){
 				//user just logged on, check if need to persist it
 				User u=null;
 				List<User> ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
