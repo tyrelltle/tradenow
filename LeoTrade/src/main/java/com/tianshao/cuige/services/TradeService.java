@@ -43,6 +43,16 @@ public class TradeService implements ITradeService{
 		}
 	}
 	
+	@Override
+	public boolean addTradeWithoutValidation(Object obj) {
+		if(obj==null)
+			return false;
+		Trade t=(Trade) obj;
+		t.setTrans_date(new Date());
+		tradeRepository.addNew((Trade)obj);
+		return true;
+	}
+	
 	
 
 }

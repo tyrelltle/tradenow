@@ -1,6 +1,6 @@
 create table trade(
 	trade_id int not null AUTO_INCREMENT,
-	prod1_id int not null,
+	prod1_id int,
 	prod2_id int not null,
 	trans_date	date not null,	
 	status1	 varchar(10) default 'Pending',

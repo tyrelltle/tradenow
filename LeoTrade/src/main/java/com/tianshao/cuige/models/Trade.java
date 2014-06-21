@@ -118,6 +118,9 @@ public class Trade implements IEntity{
 	}
 	
 	
-
+    public static final String DELIVERY="Delivery";
+    public static final String INPERSON="In Person";
+    public static final String PEND="Pending";
+    public static final String ACCEPT="Accepted";
 
 }

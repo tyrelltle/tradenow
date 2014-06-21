@@ -8,8 +8,17 @@ AppRouter=Backbone.Router.extend({
 		});
 	},
 	routes:{
+		"":"tradepage",
 		"prodlis":"prodlis",
 		"proddetail:prod_id":"prodDetail"},
+	itemselected:0,
+		
+	tradepage:function(){
+		if(this.itemselected!=undefined && this.itemselected == 1){
+			this.itemselected=0;
+			$('#leftprodpic').attr("src", "http://img0.bdstatic.com/img/image/shouye/dengni37.jpg");
+		}
+	},
 	prodlis:function(){		
 		
 		//init product list
@@ -20,6 +29,7 @@ AppRouter=Backbone.Router.extend({
 			
 			success:function(productList){
 				if(productList.length>0){
+					
 					$('#prodlist').html(app.productListView.render().el);
 					$('#loadmore').click(function(e){
 						app.productList.addstart();
@@ -27,7 +37,11 @@ AppRouter=Backbone.Router.extend({
 						app.productList.fetch({remove:false});
 						
 					});
+					$('#modelchoosebtn').click(function(e){
+						app.itemselected=1;
+						$('#prodlismodel').modal('hide');						
 					
+					});
 					$('#prodlismodel').on('shown.bs.modal', function (e) {
 						var container = document.querySelector('.masconrycontainer');
 						var msnry;

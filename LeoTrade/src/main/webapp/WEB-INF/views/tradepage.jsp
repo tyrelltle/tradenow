@@ -1,6 +1,8 @@
 <%@ page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 	
@@ -12,7 +14,14 @@
 		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/imagesloaded.pkgd.js"></script>
 				<style>
 				/* CSS used here will be applied after bootstrap.css */
-				
+				#btnsubmit{
+				margin-left:-12px;
+				margin-top:10px;
+				border-radius:20px;
+				}
+				.midblock{
+				margin-top:45px;
+				}
 				div {
 				//border: green;
 				//border-style: solid;
@@ -65,8 +74,8 @@
 				        <div id="userpanel" class="sidepanel col-md-2">
 				             <ul class="list-group">
 				              <li class="list-group-item">
-									<p>${fromprod.owner.firstname} ${fromprod.owner.lastname}</p>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${fromprod.owner.userid}">
+									<p>${prod1.owner.firstname} ${prod1.owner.lastname}</p>
+				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${prod1.owner.userid}">
 				                 </li>
 				              <li class="list-group-item">
 				              	  <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
@@ -80,23 +89,31 @@
 				               
 				              </li>
 				              
-				              <li class="list-group-item"><button type="button" class="btn btn-success">Success</button></li>
 				            </ul>
 				      	</div>
 				        <div class="midblock col-md-7">
 				            <div class="midcontainer container">
 				                <div id="two_prod_row" class="row">
 				                    <div id="prod_left" class="col-md-5">
-				                    	<p>${fromprod.title}</p>
-				                        <img alt="pic" class="img-thumbnail prodpic" src="${fromprod.thumurl}">
+				                    	<p>${prod1.title}</p>
+				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${prod1.thumurl}">
 				                    </div>
 				                    <div class="col-md-2" style="margin-top:40px">
 				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
 				                        </button>
+				                         <form:form  method="POST" commandName="tradeForm" action="submit">
+				                         		<form:input type="hidden" path="tradeid" value="${dto.tradeid}" placeholder="Last name"/>
+				                         		<form:input type="hidden" path="prod1id" value="${dto.prod1id}" placeholder="Last name"/>
+				                         		<form:input type="hidden" path="method" value="${dto.method}" placeholder="Last name"/>
+				                         		<form:input type="hidden" path="side" value="${dto.side}" placeholder="Last name"/>
+				                         						                         			
+				                       			<form:button type="submit" id="btnsubmit" class="btn btn-success">Propose!</form:button>
+				                       	 </form:form>
+				                        
 				                    </div>
 				                    <div id="prod_right" class="col-md-5">
-				                    	<p>${toprod.title}</p>
-				                        <img alt="pic" class="img-thumbnail prodpic" src="${toprod.thumurl}">
+				                    	<p>${trade.prod2.title}</p>
+				                        <img alt="pic" class="img-thumbnail prodpic" src="${trade.prod2.thumurl}">
 				                    </div>
 				                </div>
 				                <div id="msg_row" class="row">
@@ -144,8 +161,8 @@
 				    	<div id="userpanel" class="sidepanel upblock col-md-2">
 				      		<ul class="list-group">
 				              <li class="list-group-item">
-				              		<p>${toprod.owner.firstname} ${toprod.owner.lastname}</p>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${toprod.owner.userid}">
+				              		<p>${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
+				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod2.owner.userid}">
 				              </li>
 				              <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
 				              <li class="list-group-item">
@@ -157,7 +174,6 @@
 				               
 				              </li>
 				              
-				              <li class="list-group-item"><button type="button" class="btn btn-success">Success</button></li>
 				            </ul>
 				      
 				      
@@ -223,7 +239,7 @@
 								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#proddetail">
   									Detail
 								</button>
-								<button id="modalbtn" class="btn btn-primary btn-sm" data-dismiss="modal" data-target="#prodlismodel">
+								<button id="modelchoosebtn" class="btn btn-primary btn-sm">
   									Select Item!
 								</button>
 				          </div>

@@ -4,4 +4,6 @@ public interface ITradeService {
 
 	public abstract boolean validateAndAddTrade(Object obj);
 
+	boolean addTradeWithoutValidation(Object obj);
+
 }
