@@ -18,7 +18,7 @@ import org.hibernate.annotations.CascadeType;
 public class Trade implements IEntity{
 
 	public static enum FROM_TO{
-		FROM,TO,BOTH
+		FROM,TO, BOTH
 	}
 	
 	@Id
@@ -123,4 +123,37 @@ public class Trade implements IEntity{
     public static final String PEND="Pending";
     public static final String ACCEPT="Accepted";
 
+    //set 
+	public void setMethod(String method, String side) {
+		if(side.equals(Trade.FROM_TO.FROM.toString())){
+    		setMethod1(method);
+    	}else if (side.equals(Trade.FROM_TO.TO.toString())){
+    		setMethod2(method);
+    	}
+		
+	}
+
+	public Trade.FROM_TO getSide(int userid){
+		if(this.prod1!=null && prod1.getOwner().getUserid()==userid)
+			return FROM_TO.FROM;
+		else if(this.prod2!=null && prod2.getOwner().getUserid()==userid)
+			return FROM_TO.TO;
+		return null;
+	} 
+	public void setDefaultValues(){
+    	this.setMethod1(Trade.INPERSON);
+    	this.setMethod2(Trade.INPERSON);
+    	this.setStatus1(Trade.PEND);
+    	this.setStatus2(Trade.PEND);
+	}
+
+
+	public String getMethod(int userid) {
+		FROM_TO ft=this.getSide(userid);
+		switch(ft){
+			case FROM: return method1; 
+			case TO: return method2; 
+		}
+		return null;
+	}
 }

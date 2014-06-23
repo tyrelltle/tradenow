@@ -2,12 +2,6 @@ package com.tianshao.cuige;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-import java.util.Set;
-
-import javassist.bytecode.Descriptor.Iterator;
-
-import org.hibernate.Hibernate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,39 +13,40 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.tianshao.cuige.models.Category;
 import com.tianshao.cuige.models.Product;
 import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.models.Trade.FROM_TO;
 import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.ITradeRepository;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.repository.ProductRepository;
 import com.tianshao.cuige.repository.TradeRepository;
+import com.tianshao.cuige.services.IProductService;
+import com.tianshao.cuige.services.ITradeService;
+import com.tianshao.cuige.services.IUserService;
 import com.tianshao.cuige.services.ProductService;
 import com.tianshao.cuige.services.TradeService;
 import com.tianshao.cuige.services.UserService;
 
-
-
-
-
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
 public class TradeTest {
-/*	@Autowired
-	ProductService productserv;
+	@Autowired
+	IProductService productserv;
 
 	@Autowired
-	UserService userService;
+	IUserService userService;
 	
 	@Autowired
-	TradeService tradeService;
+	ITradeService tradeService;
 	
 	@Autowired
-	ProductRepository productRepository;
+	IProductRepository productRepository;
 
 	@Autowired
 	IUserRepository userRepository;
 	
 	@Autowired
-	TradeRepository tradeRepository;
+	ITradeRepository tradeRepository;
 	
 	
 	User prof;
@@ -65,11 +60,15 @@ public class TradeTest {
 		prof=new User();
 		prof2=new User();
 		prof3=new User();
+		userRepository.addNew(prof);
+		userRepository.addNew(prof2);
+		userRepository.addNew(prof3);
+
 		cat=new Category();
 		cat.setName("testcat");
 		productRepository.addNew(cat);
 	}
-	
+	/*
 
 	@Test
 	public void testadd() throws Exception{
@@ -111,7 +110,7 @@ public class TradeTest {
 		assertEquals(-1,trade2.getTrade_id());
 
 	}
-	
+	*/
 	
 	@Test
 	public void deeptestadd() throws Exception{
@@ -122,83 +121,83 @@ public class TradeTest {
 		Product prod1= new Product();
 		prod1.setCategory(cat);
 		prod1.setOwner(prof);
-		prodserv.add(prod1);
+		productRepository.addNew(prod1);
 		
 		Product prod2= new Product();
 		prod2.setCategory(cat);
 		prod2.setOwner(prof2);
-		prodserv.add(prod2);
+		productRepository.addNew(prod2);
 		
 		Product prod3= new Product();
 		prod3.setCategory(cat);
 		prod3.setOwner(prof);
-		prodserv.add(prod3);
+		productRepository.addNew(prod3);
 		
 		Product prod4= new Product();
 		prod4.setCategory(cat);
 		prod4.setOwner(prof2);
-		prodserv.add(prod4);
+		productRepository.addNew(prod4);
 		
 		Product prod5= new Product();
 		prod5.setCategory(cat);
 		prod5.setOwner(prof2);
-		prodserv.add(prod5);
+		productRepository.addNew(prod5);
 		
 		Product prod6= new Product();
 		prod6.setCategory(cat);
 		prod6.setOwner(prof);
-		prodserv.add(prod6);
+		productRepository.addNew(prod6);
 		
 		Trade trade1=new Trade();
 		trade1.setProd1(prod1);
 		trade1.setProd2(prod2);
-		tradeserv.add(trade1);
+		tradeService.validateAndAddTrade(trade1);
 
 		Trade trade2=new Trade();
 		trade2.setProd1(prod3);
 		trade2.setProd2(prod4);
-		tradeserv.add(trade2);		
+		tradeService.validateAndAddTrade(trade2);		
 		
 		Trade trade3=new Trade();
 		trade3.setProd1(prod5);
 		trade3.setProd2(prod6);
-		tradeserv.add(trade3);
+		tradeService.validateAndAddTrade(trade3);
 		
 		//test there are totally 3 trades
-		assertEquals(3,tradeserv.getByUserId(prof.getUserid(),FROM_TO.BOTH).size());
-		assertEquals(3,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.BOTH).size());
+		assertEquals(3,tradeRepository.getByUserId(prof.getUserid(),FROM_TO.BOTH).size());
+		assertEquals(3,tradeRepository.getByUserId(prof2.getUserid(),FROM_TO.BOTH).size());
 		//test 2 trades are from user 1
-		assertEquals(2,tradeserv.getByUserId(prof.getUserid(),FROM_TO.FROM).size());
+		assertEquals(2,tradeRepository.getByUserId(prof.getUserid(),FROM_TO.FROM).size());
 		//test 1 trade is from user 2
-		assertEquals(1,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.FROM).size());
+		assertEquals(1,tradeRepository.getByUserId(prof2.getUserid(),FROM_TO.FROM).size());
 		//test 2 trades are to user 2
-		assertEquals(2,tradeserv.getByUserId(prof2.getUserid(),FROM_TO.TO).size());
+		assertEquals(2,tradeRepository.getByUserId(prof2.getUserid(),FROM_TO.TO).size());
 		//test 1 trade is to user 1
-		assertEquals(1,tradeserv.getByUserId(prof.getUserid(),FROM_TO.TO).size());
+		assertEquals(1,tradeRepository.getByUserId(prof.getUserid(),FROM_TO.TO).size());
 
 
 	}
 	@After
 	public void truncate(){
 		try{
-		dao.truncateTable("Trade");
+			tradeRepository.truncateTable("Trade");
 		}catch(Exception e){}	
 		
 		try{
-		dao.truncateTable("Product");
+			tradeRepository.truncateTable("Product");
 		}catch(Exception e){}
 		
 		try{
-		dao.truncateTable("Category");
+			tradeRepository.truncateTable("Category");
 		}catch(Exception e){}
 		try{
-		dao.truncateTable("Image");
+			tradeRepository.truncateTable("Image");
 		}catch(Exception e){}
 		
 		try{
-		dao.truncateTable("Profile");
+			tradeRepository.truncateTable("Profile");
 		}catch(Exception e){}
 
-	}*/
+	}
 	
 }

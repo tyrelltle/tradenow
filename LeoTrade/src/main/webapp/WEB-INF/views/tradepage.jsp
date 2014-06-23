@@ -69,7 +69,12 @@
 </tiles:putAttribute>
 <tiles:putAttribute name="main">
 
+				
+
 				<div class="container">
+				      	<c:if test="${not empty msg}">
+			      			<div class="alert ${msgtype}">${msg}</div>
+			    		</c:if>
 				    <div id="block" class="panel col-md-12">
 				        <div id="userpanel" class="sidepanel col-md-2">
 				             <ul class="list-group">
@@ -101,7 +106,7 @@
 				                    <div class="col-md-2" style="margin-top:40px">
 				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
 				                        </button>
-				                         <form:form  method="POST" commandName="tradeForm" action="submit">
+				                         <form:form  method="POST" commandName="tradeForm" action="${pageContext.request.contextPath}/tradepage/submit">
 				                         		<form:input type="hidden" path="tradeid" value="${dto.tradeid}" placeholder="Last name"/>
 				                         		<form:input type="hidden" path="prod1id" value="${dto.prod1id}" placeholder="Last name"/>
 				                         		<form:input type="hidden" path="method" value="${dto.method}" placeholder="Last name"/>
@@ -236,10 +241,10 @@
 				          <div class="panel-body">
 				            <p class="lead">{{title}}</p>
 				          <!-- Button trigger modal -->
-								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#proddetail">
+								<button id="select" class="btn_detail btn btn-primary btn-sm" data-toggle="modal" data-target="#proddetail">
   									Detail
 								</button>
-								<button id="modelchoosebtn" class="btn btn-primary btn-sm">
+								<button id="detail" class="btn_select btn btn-primary btn-sm">
   									Select Item!
 								</button>
 				          </div>

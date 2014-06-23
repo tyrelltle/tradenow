@@ -87,7 +87,7 @@
 				          <div class="panel-body">
 				            <p class="lead">{{title}}</p>
 				          <!-- Button trigger modal -->
-								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+								<button class="btn_detail btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
   									Launch demo modal
 								</button>
 				          </div>

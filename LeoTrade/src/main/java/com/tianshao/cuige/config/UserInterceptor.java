@@ -5,11 +5,14 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.social.connect.NotConnectedException;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -83,8 +86,8 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 			
 		}else if(provinfo != null) {
 			//user signedin as social
-			if(provinfo.justloggedin.equals("1")||userid==null||userid.equals("")){
-				//user just logged on, check if need to persist it
+			if(provinfo.userid==-1){
+				//user just logged on, check if its new user and need to persist it
 				User u=null;
 				List<User> ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
 				if(ulis==null||ulis.size()==0){
@@ -96,12 +99,12 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 					userCookieGenerator.addUserIdCookie(userid, response);
 					ulis = (userRepository.getByProvIdProvUserId(provinfo.providerid, provinfo.provideruserid));
 				}//if(ulis==null||ulis.size()==0)
-				provinfo.justloggedin="0";
+				provinfo.userid=ulis.get(0).getUserid();
 				userCookieGenerator.addProviderInfoCookie(provinfo, response);
-				userid=String.valueOf(ulis.get(0).getUserid());
+			
 			}//if(provinfo.justloggedin=="1")
-
-			newcuruser.setUserid(Integer.valueOf(userid));
+		
+			newcuruser.setUserid(provinfo.userid);
 			newcuruser.setUserconid(provinfo.userconid);
 			newcuruser.setProviderid(provinfo.providerid);
 		}//else if(provinfo != null)
@@ -139,5 +142,7 @@ public final class UserInterceptor extends HandlerInterceptorAdapter {
 		boolean infacebook= connectionRepository.createConnectionRepository(userId).findPrimaryConnection(Facebook.class) == null;
 		return infacebook;
 	}
+	
+
 	
 }

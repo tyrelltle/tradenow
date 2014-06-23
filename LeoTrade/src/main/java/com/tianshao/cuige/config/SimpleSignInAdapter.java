@@ -20,10 +20,10 @@ public class SimpleSignInAdapter implements SignInAdapter{
 		User user=new User();
 		user.setUserconid(userId);
 		SecurityContext.setCurrentUser(user);
-		userCookieGenerator.addProviderInfoCookie(new ProviderInfo(userId,
+		userCookieGenerator.addProviderInfoCookie(new ProviderInfo(-1,
+																   userId,
 												  				   key.getProviderId(),
 												  				   key.getProviderUserId(),
-												  				   "1",
 												  				   prof.getEmail(),
 												  				   prof.getFirstName(),
 												  				   prof.getLastName()),

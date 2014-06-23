@@ -1,9 +1,12 @@
 package com.tianshao.cuige.services;
 
+import com.tianshao.cuige.models.Trade;
+
 public interface ITradeService {
 
-	public abstract boolean validateAndAddTrade(Object obj);
 
-	boolean addTradeWithoutValidation(Object obj);
+	boolean addNew(Trade trade);
+
+	public abstract boolean update(Trade trade);
 
 }

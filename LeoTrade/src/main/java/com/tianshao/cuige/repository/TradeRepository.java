@@ -20,39 +20,32 @@ public class TradeRepository extends BaseRepository implements ITradeRepository{
 	 */
 	@Override
 	@Transactional
-	public boolean pairexist(int prod1_id,int prod2_id){
-		String str="Select count(*) from Trade t where ( t.prod1.prod_id= %d and t.prod2.prod_id=%d) or ( t.prod1.prod_id= %d and t.prod2.prod_id=%d)";
-		String formstr=String.format(str, prod1_id,prod2_id,prod2_id,prod1_id);
+	public Trade getTradeWithGivenItem(int myuserid,int prod2_id){
+		String str="from Trade t where ( t.prod1.owner.userid= %d and t.prod2.prod_id=%d) or ( t.prod2.owner.userid= %d and t.prod1.prod_id=%d)";
+		String formstr=String.format(str, myuserid,prod2_id,myuserid,prod2_id);
 		Session session = sessionFactory.getCurrentSession();
 		Query query= session.createQuery(formstr);
-		
-		return (Long) query.uniqueResult()>0;
+		List<Trade> lis=query.list();
+		if(null==lis || lis.size()==0)
+			return null;
+		return lis.get(0);
 
 	}
 	
-	@Transactional
-	public List<Trade> getByProdId(int prodid){
-		String str="from Trade t where  t.prod1.prod_id= %d or t.prod2.prod_id=%d";
-		String formstr=String.format(str, prodid,prodid);
-		Session session = sessionFactory.getCurrentSession();
-		Query query= session.createQuery(formstr);
-		return query.list();
-		
-	}
 	
 	@Transactional
 	public List<Trade> getByUserId(int profid,Trade.FROM_TO fromto){
 		String str;
 		String formstr;
 		switch(fromto){
-			case FROM:str="from Trade t where t.prod1.owner.prof_id= %d";
+			case FROM:str="from Trade t where t.prod1.owner.userid= %d";
 					  formstr=String.format(str, profid);
 					  break;
-			case TO: str="from Trade t where t.prod2.owner.prof_id= %d";
+			case TO: str="from Trade t where t.prod2.owner.userid= %d";
 			  		  formstr=String.format(str, profid);
 				      break;
 			case BOTH:
-					 str="from Trade t where  t.prod1.owner.prof_id= %d or t.prod2.owner.prof_id=%d";
+					 str="from Trade t where  t.prod1.owner.userid= %d or t.prod2.owner.userid=%d";
 					 formstr=String.format(str, profid,profid);
 					 break;
 		    default:
@@ -63,6 +56,14 @@ public class TradeRepository extends BaseRepository implements ITradeRepository{
 		Query query= session.createQuery(formstr);
 		return query.list();
 		
+	}
+
+	@Override
+	@Transactional
+	public Trade getByTradeid(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from Trade where trade_id="+id);
+		return (Trade) query.uniqueResult();
 	}
 
 
