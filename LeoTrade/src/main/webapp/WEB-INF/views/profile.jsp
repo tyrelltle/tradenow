@@ -35,8 +35,10 @@
 						<div class="tabbable tabs-left">
 						  <ul class="nav nav-tabs">
 						  		
-							    <li class="active"><a href="#lA" id="tab_prof" data-toggle="tab">My Profile</a></li>
+							    <li><a href="#lA" id="tab_prof" data-toggle="tab">My Profile</a></li>
 							    <li><a href="#lB" id="tab_prod" data-toggle="tab">My Products</a></li>
+							    <li><a href="#lC" id="tab_trade" data-toggle="tab">My Trades</a></li>
+
 						  </ul>
 						  <div class="tab-content">
 							    <div class="tab-pane active" id="lA">
@@ -53,17 +55,16 @@
 						        			</button>
 						        		</div>
 						                <div id="prodlist">
-
-
-
-  
-
-
-						                
-						                
+	                
 						                
 						                </div><!-- end productlist -->
 						                <div style="height:300px"></div>
+						        </div>
+						        
+						        <div class="tab-pane" id="lC">
+							    		<div id="tradelist">
+		
+						                </div>
 						        </div>
 						  </div>
 						</div>
