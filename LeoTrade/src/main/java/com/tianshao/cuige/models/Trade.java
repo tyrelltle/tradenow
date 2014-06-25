@@ -13,12 +13,19 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CascadeType;
 
+import com.tianshao.cuige.models.DTO.TradeDTO;
+
 @Entity
 @Table(name="trade")
 public class Trade implements IEntity{
 
 	public static enum FROM_TO{
 		FROM,TO, BOTH
+	}
+	
+	public static enum STATUS{
+		PENDING,APPROVAL
+		
 	}
 	
 	@Id
@@ -155,5 +162,22 @@ public class Trade implements IEntity{
 			case TO: return method2; 
 		}
 		return null;
+	}
+	
+	public TradeDTO toTradeDTO(){
+		TradeDTO dto=new TradeDTO();
+		dto.setImg1url(prod1.getThumurl());
+		dto.setImg2url(prod2.getThumurl());
+		
+		if(this.status1.equals(STATUS.APPROVAL.name())&& this.status2.equals(STATUS.APPROVAL.name()))
+			dto.setStatus(STATUS.APPROVAL.name());
+		else
+			dto.setStatus(STATUS.APPROVAL.name());
+		
+		dto.setTitle1(prod1.getTitle());
+		dto.setTitle2(prod2.getTitle());
+		dto.setTradeid(this.getTrade_id());
+		dto.setTradeurl("wow! to be determined!!!!!!");
+		return dto;
 	}
 }

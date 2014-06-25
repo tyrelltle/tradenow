@@ -1,6 +1,9 @@
 package com.tianshao.cuige;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.models.Trade;
 import com.tianshao.cuige.models.Trade.FROM_TO;
@@ -34,8 +38,12 @@ public class TradeController {
 		public @ResponseBody List<TradeDTO> get(HttpServletResponse resp) throws Exception {
 
 			List<Trade> t=tradeRepository.getByUserId(SecurityContext.getCurrentUser().getUserid(), FROM_TO.BOTH);
-			
-			return null;
+			List<TradeDTO> ret=new ArrayList<TradeDTO>();
+			Iterator<Trade> i=t.iterator();
+			while(i.hasNext()){
+				ret.add(i.next().toTradeDTO());
+			}
+			return ret;
 	    	
 		}
 

@@ -63,6 +63,28 @@
 						        
 						        <div class="tab-pane" id="lC">
 							    		<div id="tradelist">
+																	<ul class="tradelis list-group">
+																      <li class="list-group-item">
+																        <span class="badge">Pending</span>
+																            <div class="row">
+																                <div class="col-md-4"><center>title1</center></div>
+																              	<div class="col-md-4"><center>title1</center></div>
+																          	</div>
+																        	<div class="row">
+																           
+																          		<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></div>
+																              <span style="z-index:3;position: absolute;margin-top:80px;left: 230px;" class="glyphicon glyphicon-transfer"> </span>
+																              	<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></div>
+																                <div class="col-md-4"> 
+																                  <button type="button" class="detailsglyph btn btn-default btn-lg">
+																                  	<span class="glyphicon glyphicon-circle-arrow-right"> </span>
+																                  </button>              
+																                </div>
+																          	</div>       
+																      </li>
+																
+																</ul>
+
 		
 						                </div>
 						        </div>
