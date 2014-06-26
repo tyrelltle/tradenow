@@ -12,6 +12,14 @@
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
 	    <style type="text/css">	
+	    	.tradelis{
+			width:700px;
+			}
+			
+			.detailsglyph{
+				float:right;
+				margin-top:50px;
+			}
 			.masconryitem{
 				width: 200px;
 				margin: 10px;
@@ -124,8 +132,6 @@
 	 		<script type="text/template" id="prodlisttmp">
 				<div class = "masconrycontainer list-group" >
 				</div>
-
-
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
 				      	<div class="row">
@@ -139,6 +145,32 @@
 						</div>
 				          
 				       	        
+			</script>
+			<script type="text/template" id="tradelisttmp">
+						<ul class="tradelis list-group">
+
+						</ul>
+			</script>
+			<script type="text/template" id="tradelistitemtmp">		
+						
+						        	<span class="badge">{{status}}</span>
+						            <div class="row">
+						                <div class="col-md-4"><center>{{title1}}</center></div>
+						              	<div class="col-md-4"><center>{{title2}}</center></div>
+						          	</div>
+						        	<div class="row">						           
+						          		<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{img1url}}"></div>
+						              <span style="z-index:3;position: absolute;margin-top:80px;left: 230px;" class="glyphicon glyphicon-transfer"> </span>
+						              	<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{img2url}}"></div>
+						                <div class="col-md-4"> 
+											<form action="${pageContext.request.contextPath}/tradepage/{{tradeid}}">
+						                  			<button type="submit" class="gototradepg detailsglyph btn btn-default btn-lg">
+						                  				<span class="glyphicon glyphicon-circle-arrow-right"> </span>
+						                  			</button>  
+											</form>            
+						                </div>
+						          	</div>       
+						 
 			</script>
 			
 			<script type="text/template" id="proddetailtmp">
@@ -217,7 +249,7 @@
 			 <script type="text/javascript" id="tmp" src="resources/scripts/application/product.js"></script>
 			 <script type="text/javascript" id="tmp" src="resources/scripts/application/profile.js"></script>
 			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/app.js"></script>
-	 		<div>testtesttest</div>
+			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/tradelist.js"></script>
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>

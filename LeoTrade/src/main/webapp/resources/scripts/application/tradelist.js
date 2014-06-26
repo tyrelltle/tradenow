@@ -1,6 +1,6 @@
 
 
-Product=Backbone.Model.extend({
+Trade=Backbone.Model.extend({
 	defaults:{"tradeid":-1,"tradeurl":"","status":"","img1url":"",
 			  "img2url":"", "title1":"","title2":""},
 	urlRoot:"api/trade",
@@ -8,65 +8,24 @@ Product=Backbone.Model.extend({
 		
 });
 
-ProductList=Backbone.Collection.extend({
-	model:Product,
-	start: 0,
-	offset:5,
-	initialize:function(){
-		
-		this.url=ctx+"api/product/start/0/count/"+this.offset;
-	},
-	
-	addstart:function(){
-		this.start+=this.offset;
-		this.url=ctx+"api/product/start/"+this.start+"/count/"+this.offset;
-
-	},
-	melize:function(){
-		//make the model fetch only my products
-		this.url=this.url+"/me";
-	}
+TradeList=Backbone.Collection.extend({
+	model: Trade,
+	url:"api/trade"	
 });
 
 
 
-ProductListView=Backbone.View.extend({
-	columnnum: 3,
+TradeListView=Backbone.View.extend({
 	initialize:function(){
-		_.templateSettings = {
-			    interpolate: /\{\{(.+?)\}\}/gim,
-			    evaluate: /\{\{(.+?)\}\}/gim,
-			    escape: /\{\{\-(.+?)\}\}/gim
-			};
-		//this.template=_.template($('#prodListTmp').html());
-		var self=this;
-		this.model.bind("create",function(e){
-			$(self.el).append(new ProductListItemView({model:e}).render().el);
-			
-		});
-		this.model.bind("add",function(e){
-			var newelm=new ProductListItemView({model:e}).render().el;
-			$(self.el).find('.masconrycontainer').append(newelm);
-			if($('.masconrycontainer').length>0){
-				var container = document.querySelector('.masconrycontainer');
-				var msnry;
-				msnry= new Masonry(container);
-				msnry.appended([newelm]);
-				msnry.layout();
-				imagesLoaded( container, function() {
-					msnry.layout();
-				
-				});
-			}
-		});
-		this.template=_.template($("#prodlisttmp").html());
+		
+		this.template=_.template($("#tradelisttmp").html());
 	},
 	
 	render:function(){
 		var self=this;
 		$(this.el).html(this.template());
 		_.each(this.model.models,function(m){
-			$(self.el).find('.masconrycontainer').append(new ProductListItemView({model:m}).render().el);
+			$(self.el).find('.tradelis').append(new TradeListItemView({model:m}).render().el);
 		});
 		
 		return this;
@@ -80,31 +39,15 @@ ProductListView=Backbone.View.extend({
 });
 
 
-ProductListItemView=Backbone.View.extend({
+TradeListItemView=Backbone.View.extend({
 	initialize:function(){
-		_.templateSettings = {
-			    interpolate: /\{\{(.+?)\}\}/gim,
-			    evaluate: /\{\{(.+?)\}\}/gim,
-			    escape: /\{\{\-(.+?)\}\}/gim
-			};
-		this.template=_.template($("#prodlistitemtmp").html());
+		this.template=_.template($("#tradelistitemtmp").html());
 	},
 	
-	className:".masconryitem",
-	events:{"click .btn_detail":"clicked",
-			"click .btn_select":"selected"},
-	
-	clicked:function(){
-		app.navigate("proddetail"+this.model.get("prod_id"),true);
-		
-	},
-	selected:function(){
-		app.navigate("prodselected"+this.model.get("prod_id"),true);
-	},
+	className:"list-group-item",
+	tagName:"li",
 	render:function(){
-		var json={title:this.model.get("title"),
-				  thumurl:this.model.get("thumurl")};
-		$(this.el).html(this.template(json));
+		$(this.el).html(this.template(this.model.toJSON()));
 		return this;
 	},
 	close:function(){

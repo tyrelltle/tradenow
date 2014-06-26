@@ -13,13 +13,12 @@ public interface ITradeRepository{
 
 	public List<Trade> getByUserId(int profid,Trade.FROM_TO fromto);
 	public abstract Trade getByTradeid(int id);
-	
-	
-	public void addNew(IEntity obj);
-	
+		
 	public void remove(IEntity obj);
 
 	public void update(IEntity obj);
 
 	public int truncateTable(String tab);
+	
+	public void addNew(IEntity obj);
 }

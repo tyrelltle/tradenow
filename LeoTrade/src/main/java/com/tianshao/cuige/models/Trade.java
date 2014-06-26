@@ -140,7 +140,7 @@ public class Trade implements IEntity{
 		
 	}
 
-	public Trade.FROM_TO getSide(int userid){
+	public Trade.FROM_TO getSideByUserId(int userid){
 		if(this.prod1!=null && prod1.getOwner().getUserid()==userid)
 			return FROM_TO.FROM;
 		else if(this.prod2!=null && prod2.getOwner().getUserid()==userid)
@@ -155,8 +155,8 @@ public class Trade implements IEntity{
 	}
 
 
-	public String getMethod(int userid) {
-		FROM_TO ft=this.getSide(userid);
+	public String getMethodByUserId(int userid) {
+		FROM_TO ft=this.getSideByUserId(userid);
 		switch(ft){
 			case FROM: return method1; 
 			case TO: return method2; 

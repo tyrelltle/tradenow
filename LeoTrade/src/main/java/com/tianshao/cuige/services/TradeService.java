@@ -21,20 +21,13 @@ public class TradeService implements ITradeService{
 
 	
 	@Override
-	public boolean addNew(Trade t) {
+	public boolean addNewTrade(Trade t) {
 		t.setTrans_date(new Date());
 		tradeRepository.addNew(t);
 		return true;
 	}
 
-	@Override
-	public boolean update(Trade trade) {		
-		trade.setTrans_date(new Date());
-		tradeRepository.addNew(trade);
-		return true;
-		
-	}
-	
+
 	
 
 }

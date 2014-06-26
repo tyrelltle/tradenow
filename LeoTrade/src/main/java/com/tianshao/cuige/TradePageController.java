@@ -77,13 +77,15 @@ public class TradePageController {
 	    		fromprod=trade.getProd1();
 	    		if(fromprod==null){
 	    			fromprod=makeDummyFromProd();
-	    		}else{	dto.setProd1id(String.valueOf(fromprod.getProd_id()));}
+	    		}else{	
+	    			dto.setProd1id(String.valueOf(fromprod.getProd_id()));
+	    		}
 	    		model.addAttribute("msgtype",msg_suc);
 		    	model.addAttribute("msg","you already have a trade with this item!");
-		    	dto.setSide(trade.getSide(userid).name());
-		    	dto.setMethod(trade.getMethod(userid));  	
+		    	dto.setSide(trade.getSideByUserId(userid).name());
+		    	dto.setMethod(trade.getMethodByUserId(userid));  	
 	    	}else{
-		    	//get toprod
+	    		//create new trade
 		    	toprod=productRepository.getByProductId(toprod_id);
 		    	//make fromprod
 		    	fromprod = makeDummyFromProd();
@@ -91,7 +93,7 @@ public class TradePageController {
 		    	trade=new Trade();
 		    	trade.setDefaultValues();
 		    	trade.setProd2(toprod);
-		    	boolean success=tradeService.addNew(trade);
+		    	boolean success=tradeService.addNewTrade(trade);
 		    	if(!success){
 		    		resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Item not exist");
 	    			return null;
@@ -106,7 +108,35 @@ public class TradePageController {
 
 	        return "tradepage";
 	    }
-
+	    
+	    @RequestMapping(value="{trade_id}", method=RequestMethod.GET)
+	    public String getbyid(Model model, 
+	    				   @ModelAttribute("tradeForm")TradePageDTO dto, 
+	    				   @PathVariable int trade_id,
+	    				   HttpServletRequest req,
+	    				   HttpServletResponse resp) throws IOException {
+	    	int userid=SecurityContext.getCurrentUser().getUserid();
+	    	Trade trade=tradeRepository.getByTradeid(trade_id);
+	    	Product fromprod;
+	    	if(trade!=null){
+	    		//user already have a trade associated with toprod
+	    		fromprod=trade.getProd1();
+	    		if(fromprod==null){
+	    			fromprod=makeDummyFromProd();
+	    		}else{	
+	    			dto.setProd1id(String.valueOf(fromprod.getProd_id()));
+	    		}
+		    	dto.setSide(trade.getSideByUserId(userid).name());
+		    	dto.setMethod(trade.getMethodByUserId(userid));  	
+	    	}else{
+	    		resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Trade not exist");
+    			return null;		  
+	    	}
+	    	model.addAttribute("prod1",fromprod);
+	    	model.addAttribute("trade",trade);
+	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
+	        return "tradepage";
+	    }
 
 	    /*called to first time start trade page, while fromprod is not choosen yet*/
 	    @RequestMapping(value="submit", method=RequestMethod.POST)
@@ -131,8 +161,8 @@ public class TradePageController {
 	    	
 
 	    	trade.setMethod(dto.getMethod(), dto.getSide());
-	    	
-    		tradeService.update(trade);
+	    	if(prod1specified)
+	    		tradeRepository.update(trade);
 	    	
 	    	model.addAttribute("prod1",prod1);
 	    	model.addAttribute("trade",trade);    	
