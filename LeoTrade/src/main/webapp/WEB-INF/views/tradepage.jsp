@@ -79,8 +79,9 @@
 				        <div id="userpanel" class="sidepanel col-md-2">
 				             <ul class="list-group">
 				              <li class="list-group-item">
-									<p>${prod1.owner.firstname} ${prod1.owner.lastname}</p>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${prod1.owner.userid}">
+									<p>${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
+									<input type="hidden" id="hide_fromuserid" value="${trade.prod1.owner.userid}"/>
+				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod1.owner.userid}">
 				                 </li>
 				              <li class="list-group-item">
 				              	  <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
@@ -100,8 +101,8 @@
 				            <div class="midcontainer container">
 				                <div id="two_prod_row" class="row">
 				                    <div id="prod_left" class="col-md-5">
-				                    	<p>${prod1.title}</p>
-				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${prod1.thumurl}">
+				                    	<p>${trade.prod1.title}</p>
+				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${trade.prod1.thumurl}">
 				                    </div>
 				                    <div class="col-md-2" style="margin-top:40px">
 				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
@@ -109,6 +110,7 @@
 				                         <form:form  method="POST" commandName="tradeForm" action="${pageContext.request.contextPath}/tradepage/submit">
 				                         		<form:input type="hidden" path="tradeid" value="${dto.tradeid}" placeholder="Last name"/>
 				                         		<form:input type="hidden" path="prod1id" value="${dto.prod1id}" placeholder="Last name"/>
+				                         		<form:input type="hidden" path="prod2id" value="${dto.prod2id}" placeholder="Last name"/>				                         		
 				                         		<form:input type="hidden" path="method" value="${dto.method}" placeholder="Last name"/>
 				                         		<form:input type="hidden" path="side" value="${dto.side}" placeholder="Last name"/>
 				                         						                         			

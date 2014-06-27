@@ -74,12 +74,12 @@ public class ProductController {
 
 		
 
-		@RequestMapping(value={"start/{st}/count/{ct}/me"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public @ResponseBody List<ProductDTO> getmine(@PathVariable int st, @PathVariable int ct, HttpServletResponse resp) throws Exception {
+		@RequestMapping(value={"start/{st}/count/{ct}/ownerid/{userid}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody List<ProductDTO> getmine(@PathVariable int st, @PathVariable int ct, @PathVariable int userid, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getAllMine(SecurityContext.getCurrentUser().getUserid(),st,ct);
+	    	List<Product> prods=productRepository.getAllMine(userid,st,ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;

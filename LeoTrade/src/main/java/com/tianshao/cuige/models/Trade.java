@@ -46,16 +46,16 @@ public class Trade implements IEntity{
 	Date trans_date;
 	
 	@Column(name="status1")
-	String status1;
+	String status1="";
 	
 	@Column(name="status2")
-	String status2;
+	String status2="";
 	
 	@Column(name="method1")
-	String method1;
+	String method1="";
 	
 	@Column(name="method2")
-	String method2;
+	String method2="";
 
 	public Trade(){}
 	
@@ -131,7 +131,7 @@ public class Trade implements IEntity{
     public static final String ACCEPT="Accepted";
 
     //set 
-	public void setMethod(String method, String side) {
+	public void setMethodBySide(String method, String side) {
 		if(side.equals(Trade.FROM_TO.FROM.toString())){
     		setMethod1(method);
     	}else if (side.equals(Trade.FROM_TO.TO.toString())){
@@ -172,7 +172,7 @@ public class Trade implements IEntity{
 		if(this.status1.equals(STATUS.APPROVAL.name())&& this.status2.equals(STATUS.APPROVAL.name()))
 			dto.setStatus(STATUS.APPROVAL.name());
 		else
-			dto.setStatus(STATUS.APPROVAL.name());
+			dto.setStatus(STATUS.PENDING.name());
 		
 		dto.setTitle1(prod1.getTitle());
 		dto.setTitle2(prod2.getTitle());

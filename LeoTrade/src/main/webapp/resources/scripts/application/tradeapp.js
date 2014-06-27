@@ -17,7 +17,7 @@ AppRouter=Backbone.Router.extend({
 		//init product list
 		app.productList = new ProductList();
 		app.productListView = new ProductListView({model:this.productList});
-		app.productList.melize();
+		app.productList.makeprivate($('#hide_fromuserid').val());
 		app.productList.fetch({
 			
 			success:function(productList){
@@ -26,7 +26,7 @@ AppRouter=Backbone.Router.extend({
 					$('#prodlist').html(app.productListView.render().el);
 					$('#loadmore').click(function(e){
 						app.productList.addstart();
-						app.productList.melize();
+						app.productList.makeprivate($('#hide_fromuserid').val());
 						app.productList.fetch({remove:false});
 						
 					});

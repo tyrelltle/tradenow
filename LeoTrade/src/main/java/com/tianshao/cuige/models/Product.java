@@ -25,7 +25,7 @@ public class Product implements IEntity{
 	@Id
 	@Column(name="prod_id")
 	@GeneratedValue
-	int prod_id;
+	int prod_id=-1;
 	
 	@ManyToOne
 	@JoinColumn(name="ownerid")

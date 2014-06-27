@@ -22,9 +22,9 @@ ProductList=Backbone.Collection.extend({
 		this.url=ctx+"api/product/start/"+this.start+"/count/"+this.offset;
 
 	},
-	melize:function(){
+	makeprivate:function(userid){
 		//make the model fetch only my products
-		this.url=this.url+"/me";
+		this.url=this.url+"/ownerid/"+userid;
 	}
 });
 

@@ -54,6 +54,8 @@ public class TradePageController {
 		private final String msg_err="alert-danger";
 	    @Autowired 
 	    private IUserService userService;
+	    @Autowired 
+	    private IUserRepository userRepository;
 	    @Autowired
 	    private IProductRepository productRepository;
 	    @Autowired
@@ -68,44 +70,48 @@ public class TradePageController {
 	    				   @PathVariable int toprod_id,
 	    				   HttpServletRequest req,
 	    				   HttpServletResponse resp) throws IOException {
+	    	/**
+	    	 * 1.if trade exists, get the trade and tell user already have
+	    	 * 	  get prod1 prod2
+	    	 * 2.if trade not exist, create trade object not persist. 
+	    	 * 	  get prod2 by toprod_id
+	    	 * 	  create dummy prod1
+	    	 *    set prod1 prod2 to trade
+	    	 * 3.add trade to model attribute
+	    	 * 4.add to/from prod_id to dto
+	    	 */
+	    	boolean newtrade=false;
 	    	int userid=SecurityContext.getCurrentUser().getUserid();
+	    	Product toprod = null;
+	    	Product fromprod = null;
+	    	
+	    	//1
 	    	Trade trade=tradeRepository.getTradeWithGivenItem(userid, toprod_id);
-	    	Product toprod;
-	    	Product fromprod;
 	    	if(trade!=null){
-	    		//user already have a trade associated with toprod
-	    		fromprod=trade.getProd1();
-	    		if(fromprod==null){
-	    			fromprod=makeDummyFromProd();
-	    		}else{	
-	    			dto.setProd1id(String.valueOf(fromprod.getProd_id()));
-	    		}
 	    		model.addAttribute("msgtype",msg_suc);
 		    	model.addAttribute("msg","you already have a trade with this item!");
-		    	dto.setSide(trade.getSideByUserId(userid).name());
-		    	dto.setMethod(trade.getMethodByUserId(userid));  	
-	    	}else{
-	    		//create new trade
-		    	toprod=productRepository.getByProductId(toprod_id);
-		    	//make fromprod
-		    	fromprod = makeDummyFromProd();
-		    	
+		    	fromprod=trade.getProd1();
+		    	toprod=trade.getProd2();
+	    	}	    	
+	    	//2
+	    	else{
+	    		newtrade=true;
 		    	trade=new Trade();
-		    	trade.setDefaultValues();
-		    	trade.setProd2(toprod);
-		    	boolean success=tradeService.addNewTrade(trade);
-		    	if(!success){
-		    		resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Item not exist");
-	    			return null;
-	    		}
-		    	
-		    	dto.setSide(Trade.FROM_TO.FROM.toString());
-		    	dto.setMethod(Trade.INPERSON);
+		    	fromprod = makeDummyFromProd(SecurityContext.getCurrentUser().getUserid());
+		    	toprod=productRepository.getByProductId(toprod_id);
 	    	}
-	    	model.addAttribute("prod1",fromprod);
+	    	trade.setProd1(fromprod);
+	    	trade.setProd2(toprod);
+	    	//3
 	    	model.addAttribute("trade",trade);
+	    	//4
+	    	dto.setSide(trade.getSideByUserId(userid).name());
+		    dto.setMethod(trade.getMethodByUserId(userid));      
 	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
-
+	    	dto.setProd2id(String.valueOf(toprod_id));
+	    	dto.setProd1id(String.valueOf(fromprod.getProd_id()));
+	    			   
+	    	
 	        return "tradepage";
 	    }
 	    
@@ -121,19 +127,15 @@ public class TradePageController {
 	    	if(trade!=null){
 	    		//user already have a trade associated with toprod
 	    		fromprod=trade.getProd1();
-	    		if(fromprod==null){
-	    			fromprod=makeDummyFromProd();
-	    		}else{	
-	    			dto.setProd1id(String.valueOf(fromprod.getProd_id()));
-	    		}
+	    		dto.setProd1id(String.valueOf(fromprod.getProd_id()));
 		    	dto.setSide(trade.getSideByUserId(userid).name());
 		    	dto.setMethod(trade.getMethodByUserId(userid));  	
 	    	}else{
 	    		resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Trade not exist");
     			return null;		  
 	    	}
-	    	model.addAttribute("prod1",fromprod);
 	    	model.addAttribute("trade",trade);
+	    	dto.setProd2id(String.valueOf(trade.getProd2().getProd_id()));
 	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
 	        return "tradepage";
 	    }
@@ -143,36 +145,61 @@ public class TradePageController {
 	    public String submit(Model model, 
 	    				   @ModelAttribute("tradeForm")TradePageDTO dto, 
 	    				   HttpServletResponse resp) throws Exception {
+
 	    	boolean prod1specified=false;
-	    	Trade trade=tradeRepository.getByTradeid(Integer.valueOf(dto.getTradeid()));
 	    	Product prod1;
-	    	if(dto.getProd1id()==null || dto.getProd1id().equals("")){
-	    		prod1=this.makeDummyFromProd();
+	    	Product prod2;
+	    	if(dto.getProd1id()==null || dto.getProd1id().equals("-1")){
+	    		prod1=this.makeDummyFromProd(Integer.valueOf(dto.getProd1id()));
 	    		model.addAttribute("msgtype",msg_err);
 		    	model.addAttribute("msg","Please choose an item from your inventory!");		    	
 		    	prod1specified=false;
 	    	}else{
 	    		prod1=productRepository.getByProductId(Integer.valueOf(dto.getProd1id()));
-		    	trade.setProd1(prod1);
 	    		model.addAttribute("msgtype",msg_suc);
 		    	model.addAttribute("msg","you have proposed a new item!");
 		    	prod1specified=true;
 	    	}
 	    	
+	    	Trade trade=null;
+	    	if(prod1specified){
+	    		//create or update the trade
+	    		boolean firsttime=false;
+		    	trade=tradeRepository.getByTradeid(Integer.valueOf(dto.getTradeid()));
+	    		if(trade==null){	
+	    			firsttime=true;
+	    			trade=new Trade();
+	    			prod2=productRepository.getByProductId(Integer.valueOf(dto.getProd2id()));
 
-	    	trade.setMethod(dto.getMethod(), dto.getSide());
-	    	if(prod1specified)
-	    		tradeRepository.update(trade);
-	    	
-	    	model.addAttribute("prod1",prod1);
+	    		}else{
+	    			prod2=trade.getProd2();
+	    		}
+	    		trade.setProd1(prod1);
+	    		trade.setProd2(prod2);
+	    		if(firsttime){
+	    			tradeService.addNewTrade(trade);
+	    			trade.setDefaultValues();
+	    		}
+	    		else{
+	    			tradeRepository.update(trade);
+	    		}
+		    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
+		    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
+
+	    	}else{
+	    		//still use dummy trade
+		    	trade=new Trade();
+		    	prod2=productRepository.getByProductId(Integer.valueOf(dto.getProd2id()));
+		    	trade.setProd1(prod1);
+		    	trade.setProd2(prod2);
+	    	}
 	    	model.addAttribute("trade",trade);    	
-	    	
 	        return "tradepage";
 	    }
 	    
-		private Product makeDummyFromProd() {
+		private Product makeDummyFromProd(int ownerid) {
 			Product fromprod=new Product();
-	    	User fromuser=userService.currentUser();
+	    	User fromuser=userRepository.getByUserid(ownerid);
 	    	fromprod.setOwner(fromuser);
 	    	fromprod.setThumurl("http://img.vip.xunlei.com/img/banner/201307291420313509.jpg");
 	    	fromprod.setTitle("Please select an Item");

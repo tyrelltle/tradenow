@@ -4,6 +4,7 @@ public class TradePageDTO {
 	
     	 String tradeid;
     	 String prod1id;
+    	 String prod2id;
     	 String side;
     	 String method;
 		public String getTradeid() {
@@ -29,6 +30,12 @@ public class TradePageDTO {
 		}
 		public void setMethod(String method) {
 			this.method = method;
+		}
+		public String getProd2id() {
+			return prod2id;
+		}
+		public void setProd2id(String prod2id) {
+			this.prod2id = prod2id;
 		}
     	 
     	 
