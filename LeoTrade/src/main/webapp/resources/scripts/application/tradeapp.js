@@ -6,6 +6,14 @@ AppRouter=Backbone.Router.extend({
 			app.navigate("prodlis",true);
 			
 		});
+		
+		if($('#side').val()=='FROM')
+			$('.fromusernm').html('YOU');
+		else if($('#side').val()=='TO')
+			$('.tousernm').html('YOU');
+
+		
+		
 	},
 	routes:{
 		"prodlis":"prodlis",

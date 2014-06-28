@@ -139,7 +139,7 @@ h3,h4,h5 {
  	<div class="col-md-12">
         <div class="navbar-header">
           
-          <a href="#" class="navbar-brand">Trade Now!</a>
+          <a href="${pageContext.request.contextPath}" class="navbar-brand">Trade Now!</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
           <i class="glyphicon glyphicon-search"></i>
           </button>

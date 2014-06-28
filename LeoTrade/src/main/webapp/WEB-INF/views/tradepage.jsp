@@ -79,7 +79,7 @@
 				        <div id="userpanel" class="sidepanel col-md-2">
 				             <ul class="list-group">
 				              <li class="list-group-item">
-									<p>${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
+									<p class="fromusernm">${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
 									<input type="hidden" id="hide_fromuserid" value="${trade.prod1.owner.userid}"/>
 				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod1.owner.userid}">
 				                 </li>
@@ -90,7 +90,6 @@
 				                Delivery Method
 				                  <select class="form-control">
 				                    <option>In Person</option>
-				                    <option>Mail</option>
 				                  </select> 
 				               
 				              </li>
@@ -168,15 +167,13 @@
 				    	<div id="userpanel" class="sidepanel upblock col-md-2">
 				      		<ul class="list-group">
 				              <li class="list-group-item">
-				              		<p>${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
+				              		<p class="tousernm">${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
 				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod2.owner.userid}">
 				              </li>
-				              <li class="list-group-item"><button type="button" class="btn btn-default">Choose Item</button></li>
 				              <li class="list-group-item">
 				                Delivery Method
 				                  <select class="form-control">
 				                    <option>In Person</option>
-				                    <option>Mail</option>
 				                  </select> 
 				               
 				              </li>

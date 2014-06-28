@@ -193,6 +193,8 @@ public class TradePageController {
 		    	trade.setProd1(prod1);
 		    	trade.setProd2(prod2);
 	    	}
+	    	dto.setSide(trade.getSideByUserId(SecurityContext.getCurrentUser().getUserid()).name());
+
 	    	model.addAttribute("trade",trade);    	
 	        return "tradepage";
 	    }

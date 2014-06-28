@@ -1,14 +1,19 @@
 package com.tianshao.cuige;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +38,7 @@ import com.tianshao.cuige.models.User;
 import com.tianshao.cuige.models.DTO.UserDTO;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IUserService;
+import com.tianshao.cuige.shared.Util;
 
 
 
@@ -50,6 +56,7 @@ public class UserController {
 	    @Autowired
 	    private IUserService userService;
 	    
+	    final String defaultimgurl="http://img.teapic.com/thumbs/201207/27/124104mawrcsfomsejkmvl.jpg.middle.jpg";
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
 			
@@ -106,17 +113,21 @@ public class UserController {
 		} 
 		
 		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-		public @ResponseBody byte[] getimg() {
+		public @ResponseBody byte[] getimg() throws IOException {
 			
-			return userService.currentUser().getImage();
-			
+			byte[] ret= userService.currentUser().getImage();
+			if(ret==null)
+				ret=Util.getimageByUrl(defaultimgurl);
+			return ret;
 
 		}
 		
 		@RequestMapping(value="img/userid/{userid}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletResponse resp) {
-			return userRepository.getByUserid(userid).getImage();
-			
+		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletResponse resp) throws IOException {
+			byte[] ret= userRepository.getByUserid(userid).getImage();
+			if(ret==null)
+				ret=Util.getimageByUrl(defaultimgurl);
+			return ret;
 
 	    }	    
 	
