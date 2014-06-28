@@ -1,5 +1,6 @@
 package com.tianshao.cuige.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -7,6 +8,7 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tianshao.cuige.models.IEntity;
 import com.tianshao.cuige.models.Trade;
 
 
@@ -64,6 +66,13 @@ public class TradeRepository extends BaseRepository implements ITradeRepository{
 		Session session = sessionFactory.getCurrentSession();
 		Query query= session.createQuery("from Trade where trade_id="+id);
 		return (Trade) query.uniqueResult();
+	}
+
+	@Transactional
+	@Override
+	public void addNew(IEntity obj) {
+		((Trade)obj).setTrans_date(new Date());
+		super.addNew(obj);
 	}
 
 

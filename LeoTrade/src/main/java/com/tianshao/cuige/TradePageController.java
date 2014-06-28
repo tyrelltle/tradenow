@@ -66,7 +66,6 @@ public class TradePageController {
 	    /*called to first time start trade page, while fromprod is not choosen yet*/
 	    @RequestMapping(value="toprod/{toprod_id}", method=RequestMethod.GET)
 	    public String home(Model model, 
-	    				   @ModelAttribute("tradeForm")TradePageDTO dto, 
 	    				   @PathVariable int toprod_id,
 	    				   HttpServletRequest req,
 	    				   HttpServletResponse resp) throws IOException {
@@ -104,20 +103,13 @@ public class TradePageController {
 	    	trade.setProd2(toprod);
 	    	//3
 	    	model.addAttribute("trade",trade);
-	    	//4
-	    	dto.setSide(trade.getSideByUserId(userid).name());
-		    dto.setMethod(trade.getMethodByUserId(userid));      
-	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
-	    	dto.setProd2id(String.valueOf(toprod_id));
-	    	dto.setProd1id(String.valueOf(fromprod.getProd_id()));
-	    			   
-	    	
+	    	model.addAttribute("side",trade.getSideByUserId(SecurityContext.getCurrentUser().getUserid()));
+
 	        return "tradepage";
 	    }
 	    
 	    @RequestMapping(value="{trade_id}", method=RequestMethod.GET)
 	    public String getbyid(Model model, 
-	    				   @ModelAttribute("tradeForm")TradePageDTO dto, 
 	    				   @PathVariable int trade_id,
 	    				   HttpServletRequest req,
 	    				   HttpServletResponse resp) throws IOException {
@@ -127,77 +119,17 @@ public class TradePageController {
 	    	if(trade!=null){
 	    		//user already have a trade associated with toprod
 	    		fromprod=trade.getProd1();
-	    		dto.setProd1id(String.valueOf(fromprod.getProd_id()));
-		    	dto.setSide(trade.getSideByUserId(userid).name());
-		    	dto.setMethod(trade.getMethodByUserId(userid));  	
 	    	}else{
 	    		resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Trade not exist");
     			return null;		  
 	    	}
 	    	model.addAttribute("trade",trade);
-	    	dto.setProd2id(String.valueOf(trade.getProd2().getProd_id()));
-	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
+	    	model.addAttribute("side",trade.getSideByUserId(userid));
+
 	        return "tradepage";
 	    }
 
-	    /*called to first time start trade page, while fromprod is not choosen yet*/
-	    @RequestMapping(value="submit", method=RequestMethod.POST)
-	    public String submit(Model model, 
-	    				   @ModelAttribute("tradeForm")TradePageDTO dto, 
-	    				   HttpServletResponse resp) throws Exception {
 
-	    	boolean prod1specified=false;
-	    	Product prod1;
-	    	Product prod2;
-	    	if(dto.getProd1id()==null || dto.getProd1id().equals("-1")){
-	    		prod1=this.makeDummyFromProd(Integer.valueOf(dto.getProd1id()));
-	    		model.addAttribute("msgtype",msg_err);
-		    	model.addAttribute("msg","Please choose an item from your inventory!");		    	
-		    	prod1specified=false;
-	    	}else{
-	    		prod1=productRepository.getByProductId(Integer.valueOf(dto.getProd1id()));
-	    		model.addAttribute("msgtype",msg_suc);
-		    	model.addAttribute("msg","you have proposed a new item!");
-		    	prod1specified=true;
-	    	}
-	    	
-	    	Trade trade=null;
-	    	if(prod1specified){
-	    		//create or update the trade
-	    		boolean firsttime=false;
-		    	trade=tradeRepository.getByTradeid(Integer.valueOf(dto.getTradeid()));
-	    		if(trade==null){	
-	    			firsttime=true;
-	    			trade=new Trade();
-	    			prod2=productRepository.getByProductId(Integer.valueOf(dto.getProd2id()));
-
-	    		}else{
-	    			prod2=trade.getProd2();
-	    		}
-	    		trade.setProd1(prod1);
-	    		trade.setProd2(prod2);
-	    		if(firsttime){
-	    			tradeService.addNewTrade(trade);
-	    			trade.setDefaultValues();
-	    		}
-	    		else{
-	    			tradeRepository.update(trade);
-	    		}
-		    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
-		    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
-
-	    	}else{
-	    		//still use dummy trade
-		    	trade=new Trade();
-		    	prod2=productRepository.getByProductId(Integer.valueOf(dto.getProd2id()));
-		    	trade.setProd1(prod1);
-		    	trade.setProd2(prod2);
-	    	}
-	    	dto.setSide(trade.getSideByUserId(SecurityContext.getCurrentUser().getUserid()).name());
-
-	    	model.addAttribute("trade",trade);    	
-	        return "tradepage";
-	    }
 	    
 		private Product makeDummyFromProd(int ownerid) {
 			Product fromprod=new Product();

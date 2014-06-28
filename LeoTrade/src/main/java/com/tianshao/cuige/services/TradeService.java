@@ -15,17 +15,6 @@ import com.tianshao.cuige.repository.ITradeRepository;
 
 @Service("tradeService")
 public class TradeService implements ITradeService{
-	@Autowired
-	ITradeRepository tradeRepository;
-
-
-	
-	@Override
-	public boolean addNewTrade(Trade t) {
-		t.setTrans_date(new Date());
-		tradeRepository.addNew(t);
-		return true;
-	}
 
 
 	

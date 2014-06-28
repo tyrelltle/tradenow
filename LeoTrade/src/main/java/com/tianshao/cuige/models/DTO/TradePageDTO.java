@@ -7,6 +7,30 @@ public class TradePageDTO {
     	 String prod2id;
     	 String side;
     	 String method;
+    	 String msg="";
+    	 String msgtype="";//suc err
+    	 
+    	public TradePageDTO(){}
+    	
+    	
+    	public String getMsgtype() {
+			return msgtype;
+		}
+
+
+		public void setMsgtype(String msgtype) {
+			this.msgtype = msgtype;
+		}
+
+
+		public void setErrorMessage(String msg){
+    		msgtype="err";
+    		this.msg=msg;
+    	}
+    	public void setSuccessMessage(String msg){
+    		msgtype="suc";
+    		this.msg=msg;
+    	}
 		public String getTradeid() {
 			return tradeid;
 		}
@@ -36,6 +60,12 @@ public class TradePageDTO {
 		}
 		public void setProd2id(String prod2id) {
 			this.prod2id = prod2id;
+		}
+		public String getMsg() {
+			return msg;
+		}
+		public void setMsg(String msg) {
+			this.msg = msg;
 		}
     	 
     	 

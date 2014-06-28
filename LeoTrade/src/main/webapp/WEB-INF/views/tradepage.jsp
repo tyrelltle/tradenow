@@ -14,7 +14,7 @@
 		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/imagesloaded.pkgd.js"></script>
 				<style>
 				/* CSS used here will be applied after bootstrap.css */
-				#btnsubmit{
+				.btnsubmit{
 				margin-left:-12px;
 				margin-top:10px;
 				border-radius:20px;
@@ -61,7 +61,9 @@
 				#catlistpanel{
 					float:left;
 				}
-					
+				.hid{
+					display:none;
+				}
 				</style>
 </tiles:putAttribute>
 <tiles:putAttribute name="left">
@@ -72,8 +74,18 @@
 				
 
 				<div class="container">
-				      	<c:if test="${not empty msg}">
-			      			<div class="alert ${msgtype}">${msg}</div>
+			      		<div id="msgholder" class="hid">
+			      			<div class="row">
+			      				<div id="msg" class="col-md-11"></div>
+			      				<div class="col-md-1">
+			      					<button type="button" class="msgdismiss btn btn-default btn-sm">
+								  		<span class="glyphicon glyphicon-remove"></span>
+									</button>
+								</div>
+			      			</div>
+			      		</div>
+			      		<c:if test="${not empty msg}">
+			      			<input id="srvrmsg" type="hidden" value="${msg}"/>
 			    		</c:if>
 				    <div id="block" class="panel col-md-12">
 				        <div id="userpanel" class="sidepanel col-md-2">
@@ -106,15 +118,12 @@
 				                    <div class="col-md-2" style="margin-top:40px">
 				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
 				                        </button>
-				                         <form:form  method="POST" commandName="tradeForm" action="${pageContext.request.contextPath}/tradepage/submit">
-				                         		<form:input type="hidden" path="tradeid" value="${dto.tradeid}" placeholder="Last name"/>
-				                         		<form:input type="hidden" path="prod1id" value="${dto.prod1id}" placeholder="Last name"/>
-				                         		<form:input type="hidden" path="prod2id" value="${dto.prod2id}" placeholder="Last name"/>				                         		
-				                         		<form:input type="hidden" path="method" value="${dto.method}" placeholder="Last name"/>
-				                         		<form:input type="hidden" path="side" value="${dto.side}" placeholder="Last name"/>
-				                         						                         			
-				                       			<form:button type="submit" id="btnsubmit" class="btn btn-success">Propose!</form:button>
-				                       	 </form:form>
+		                         		<input type="hidden" id="tradeid" value="${trade.trade_id}" placeholder="Last name"/>
+		                         		<input type="hidden" id="prod1id" value="${trade.prod1.prod_id}" placeholder="Last name"/>
+		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>				                         		
+		                         		<input type="hidden" id="side" value="${side}" placeholder="Last name"/>
+		                         						                         			
+		                       			<button type="submit" id="btnpropose" class="btnsubmit btn btn-success">Propose!</button>
 				                        
 				                    </div>
 				                    <div id="prod_right" class="col-md-5">
@@ -184,7 +193,8 @@
 				        </div>
 				    </div>
 				</div>
-				
+		
+
 			<!-- product list Modal -->
 			<div class="modal fade" id="prodlismodel" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg-cust modal-dialog">

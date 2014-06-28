@@ -7,12 +7,19 @@ AppRouter=Backbone.Router.extend({
 			
 		});
 		
+		$('#btnpropose').click(function(){
+			app.proposed();
+		});
+		
 		if($('#side').val()=='FROM')
 			$('.fromusernm').html('YOU');
 		else if($('#side').val()=='TO')
 			$('.tousernm').html('YOU');
 
-		
+		if($('#srvrmsg').length>0){
+			
+			alert($('#srvrmsg').val());
+		}
 		
 	},
 	routes:{
@@ -76,6 +83,40 @@ AppRouter=Backbone.Router.extend({
 		$('#prodlismodel').modal('hide');
 		app.navigate("",true);
 
+	},
+	
+	proposed:function(){
+		$.ajax({
+			  type: "POST",
+		      contentType: "application/json",
+		      dataType: "json",
+			  url: ctx+"api/trade/propose",
+			  data: JSON.stringify({ tradeid: $('#tradeid').val(), 
+				  	  prod1id: $('#prod1id').val(), 
+				  	  prod2id: $('#prod2id').val(),
+				  	  side:$('#side').val(),
+				  	  method: "", 
+				  	  msg: "", 
+				  	  msgtype: ""})
+			})
+			  .done(function( msg ) {
+					var jstr=JSON.stringify(msg);
+					var jsn=jQuery.parseJSON(jstr);
+					if(jsn.msgtype=="suc"){
+						$('#msgholder').attr("class","alert alert-success");
+						$('#msg').html(jsn.msg);
+						$('.msgdismiss').click(function(){
+							$('#msgholder').attr("class","hid");
+						});
+					}else if(jsn.msgtype=="err"){
+						$('#msgholder').attr("class","alert alert-danger");
+						$('#msg').html(jsn.msg);
+						$('.msgdismiss').click(function(){
+							$('#msgholder').attr("class","hid");
+						});
+					}					
+				   
+		 });	
 	}
 });
 
