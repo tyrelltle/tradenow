@@ -11,6 +11,10 @@ AppRouter=Backbone.Router.extend({
 			app.proposed();
 		});
 		
+		$('#btnaccepted').click(function(){
+			app.accepted();
+		});
+		
 		if($('#side').val()=='FROM')
 			$('.fromusernm').html('YOU');
 		else if($('#side').val()=='TO')
@@ -20,7 +24,22 @@ AppRouter=Backbone.Router.extend({
 			
 			alert($('#srvrmsg').val());
 		}
-		
+		this.initstatus($('#status1').val(),$('#status2').val());
+	},
+	initstatus:function(status1,status2){
+		if(status1=="PENDING"){
+			$('#label_status1').attr("class","label label-warning");
+		}else if(status1=="ACCEPTED"){
+			$('#label_status1').attr("class","label label-success");
+		}
+		$('#label_status1').html(status1);
+		if(status2=="PENDING"){
+			$('#label_status2').attr("class","label label-warning");
+		}else if(status2=="ACCEPTED"){
+			$('#label_status2').attr("class","label label-success");
+		}
+		$('#label_status2').html(status2);
+
 	},
 	routes:{
 		"prodlis":"prodlis",
@@ -108,6 +127,38 @@ AppRouter=Backbone.Router.extend({
 						$('.msgdismiss').click(function(){
 							$('#msgholder').attr("class","hid");
 						});
+						$('#tradeid').val(jsn.tradeid);
+
+					}else if(jsn.msgtype=="err"){
+						$('#msgholder').attr("class","alert alert-danger");
+						$('#msg').html(jsn.msg);
+						$('.msgdismiss').click(function(){
+							$('#msgholder').attr("class","hid");
+						});
+					}					
+				   
+		 });	
+	},
+	accepted:function(){
+		var url=ctx+"api/trade/accept/tradeid/"+$('#tradeid').val()+"/side/"+$('#side').val();
+		$.ajax({
+			  type: "POST",
+		      contentType: "application/json",
+			  url: url,			
+			})
+			  .done(function( msg ) {
+					var jstr=JSON.stringify(msg);
+					var jsn=jQuery.parseJSON(jstr);
+					if(jsn.msgtype=="suc"){
+						$('#msgholder').attr("class","alert alert-success");
+						$('#msg').html(jsn.msg);
+						$('.msgdismiss').click(function(){
+							$('#msgholder').attr("class","hid");
+						});
+						$('status1').val(jsn.status1);
+						$('status2').val(jsn.status2);
+						app.initstatus(jsn.status1,jsn.status2);
+
 					}else if(jsn.msgtype=="err"){
 						$('#msgholder').attr("class","alert alert-danger");
 						$('#msg').html(jsn.msg);

@@ -153,7 +153,7 @@
 			</script>
 			<script type="text/template" id="tradelistitemtmp">		
 						
-						        	<span class="badge">{{status}}</span>
+						        	<span id="span_status" class="badge">{{status}}</span>
 						            <div class="row">
 						                <div class="col-md-4"><center>{{title1}}</center></div>
 						              	<div class="col-md-4"><center>{{title2}}</center></div>

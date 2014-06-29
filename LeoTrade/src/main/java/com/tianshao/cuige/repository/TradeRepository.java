@@ -1,5 +1,7 @@
 package com.tianshao.cuige.repository;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.List;
 
@@ -10,11 +12,41 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.models.IEntity;
 import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.shared.Pair;
 
 
 @Repository("tradeRepository")
 
 public class TradeRepository extends BaseRepository implements ITradeRepository{
+	
+	/**
+	 * 
+	 * @param trade  must contain tradeid and column values that are to be updated
+	 * @param columns  array of pair of setter name and value
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
+	 */
+	@Override
+	@Transactional
+	public Trade update(int trade_id, List<Pair<String, Object>>columns) throws NoSuchMethodException, 
+																		  SecurityException, 
+																		  IllegalAccessException, 
+																		  IllegalArgumentException, 
+																		  InvocationTargetException {
+		//to avoid race condition, only update specific column
+		Session session = sessionFactory.getCurrentSession();
+		Trade trade = (Trade) session.get(Trade.class,trade_id); 
+		for(int i=0;i<columns.size();i++){
+			Method method=Trade.class.getMethod(columns.get(i).first, columns.get(i).second.getClass());
+			method.invoke(trade, columns.get(i).second);
+		}
+		return trade;
+
+	}
+
 
 	/**
 	 * 

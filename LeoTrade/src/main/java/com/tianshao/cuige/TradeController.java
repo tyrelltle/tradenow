@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,7 @@ import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.models.Product;
 import com.tianshao.cuige.models.Trade;
 import com.tianshao.cuige.models.Trade.FROM_TO;
+import com.tianshao.cuige.models.DTO.MessageDTO;
 import com.tianshao.cuige.models.DTO.TradeDTO;
 import com.tianshao.cuige.models.DTO.TradePageDTO;
 import com.tianshao.cuige.repository.IProductRepository;
@@ -78,14 +80,42 @@ public class TradeController {
        		trade.setMethodBySide(dto.getMethod(), dto.getSide());	
 
     		if(firsttime){
+    			trade.setDefaultValues();
     			tradeRepository.addNew(trade);
     		}
     		else{
-    			tradeRepository.update(trade);
+    			trade=tradeService.updateProposedTrade(trade, dto.getSide());
     		}
 	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
 	    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
 	    	dto.setSuccessMessage("Successfully proposed the item!");
 	        return dto;
 	    }
+		
+		@RequestMapping(value="accept/tradeid/{tradeid}/side/{side}",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
+	    public @ResponseBody TradePageDTO accept(@PathVariable String side, @PathVariable int tradeid,
+	    				   HttpServletResponse resp) throws Exception {
+
+			TradePageDTO dto=new TradePageDTO();
+	    	Trade trade=null;
+	    	trade=tradeRepository.getByTradeid(tradeid);
+    		if(trade==null){	
+    	    	dto.setErrorMessage("Please propose an item first before accet a trade!");
+    	    	return dto;
+    		}
+    		try{
+    			trade.setStatusBySide(side, Trade.STATUS.ACCEPTED);
+    		}catch(Exception e){
+    	    	dto.setErrorMessage(e.getMessage());
+    		}
+    		trade=tradeService.updateAcceptedTrade(trade, side);
+    		//get up to dated 
+    		trade=tradeRepository.getByTradeid(trade.getTrade_id());
+    		dto.setTradeid(String.valueOf(trade.getTrade_id()));
+    		dto.setStatus1(trade.getStatus1());
+    		dto.setStatus2(trade.getStatus2());
+	    	dto.setSuccessMessage("You have accepted the item!");
+	        return dto;
+	    }
+		
 }

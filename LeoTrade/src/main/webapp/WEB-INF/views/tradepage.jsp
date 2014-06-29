@@ -95,6 +95,7 @@
 									<input type="hidden" id="hide_fromuserid" value="${trade.prod1.owner.userid}"/>
 				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod1.owner.userid}">
 				                 </li>
+				             <li class="list-group-item"> Status: <span  id="label_status1" style="color:white"></span></li>
 				              <li class="list-group-item">
 				              	  <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
 				              </li>
@@ -120,10 +121,14 @@
 				                        </button>
 		                         		<input type="hidden" id="tradeid" value="${trade.trade_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod1id" value="${trade.prod1.prod_id}" placeholder="Last name"/>
-		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>				                         		
+		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>	
+		                         		<input type="hidden" id="status1" value="${trade.status1}" placeholder="Last name"/>				                         		
+		                         		<input type="hidden" id="status2" value="${trade.status2}" placeholder="Last name"/>				                         		
+		                         					                         		
 		                         		<input type="hidden" id="side" value="${side}" placeholder="Last name"/>
 		                         						                         			
-		                       			<button type="submit" id="btnpropose" class="btnsubmit btn btn-success">Propose!</button>
+		                       			<button type="submit" id="btnpropose" style="border-radius: 20px" class="btnsubmit btn btn-success">Propose!</button>
+				                        <button type="button" id="btnaccepted" style="width:100%;margin-top: 5px;margin-left: -4px;border-radius: 20px" class="btn btn-success">Accept!</button>
 				                        
 				                    </div>
 				                    <div id="prod_right" class="col-md-5">
@@ -179,6 +184,8 @@
 				              		<p class="tousernm">${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
 				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod2.owner.userid}">
 				              </li>
+				              <li class="list-group-item"> Status: <span id="label_status2" style="color:white"></span></li>
+				              
 				              <li class="list-group-item">
 				                Delivery Method
 				                  <select class="form-control">

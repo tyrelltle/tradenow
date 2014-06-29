@@ -24,7 +24,7 @@ public class Trade implements IEntity{
 	}
 	
 	public static enum STATUS{
-		PENDING,APPROVAL
+		PENDING,ACCEPTED,DONE
 		
 	}
 	
@@ -127,8 +127,6 @@ public class Trade implements IEntity{
 	
     public static final String DELIVERY="Delivery";
     public static final String INPERSON="In Person";
-    public static final String PEND="Pending";
-    public static final String ACCEPT="Accepted";
 
     //set 
 	public void setMethodBySide(String method, String side) {
@@ -150,8 +148,19 @@ public class Trade implements IEntity{
 	public void setDefaultValues(){
     	this.setMethod1(Trade.INPERSON);
     	this.setMethod2(Trade.INPERSON);
-    	this.setStatus1(Trade.PEND);
-    	this.setStatus2(Trade.PEND);
+    	this.setStatus1(Trade.STATUS.PENDING.name());
+    	this.setStatus2(Trade.STATUS.PENDING.name());
+	}
+	
+	public void setStatusBySide(String side, STATUS status) throws Exception{
+
+		if(side.equals(FROM_TO.FROM.name())){
+			this.setStatus1(status.name());
+		}else if(side.equals(FROM_TO.TO.name())){
+			this.setStatus2(status.name());
+		}else{
+			throw new Exception("Internal error: wrong side string. must be either FROM or TO");
+		}
 	}
 
 
@@ -169,8 +178,8 @@ public class Trade implements IEntity{
 		dto.setImg1url(prod1.getThumurl());
 		dto.setImg2url(prod2.getThumurl());
 		
-		if(this.status1.equals(STATUS.APPROVAL.name())&& this.status2.equals(STATUS.APPROVAL.name()))
-			dto.setStatus(STATUS.APPROVAL.name());
+		if(this.status1.equals(STATUS.ACCEPTED.name())&& this.status2.equals(STATUS.ACCEPTED.name()))
+			dto.setStatus(STATUS.DONE.name());
 		else
 			dto.setStatus(STATUS.PENDING.name());
 		

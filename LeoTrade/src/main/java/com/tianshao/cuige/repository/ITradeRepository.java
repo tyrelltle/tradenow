@@ -1,11 +1,13 @@
 package com.tianshao.cuige.repository;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.models.IEntity;
 import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.shared.Pair;
 
 public interface ITradeRepository{
 
@@ -21,4 +23,9 @@ public interface ITradeRepository{
 	public int truncateTable(String tab);
 	
 	public void addNew(IEntity obj);
+
+	Trade update(int trade_id, List<Pair<String, Object>> columns)
+			throws NoSuchMethodException, SecurityException,
+			IllegalAccessException, IllegalArgumentException,
+			InvocationTargetException;
 }

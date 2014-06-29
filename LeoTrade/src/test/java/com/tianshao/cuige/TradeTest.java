@@ -111,7 +111,36 @@ public class TradeTest {
 
 	}
 	*/
-	
+	@Test
+	public void testupdatecolumns() throws Exception{
+		//trade1: prod1->prod2 owner1 -> owner2
+		//trade2: prod3->prod4 owner1 -> owner2
+		//trade3: prod5->prod6 owner2 -> owner1
+		
+		Product prod1= new Product();
+		prod1.setCategory(cat);
+		prod1.setOwner(prof);
+		productRepository.addNew(prod1);
+		
+		Product prod2= new Product();
+		prod2.setCategory(cat);
+		prod2.setOwner(prof2);
+		productRepository.addNew(prod2);
+		
+		Trade t=new Trade();
+		t.setProd1(prod1);
+		t.setProd2(prod2);
+		t.setDefaultValues();
+		tradeRepository.addNew(t);
+		
+		t.setMethod1("1");
+		t=tradeService.updateProposedTrade(t, "FROM");
+		t.setDefaultValues();
+		t.setMethod2("2");
+		t=tradeService.updateProposedTrade(t, "TO");
+		assertTrue(t.getMethod1().equals("1") && t.getMethod2().equals("2"));
+
+	}
 	@Test
 	public void deeptestadd() throws Exception{
 		//trade1: prod1->prod2 owner1 -> owner2
@@ -151,17 +180,17 @@ public class TradeTest {
 		Trade trade1=new Trade();
 		trade1.setProd1(prod1);
 		trade1.setProd2(prod2);
-		tradeService.validateAndAddTrade(trade1);
+		tradeRepository.addNew(trade1);
 
 		Trade trade2=new Trade();
 		trade2.setProd1(prod3);
 		trade2.setProd2(prod4);
-		tradeService.validateAndAddTrade(trade2);		
+		tradeRepository.addNew(trade2);		
 		
 		Trade trade3=new Trade();
 		trade3.setProd1(prod5);
 		trade3.setProd2(prod6);
-		tradeService.validateAndAddTrade(trade3);
+		tradeRepository.addNew(trade3);
 		
 		//test there are totally 3 trades
 		assertEquals(3,tradeRepository.getByUserId(prof.getUserid(),FROM_TO.BOTH).size());

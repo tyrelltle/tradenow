@@ -7,6 +7,8 @@ public class TradePageDTO {
     	 String prod2id;
     	 String side;
     	 String method;
+    	 String status1;
+    	 String status2;
     	 String msg="";
     	 String msgtype="";//suc err
     	 
@@ -66,6 +68,26 @@ public class TradePageDTO {
 		}
 		public void setMsg(String msg) {
 			this.msg = msg;
+		}
+
+
+		public String getStatus1() {
+			return status1;
+		}
+
+
+		public void setStatus1(String status1) {
+			this.status1 = status1;
+		}
+
+
+		public String getStatus2() {
+			return status2;
+		}
+
+
+		public void setStatus2(String status2) {
+			this.status2 = status2;
 		}
     	 
     	 

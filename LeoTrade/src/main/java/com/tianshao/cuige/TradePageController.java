@@ -98,6 +98,7 @@ public class TradePageController {
 		    	trade=new Trade();
 		    	fromprod = makeDummyFromProd(SecurityContext.getCurrentUser().getUserid());
 		    	toprod=productRepository.getByProductId(toprod_id);
+		    	trade.setDefaultValues();
 	    	}
 	    	trade.setProd1(fromprod);
 	    	trade.setProd2(toprod);
