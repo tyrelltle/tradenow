@@ -21,7 +21,7 @@ import org.springframework.social.connect.web.ProviderSignInController;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.user.User;
 
 @Configuration
 public class SocialConfig {

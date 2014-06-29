@@ -1,4 +1,4 @@
-package com.tianshao.cuige.models;
+package com.tianshao.cuige.domains.trade;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,7 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CascadeType;
 
-import com.tianshao.cuige.models.DTO.TradeDTO;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.product.Product;
 
 @Entity
 @Table(name="trade")

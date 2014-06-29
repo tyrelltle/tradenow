@@ -1,27 +1,14 @@
-package com.tianshao.cuige;
+package com.tianshao.cuige.appservice.product;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
-
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.social.facebook.api.Reference;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,17 +18,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.tianshao.cuige.config.SecurityContext;
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Image;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.User;
-import com.tianshao.cuige.models.DTO.ProductDTO;
-import com.tianshao.cuige.models.DTO.ProductImageUrlDTP;
+import com.tianshao.cuige.domains.product.Category;
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.product.ProductDTO;
+import com.tianshao.cuige.domains.product.ProductImageUrlDTP;
+import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.IProductRepository;
-import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IProductService;
 import com.tianshao.cuige.services.IUserService;
-import com.tianshao.cuige.services.UserService;
 
 
 

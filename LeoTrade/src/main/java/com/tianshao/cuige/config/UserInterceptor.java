@@ -5,21 +5,15 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.social.connect.NotConnectedException;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.tianshao.cuige.models.User;
-import com.tianshao.cuige.models.DTO.ProviderInfo;
+import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.services.IUserService;
 
 public final class UserInterceptor extends HandlerInterceptorAdapter {
 

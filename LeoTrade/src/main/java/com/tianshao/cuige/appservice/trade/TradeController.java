@@ -1,4 +1,4 @@
-package com.tianshao.cuige;
+package com.tianshao.cuige.appservice.trade;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.config.SecurityContext;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Trade;
-import com.tianshao.cuige.models.Trade.FROM_TO;
-import com.tianshao.cuige.models.DTO.MessageDTO;
-import com.tianshao.cuige.models.DTO.TradeDTO;
-import com.tianshao.cuige.models.DTO.TradePageDTO;
+import com.tianshao.cuige.domains.trade.Trade;
+import com.tianshao.cuige.domains.trade.TradeDTO;
+import com.tianshao.cuige.domains.trade.TradePageDTO;
+import com.tianshao.cuige.domains.trade.Trade.FROM_TO;
 import com.tianshao.cuige.repository.IProductRepository;
 import com.tianshao.cuige.repository.ITradeRepository;
 import com.tianshao.cuige.services.ITradeService;

@@ -1,4 +1,4 @@
-package com.tianshao.cuige.models;
+package com.tianshao.cuige.domains.product;
 
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +17,10 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.trade.Trade;
+import com.tianshao.cuige.domains.user.User;
 
 
 @Entity

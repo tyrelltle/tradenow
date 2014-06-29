@@ -1,4 +1,4 @@
-package com.tianshao.cuige.models.DTO;
+package com.tianshao.cuige.config;
 
 public class ProviderInfo {
 

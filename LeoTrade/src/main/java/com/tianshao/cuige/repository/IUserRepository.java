@@ -2,8 +2,8 @@ package com.tianshao.cuige.repository;
 
 import java.util.List;
 
-import com.tianshao.cuige.models.IEntity;
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.user.User;
 
 public interface IUserRepository{
 

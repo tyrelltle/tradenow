@@ -1,4 +1,4 @@
-package com.tianshao.cuige.models;
+package com.tianshao.cuige.domains.user;
 
 import java.io.Serializable;
 
@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.tianshao.cuige.models.DTO.ProviderInfo;
-import com.tianshao.cuige.models.DTO.UserRegistrationDTO;
+import com.tianshao.cuige.config.ProviderInfo;
+import com.tianshao.cuige.domains.IEntity;
 @Entity
 @Table(name="user")
 public class User implements IEntity{

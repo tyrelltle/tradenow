@@ -7,8 +7,8 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tianshao.cuige.models.IEntity;
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.user.User;
 
 @Repository("userRepository")
 public class UserRepository extends BaseRepository implements IUserRepository{

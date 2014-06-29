@@ -6,11 +6,11 @@
  
 <hibernate-configuration>
     <session-factory>
-        <mapping class="com.tianshao.cuige.models.User" />
-		<mapping class="com.tianshao.cuige.models.Category" />
-        <mapping class="com.tianshao.cuige.models.Product" />
-        <mapping class="com.tianshao.cuige.models.Image" />
-        <mapping class="com.tianshao.cuige.models.Trade" />
+        <mapping class="com.tianshao.cuige.domains.user.User" />
+		<mapping class="com.tianshao.cuige.domains.product.Category" />
+        <mapping class="com.tianshao.cuige.domains.product.Product" />
+        <mapping class="com.tianshao.cuige.domains.product.Image" />
+        <mapping class="com.tianshao.cuige.domains.trade.Trade" />
 
     </session-factory>
 	    

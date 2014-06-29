@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.user.User;
 
 public class SecurityContext {
 	private static final ThreadLocal<User> currentUser = new ThreadLocal<User>();

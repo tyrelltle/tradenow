@@ -1,4 +1,4 @@
-package com.tianshao.cuige.models;
+package com.tianshao.cuige.domains;
 
 import java.io.Serializable;
 

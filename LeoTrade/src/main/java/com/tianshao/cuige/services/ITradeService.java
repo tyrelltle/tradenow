@@ -2,7 +2,7 @@ package com.tianshao.cuige.services;
 
 import java.lang.reflect.InvocationTargetException;
 
-import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.domains.trade.Trade;
 
 public interface ITradeService {
 

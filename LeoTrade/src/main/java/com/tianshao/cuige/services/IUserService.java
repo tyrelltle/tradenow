@@ -1,6 +1,6 @@
 package com.tianshao.cuige.services;
 
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.user.User;
 
 public interface IUserService {
 

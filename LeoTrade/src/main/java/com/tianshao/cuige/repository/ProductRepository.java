@@ -8,10 +8,10 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.IEntity;
-import com.tianshao.cuige.models.Image;
-import com.tianshao.cuige.models.Product;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.product.Category;
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
 
 @Repository("productRepository")
 

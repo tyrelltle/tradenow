@@ -1,24 +1,12 @@
-package com.tianshao.cuige;
+package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.social.facebook.api.Reference;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.config.UserCookieGenerator;
-import com.tianshao.cuige.models.User;
-import com.tianshao.cuige.models.DTO.UserLogonDTO;
-import com.tianshao.cuige.models.DTO.UserRegistrationDTO;
+import com.tianshao.cuige.domains.user.User;
+import com.tianshao.cuige.domains.user.UserLogonDTO;
+import com.tianshao.cuige.domains.user.UserRegistrationDTO;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.services.IUserService;
-import com.tianshao.cuige.services.UserService;
 
 
 

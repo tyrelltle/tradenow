@@ -1,6 +1,6 @@
 package com.tianshao.cuige.services;
 
-import com.tianshao.cuige.models.Image;
+import com.tianshao.cuige.domains.product.Image;
 
 public interface IProductService {
 

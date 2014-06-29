@@ -7,8 +7,8 @@ import org.springframework.social.connect.ConnectionKey;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.web.SignInAdapter;
 import org.springframework.web.context.request.NativeWebRequest;
-import com.tianshao.cuige.models.User;
-import com.tianshao.cuige.models.DTO.ProviderInfo;
+
+import com.tianshao.cuige.domains.user.User;
 
 public class SimpleSignInAdapter implements SignInAdapter{
 	private final UserCookieGenerator userCookieGenerator = new UserCookieGenerator();

@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.util.CookieGenerator;
 
-import com.tianshao.cuige.models.DTO.ProviderInfo;
-
 public class UserCookieGenerator {
 
 

@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Image;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.product.Category;
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.IProductRepository;
 import com.tianshao.cuige.repository.IUserRepository;
 import com.tianshao.cuige.repository.ProductRepository;

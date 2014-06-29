@@ -2,10 +2,10 @@ package com.tianshao.cuige.repository;
 
 import java.util.List;
 
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.IEntity;
-import com.tianshao.cuige.models.Image;
-import com.tianshao.cuige.models.Product;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.product.Category;
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
 
 public interface IProductRepository{
 

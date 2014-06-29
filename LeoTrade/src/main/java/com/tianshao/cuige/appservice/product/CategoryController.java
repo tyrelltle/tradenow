@@ -1,4 +1,4 @@
-package com.tianshao.cuige;
+package com.tianshao.cuige.appservice.product;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tianshao.cuige.models.Category;
+import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.repository.IProductRepository;
 
 

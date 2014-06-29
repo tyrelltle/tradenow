@@ -1,43 +1,22 @@
-package com.tianshao.cuige;
+package com.tianshao.cuige.appservice.trade;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.social.facebook.api.Reference;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.tianshao.cuige.config.SecurityContext;
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.Trade;
-import com.tianshao.cuige.models.User;
-import com.tianshao.cuige.models.DTO.TradePageDTO;
-import com.tianshao.cuige.models.DTO.UserRegistrationDTO;
+import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.trade.Trade;
+import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.IProductRepository;
 import com.tianshao.cuige.repository.ITradeRepository;
 import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.services.IProductService;
 import com.tianshao.cuige.services.ITradeService;
 import com.tianshao.cuige.services.IUserService;
 

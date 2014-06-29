@@ -1,14 +1,10 @@
 package com.tianshao.cuige.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tianshao.cuige.models.Category;
-import com.tianshao.cuige.models.Image;
-import com.tianshao.cuige.models.Product;
-import com.tianshao.cuige.models.User;
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.repository.IProductRepository;
 
 @Service("ProductService")

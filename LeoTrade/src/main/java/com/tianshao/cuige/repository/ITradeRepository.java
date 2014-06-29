@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tianshao.cuige.models.IEntity;
-import com.tianshao.cuige.models.Trade;
+import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.shared.Pair;
 
 public interface ITradeRepository{
