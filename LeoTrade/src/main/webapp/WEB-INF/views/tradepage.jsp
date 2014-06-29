@@ -202,6 +202,26 @@
 				</div>
 		
 
+
+
+			<!-- Deal done modal -->
+			<div class="modal fade" id="dealdone" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-lg-cust modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			        <h4 class="modal-title" id="myModalLabel">Congradulations!</h4>
+			      </div>
+			      <div id="div_dealdone" class="modal-body">
+			      	 This trade has been finished because both of you have aceepted the offer!
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" id="prod_save" data-dismiss="modal" class="btn btn-primary">Dismiss</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
 			<!-- product list Modal -->
 			<div class="modal fade" id="prodlismodel" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg-cust modal-dialog">

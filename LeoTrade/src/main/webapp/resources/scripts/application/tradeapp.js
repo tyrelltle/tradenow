@@ -39,6 +39,13 @@ AppRouter=Backbone.Router.extend({
 			$('#label_status2').attr("class","label label-success");
 		}
 		$('#label_status2').html(status2);
+		if(status1==status2 && status1=='ACCEPTED'){
+			$('#msgholder').attr("class","alert alert-success");
+			$('#msg').html("This trade has been finished, because both of you have accepted the offer!");
+			$('.msgdismiss').click(function(){
+				$('#msgholder').attr("class","hid");
+			});
+		}
 
 	},
 	routes:{
@@ -150,11 +157,16 @@ AppRouter=Backbone.Router.extend({
 					var jstr=JSON.stringify(msg);
 					var jsn=jQuery.parseJSON(jstr);
 					if(jsn.msgtype=="suc"){
-						$('#msgholder').attr("class","alert alert-success");
-						$('#msg').html(jsn.msg);
-						$('.msgdismiss').click(function(){
-							$('#msgholder').attr("class","hid");
-						});
+						if(jsn.status1==jsn.status2 & jsn.status1=="ACCEPTED"){
+							$('#dealdone').modal({show:true});
+						}else{
+							$('#msgholder').attr("class","alert alert-success");
+							$('#msg').html(jsn.msg);
+							$('.msgdismiss').click(function(){
+								$('#msgholder').attr("class","hid");
+							});
+						}
+						
 						$('status1').val(jsn.status1);
 						$('status2').val(jsn.status2);
 						app.initstatus(jsn.status1,jsn.status2);
