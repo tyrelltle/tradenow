@@ -1,4 +1,4 @@
-package com.tianshao.cuige.services;
+package com.tianshao.cuige.services.user;
 
 import com.tianshao.cuige.domains.user.User;
 

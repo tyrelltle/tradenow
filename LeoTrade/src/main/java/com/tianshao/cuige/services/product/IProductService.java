@@ -1,4 +1,4 @@
-package com.tianshao.cuige.services;
+package com.tianshao.cuige.services.product;
 
 import com.tianshao.cuige.domains.product.Image;
 

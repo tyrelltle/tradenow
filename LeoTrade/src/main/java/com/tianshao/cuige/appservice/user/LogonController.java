@@ -1,6 +1,7 @@
 package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +18,8 @@ import com.tianshao.cuige.config.UserCookieGenerator;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserLogonDTO;
 import com.tianshao.cuige.domains.user.UserRegistrationDTO;
-import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.services.IUserService;
+import com.tianshao.cuige.repository.user.IUserRepository;
+import com.tianshao.cuige.services.user.IUserService;
 
 
 

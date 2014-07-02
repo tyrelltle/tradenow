@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.domains.product.Category;
-import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.product.IProductRepository;
 
 
 

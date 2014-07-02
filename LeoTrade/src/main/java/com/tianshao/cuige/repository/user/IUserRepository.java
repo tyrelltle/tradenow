@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.user;
 
 import java.util.List;
 

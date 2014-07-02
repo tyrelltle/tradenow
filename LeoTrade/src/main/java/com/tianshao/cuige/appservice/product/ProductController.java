@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,9 @@ import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.product.ProductDTO;
 import com.tianshao.cuige.domains.product.ProductImageUrlDTP;
 import com.tianshao.cuige.domains.user.User;
-import com.tianshao.cuige.repository.IProductRepository;
-import com.tianshao.cuige.services.IProductService;
-import com.tianshao.cuige.services.IUserService;
+import com.tianshao.cuige.repository.product.IProductRepository;
+import com.tianshao.cuige.services.product.IProductService;
+import com.tianshao.cuige.services.user.IUserService;
 
 
 

@@ -1,6 +1,7 @@
 package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserDTO;
-import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.services.IUserService;
+import com.tianshao.cuige.repository.user.IUserRepository;
+import com.tianshao.cuige.services.user.IUserService;
 import com.tianshao.cuige.shared.Util;
 
 

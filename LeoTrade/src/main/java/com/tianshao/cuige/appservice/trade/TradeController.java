@@ -19,9 +19,9 @@ import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.trade.TradeDTO;
 import com.tianshao.cuige.domains.trade.TradePageDTO;
 import com.tianshao.cuige.domains.trade.Trade.FROM_TO;
-import com.tianshao.cuige.repository.IProductRepository;
-import com.tianshao.cuige.repository.ITradeRepository;
-import com.tianshao.cuige.services.ITradeService;
+import com.tianshao.cuige.repository.product.IProductRepository;
+import com.tianshao.cuige.repository.trade.ITradeRepository;
+import com.tianshao.cuige.services.trade.ITradeService;
 
 
 

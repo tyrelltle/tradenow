@@ -1,6 +1,7 @@
 package com.tianshao.cuige.appservice.trade;
 
 import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,15 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.user.User;
-import com.tianshao.cuige.repository.IProductRepository;
-import com.tianshao.cuige.repository.ITradeRepository;
-import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.services.ITradeService;
-import com.tianshao.cuige.services.IUserService;
+import com.tianshao.cuige.repository.product.IProductRepository;
+import com.tianshao.cuige.repository.trade.ITradeRepository;
+import com.tianshao.cuige.repository.user.IUserRepository;
+import com.tianshao.cuige.services.trade.ITradeService;
+import com.tianshao.cuige.services.user.IUserService;
 
 
 

@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.user;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.user.User;
+import com.tianshao.cuige.repository.BaseRepository;
 
 @Repository("userRepository")
 public class UserRepository extends BaseRepository implements IUserRepository{

@@ -1,12 +1,13 @@
-package com.tianshao.cuige.services;
+package com.tianshao.cuige.services.trade;
 
 
 import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.domains.trade.Trade;
-import com.tianshao.cuige.repository.ITradeRepository;
+import com.tianshao.cuige.repository.trade.ITradeRepository;
 import com.tianshao.cuige.shared.Pair;
 
 

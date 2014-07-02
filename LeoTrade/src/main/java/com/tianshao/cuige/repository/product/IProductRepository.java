@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.product;
 
 import java.util.List;
 

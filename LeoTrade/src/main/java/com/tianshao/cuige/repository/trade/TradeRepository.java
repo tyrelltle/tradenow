@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.trade;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.trade.Trade;
+import com.tianshao.cuige.repository.BaseRepository;
 import com.tianshao.cuige.shared.Pair;
 
 

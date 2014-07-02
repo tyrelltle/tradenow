@@ -1,11 +1,11 @@
-package com.tianshao.cuige.services;
+package com.tianshao.cuige.services.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
-import com.tianshao.cuige.repository.IProductRepository;
+import com.tianshao.cuige.repository.product.IProductRepository;
 
 @Service("ProductService")
 public class ProductService implements IProductService{

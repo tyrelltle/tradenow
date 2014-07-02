@@ -13,7 +13,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.tianshao.cuige.domains.user.User;
-import com.tianshao.cuige.repository.IUserRepository;
+import com.tianshao.cuige.repository.user.IUserRepository;
 
 public final class UserInterceptor extends HandlerInterceptorAdapter {
 

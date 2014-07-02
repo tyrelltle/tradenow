@@ -15,17 +15,17 @@ import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.trade.Trade.FROM_TO;
 import com.tianshao.cuige.domains.user.User;
-import com.tianshao.cuige.repository.IProductRepository;
-import com.tianshao.cuige.repository.ITradeRepository;
-import com.tianshao.cuige.repository.IUserRepository;
-import com.tianshao.cuige.repository.ProductRepository;
-import com.tianshao.cuige.repository.TradeRepository;
-import com.tianshao.cuige.services.IProductService;
-import com.tianshao.cuige.services.ITradeService;
-import com.tianshao.cuige.services.IUserService;
-import com.tianshao.cuige.services.ProductService;
-import com.tianshao.cuige.services.TradeService;
-import com.tianshao.cuige.services.UserService;
+import com.tianshao.cuige.repository.product.IProductRepository;
+import com.tianshao.cuige.repository.product.ProductRepository;
+import com.tianshao.cuige.repository.trade.ITradeRepository;
+import com.tianshao.cuige.repository.trade.TradeRepository;
+import com.tianshao.cuige.repository.user.IUserRepository;
+import com.tianshao.cuige.services.product.IProductService;
+import com.tianshao.cuige.services.product.ProductService;
+import com.tianshao.cuige.services.trade.ITradeService;
+import com.tianshao.cuige.services.trade.TradeService;
+import com.tianshao.cuige.services.user.IUserService;
+import com.tianshao.cuige.services.user.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})

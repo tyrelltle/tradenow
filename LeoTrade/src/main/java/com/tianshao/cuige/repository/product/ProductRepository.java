@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.product;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.repository.BaseRepository;
 
 @Repository("productRepository")
 

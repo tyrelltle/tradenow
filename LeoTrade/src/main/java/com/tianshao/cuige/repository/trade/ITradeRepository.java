@@ -1,4 +1,4 @@
-package com.tianshao.cuige.repository;
+package com.tianshao.cuige.repository.trade;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
