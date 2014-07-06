@@ -6,11 +6,7 @@
 	
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
-				<script>var ctx = "${pageContext.request.contextPath}/"</script>
 	
-		<script type="text/javascript" language="javascript" src="resources/scripts/jquery-1.10.2.js"></script>
-	    <script type="text/javascript" language="javascript" src="resources/scripts/underscore.js"></script>
-	    <script type="text/javascript" language="javascript" src="resources/scripts/backbone.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
 	    <style type="text/css">	

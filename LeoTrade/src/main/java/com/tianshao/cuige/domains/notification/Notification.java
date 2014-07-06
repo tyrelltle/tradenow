@@ -98,7 +98,15 @@ public class Notification implements IEntity{
 		this.url = url;
 	}
 	
-	
+	@SuppressWarnings("deprecation")
+	public NotificationDTO toDTO(){
+		NotificationDTO dto=new NotificationDTO();
+		dto.setDate(this.create_date.toGMTString());
+		dto.setMessage(this.msg);
+		dto.setUrl(this.url);
+		dto.setId(this.noti_id);
+		return dto;
+	}
 	
 	
 

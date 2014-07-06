@@ -35,6 +35,7 @@ public abstract class BaseRepository {
 		sessionFactory.getCurrentSession().update(obj);
 	}
 
+
 	@Transactional
 	public int truncateTable(String tab){
 		Session session = sessionFactory.getCurrentSession();

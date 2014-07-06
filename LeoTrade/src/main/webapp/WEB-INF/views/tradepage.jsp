@@ -7,9 +7,6 @@
 	<tiles:putAttribute name="header">
 	
 			<script>var ctx = "${pageContext.request.contextPath}/"</script>
-			<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
 		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/masonry.pkgd.js"></script>
 		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/imagesloaded.pkgd.js"></script>
 				<style>
