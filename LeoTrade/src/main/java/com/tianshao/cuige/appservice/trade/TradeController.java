@@ -89,7 +89,7 @@ public class TradeController {
 	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
 	    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
 	    	dto.setSuccessMessage("Successfully proposed the item!");
-	    	notificationService.createTradeProposalNotif(trade,dto.getSide());
+	    	notificationService.createTradeProposal_Approval_Notif(trade,dto.getSide(), INotificationService.TRADE_ACTION.PROPOSAL);
 	        return dto;
 	    }
 		
@@ -119,6 +119,12 @@ public class TradeController {
     		dto.setStatus1(trade.getStatus1());
     		dto.setStatus2(trade.getStatus2());
 	    	dto.setSuccessMessage("You have accepted the item!");
+	    	if(trade.bothAccepted())
+	    	{
+	    		notificationService.createTradeCompleteNotif(trade);
+	    	}else{
+		    	notificationService.createTradeProposal_Approval_Notif(trade,side, INotificationService.TRADE_ACTION.APPROVAL);
+	    	}
 	        return dto;
 	    }
 		

@@ -187,4 +187,8 @@ public class Trade implements IEntity{
 		dto.setTradeurl("wow! to be determined!!!!!!");
 		return dto;
 	}
+	
+	public boolean bothAccepted(){
+		return this.status1.equals(this.status2) && this.status1.equals(STATUS.ACCEPTED.name());
+	}
 }
