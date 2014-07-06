@@ -6,7 +6,5 @@ public interface IEvent {
 	List<Integer> getListenerUserIds();
 	void setListenerUserIds(List<Integer> lis);
 	Object getDeferredResultObj();
-	void setDeferredResultObj(Object o);
-	void nonhitOperation(List<Integer> nonhituserids);
-	
+	void setDeferredResultObj(Object o);	
 }

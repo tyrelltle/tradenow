@@ -14,6 +14,7 @@
         <mapping class="com.tianshao.cuige.domains.product.Product" />
         <mapping class="com.tianshao.cuige.domains.product.Image" />
         <mapping class="com.tianshao.cuige.domains.trade.Trade" />
+        <mapping class="com.tianshao.cuige.domains.notification.Notification" />
         
 
     </session-factory>

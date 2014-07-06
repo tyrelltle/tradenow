@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.PageContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,12 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.config.SecurityContext;
+import com.tianshao.cuige.domains.event.IEventFactory;
+import com.tianshao.cuige.domains.notification.Notification;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.trade.TradeDTO;
 import com.tianshao.cuige.domains.trade.TradePageDTO;
 import com.tianshao.cuige.domains.trade.Trade.FROM_TO;
+import com.tianshao.cuige.domains.user.User;
+import com.tianshao.cuige.repository.notification.INotificationRepository;
 import com.tianshao.cuige.repository.product.IProductRepository;
 import com.tianshao.cuige.repository.trade.ITradeRepository;
+import com.tianshao.cuige.services.Event.IEventService;
 import com.tianshao.cuige.services.trade.ITradeService;
 
 
@@ -33,6 +39,8 @@ import com.tianshao.cuige.services.trade.ITradeService;
 @RequestMapping("/api/trade")
 public class TradeController {
 
+		@Autowired
+		private INotificationRepository notificationRepository;
 	    @Autowired
 	    private ITradeService tradeService;
 	    @Autowired
@@ -86,9 +94,28 @@ public class TradeController {
 	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
 	    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
 	    	dto.setSuccessMessage("Successfully proposed the item!");
+	    	addNotification(trade,dto.getSide());
 	        return dto;
 	    }
 		
+		private void addNotification(Trade trade,String side) throws Exception {
+			User usr=new User();
+			String notifMsg="%s has proposed a new item, go to view it!";
+			if(side.equals(Trade.FROM_TO.FROM.name())){
+				notifMsg=String.format(notifMsg, trade.getProd1().getOwner().getUserid());
+				usr=trade.getProd1().getOwner();
+			}
+			else if(side.equals(Trade.FROM_TO.TO.name())){
+				notifMsg=String.format(notifMsg, trade.getProd2().getOwner().getUserid());
+				usr=trade.getProd2().getOwner();
+			}
+			else 
+				throw new Exception("invalid side string: "+side);
+			notificationRepository.addNew(notifMsg, "tradepage/"+trade.getTrade_id(), usr.getUserid());;
+			
+		}
+
+
 		@RequestMapping(value="accept/tradeid/{tradeid}/side/{side}",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 	    public @ResponseBody TradePageDTO accept(@PathVariable String side, @PathVariable int tradeid,
 	    				   HttpServletResponse resp) throws Exception {

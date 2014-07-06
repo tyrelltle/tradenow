@@ -15,6 +15,8 @@ import org.springframework.web.context.request.async.DeferredResult;
 import com.tianshao.cuige.domains.event.AbstractEvent;
 import com.tianshao.cuige.domains.event.IEvent;
 import com.tianshao.cuige.domains.event.TradeProposalEvent;
+import com.tianshao.cuige.domains.notification.Notification;
+import com.tianshao.cuige.repository.notification.INotificationRepository;
 import com.tianshao.cuige.services.Event.EventService;
 import com.tianshao.cuige.services.Event.MapKey;
 
@@ -26,21 +28,22 @@ public class EventControllerTest {
 	EventService eventService;
 	
 	public class MockEvent extends AbstractEvent{
-		List<String> msgs=new ArrayList<String>();
+		
 
+		public MockEvent(){}
+		public MockEvent(String msg, String url) {
+			super(msg, url);
+			// TODO Auto-generated constructor stub
+		}
+
+		List<String> msgs=new ArrayList<String>();
 		@Override
 		public Object getDeferredResultObj() {
 			msgs.add("getDeferredResultObj");
 			return new Object();
 		}
 
-		@Override
-		public void nonhitOperation(List<Integer> nonhituserids) {
-			for(int i : nonhituserids)
-			{
-				msgs.add("nonhit:"+i);
-			}
-		}
+
 
 
 		

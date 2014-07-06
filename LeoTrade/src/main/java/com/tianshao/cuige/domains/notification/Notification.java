@@ -1,4 +1,6 @@
-package com.tianshao.cuige.domains.Notification;
+package com.tianshao.cuige.domains.notification;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +32,40 @@ public class Notification implements IEntity{
 	@Column(name="url")
 	String url="";
 
+	@Column(name="isnew")
+	int isnew=1;
+	
+	@Column(name="create_date")
+	Date create_date;
+	
 	public Notification(){}
+	
+	
+	
+	public int getIsnew() {
+		return isnew;
+	}
+
+
+
+	public void setIsnew(int isnew) {
+		this.isnew = isnew;
+	}
+
+
+
+	public Date getCreate_date() {
+		return create_date;
+	}
+
+
+
+	public void setCreate_date(Date create_date) {
+		this.create_date = create_date;
+	}
+
+
+
 	public int getNoti_id() {
 		return noti_id;
 	}

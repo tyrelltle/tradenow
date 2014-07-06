@@ -42,8 +42,7 @@ public class EventService implements IEventService{
 
 	@Override
 	public void fireEvent(IEvent e) {
-		List<Integer> hitlist;
-		List<Integer> nonhitlist = new ArrayList<Integer>();
+		new ArrayList<Integer>();
 		MapKey hitkey=null;
 		synchronized(listenermap){
 			for(Integer i : e.getListenerUserIds()){
@@ -51,12 +50,9 @@ public class EventService implements IEventService{
 				if(listenermap.containsKey(hitkey)){
 					listenermap.get(hitkey).setResult(e.getDeferredResultObj());
 					listenermap.remove(hitkey);
-				}else{
-					nonhitlist.add(i);
 				}
 			}
 		}
-		e.nonhitOperation(nonhitlist);
 
 	}
 	
