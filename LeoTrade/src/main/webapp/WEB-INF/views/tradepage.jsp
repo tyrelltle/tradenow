@@ -61,6 +61,9 @@
 				.hid{
 					display:none;
 				}
+				.msgdate{
+					margin-left:125px;
+				}
 				</style>
 </tiles:putAttribute>
 <tiles:putAttribute name="left">
@@ -144,27 +147,37 @@
 				                          <div class="midcontainer container">
 				                                <div id="newmsg_row" class="row">
 				                                    <div class="col-md-10">
-				                                      <textarea class="form-control" rows="3"></textarea> 
+				                                      <textarea id="msgtxt" class="form-control" rows="3"></textarea> 
 				                                        
 				                                    </div>
 				                                    <div class="col-md-1">                              	
-				                                        <button type="button" class="btn btn-primary">Send</button>
+				                                        <button type="button" id="msgbtn" class="btn btn-primary">Send</button>
 				                                    </div>
 				                                </div>
 				                                <div id="msglis_row" class="row">
-				                                    <div class="midcontainer container">
+				                                    <div class="msglis_container midcontainer container">
 				                                        <!--bunch of msg rows -->
-				                                        <div class="message row">
+				                                         <div class="message row">
 				                                            <div class="col-md-2">
-				                                              <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
+				                                                <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
 				                                            </div>
-				                                            <div class="message_body col-md-7 well well-sm">helloworld</div>
-				                                        </div>
+															<div class="message_body col-md-7">
+				                                              <div class="msgdate">Mon 19, 2014</div>
+				                                              <div class="well well-sm">
+				                                                  helloworldddddddddddddddddddddddddddddddddddddddd
+				
+				                                              </div>
+				                                            </div>                                        </div>
 				                                        <div class="message row">
-				                                            
-				                                            <div class="message_body col-md-offset-2 col-md-7 well well-sm">helloworldddddddddddddddddddddddddddddddddddddddd</div>
+				                                            <div class="message_body col-md-offset-2 col-md-7">
+				                                              <div class="msgdate">Mon 19, 2014</div>
+				                                              <div class="well well-sm">
+				                                                  helloworldddddddddddddddddddddddddddddddddddddddd
+				
+				                                              </div>
+				                                            </div>
 				                                            <div class="col-md-2">
-				                                              <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
+				                                                <img alt="pic" class="img-thumbnail prodpic" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg">
 				                                            </div>
 				                                        </div>
 				                                    </div>
@@ -267,7 +280,30 @@
 				</center>
 
 			</script>
-	 		<script type="text/template" id="prodlistitemtmp">
+			
+	 		<script type="text/template" id="msglisitemtmp1">			
+				<div class="col-md-2">
+	                 <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/{{imgurl}}">
+	            </div>
+				<div class="message_body col-md-7">
+		             <div class="msgdate">{{date}}</div>
+		             <div class="well well-sm">
+		                 {{message}}
+		             </div>
+	            </div>     
+			</script>
+			<script type="text/template" id="msglisitemtmp2">			
+				<div class="message_body col-md-offset-2 col-md-7">
+		             <div class="msgdate">{{date}}</div>
+		             <div class="well well-sm">
+		                 {{message}}
+		             </div>
+	            </div> 
+				<div class="col-md-2">
+	                 <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/{{imgurl}}">
+	            </div>    
+			</script>
+	 		<script type="text/template" id="prodlistitemtmp1">
 				      <div class="masconryitem">			      
 				      	<div class="panel panel-default">
 				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>
@@ -284,6 +320,7 @@
 				        </div>		        
 				      </div>																	     
 			</script>
+			
 			
 			<script type="text/template" id="proddetailtmp">
 			      
@@ -350,8 +387,11 @@
 	
 		
 	<!--start bootstrap dependencies-->	
+				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/scripts/application/trademessage.js"></script>
+	
 			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/browseproduct.js"></script>
 			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/scripts/application/tradeapp.js"></script>
+			 
 	<!--end bootstrap dependencies-->
 				
 </tiles:putAttribute>

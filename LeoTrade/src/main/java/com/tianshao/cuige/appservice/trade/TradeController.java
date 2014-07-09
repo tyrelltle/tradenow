@@ -26,10 +26,6 @@ import com.tianshao.cuige.services.trade.ITradeService;
 
 
 
-
-/**
- * Handles requests for the application home page.
- */
 @Controller
 @RequestMapping("/api/trade")
 public class TradeController {
