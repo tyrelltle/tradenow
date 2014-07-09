@@ -3,6 +3,7 @@ package com.tianshao.cuige.services.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tianshao.cuige.domains.trade.Message;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.notification.INotificationRepository;
@@ -12,6 +13,7 @@ public class NotificationService implements INotificationService{
 	@Autowired
 	private INotificationRepository notificationRepository;
 
+	
 	@Override
 	public void createTradeProposal_Approval_Notif(Trade trade, String side, TRADE_ACTION action) throws Exception {
 		User tousr=new User();
@@ -53,6 +55,26 @@ public class NotificationService implements INotificationService{
 		notifMsg=String.format(notifMsg,owner.getFirstname()+" "+owner.getLastname());
 		tousr=trade.getProd1().getOwner();
 		notificationRepository.addNew(notifMsg, "tradepage/"+trade.getTrade_id(), tousr.getUserid());	
+		
+	}
+
+	@Override
+	public void createTradeMessageNotif(Message msg) {
+		String notifMsg="%s has sent you a message!";
+		User touser=null;
+		User owner=null;
+		if(msg.getSide()==0){
+			owner=msg.getTrade().getProd1().getOwner();
+			notifMsg=String.format(notifMsg, owner.getFirstname()+" "+owner.getLastname());
+			touser=msg.getTrade().getProd2().getOwner();
+		}else{
+			owner=msg.getTrade().getProd2().getOwner();
+			notifMsg=String.format(notifMsg, owner.getFirstname()+" "+owner.getLastname());
+			touser=msg.getTrade().getProd1().getOwner();
+		}
+		
+		notificationRepository.addNew(notifMsg, "tradepage/"+msg.getTrade().getTrade_id(), touser.getUserid());	
+
 		
 	}
 }
