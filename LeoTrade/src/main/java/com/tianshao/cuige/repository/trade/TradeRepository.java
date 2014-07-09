@@ -2,7 +2,6 @@ package com.tianshao.cuige.repository.trade;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.domains.IEntity;
-import com.tianshao.cuige.domains.trade.Message;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.repository.BaseRepository;
 import com.tianshao.cuige.shared.Pair;
@@ -110,21 +108,6 @@ public class TradeRepository extends BaseRepository implements ITradeRepository{
 		super.addNew(obj);
 	}
 
-	@Transactional
-	@Override
-	public List<Message> getMessageByTradeId(int tradeid) {
-		Session session = sessionFactory.getCurrentSession();
-		String hql="from Message where trade.trade_id=%d order by create_date desc";
-		Query query=session.createQuery(String.format(hql, tradeid));
-		return query.list();
-	}
-
-	@Transactional
-	@Override
-	public void addNewMessage(Message msg) {
-		msg.setCreate_date(new Timestamp(new Date().getTime()));
-		super.addNew(msg);
-	}
 
 
 

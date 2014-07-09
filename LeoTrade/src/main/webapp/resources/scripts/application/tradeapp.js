@@ -15,10 +15,6 @@ AppRouter=Backbone.Router.extend({
 			app.accepted();
 		});
 		
-		$('#msgbtn').click(function(){
-			app.msgsend();
-		})
-		
 		if($('#side').val()=='FROM')
 			$('.fromusernm').html('YOU');
 		else if($('#side').val()=='TO')
@@ -29,29 +25,6 @@ AppRouter=Backbone.Router.extend({
 			alert($('#srvrmsg').val());
 		}
 		this.initstatus($('#status1').val(),$('#status2').val());
-	},
-	start:function(){
-		//not put in initialize() because at that time app is not defined yet
-		app.messageList=new MessageList();
-		app.messageList.setTradeId($('#tradeid').val());
-		app.messageListView =new MessageListView({model:app.messageList});
-		app.messageList.fetch({
-			success:function(lis){
-				app.messageListView.render();
-			}
-		});
-	},
-	msgsend:function(){
-		var message=new Message();
-		var side_=0;
-		if($('#side').val() == "TO")
-			side_=1;
-		message.set({
-			side:side_,
-			message:$('#msgtxt').val(),	
-		});
-		message.setTradeId($('#tradeid').val());
-		app.messageList.create(message,{success:app.start});
 	},
 	initstatus:function(status1,status2){
 		if(status1=="PENDING"){
@@ -76,7 +49,6 @@ AppRouter=Backbone.Router.extend({
 
 	},
 	routes:{
-		"":"start",
 		"prodlis":"prodlis",
 		"proddetail:prod_id":"prodDetail",
 		"prodselected:prod_id":"prodsel"},

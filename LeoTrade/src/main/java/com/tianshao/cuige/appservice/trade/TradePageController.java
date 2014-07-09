@@ -23,6 +23,11 @@ import com.tianshao.cuige.services.trade.ITradeService;
 import com.tianshao.cuige.services.user.IUserService;
 
 
+
+
+/**
+ * Handles requests for the application home page.
+ */
 @Controller
 @RequestMapping("/tradepage")
 public class TradePageController {
