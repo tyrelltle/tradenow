@@ -38,4 +38,6 @@ public interface IProductRepository{
 	List<Product> getAllMine(int userid, int limitL, int limitR)
 			throws Exception;
 
+	List<Product> getByCatId(int catid, int myuid, int st, int ct);
+
 }

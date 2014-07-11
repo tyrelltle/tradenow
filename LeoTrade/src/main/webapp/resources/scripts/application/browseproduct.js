@@ -25,6 +25,10 @@ ProductList=Backbone.Collection.extend({
 	makeprivate:function(userid){
 		//make the model fetch only my products
 		this.url=this.url+"/ownerid/"+userid;
+	},
+	makecategorize:function(catid){
+		this.url=this.url+"/catid/"+catid;
+
 	}
 });
 

@@ -72,7 +72,17 @@ public class ProductController {
 	    	
 		}
 		
-		
+		@RequestMapping(value={"start/{st}/count/{ct}/catid/{catid}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody List<ProductDTO> getbycategory(@PathVariable int st, @PathVariable int ct, @PathVariable int catid, HttpServletResponse resp) throws Exception {
+			//st and ct are used in LIMIT st,ct
+			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+	    	
+	    	List<Product> prods=productRepository.getByCatId(catid, catid,st,ct);
+	    	
+	    	toRrodListDTO(ret, prods);
+	    	return ret;
+	    	
+		}
 		
 		
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")

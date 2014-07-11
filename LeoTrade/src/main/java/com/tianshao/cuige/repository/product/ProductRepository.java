@@ -31,6 +31,18 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	
 	@Override
 	@Transactional
+	public List<Product> getByCatId(int catid, int myuid,int st, int ct) {
+		Session session = sessionFactory.getCurrentSession();
+		String hql="from Product where category.catid = %d and owner.userid != %d";
+		hql=String.format(hql, catid,myuid);
+		Query query= session.createQuery(hql);
+		query.setFirstResult(st);
+		query.setMaxResults(ct);
+		return query.list();	
+	}
+	
+	@Override
+	@Transactional
 	public List<Product> getAllMine(int userid, int limitL, int limitR) throws Exception{
 	
 		Session session = sessionFactory.getCurrentSession();
@@ -107,6 +119,8 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		Query query= session.createQuery("from Category");
 		return query.list();
 	}
+
+
 
 
 

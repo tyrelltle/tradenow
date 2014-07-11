@@ -36,16 +36,12 @@
 	
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
-   
-   			<div>
+   			<c:if test="${not empty catid}">
+      			<input id="catid" type="hidden" value="${catid}"/>
+    		</c:if>
+   			<div id="prodlist">
 				
-			      <div id="prodlispanel" class="panel panel-default">
-			      		<div  class="panel-body">
-							<div id="prodlist" >
-								
-							</div>
-						</div>
-				 </div>
+			      
 			 </div>
 		 	<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -69,11 +65,16 @@
 			
 	 		
 	 		<script type="text/template" id="prodlisttmp">
-				<div class = "masconrycontainer"   style="margin-top: 60px;">
+				<div id="prodlispanel" class="panel panel-default">
+			      		<div  class="panel-body">
+							<div class = "masconrycontainer"   >
+							</div>
+							<center>
+								<button type="button" id="loadmore" class="btn btn-default">Load More</button>
+							</center>
+						</div>
 				</div>
-				<center>
-				<button type="button" id="loadmore" class="btn btn-default">Load More</button>
-				</center>
+				
 
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">

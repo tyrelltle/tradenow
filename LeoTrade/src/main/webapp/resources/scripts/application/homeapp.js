@@ -9,7 +9,6 @@ AppRouter=Backbone.Router.extend({
 		"proddetail:prod_id":"prodDetail"},
 		
 	initTab:function(){		$('#tab_prof').click();},
-
 	prodlis:function(){
 		
 		//init category list
@@ -23,14 +22,18 @@ AppRouter=Backbone.Router.extend({
 		
 		
 		//init product list
-		this.productList = new ProductList();
-		this.productListView = new ProductListView({model:this.productList});
-		this.productList.fetch({
+		app.productList = new ProductList();
+		if($('#catid').length>0)
+			app.productList.makecategorize($('#catid').val());
+		app.productListView = new ProductListView({model:app.productList});
+		app.productList.fetch({
 
 			success:function(productList){
 				$('#prodlist').html(app.productListView.render().el);
 				$('#loadmore').click(function(e){
 					app.productList.addstart();
+					if($('#catid').length>0)
+						app.productList.makecategorize($('#catid').val());
 					app.productList.fetch({remove:false});
 					
 				});

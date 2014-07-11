@@ -303,7 +303,7 @@
 	                 <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/{{imgurl}}">
 	            </div>    
 			</script>
-	 		<script type="text/template" id="prodlistitemtmp1">
+	 		<script type="text/template" id="prodlistitemtmp">
 				      <div class="masconryitem">			      
 				      	<div class="panel panel-default">
 				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>

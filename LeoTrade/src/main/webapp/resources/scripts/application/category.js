@@ -29,11 +29,15 @@ CategoryListView=Backbone.View.extend({
 
 
 CategoryListItemView=Backbone.View.extend({
+	events:{"click":"clicked"},
 	className:"list-group-item",
 	tagName:"a",
 	render:function(){
 		$(this.el).append(this.model.get("name"));
 		return this;
+	},
+	clicked:function(){
+		window.location.replace(ctx+"catid"+this.model.get("catid"));
 	}
 	
 });
