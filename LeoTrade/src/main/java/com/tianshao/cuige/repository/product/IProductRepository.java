@@ -40,6 +40,6 @@ public interface IProductRepository{
 
 	List<Product> getByCatId(int catid, int myuid, int st, int ct);
 	
-	List<Product> searchByTitle(String tit);
+	List<Product> searchByTitle(String tit,int st,int ct);
 	public int truncateTable(String tab);
 }

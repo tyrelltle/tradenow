@@ -39,8 +39,9 @@
    			<c:if test="${not empty catid}">
       			<input id="catid" type="hidden" value="${catid}"/>
     		</c:if>
+   			
    			<div id="prodlist">
-				
+		
 			      
 			 </div>
 		 	<!-- product detail Modal -->

@@ -25,7 +25,7 @@ import com.tianshao.cuige.services.Admin.IAdminService;
 
 
 /**
- * Handles requests for the application home page.
+	deals with administration tasks like initialize search index
  */
 @Controller
 @RequestMapping("/admin")

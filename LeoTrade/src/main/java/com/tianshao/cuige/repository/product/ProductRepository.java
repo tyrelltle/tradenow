@@ -125,14 +125,17 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	
 	@Transactional
 	@Override
-	public List<Product> searchByTitle(String tit) {
+	public List<Product> searchByTitle(String tit,int st,int ct) {
 		Session session = sessionFactory.getCurrentSession();
 		FullTextSession fullTextSession = Search.getFullTextSession(session);
 		QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Product.class).get();
 		org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("title").matching(tit).createQuery();
 		// wrap Lucene query in a javax.persistence.Query
         org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Product.class);
+        fullTextQuery.setFirstResult(st);
+        fullTextQuery.setMaxResults(ct);
         List<Product> ret=fullTextQuery.list();
+        
         fullTextSession.clear();
 		return ret;
 	}

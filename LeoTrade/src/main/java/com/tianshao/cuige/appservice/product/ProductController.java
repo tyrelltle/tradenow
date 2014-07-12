@@ -77,12 +77,27 @@ public class ProductController {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getByCatId(catid, catid,st,ct);
+	    	List<Product> prods=productRepository.getByCatId(catid, SecurityContext.getCurrentUser().getUserid(),st,ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;
 	    	
 		}
+		
+		
+		@RequestMapping(value={"start/{st}/count/{ct}/search/{key}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody List<ProductDTO> search(@PathVariable int st, @PathVariable int ct, @PathVariable String key, HttpServletResponse resp) throws Exception {
+			//st and ct are used in LIMIT st,ct
+			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+	    	
+	    	List<Product> prods=productRepository.searchByTitle(key, st, ct);
+	    	
+	    	toRrodListDTO(ret, prods);
+	    	return ret;
+	    	
+		}
+		
+		
 		
 		
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
@@ -263,27 +278,27 @@ public class ProductController {
 		    		ret.add(dto);
 		    	}
 			}
-		private void DTO_to_PROD(ProductDTO dto, Product prod) {
-			prod.setDetail(dto.getDetail());
-			prod.setPrice(dto.getPrice());
-			prod.setQuantity(dto.getQuantity());
-			prod.setStatus(dto.getStatus());
-			prod.setTitle(dto.getTitle());
-			prod.setTradefor(dto.getTradefor());
-			prod.setThumurl(dto.getThumurl());
-			prod.setCategory(productRepository.getCategory(dto.getCatid()));
-		}		
-	
-		private void PROD_TO_DTO(Product prod, ProductDTO dto) {
-			dto.setDetail(prod.getDetail());
-			dto.setPrice(prod.getPrice());
-			dto.setProd_id(prod.getProd_id());
-			dto.setQuantity(prod.getQuantity());
-			dto.setUserid(prod.getOwner().getUserid());
-			dto.setStatus(prod.getStatus());
-			dto.setCatid(prod.getCategory().getCatid());
-			dto.setTitle(prod.getTitle());
-			dto.setThumurl(prod.getThumurl());
-			dto.setTradefor(prod.getTradefor());
-		}
+			private void DTO_to_PROD(ProductDTO dto, Product prod) {
+				prod.setDetail(dto.getDetail());
+				prod.setPrice(dto.getPrice());
+				prod.setQuantity(dto.getQuantity());
+				prod.setStatus(dto.getStatus());
+				prod.setTitle(dto.getTitle());
+				prod.setTradefor(dto.getTradefor());
+				prod.setThumurl(dto.getThumurl());
+				prod.setCategory(productRepository.getCategory(dto.getCatid()));
+			}		
+		
+			private void PROD_TO_DTO(Product prod, ProductDTO dto) {
+				dto.setDetail(prod.getDetail());
+				dto.setPrice(prod.getPrice());
+				dto.setProd_id(prod.getProd_id());
+				dto.setQuantity(prod.getQuantity());
+				dto.setUserid(prod.getOwner().getUserid());
+				dto.setStatus(prod.getStatus());
+				dto.setCatid(prod.getCategory().getCatid());
+				dto.setTitle(prod.getTitle());
+				dto.setThumurl(prod.getThumurl());
+				dto.setTradefor(prod.getTradefor());
+			}
 }

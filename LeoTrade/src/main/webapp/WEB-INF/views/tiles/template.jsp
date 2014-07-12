@@ -1,4 +1,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -148,9 +149,19 @@
         <div class="collapse navbar-collapse" id="navbar-collapse1">
           <form class="navbar-form pull-left">
               <div class="input-group" style="max-width:470px;">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+              
+              <c:choose>
+			      <c:when test="${not empty searchkey}">
+			           <input type="text" class="searchtxt form-control" placeholder="Search By Item Titles" value="${searchkey}">   			
+			      </c:when>
+			      <c:otherwise>
+			           <input type="text" class="searchtxt form-control" placeholder="Search By Item Titles">   			
+			      </c:otherwise>
+			  </c:choose>
+              
+              
                 <div class="input-group-btn">
-                  <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  <button class="searchbtn btn btn-default btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
               </div>
           </form>
@@ -263,7 +274,10 @@
 				      	$(this).addClass('on');
 				  	}
 				});
-				
+				$('.searchbtn').click(function(){
+					window.location=ctx+"search"+$('.searchtxt').val();
+					return false;
+				});
 				var notiflis=new NotificationList();
 				var notiflisview =new NotificationListView({model:notiflis});
 				notiflis.fetch({

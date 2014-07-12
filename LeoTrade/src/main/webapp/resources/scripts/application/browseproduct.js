@@ -28,7 +28,9 @@ ProductList=Backbone.Collection.extend({
 	},
 	makecategorize:function(catid){
 		this.url=this.url+"/catid/"+catid;
-
+	},
+	addsearch:function(key){
+		this.url=this.url+"/search/"+key;
 	}
 });
 

@@ -23,7 +23,9 @@ AppRouter=Backbone.Router.extend({
 		
 		//init product list
 		app.productList = new ProductList();
-		if($('#catid').length>0)
+		if($('.searchtxt').val()!="")
+			app.productList.addsearch($('.searchtxt').val());
+		else if($('#catid').length>0)
 			app.productList.makecategorize($('#catid').val());
 		app.productListView = new ProductListView({model:app.productList});
 		app.productList.fetch({
@@ -32,7 +34,9 @@ AppRouter=Backbone.Router.extend({
 				$('#prodlist').html(app.productListView.render().el);
 				$('#loadmore').click(function(e){
 					app.productList.addstart();
-					if($('#catid').length>0)
+					if($('.searchtxt').val()!="")
+						app.productList.addsearch($('.searchtxt').val());
+					else if($('#catid').length>0)
 						app.productList.makecategorize($('#catid').val());
 					app.productList.fetch({remove:false});
 					

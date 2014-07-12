@@ -78,7 +78,7 @@ public class SearchTest {
 		prod.setCategory(cat);
 		productRepository.addNew(prod);
 		
-		List<Product> lis=productRepository.searchByTitle("product1");
+		List<Product> lis=productRepository.searchByTitle("product1",0,100);
 		assertEquals(lis.size(),2);
 		
 	}

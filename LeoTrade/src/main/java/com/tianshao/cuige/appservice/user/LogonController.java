@@ -97,11 +97,22 @@ public class LogonController  {
 	    public String home(Model model) {	      
 	        return "home";
 	    }
+	    
+/**
+ * 	    
+ * TODO: 
+ * because ajax reloading masonary product list has defects, we have to refresh the 
+ * whole page when filtering on the product list.
+ */
 	    @RequestMapping(value="catid{catid}", method=RequestMethod.GET)
 	    public String homebycate(@PathVariable int catid, Model model) {
 	    	model.addAttribute("catid",catid);	      
 	        return "home";
 	    }
 
-	
+	    @RequestMapping(value="search{key}", method=RequestMethod.GET)
+	    public String homesearch(@PathVariable String key, Model model) {
+	    	model.addAttribute("searchkey",key);	      
+	        return "home";
+	    }
 }
