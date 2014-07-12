@@ -17,6 +17,11 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.trade.Trade;
@@ -24,6 +29,7 @@ import com.tianshao.cuige.domains.user.User;
 
 
 @Entity
+@Indexed
 @Table(name="product")
 public class Product implements IEntity{
 	@Id
@@ -38,7 +44,7 @@ public class Product implements IEntity{
 	@ManyToOne
 	@JoinColumn(name="catid")
 	Category category;
-	
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	@Column(name="title")
 	String title="";
 	

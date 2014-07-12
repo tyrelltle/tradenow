@@ -39,5 +39,7 @@ public interface IProductRepository{
 			throws Exception;
 
 	List<Product> getByCatId(int catid, int myuid, int st, int ct);
-
+	
+	List<Product> searchByTitle(String tit);
+	public int truncateTable(String tab);
 }

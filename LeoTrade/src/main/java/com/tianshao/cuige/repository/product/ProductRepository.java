@@ -5,6 +5,9 @@ import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -118,6 +121,20 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		Session session = sessionFactory.getCurrentSession();
 		Query query= session.createQuery("from Category");
 		return query.list();
+	}
+	
+	@Transactional
+	@Override
+	public List<Product> searchByTitle(String tit) {
+		Session session = sessionFactory.getCurrentSession();
+		FullTextSession fullTextSession = Search.getFullTextSession(session);
+		QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Product.class).get();
+		org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("title").matching(tit).createQuery();
+		// wrap Lucene query in a javax.persistence.Query
+        org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Product.class);
+        List<Product> ret=fullTextQuery.list();
+        fullTextSession.clear();
+		return ret;
 	}
 
 
