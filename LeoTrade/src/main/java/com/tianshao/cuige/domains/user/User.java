@@ -1,16 +1,30 @@
 package com.tianshao.cuige.domains.user;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Latitude;
+import org.hibernate.search.annotations.Longitude;
+import org.hibernate.search.annotations.Spatial;
 
 import com.tianshao.cuige.config.ProviderInfo;
 import com.tianshao.cuige.domains.IEntity;
-@Entity
+import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.trade.Trade;
+@Spatial(name="location") @Indexed @Entity
 @Table(name="user")
 public class User implements IEntity{
 
@@ -32,23 +46,32 @@ public class User implements IEntity{
 	private String password;
 
 	@Column(name="firstname")
-	private String firstname;
+	private String firstname="";
 	
 	@Column(name="lastname")
-	private String lastname;
+	private String lastname="";
 
 	@Column(name="email")
-	private String email;
+	private String email="";
 	
 	@Column(name="aboutme")
-	private String aboutme;
+	private String aboutme="";
 	
 	@Column(name="location")
-	private String location;
+	private String location="";
 	
 	@Column(name="image")
 	private byte[] image;
 	
+	@Column(name="latitude")
+	@Latitude(of="location")
+	Double latitude=0.0;
+	
+	@Column(name="longitude")
+    @Longitude(of="location")
+    Double longitude=0.0;
+	
+
 	
 	public User(int userid){this.userid=userid;}
 
@@ -70,6 +93,8 @@ public class User implements IEntity{
 		this.setEmail(provinfo.email);
 		this.setUserconid(provinfo.userconid);
 	}
+
+
 
 	public boolean signedinAsFacebookUser(){
 		return this.userconid!="";
@@ -166,6 +191,22 @@ public class User implements IEntity{
     public boolean isSocialUserAndNeedImage(){
     	return this.providerid!=null && this.providerid.equals("facebook")&&this.image==null;
     }
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
 	
 
 

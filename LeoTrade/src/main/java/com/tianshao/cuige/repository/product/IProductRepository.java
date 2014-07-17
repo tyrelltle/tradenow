@@ -2,10 +2,14 @@ package com.tianshao.cuige.repository.product;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.SimpleExpression;
+
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.user.User;
 
 public interface IProductRepository{
 
@@ -19,7 +23,7 @@ public interface IProductRepository{
 
 	public abstract Product getProductWithImages(int prod_id);
 
-	public abstract List<Product> getAllButMe(int userid, int limitL, int limitR)
+	public abstract List<Product> getAllButMe(User curuser, int limitL, int limitR)
 			throws Exception;
 
 	public abstract void update(IEntity ownerPro);
@@ -38,8 +42,11 @@ public interface IProductRepository{
 	List<Product> getAllMine(int userid, int limitL, int limitR)
 			throws Exception;
 
-	List<Product> getByCatId(int catid, int myuid, int st, int ct);
+	List<Product> getByCatId(User curuser, int catid, int st, int ct);
 	
 	List<Product> searchByTitle(String tit,int st,int ct);
 	public int truncateTable(String tab);
+
+	List<Product> getNearBy(int st, int ct, User centraluser,
+			Criteria criteria);
 }

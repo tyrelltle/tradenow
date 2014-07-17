@@ -10,6 +10,8 @@ create table user(
 	password varchar(255),
 	aboutme varchar(255),
 	location varchar(255),
+	latitude double,
+	longitude double,
 	image   MEDIUMBLOB,
 	primary key (userid)
 )

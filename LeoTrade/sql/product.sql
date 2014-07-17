@@ -9,6 +9,8 @@ create table product(
 	status varchar (3) not null default '',
 	tradefor varchar(200) default '',
 	thumurl varchar(200) default '',
+	latitude double,
+	longitude double,
 	primary key (prod_id),
 	foreign key (catid) references category(catid),
 	foreign key (ownerid) references user(userid)

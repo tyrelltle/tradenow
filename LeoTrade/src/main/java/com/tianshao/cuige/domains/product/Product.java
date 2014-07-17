@@ -21,6 +21,9 @@ import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Latitude;
+import org.hibernate.search.annotations.Longitude;
+import org.hibernate.search.annotations.Spatial;
 import org.hibernate.search.annotations.Store;
 
 import com.tianshao.cuige.domains.IEntity;
@@ -30,6 +33,7 @@ import com.tianshao.cuige.domains.user.User;
 
 @Entity
 @Indexed
+@Spatial(name="location") 
 @Table(name="product")
 public class Product implements IEntity{
 	@Id
@@ -62,6 +66,15 @@ public class Product implements IEntity{
 	
 	@Column(name="status")
 	String status="";
+	
+	@Column(name="latitude")
+	@Latitude(of="location")
+	Double latitude=0.0;
+	
+	@Column(name="longitude")
+    @Longitude(of="location")
+    Double longitude=0.0;
+	
 	
 	@OneToMany(fetch = FetchType.LAZY, 
 		       cascade = {CascadeType.ALL}, 
@@ -105,6 +118,8 @@ public class Product implements IEntity{
 
 	public void setOwner(User owner) {
 		this.owner = owner;
+		this.latitude=owner.getLatitude();
+		this.longitude=owner.getLongitude();
 	}
 
 	public Category getCategory() {
@@ -193,6 +208,34 @@ public class Product implements IEntity{
 
 	public void setTrades2(Set<Trade> trades2) {
 		this.trades2 = trades2;
+	}
+
+
+
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+
+
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+
+
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+
+
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
 	}
 
 

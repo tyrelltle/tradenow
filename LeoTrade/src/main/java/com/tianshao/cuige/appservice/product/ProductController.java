@@ -51,7 +51,7 @@ public class ProductController {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getAllButMe(SecurityContext.getCurrentUser().getUserid(),st,ct);
+	    	List<Product> prods=productRepository.getAllButMe(userService.currentUser(),st,ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;
@@ -77,7 +77,7 @@ public class ProductController {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getByCatId(catid, SecurityContext.getCurrentUser().getUserid(),st,ct);
+	    	List<Product> prods=productRepository.getByCatId(SecurityContext.getCurrentUser(), catid,st,ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;

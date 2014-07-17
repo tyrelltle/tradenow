@@ -8,7 +8,7 @@
 
     <session-factory>
         <property name="hibernate.search.default.directory_provider">filesystem</property>
-		<property name="hibernate.search.default.indexBase">c:\hibernate_test</property>
+		<property name="hibernate.search.default.indexBase">c:\hibernate_test2</property>
     	<property name="format_sql">true</property>
         <mapping class="com.tianshao.cuige.domains.user.User" />
 		<mapping class="com.tianshao.cuige.domains.product.Category" />
