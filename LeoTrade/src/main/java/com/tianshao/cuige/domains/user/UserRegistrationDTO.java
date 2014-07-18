@@ -5,6 +5,9 @@ public class UserRegistrationDTO {
     	private String password;
     	private String lastname;
     	private String firstname;
+    	private String lat;
+    	private String lng;
+    	private String location;
     	private String email;
     	
     	
@@ -12,6 +15,36 @@ public class UserRegistrationDTO {
     		
     	}
     	
+
+		public String getLocation() {
+			return location;
+		}
+
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+
+		public String getLat() {
+			return lat;
+		}
+
+
+		public void setLat(String lat) {
+			this.lat = lat;
+		}
+
+
+		public String getLng() {
+			return lng;
+		}
+
+
+		public void setLng(String lng) {
+			this.lng = lng;
+		}
+
 
 		public String getLastname() {
 			return lastname;
