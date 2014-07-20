@@ -94,6 +94,8 @@ public class User implements IEntity{
 		this.firstname=dto.getFirstname();
 		this.lastname=dto.getLastname();
 		this.password=dto.getPassword();
+		this.latitude=Double.valueOf(dto.getLat());
+		this.longitude=Double.valueOf(dto.getLng());
 		
 	}
 	

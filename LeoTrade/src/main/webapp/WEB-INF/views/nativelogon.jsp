@@ -59,8 +59,8 @@
 		
 		                  <div class="form-group">
 		                    <form:input type="text" id="autocomplete" onFocus="geolocate()" class="form-control input-lg" path="location" placeholder="Please enter your City,Country"/>
-		                    <form:input id="lat" type="hidden" class="form-control input-lg" path="lat" />
-		                    <form:input id="lng" type="hidden" class="form-control input-lg" path="lng" />
+		                    <form:input id="lat" type="hidden" class="form-control input-lg"  path="lat" />
+		                    <form:input id="lng" type="hidden" class="form-control input-lg" path="lng"  />
 		
 		                  </div>
 							<script type="text/javascript">
