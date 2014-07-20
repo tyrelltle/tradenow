@@ -30,8 +30,46 @@
 		<dependency>
 		    <groupId>org.springframework.social</groupId>
 		    <artifactId>spring-social-core</artifactId>
-		    <version>1.0.3.RELEASE</version>
+		    <version>1.1.0.RELEASE</version>
 		</dependency>
+		<dependency>     
+		    <groupId>org.springframework.social</groupId>
+		    <artifactId>spring-social-security</artifactId>
+		    <version>1.1.0.RELEASE</version>
+		</dependency>
+		<!-- Spring Social -->
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-config</artifactId>
+            <version>1.1.0.RELEASE</version>
+        </dependency>
+		<!-- Spring Security -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>3.2.4.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.2.4.RELEASE</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.4.RELEASE</version>
+		</dependency>
+ 
+		<!-- Spring Security JSP Taglib -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.2.4.RELEASE</version>
+		</dependency>
+		
+		
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-crypto</artifactId>
@@ -40,7 +78,7 @@
 		<dependency>
 		    <groupId>org.springframework.social</groupId>
 		    <artifactId>spring-social-web</artifactId>
-		    <version>1.0.3.RELEASE</version>
+		    <version>1.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -50,7 +88,7 @@
 	    <dependency>
 	        <groupId>org.springframework.social</groupId>
 	        <artifactId>spring-social-facebook</artifactId>
-	        <version>1.0.3.RELEASE</version>
+	        <version>1.1.0.RELEASE</version>
         </dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -89,7 +127,17 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>	
-		
+		<dependency>
+		  <groupId>org.aspectj</groupId>
+		  <artifactId>aspectjweaver</artifactId>
+		  <version>${org.aspectj-version}</version>
+		</dependency>
+		<!-- Spring + aspects -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

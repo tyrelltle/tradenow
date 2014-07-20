@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.notification.Notification;
 import com.tianshao.cuige.domains.notification.NotificationDTO;
 import com.tianshao.cuige.repository.notification.INotificationRepository;

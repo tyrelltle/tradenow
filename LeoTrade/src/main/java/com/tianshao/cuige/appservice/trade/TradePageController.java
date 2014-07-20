@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.user.User;
@@ -56,7 +55,7 @@ public class TradePageController {
 	    	 * 4.add to/from prod_id to dto
 	    	 */
 	    	boolean newtrade=false;
-	    	int userid=SecurityContext.getCurrentUser().getUserid();
+	    	int userid=userService.currentUser().getUserid();
 	    	Product toprod = null;
 	    	Product fromprod = null;
 	    	
@@ -72,7 +71,7 @@ public class TradePageController {
 	    	else{
 	    		newtrade=true;
 		    	trade=new Trade();
-		    	fromprod = makeDummyFromProd(SecurityContext.getCurrentUser().getUserid());
+		    	fromprod = makeDummyFromProd(userService.currentUser().getUserid());
 		    	toprod=productRepository.getByProductId(toprod_id);
 		    	trade.setDefaultValues();
 	    	}
@@ -80,7 +79,7 @@ public class TradePageController {
 	    	trade.setProd2(toprod);
 	    	//3
 	    	model.addAttribute("trade",trade);
-	    	model.addAttribute("side",trade.getSideByUserId(SecurityContext.getCurrentUser().getUserid()));
+	    	model.addAttribute("side",trade.getSideByUserId(userService.currentUser().getUserid()));
 
 	        return "tradepage";
 	    }
@@ -90,7 +89,7 @@ public class TradePageController {
 	    				   @PathVariable int trade_id,
 	    				   HttpServletRequest req,
 	    				   HttpServletResponse resp) throws IOException {
-	    	int userid=SecurityContext.getCurrentUser().getUserid();
+	    	int userid=userService.currentUser().getUserid();
 	    	Trade trade=tradeRepository.getByTradeid(trade_id);
 	    	Product fromprod;
 	    	if(trade!=null){

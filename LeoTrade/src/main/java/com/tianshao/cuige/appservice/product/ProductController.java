@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
@@ -77,7 +76,7 @@ public class ProductController {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getByCatId(SecurityContext.getCurrentUser(), catid,st,ct);
+	    	List<Product> prods=productRepository.getByCatId(userService.currentUser(), catid,st,ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;
@@ -105,7 +104,7 @@ public class ProductController {
 			
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getByUserId(SecurityContext.getCurrentUser().getUserid());
+	    	List<Product> prods=productRepository.getByUserId(userService.currentUser().getUserid());
 	    	if(null==prods)
 	    		return ret;
 	    	
@@ -160,7 +159,7 @@ public class ProductController {
 		@RequestMapping(value="{prod_id}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody ProductDTO put(@RequestBody ProductDTO dto, @PathVariable int prod_id, HttpServletResponse resp) throws IOException {
 			
-			if(SecurityContext.getCurrentUser().getUserid()!=dto.getUserid()){
+			if(userService.currentUser().getUserid()!=dto.getUserid()){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}
@@ -188,7 +187,7 @@ public class ProductController {
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No such Item!");
 				 return null;
 	    	}
-			if(SecurityContext.getCurrentUser().getUserid()!= prod_id){
+			if(userService.currentUser().getUserid()!= prod_id){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}
@@ -212,7 +211,7 @@ public class ProductController {
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No such Item!");
 				 return null;
 	    	}
-			if(SecurityContext.getCurrentUser().getUserid()!=prod.getOwner().getUserid()){
+			if(userService.currentUser().getUserid()!=prod.getOwner().getUserid()){
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
 		         return null;
 			}

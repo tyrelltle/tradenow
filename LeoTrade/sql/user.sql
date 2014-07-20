@@ -1,9 +1,6 @@
 create table user(
 	userid int not null AUTO_INCREMENT,
-	userconid varchar(255),
-	providerid varchar(255),
-	provideruserid varchar(255),
-	social_id varchar(255),
+	socialuid varchar(255),
 	firstname varchar(255),
 	lastname varchar(255),
 	email	varchar(255),
@@ -13,5 +10,6 @@ create table user(
 	latitude double,
 	longitude double,
 	image   MEDIUMBLOB,
+	enabled TINYINT NOT NULL DEFAULT 1 ,
 	primary key (userid)
 )

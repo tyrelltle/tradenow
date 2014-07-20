@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tianshao.cuige.config.SecurityContext;
-import com.tianshao.cuige.config.UserCookieGenerator;
+import com.tianshao.cuige.config.SocialContext;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserLogonDTO;
 import com.tianshao.cuige.domains.user.UserRegistrationDTO;
+import com.tianshao.cuige.domains.user.UserRole;
 import com.tianshao.cuige.repository.user.IUserRepository;
 import com.tianshao.cuige.services.user.IUserService;
 
@@ -32,19 +33,24 @@ import com.tianshao.cuige.services.user.IUserService;
 public class LogonController  {
 	  @Inject
       private final IUserRepository userRepository=null;
-	  @Inject
-	  private final Facebook facebook=null;
-	  
+
+	  @Autowired
+	  private final SocialContext socialContext=null;
 	  @Inject
 	  private final IUserService userService=null;
 	  
-	  private final UserCookieGenerator userCookieGenerator = new UserCookieGenerator();
 	   
 	    public LogonController(){
 	    }
 	    
 	 
-	    
+	    @RequestMapping(value="signout",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public String postlogout(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserRegistrationDTO dto2,HttpServletResponse resp) throws IOException {
+	    	String socialuid=userService.currentUser().getSocialuid();
+	    	if(socialuid!=null)
+	    		socialContext.disconnect(socialuid);
+			return "redirect:signout_";
+		}
 
 		@RequestMapping(value="nativelogon",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public String nativelogon(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserRegistrationDTO dto2,HttpServletResponse resp) throws IOException {
@@ -58,9 +64,7 @@ public class LogonController  {
 				User user=(userRepository.getByEmailPassword(dto.getEmail(),dto.getPassword()));
 				if(null!=user)
 				{
-					SecurityContext.setCurrentUser(user);
-					userCookieGenerator.addUserIdCookie(String.valueOf(user.getUserid()), resp);
-					return "home";
+										return "home";
 				}else{
 					throw new Exception("user does not exists");
 				
@@ -75,10 +79,10 @@ public class LogonController  {
 		public String nativeregister(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
 			try{
 			
-				if(0==userRepository.getByEmail(dto.getEmail()).size())
+				if(userRepository.getByEmail(dto.getEmail())==null)
 				{
 					User user=new User(dto);
-					userRepository.addNew(user);
+					userService.addNewRoledUser(user, UserRole.ROLES.ROLE_USER);
 
 					
 					model.addAttribute("error", "Success!");

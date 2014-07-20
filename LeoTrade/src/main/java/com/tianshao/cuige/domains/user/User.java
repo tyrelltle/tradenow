@@ -1,7 +1,9 @@
 package com.tianshao.cuige.domains.user;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -19,8 +21,11 @@ import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Latitude;
 import org.hibernate.search.annotations.Longitude;
 import org.hibernate.search.annotations.Spatial;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
+import org.springframework.social.facebook.api.Reference;
 
-import com.tianshao.cuige.config.ProviderInfo;
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
@@ -33,14 +38,14 @@ public class User implements IEntity{
     @GeneratedValue
 	private int userid=-1;
 	
-	@Column(name="userconid")
-	String userconid;
+	@Column(name="socialuid")
+	private String socialuid;
 	
-	@Column(name="providerid")
-	String providerid;
+	@OneToMany(mappedBy = "user")
+	Set<UserRole> userRoles;
 	
-	@Column(name="provideruserid")
-	String provideruserid;
+	@Column(name = "enabled", nullable = false)
+	private boolean enabled;
 	
 	@Column(name="password")
 	private String password;
@@ -71,13 +76,20 @@ public class User implements IEntity{
     @Longitude(of="location")
     Double longitude=0.0;
 	
+//	
+//	public User(String a, String b, boolean c, boolean d, boolean e, boolean f, Object g){
+//		super(a, b, c, d, e, f, (Collection<? extends GrantedAuthority>) g);
+//	}
+	public User(int userid){
+		this.userid=userid;
+	}
 
-	
-	public User(int userid){this.userid=userid;}
-
-	public User(){}
+	public User(){
+	}
 
 	public User(UserRegistrationDTO dto){
+		
+		
 		this.email=dto.getEmail();
 		this.firstname=dto.getFirstname();
 		this.lastname=dto.getLastname();
@@ -85,21 +97,28 @@ public class User implements IEntity{
 		
 	}
 	
-	public User(ProviderInfo provinfo){
-		this.setProviderid(provinfo.providerid);
-		this.setProvideruserid(provinfo.provideruserid);
-		this.setFirstname(provinfo.firstname);
-		this.setLastname(provinfo.lastname);
-		this.setEmail(provinfo.email);
-		this.setUserconid(provinfo.userconid);
+
+
+	public User(Facebook api) {
+		FacebookProfile prof=api.userOperations().getUserProfile();
+		this.setFirstname(prof.getFirstName());
+		this.setLastname(prof.getLastName());
+		this.setEmail(prof.getEmail());
+		this.setEnabled(true);
+		this.setImage(api.userOperations().getUserProfileImage());
+		this.setLocation(prof.getLocation().getName());
+		this.setPassword("Dummy Social Password");
+		
 	}
 
-
-
-	public boolean signedinAsFacebookUser(){
-		return this.userconid!="";
+	public String getSocialuid() {
+		return socialuid;
 	}
-	
+
+	public void setSocialuid(String socialuid) {
+		this.socialuid = socialuid;
+	}
+
 	public String getAboutme() {
 		return aboutme;
 	}
@@ -164,33 +183,14 @@ public class User implements IEntity{
 		this.password = password;
 	}
 
-	public String getUserconid() {
-		return userconid;
-	}
-
-	public void setUserconid(String userconid) {
-		this.userconid = userconid;
-	}
-
-	public String getProviderid() {
-		return providerid;
-	}
-
-	public void setProviderid(String providerid) {
-		this.providerid = providerid;
-	}
-
-	public String getProvideruserid() {
-		return provideruserid;
-	}
-
-	public void setProvideruserid(String provideruserid) {
-		this.provideruserid = provideruserid;
-	}
 	
-    public boolean isSocialUserAndNeedImage(){
-    	return this.providerid!=null && this.providerid.equals("facebook")&&this.image==null;
-    }
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(Set<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
 
 	public Double getLatitude() {
 		return latitude;
@@ -206,6 +206,19 @@ public class User implements IEntity{
 
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public boolean isSocialUserAndNeedImage() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 

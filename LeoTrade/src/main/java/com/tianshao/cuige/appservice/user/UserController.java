@@ -32,8 +32,7 @@ import com.tianshao.cuige.shared.Util;
 public class UserController {
 	    @Autowired
 	    private IUserRepository userRepository;
-	    @Autowired
-	    Facebook facebook;
+
 	    @Autowired
 	    private IUserService userService;
 	    
@@ -52,10 +51,10 @@ public class UserController {
 		public @ResponseBody UserDTO get( @PathVariable int userid,HttpServletResponse resp) throws IOException {
 	    	User user=userService.currentUser();
 	    	user= userRepository.getByUserid(user.getUserid());
-	    	if(user.isSocialUserAndNeedImage()){
-	    		user.setImage(facebook.userOperations().getUserProfileImage());
-	    		userRepository.update(user);
-	    	}
+//	    	if(user.isSocialUserAndNeedImage()){
+//	    		user.setImage(facebook.userOperations().getUserProfileImage());
+//	    		userRepository.update(user);
+//	    	}
 	   
 		   
 	    	UserDTO profwrap=new UserDTO();

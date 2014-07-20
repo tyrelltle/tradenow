@@ -14,7 +14,14 @@ import com.tianshao.cuige.repository.BaseRepository;
 @Repository("userRepository")
 public class UserRepository extends BaseRepository implements IUserRepository{
 
-	
+	@Override
+	@Transactional
+	public User loadUserBySocialuid(String userId) {
+		com.tianshao.cuige.domains.user.User u;
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from User where socialuid='"+userId+"'");
+		return (User) query.uniqueResult();
+	}
 	@Override
 	@Transactional
 	public User getByUserid(int userid){
@@ -23,15 +30,27 @@ public class UserRepository extends BaseRepository implements IUserRepository{
 		
 		return (User) query.uniqueResult();
 	}
-
+	
+	@Override
+	@Transactional
+	public User getBySocialUid(String socialuid) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from User where socialuid='"+socialuid+"'");
+		List<User> lis=query.list();
+		if(lis.size()==0)
+			return null;
+		return lis.get(0);
+	}
 
 	@Override
 	@Transactional
-	public List<User> getByEmail(String email){
+	public User getByEmail(String email){
 		Session session = sessionFactory.getCurrentSession();
 		Query query= session.createQuery("from User where email='"+email+"'");
-		
-		return query.list();
+		List<User> lis=query.list();
+		if(lis.size()==0)
+			return null;
+		return lis.get(0);
 	}
 	
 	@Override
@@ -67,5 +86,8 @@ public class UserRepository extends BaseRepository implements IUserRepository{
 		Query query=seesion.createQuery("from User where providerid='"+providerid+"' and provideruserid='"+provideruserid+"'");
 		return query.list();
 	}
+
+
+
 
 }

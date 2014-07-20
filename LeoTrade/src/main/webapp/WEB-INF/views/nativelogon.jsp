@@ -28,18 +28,19 @@
 	
 		<div class="logincontainer container">
 		  <div class="row">
-		      <form:form class="form col-md-6 center-block" method="POST" commandName="signinForm" action="nativesignin" >
+		      <form class="form col-md-6 center-block" method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
 		                  <div class="form-group">
-		                    <form:input type="text" class="form-control input-lg" path="email" placeholder="Email"/>
+		                    <input type="text" class="form-control input-lg" name="username" placeholder="Email"/>
 		                  </div>
 		                  <div class="form-group">
-		                    <form:input type="password" class="form-control input-lg" path="password" placeholder="Password"/>
+		                    <input type="password" class="form-control input-lg" name="password" placeholder="Password"/>
 		                  </div>
 		                  <div class="form-group">
-		                    <form:button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</form:button>
+		                    <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
 		                   <span><a href="#">${errorlogin}</a></span>
 		                  </div>
-		      </form:form>
+		                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		      </form>
 		      <form:form class="form col-md-6 center-block" id="regform"  method="POST" commandName="userForm" action="nativeregister">
 						 
 		                  <div class="form-group">

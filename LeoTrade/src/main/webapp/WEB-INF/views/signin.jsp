@@ -281,7 +281,7 @@ section {
       <div class="col-sm-6">
         <div class="pull-right  hidden-xs">    
 			<h>
-			<form action="<c:url value="/signin/facebook" />" method="POST">
+			<form action="<c:url value="/auth/facebook" />" method="POST">
 		    	 <button type="submit">Sign in with Facebook</button>
 		   		 <input type="hidden" name="scope" value="email,publish_stream,offline_access" />	
 		   		 	    

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.trade.TradeDTO;
 import com.tianshao.cuige.domains.trade.TradePageDTO;
@@ -23,13 +23,15 @@ import com.tianshao.cuige.repository.product.IProductRepository;
 import com.tianshao.cuige.repository.trade.ITradeRepository;
 import com.tianshao.cuige.services.NotificationService.INotificationService;
 import com.tianshao.cuige.services.trade.ITradeService;
+import com.tianshao.cuige.services.user.IUserService;
 
 
 
 @Controller
 @RequestMapping("/api/trade")
 public class TradeController {
-
+		@Autowired
+		private IUserService userService;
 		@Autowired
 		private INotificationService notificationService;
 	    @Autowired
@@ -41,7 +43,7 @@ public class TradeController {
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<TradeDTO> get(HttpServletResponse resp) throws Exception {
 
-			List<Trade> t=tradeRepository.getByUserId(SecurityContext.getCurrentUser().getUserid(), FROM_TO.BOTH);
+			List<Trade> t=tradeRepository.getByUserId(userService.currentUser().getUserid(), FROM_TO.BOTH);
 			List<TradeDTO> ret=new ArrayList<TradeDTO>();
 			Iterator<Trade> i=t.iterator();
 			while(i.hasNext()){

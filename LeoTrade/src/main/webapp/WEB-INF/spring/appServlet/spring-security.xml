@@ -1,0 +1,86 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- enable use-expressions -->
+	<http auto-config="true" use-expressions="true">
+	
+		        <!-- Anyone can access these urls -->
+        <intercept-url pattern="/resources/**" access="permitAll"/>
+        <intercept-url pattern="/signout/**" access="permitAll"/>
+        <intercept-url pattern="/auth/**" access="permitAll"/>
+        <intercept-url pattern="/login/**" access="permitAll"/>
+        <intercept-url pattern="/signin/**" access="permitAll"/>
+        <intercept-url pattern="/nativelogon" access="permitAll"/>
+        <intercept-url pattern="/nativeregister" access="permitAll"/>
+        <intercept-url pattern="/api/notification" access="permitAll"/>
+
+	    <!-- The rest of our application is protected. -->
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+
+		<!-- access denied page -->
+		<access-denied-handler error-page="/403" />
+		<form-login 
+		    login-page="/signin" 
+		    default-target-url=""
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
+			password-parameter="password" />
+			
+		<logout logout-url="/signout_" logout-success-url="/signin" delete-cookies="JESSIONID"/>
+		<!-- enable csrf protection -->
+		
+		<!-- Adds social authentication filter to the Spring Security filter chain. -->
+        <custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
+	</http>
+	<context:component-scan base-package="com.tianshao.cuige" />
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService" >
+			<password-encoder hash="bcrypt" />    
+		</authentication-provider>
+		<authentication-provider ref="socialAuthenticationProvider"/>
+	</authentication-manager>
+	
+	 <!--
+        Configures the social authentication filter which integrates Spring Social
+        with Spring Security.
+    -->
+    <beans:bean id="socialAuthenticationFilter" class="org.springframework.social.security.SocialAuthenticationFilter">
+        <beans:constructor-arg index="0" ref="authenticationManager"/>
+        <beans:constructor-arg index="1" ref="userIdSource"/>
+        <beans:constructor-arg index="2" ref="usersConnectionRepository"/>
+        <beans:constructor-arg index="3" ref="connectionFactoryLocator"/>
+
+        <!-- Sets the url of the registration form. -->
+        <beans:property name="signupUrl" value="/aloha"/>
+    </beans:bean>
+	
+ <!--
+        Configures the social authentication provider which processes authentication requests
+        made by using supported social authentication services (FB, Twitter and so on).
+    -->
+    <beans:bean id="socialAuthenticationProvider" class="org.springframework.social.security.SocialAuthenticationProvider">
+        <beans:constructor-arg index="0" ref="usersConnectionRepository"/>
+        <beans:constructor-arg index="1" ref="socialUserDetailsService"/>
+    </beans:bean>
+    
+    
+    
+    <!--
+        This bean determines the account ID of the user. The example application
+        uses the username as the account ID.
+    -->
+    <beans:bean id="userIdSource" class="org.springframework.social.security.AuthenticationNameUserIdSource"/>
+    
+
+
+
+</beans:beans>

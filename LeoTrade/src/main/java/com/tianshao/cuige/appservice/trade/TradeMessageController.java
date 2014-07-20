@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tianshao.cuige.config.SecurityContext;
 import com.tianshao.cuige.domains.trade.Message;
 import com.tianshao.cuige.domains.trade.MessageDTO;
 import com.tianshao.cuige.domains.trade.Trade;

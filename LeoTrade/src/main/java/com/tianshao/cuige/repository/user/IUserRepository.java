@@ -2,6 +2,9 @@ package com.tianshao.cuige.repository.user;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.user.User;
 
@@ -15,7 +18,9 @@ public interface IUserRepository{
 
 	public void remove(IEntity prof);
 
-	public List<User> getByEmail(String email);
+	public User getByEmail(String email);
+	
+	public User getBySocialUid(String socialuid);
 
 	User getByEmailPassword(String email, String password);
 
@@ -23,5 +28,5 @@ public interface IUserRepository{
 
 	List<User> getByProvIdProvUserId(String providerid, String provideruserid);
 
-
+	public User loadUserBySocialuid(String userId) ;
 }

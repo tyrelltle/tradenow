@@ -11,6 +11,7 @@
 		<property name="hibernate.search.default.indexBase">c:\hibernate_test2</property>
     	<property name="format_sql">true</property>
         <mapping class="com.tianshao.cuige.domains.user.User" />
+        <mapping class="com.tianshao.cuige.domains.user.UserRole" />
 		<mapping class="com.tianshao.cuige.domains.product.Category" />
         <mapping class="com.tianshao.cuige.domains.product.Product" />
         <mapping class="com.tianshao.cuige.domains.product.Image" />
