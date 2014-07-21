@@ -89,7 +89,7 @@ public class ProductController {
 			//st and ct are used in LIMIT st,ct
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.searchByTitle(key, st, ct);
+	    	List<Product> prods=productRepository.searchByTitle(userService.currentUser().getUserid(),key, st, ct);
 	    	
 	    	toRrodListDTO(ret, prods);
 	    	return ret;
@@ -187,10 +187,6 @@ public class ProductController {
 				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No such Item!");
 				 return null;
 	    	}
-			if(userService.currentUser().getUserid()!= prod_id){
-				 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "you are not the owner of this Item, please sign in first!");
-		         return null;
-			}
 			
 			try {
 				productRepository.remove(prod);
@@ -299,5 +295,8 @@ public class ProductController {
 				dto.setTitle(prod.getTitle());
 				dto.setThumurl(prod.getThumurl());
 				dto.setTradefor(prod.getTradefor());
+				dto.setOwneraddr(prod.getOwner().getLocation());
+				dto.setOwnerimgurl("http://localhost:8080/cuige/user/img/userid/"+prod.getOwner().getUserid());
+				dto.setOwnernm(prod.getOwner().getFullName());
 			}
 }

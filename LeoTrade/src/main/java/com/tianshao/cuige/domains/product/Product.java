@@ -1,5 +1,6 @@
 package com.tianshao.cuige.domains.product;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,14 +19,17 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.DateBridge;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Latitude;
 import org.hibernate.search.annotations.Longitude;
+import org.hibernate.search.annotations.Resolution;
 import org.hibernate.search.annotations.Spatial;
 import org.hibernate.search.annotations.Store;
 
+import com.tianshao.cuige.domains.ICEntity;
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.trade.Trade;
 import com.tianshao.cuige.domains.user.User;
@@ -99,6 +103,10 @@ public class Product implements IEntity{
 	
 	@Column(name="thumurl")
 	String thumurl="";
+	
+	@Column(name="update_date")
+	Timestamp update_date;
+	
 	public Product(){}
 
 	
@@ -239,7 +247,21 @@ public class Product implements IEntity{
 	}
 
 
-	
+
+
+	public Timestamp getUpdate_date() {
+		return update_date;
+	}
+
+
+
+
+	public void setUpdate_date(Timestamp update_date) {
+		this.update_date = update_date;
+	}
+
+
+
 	
 
 

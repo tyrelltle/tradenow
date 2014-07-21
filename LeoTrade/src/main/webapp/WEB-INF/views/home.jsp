@@ -10,12 +10,15 @@
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
 	    <style type="text/css">	
-			.masconryitem{
+			.masonryitem{
 				width: 200px;
 				margin: 10px;
 			}
 			#catlistpanel{
 				float:left;
+			}
+			.panel-thumbnail:hover{
+				cursor:pointer;
 			}
 		
 	    </style>
@@ -68,7 +71,7 @@
 	 		<script type="text/template" id="prodlisttmp">
 				<div id="prodlispanel" class="panel panel-default">
 			      		<div  class="panel-body">
-							<div class = "masconrycontainer"   >
+							<div class = "masonrycontainer"   >
 							</div>
 							<center>
 								<button type="button" id="loadmore" class="btn btn-default">Load More</button>
@@ -79,18 +82,25 @@
 
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
-				      <div class="masconryitem">			      
 				      	<div class="panel panel-default">
-				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>
-				          <div class="panel-body">
-				            <p class="lead">{{title}}</p>
-				          <!-- Button trigger modal -->
-								<button class="btn_detail btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-  									Launch demo modal
-								</button>
+				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="img-responsive"></a></div>
+				          <div class="panel-body" style="border: 1px solid #cccccc;">
+				            <div class="caption" style="font-size:15px">
+									<div class="col-md-12">{{title}}</div>			
+							</div>
 				          </div>
+						  <div class="panel-footer">
+						    <div class="row">
+								<div class="col-md-4">
+									<img style="width:50px" src="{{ownerimgurl}}"/>
+								</div>
+								<div class="col-md-8">
+									<em>{{ownernm}}:</em> 
+									<p style="font-size:12px">{{owneraddr}}</p>
+								</div>
+							</div>
+						  </div>
 				        </div>		        
-				      </div>																	     
 			</script>
 			
 			<script type="text/template" id="proddetailtmp">

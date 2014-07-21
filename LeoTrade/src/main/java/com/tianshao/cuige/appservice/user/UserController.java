@@ -1,4 +1,4 @@
-package com.tianshao.cuige.appservice.user;
+   package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
 
@@ -36,7 +36,7 @@ public class UserController {
 	    @Autowired
 	    private IUserService userService;
 	    
-	    final String defaultimgurl="http://img.teapic.com/thumbs/201207/27/124104mawrcsfomsejkmvl.jpg.middle.jpg";
+	    final String defaultimgurl="";//"http://img.teapic.com/thumbs/201207/27/124104mawrcsfomsejkmvl.jpg.middle.jpg";
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
 			

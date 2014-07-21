@@ -1,8 +1,12 @@
 package com.tianshao.cuige.repository.product;
 
+import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -18,6 +22,7 @@ import org.hibernate.search.spatial.DistanceSortField;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
@@ -27,46 +32,64 @@ import com.tianshao.cuige.repository.BaseRepository;
 @Repository("productRepository")
 
 public class ProductRepository extends BaseRepository implements IProductRepository{
-	private static final int locationrange = 100;
-	
+	private static final int locationrange = 200;
+	private static final String spatialsql="";
 	@Override
 	@Transactional
 	public List<Product> getAllButMe(User curuser, int limitL, int limitR) throws Exception{
 	//	public List<Product> getNearBy(int st, int ct, User centraluser, SimpleExpression... exps) 
 		
-		Session session = sessionFactory.getCurrentSession();
-
-		Criteria c = session.createCriteria(Product.class, "prod");
-		c.createAlias("prod.owner", "owner"); // inner join by default
-		c.add(Restrictions.ne("owner.userid", curuser.getUserid()));
 		
-		return this.getNearBy(limitL, limitR, curuser, c);		
+
+		Query query = sessionFactory.getCurrentSession()
+									.createQuery("from Product where (6371 * 2 * ASIN(SQRT(POWER(SIN((:ulatitude - abs(latitude)) * pi()/180 / 2),2) +" +
+																		"COS(:ulatitude * pi()/180 ) * COS(abs(latitude) * pi()/180) *" +
+																		"POWER(SIN((:ulongitude - longitude) * pi()/180 / 2), 2))))*1000 < " + locationrange*1000+																	
+																		" and owner.userid != "+curuser.getUserid()+" ORDER BY update_date desc");
+
+		query.setParameter("ulongitude", curuser.getLongitude());
+		query.setParameter("ulatitude", curuser.getLatitude());
+		query.setFirstResult(limitL);
+		query.setMaxResults(limitR);
+
+		return (List<Product>) query.list();
+	
+		
 	}
 	
 	@Override
 	@Transactional
 	public List<Product> getByCatId(User curuser, int catid,int st, int ct) {
-		Session session = sessionFactory.getCurrentSession();
 
-		Criteria c = session.createCriteria(Product.class, "prod");
-		c.createAlias("prod.owner", "owner");
-		c.createAlias("prod.category", "category");
+		Query query = sessionFactory.getCurrentSession()
+									.createQuery("from Product where (6371 * 2 * ASIN(SQRT(POWER(SIN((:ulatitude - abs(latitude)) * pi()/180 / 2),2) +" +
+																		"COS(:ulatitude * pi()/180 ) * COS(abs(latitude) * pi()/180) *" +
+																		"POWER(SIN((:ulongitude - longitude) * pi()/180 / 2), 2))))*1000 < " + locationrange*1000+																	
+																		" and category.catid="+catid+" and owner.userid != "+curuser.getUserid()+"ORDER BY update_date desc");
 
-		c.add(Restrictions.ne("owner.userid", curuser.getUserid()));
+		query.setParameter("ulongitude", curuser.getLongitude());
+		query.setParameter("ulatitude", curuser.getLatitude());
+		query.setFirstResult(st);
+		query.setMaxResults(ct);
+
+		return (List<Product>) query.list();
 		
-		c.add(Restrictions.eq("category.catid",catid));
-		return this.getNearBy(st, ct, curuser, c);		
+			
 	}
 	
 	@Transactional
 	@Override
-	public List<Product> searchByTitle(String tit,int st,int ct) {
+	public List<Product> searchByTitle(int myuid,String tit,int st,int ct) {
 		Session session = sessionFactory.getCurrentSession();
 		FullTextSession fullTextSession = Search.getFullTextSession(session);
 		QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Product.class).get();
 		org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("title").matching(tit).createQuery();
 		// wrap Lucene query in a javax.persistence.Query
-        org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Product.class);
+		FullTextQuery fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Product.class);
+        Criteria c = session.createCriteria(Product.class, "prod");
+		c.createAlias("prod.owner", "owner"); // inner join by default
+		c.add(Restrictions.ne("owner.userid",myuid));
+		fullTextQuery.setCriteriaQuery(c);
         fullTextQuery.setFirstResult(st);
         fullTextQuery.setMaxResults(ct);
         List<Product> ret=fullTextQuery.list();
@@ -160,36 +183,23 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 
 	
 
+	
+
 	@Override
 	@Transactional
-	public List<Product> getNearBy(int st, int ct, User centraluser, Criteria criteria) {
-		double centerLatitude = centraluser.getLatitude();
-		double centerLongitude = centraluser.getLongitude();
-		FullTextSession fullTextSession = Search.getFullTextSession(sessionFactory.getCurrentSession());
+	public void addNew(IEntity obj) {
+		Product p =(Product)obj;
+		p.setUpdate_date(new Timestamp(new Date().getTime()));
 
-		QueryBuilder builder = fullTextSession.getSearchFactory()
-		   .buildQueryBuilder().forEntity( User.class ).get();
-		org.apache.lucene.search.Query luceneQuery = builder.spatial()
-			  .onCoordinates("location")
-			  .within(locationrange, Unit.KM)
-		      .ofLatitude(centerLatitude)
-		      .andLongitude(centerLongitude)
-		   .createQuery();
+		super.addNew(obj);
+	}
 
-		FullTextQuery fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Product.class);
-		Sort distanceSort = new Sort(
-		    new DistanceSortField(centerLatitude, centerLongitude, "location"));
-		fullTextQuery.setSort(distanceSort);
-		
-		
-		//criteria create
-		if(criteria !=null)
-			fullTextQuery.setCriteriaQuery(criteria);	
-		fullTextQuery.setFirstResult(st);
-		fullTextQuery.setMaxResults(ct);
-		List<Product> ret=fullTextQuery.list();
-		fullTextSession.clear();
-		return ret;
+	@Override
+	@Transactional
+	public void update(IEntity obj) {
+		Product p =(Product)obj;
+		p.setUpdate_date(new Timestamp(new Date().getTime()));
+		super.update(obj);
 	}
 
 

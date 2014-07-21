@@ -22,10 +22,50 @@ public class ProductDTO{
 	String tradefor="";
 	
 	String thumurl="";
+	
+	String ownernm="";
+	String owneraddr="";
+	String ownerimgurl="";
 	public ProductDTO(){}
 
 	
 	
+	public String getOwnernm() {
+		return ownernm;
+	}
+
+
+
+	public void setOwnernm(String ownernm) {
+		this.ownernm = ownernm;
+	}
+
+
+
+	public String getOwneraddr() {
+		return owneraddr;
+	}
+
+
+
+	public void setOwneraddr(String owneraddr) {
+		this.owneraddr = owneraddr;
+	}
+
+
+
+	public String getOwnerimgurl() {
+		return ownerimgurl;
+	}
+
+
+
+	public void setOwnerimgurl(String ownerimgurl) {
+		this.ownerimgurl = ownerimgurl;
+	}
+
+
+
 	public String getTradefor() {
 		return tradefor;
 	}

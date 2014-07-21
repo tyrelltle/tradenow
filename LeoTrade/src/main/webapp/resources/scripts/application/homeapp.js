@@ -41,11 +41,11 @@ AppRouter=Backbone.Router.extend({
 					app.productList.fetch({remove:false});
 					
 				});
-				var container = document.querySelector('.masconrycontainer');
-				var msnry;
-				this.msnry= new Masonry( container,{isInitLayout: true});
-				imagesLoaded( container, function() {
-					msnry= new Masonry( container,{isInitLayout: true});
+				app.container = document.querySelector('.masonrycontainer');
+				
+				app.msnry= new Masonry( app.container);
+				imagesLoaded( app.container, function() {
+					app.msnry= new Masonry( app.container);
 				
 				});
 			
@@ -55,6 +55,13 @@ AppRouter=Backbone.Router.extend({
 
 	prodDetail:function(prod_id){
 		//display productView in popup modal
+		if($('#myModal').modal == undefined)
+			app.navigate("",true);
+		
+		$('#myModal').modal({show:true});
+		$('#myModal').on('hide.bs.modal', function (e) {
+			app.navigate("",true);
+		});
 		$('#btn_trade').click(function(){document.location.href = 'tradepage/toprod/'+prod_id;});
 		this.product=this.productList.get(prod_id);
 		this.productView=new ProductView({model:this.product});

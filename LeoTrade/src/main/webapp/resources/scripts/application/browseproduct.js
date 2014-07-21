@@ -2,7 +2,9 @@
 
 Product=Backbone.Model.extend({
 	defaults:{"prod_id":null,"userid":0,"catid":0,"title":"",
-			  "detail":"", "price":0,"quantity":0,"status":"","tradefor":"","thumurl":""},
+			  "detail":"", "price":0,"quantity":0,"status":"",
+			  "tradefor":"","thumurl":"","ownerimgurl":"",
+			  "ownernm":"","owneraddr":""},
 	urlRoot:"api/product",
 	idAttribute: "prod_id"
 		
@@ -11,7 +13,7 @@ Product=Backbone.Model.extend({
 ProductList=Backbone.Collection.extend({
 	model:Product,
 	start: 0,
-	offset:5,
+	offset:20,
 	initialize:function(){
 		
 		this.url=ctx+"api/product/start/0/count/"+this.offset;
@@ -142,7 +144,7 @@ ProductListView=Backbone.View.extend({
 		var self=this;
 		$(this.el).html(this.template());
 		_.each(this.model.models,function(m){
-			$(self.el).find('.masconrycontainer').append(new ProductListItemView({model:m}).render().el);
+			$(self.el).find('.masonrycontainer').append(new ProductListItemView({model:m}).render().el);
 		});
 		
 		return this;
@@ -166,21 +168,16 @@ ProductListItemView=Backbone.View.extend({
 		this.template=_.template($("#prodlistitemtmp").html());
 	},
 	
-	className:".masconryitem",
-	events:{"click .btn_detail":"clicked",
-			"click .btn_select":"selected"},
+	className:"masonryitem",
+	events:{"click":"clicked"},
 	
 	clicked:function(){
-		app.navigate("proddetail"+this.model.get("prod_id"),true);
-		
-	},
-	selected:function(){
-		app.navigate("prodselected"+this.model.get("prod_id"),true);
+		//app.navigate("proddetail"+this.model.get("prod_id"),true);
+		app.prodDetail(this.model.get("prod_id"));
 	},
 	render:function(){
-		var json={title:this.model.get("title"),
-				  thumurl:this.model.get("thumurl")};
-		$(this.el).html(this.template(json));
+
+		$(this.el).html(this.template(this.model.toJSON()));
 		return this;
 	},
 	close:function(){

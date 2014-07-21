@@ -11,6 +11,8 @@ create table product(
 	thumurl varchar(200) default '',
 	latitude double,
 	longitude double,
+	update_date timestamp,
+
 	primary key (prod_id),
 	foreign key (catid) references category(catid),
 	foreign key (ownerid) references user(userid)

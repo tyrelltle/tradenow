@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tianshao.cuige.domains.product.Product;
+
 @Service("adminService")
 public class AdminService implements IAdminService{
 	@Autowired
@@ -19,7 +21,7 @@ public class AdminService implements IAdminService{
 		
 			Session session = sessionFactory.getCurrentSession();
 			FullTextSession fullTextSession = Search.getFullTextSession(session);
-	        fullTextSession.createIndexer().startAndWait();
+	        fullTextSession.createIndexer(Product.class).startAndWait();
 		
 		
 	}	

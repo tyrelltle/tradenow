@@ -44,9 +44,8 @@ public interface IProductRepository{
 
 	List<Product> getByCatId(User curuser, int catid, int st, int ct);
 	
-	List<Product> searchByTitle(String tit,int st,int ct);
-	public int truncateTable(String tab);
 
-	List<Product> getNearBy(int st, int ct, User centraluser,
-			Criteria criteria);
+
+
+	List<Product> searchByTitle(int myuid, String tit, int st, int ct);
 }

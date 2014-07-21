@@ -29,7 +29,7 @@ import org.springframework.social.facebook.api.Reference;
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
-@Spatial(name="location") @Indexed @Entity
+@Entity
 @Table(name="user")
 public class User implements IEntity{
 
@@ -69,11 +69,9 @@ public class User implements IEntity{
 	private byte[] image;
 	
 	@Column(name="latitude")
-	@Latitude(of="location")
 	Double latitude=0.0;
 	
 	@Column(name="longitude")
-    @Longitude(of="location")
     Double longitude=0.0;
 	
 //	
@@ -96,6 +94,7 @@ public class User implements IEntity{
 		this.password=dto.getPassword();
 		this.latitude=Double.valueOf(dto.getLat());
 		this.longitude=Double.valueOf(dto.getLng());
+		this.location=dto.getLocation();
 		
 	}
 	
@@ -221,6 +220,10 @@ public class User implements IEntity{
 	public boolean isSocialUserAndNeedImage() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public String getFullName() {
+		return this.firstname.toUpperCase()+" "+this.lastname.toUpperCase();
 	}
 	
 
