@@ -101,7 +101,7 @@ AppRouter=Backbone.Router.extend({
 					});
 
 					$('#prodlismodel').on('shown.bs.modal', function (e) {
-						var container = document.querySelector('.masconrycontainer');
+						var container = document.querySelector('.masonrycontainer');
 						var msnry;
 						this.msnry= new Masonry( container,{isInitLayout: true});
 						imagesLoaded( container, function() {

@@ -51,7 +51,7 @@
 				.modal-lg-cust{
 				width:1275px;
 				}
-				.masconryitem{
+				.masonryitem{
 				width: 200px;
 				margin: 10px;
 				}
@@ -273,7 +273,7 @@
 			
 	 		
 	 		<script type="text/template" id="prodlisttmp">
-				<div class = "masconrycontainer"   style="margin-top: 60px;">
+				<div class = "masonrycontainer"   style="margin-top: 60px;">
 				</div>
 				<center>
 				<button type="button" id="loadmore" class="btn btn-default">Load More</button>
@@ -304,7 +304,7 @@
 	            </div>    
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
-				      <div class="masconryitem">			      
+				      <div class="masonryitem">			      
 				      	<div class="panel panel-default">
 				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>
 				          <div class="panel-body">

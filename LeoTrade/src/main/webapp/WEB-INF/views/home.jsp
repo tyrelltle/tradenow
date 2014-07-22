@@ -83,7 +83,7 @@
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
 				      	<div class="panel panel-default">
-				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="img-responsive"></a></div>
+				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="btn_detail img-responsive"></a></div>
 
 						  <div class="panel-footer">
 							<div class="row">

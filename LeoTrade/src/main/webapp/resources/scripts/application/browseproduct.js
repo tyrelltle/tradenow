@@ -169,8 +169,11 @@ ProductListItemView=Backbone.View.extend({
 	},
 	
 	className:"masonryitem",
-	events:{"click":"clicked"},
-	
+	events:{"click .btn_detail":"clicked",
+		"click .btn_select":"selected"},
+	selected:function(){
+			app.navigate("prodselected"+this.model.get("prod_id"),true);
+		},
 	clicked:function(){
 		//app.navigate("proddetail"+this.model.get("prod_id"),true);
 		app.prodDetail(this.model.get("prod_id"));
