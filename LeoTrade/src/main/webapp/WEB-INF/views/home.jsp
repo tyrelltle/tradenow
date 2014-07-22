@@ -84,12 +84,11 @@
 	 		<script type="text/template" id="prodlistitemtmp">
 				      	<div class="panel panel-default">
 				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="img-responsive"></a></div>
-				          <div class="panel-body" style="border: 1px solid #cccccc;">
-				            <div class="caption" style="font-size:15px">
-									<div class="col-md-12">{{title}}</div>			
-							</div>
-				          </div>
+
 						  <div class="panel-footer">
+							<div class="row">
+								<div class="col-md-12" style="font-size:15px">{{title}}</div>
+							</div>
 						    <div class="row">
 								<div class="col-md-4">
 									<img style="width:50px" src="{{ownerimgurl}}"/>

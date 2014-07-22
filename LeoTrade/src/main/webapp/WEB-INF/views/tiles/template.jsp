@@ -11,7 +11,8 @@
 <!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
         
 		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">        
-		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet">        
+		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> 
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/spin.min.js"></script>		       
         <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
@@ -226,7 +227,19 @@
 	  </div>
 	</div>
 
-
+	<!--wait modal-->
+	<div id="waitmodal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	      <div class="modal-body">
+				<div style="height:200px">
+			      <span id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
+			    </div>
+			</div>
+	      </div>
+	  </div>
+	  </div>
+	</div>
 	<!--about modal-->
 	<div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog">
@@ -261,7 +274,44 @@
     <!-- JavaScript jQuery code from Bootply.com editor -->
        
     <script type='text/javascript'>
-       
+    var opts = {
+    		  lines: 13, // The number of lines to draw
+    		  length: 20, // The length of each line
+    		  width: 10, // The line thickness
+    		  radius: 30, // The radius of the inner circle
+    		  corners: 1, // Corner roundness (0..1)
+    		  rotate: 0, // The rotation offset
+    		  direction: 1, // 1: clockwise, -1: counterclockwise
+    		  color: '#000', // #rgb or #rrggbb or array of colors
+    		  speed: 1, // Rounds per second
+    		  trail: 60, // Afterglow percentage
+    		  shadow: false, // Whether to render a shadow
+    		  hwaccel: false, // Whether to use hardware acceleration
+    		  className: 'spinner', // The CSS class to assign to the spinner
+    		  zIndex: 2e9, // The z-index (defaults to 2000000000)
+    		  top: 'auto', // Top position relative to parent in px
+    		  left:'auto' // Left position relative to parent in px
+    		};
+    var iwait;
+    iwait = iwait || (function () {
+    	
+        var pleaseWaitDiv = $('#waitmodal');
+        return {
+            showPleaseWait: function() {
+            	var target = document.getElementById('searching_spinner_center');
+            	var spinner = new Spinner(opts).spin(target);
+                pleaseWaitDiv.modal();
+            },
+            hidePleaseWait: function () {
+                pleaseWaitDiv.modal('hide');
+            },
+
+        };
+    })();
+    
+    
+    
+    
     $(document).ready(function() {      
 				/* toggle layout */
 				$('#btnToggle').click(function(){

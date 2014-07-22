@@ -42,11 +42,12 @@ AppRouter=Backbone.Router.extend({
 					
 				});
 				app.container = document.querySelector('.masonrycontainer');
-				
-				app.msnry= new Masonry( app.container);
+				iwait.showPleaseWait();
+				app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 				imagesLoaded( app.container, function() {
-					app.msnry= new Masonry( app.container);
-				
+					iwait.hidePleaseWait();
+					app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
+					app.msnry.layout();
 				});
 			
 			}

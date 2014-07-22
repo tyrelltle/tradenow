@@ -124,9 +124,9 @@ ProductListView=Backbone.View.extend({
 		});
 		this.model.bind("add",function(e){
 			var newelm=new ProductListItemView({model:e}).render().el;
-			$(self.el).find('.masconrycontainer').append(newelm);
-			if($('.masconrycontainer').length>0){
-				var container = document.querySelector('.masconrycontainer');
+			$(self.el).find('.masonrycontainer').append(newelm);
+			if($('.masonrycontainer').length>0){
+				var container = document.querySelector('.masonrycontainer');
 				var msnry;
 				msnry= new Masonry(container);
 				msnry.appended([newelm]);
