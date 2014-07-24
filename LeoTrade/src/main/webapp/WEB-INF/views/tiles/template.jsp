@@ -10,12 +10,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
         
-		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">        
-		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> 
+		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">    
+		        <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
+		    
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> </script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/spin.min.js"></script>		       
-        <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
+		
         <script>var ctx = "${pageContext.request.contextPath}/"</script>
         
         <!--[if lt IE 9]>
@@ -180,6 +182,21 @@
         </div>	
 	     </div>	
 	</div>
+	
+	<!--wait modal-->
+	<div id="waitmodal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	      <div class="modal-body">
+				<div style="height:200px">
+			      <span id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
+			    </div>
+			</div>
+	      </div>
+	  </div>
+	  </div>
+	</div>
+	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/iwait.js"></script>
 
 	<!--left -->
 	<div id="leftpanel" style="float:left;margin-top:56px">
@@ -223,19 +240,7 @@
 	  </div>
 	</div>
 
-	<!--wait modal-->
-	<div id="waitmodal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	  <div class="modal-content">
-	      <div class="modal-body">
-				<div style="height:200px">
-			      <span id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
-			    </div>
-			</div>
-	      </div>
-	  </div>
-	  </div>
-	</div>
+	
 	<!--about modal-->
 	<div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog">
@@ -265,6 +270,7 @@
 
     <!--start bootstrap dependencies-->	
 	<script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/notification.js"></script>
+	
 
 	<!--end bootstrap dependencies-->   
     <!-- JavaScript jQuery code from Bootply.com editor -->
@@ -274,42 +280,7 @@
     if (window.location.hash && window.location.hash == '#_=_') {
         window.location.hash = '';
     }
-    //=========loader config
-    var opts = {
-    		  lines: 13, // The number of lines to draw
-    		  length: 20, // The length of each line
-    		  width: 10, // The line thickness
-    		  radius: 30, // The radius of the inner circle
-    		  corners: 1, // Corner roundness (0..1)
-    		  rotate: 0, // The rotation offset
-    		  direction: 1, // 1: clockwise, -1: counterclockwise
-    		  color: '#000', // #rgb or #rrggbb or array of colors
-    		  speed: 1, // Rounds per second
-    		  trail: 60, // Afterglow percentage
-    		  shadow: false, // Whether to render a shadow
-    		  hwaccel: false, // Whether to use hardware acceleration
-    		  className: 'spinner', // The CSS class to assign to the spinner
-    		  zIndex: 2e9, // The z-index (defaults to 2000000000)
-    		  top: 'auto', // Top position relative to parent in px
-    		  left:'auto' // Left position relative to parent in px
-    		};
-    var iwait;
-    iwait = iwait || (function () {
-    	
-        var pleaseWaitDiv = $('#waitmodal');
-        return {
-            showPleaseWait: function() {
-            	var target = document.getElementById('searching_spinner_center');
-            	var spinner = new Spinner(opts).spin(target);
-                pleaseWaitDiv.modal();
-            },
-            hidePleaseWait: function () {
-                pleaseWaitDiv.modal('hide');
-            },
 
-        };
-    })();
-    
     
     
     
