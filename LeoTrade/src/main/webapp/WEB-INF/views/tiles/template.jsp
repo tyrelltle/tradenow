@@ -30,7 +30,7 @@
             /* custom google plus style theme */
 			@import url(http://fonts.googleapis.com/css?family=Roboto:400);
 			body {
-			  background-color:#e0e0e0;
+			  background-color:#ffffff;
 			  -webkit-font-smoothing: antialiased;
 			  font: normal 14px Roboto,arial,sans-serif;
 			}
@@ -38,9 +38,9 @@
 			.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li:hover > a {border:0 solid #4285f4;border-bottom-width:2px;font-weight:800;background-color:transparent;}
 			.navbar-default .dropdown-menu {background-color:#ffffff;}
 			.navbar-default .dropdown-menu li > a {padding-left:30px;}
-			
-			.header {background-color:#ffffff;border-width:0;}
-			.header .navbar-collapse {background-color:#ffffff;}
+			.header_glyph {color:white;}
+			.header {background-color:#2a6496;border-width:0;}
+			.header .navbar-collapse {background-color:#2a6496;}
 			.btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
 			.form-control {border-color:#d7d7d7;}
 			.btn-primary {border-color:transparent;}
@@ -141,7 +141,7 @@
  	<div class="col-md-12">
         <div class="navbar-header">
           
-          <a href="${pageContext.request.contextPath}" class="navbar-brand">Trade Now!</a>
+          <a href="${pageContext.request.contextPath}" class="header_glyph navbar-brand">Trade Now!</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
           <i class="glyphicon glyphicon-search"></i>
           </button>
@@ -167,19 +167,15 @@
               </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
-             <li><a href="http://www.bootply.com" target="_ext">Bootply+</a></li>
              <li class="linotiflis">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="notibell glyphicon glyphicon-bell"></i></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
                 <ul class="notiflis dropdown-menu">
-<!--                   <li><a href="#"><span class="badge pull-right">40</span>Link</a></li> -->
-<!--                   <li><a href="#"><span class="badge pull-right">2</span>Link</a></li> -->
-<!--                   <li><a href="#"><span class="badge pull-right">0</span>Link</a></li> -->
-<!--                   <li><a href="#"><span class="label label-info pull-right">1</span>Link</a></li> -->
-<!--                   <li><a href="#"><span class="badge pull-right">13</span>Link</a></li> -->
+
                 </ul>
              </li>
-             <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large"></i></a></li>
-             <li><a href="${pageContext.request.contextPath}/user"><i class="glyphicon glyphicon-user"></i></a></li>
+             <li><a href="${pageContext.request.contextPath}/user"><i class="header_glyph glyphicon glyphicon-user"></i></a></li>
+             <li><a href="${pageContext.request.contextPath}/signout"><i class="header_glyph glyphicon glyphicon-log-out"></i></a></li>
+             
            </ul>
         </div>	
 	     </div>	
@@ -274,6 +270,11 @@
     <!-- JavaScript jQuery code from Bootply.com editor -->
        
     <script type='text/javascript'>
+    
+    if (window.location.hash && window.location.hash == '#_=_') {
+        window.location.hash = '';
+    }
+    //=========loader config
     var opts = {
     		  lines: 13, // The number of lines to draw
     		  length: 20, // The length of each line

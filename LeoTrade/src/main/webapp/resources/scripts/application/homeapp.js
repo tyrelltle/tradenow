@@ -5,10 +5,14 @@ AppRouter=Backbone.Router.extend({
 		
 	},
 	routes:{
+		"#_=_":"gotohome",
 		"":"prodlis",
 		"proddetail:prod_id":"prodDetail"},
 		
 	initTab:function(){		$('#tab_prof').click();},
+	gotohome:function(){
+		app.navigate("",true);
+	},
 	prodlis:function(){
 		
 		//init category list

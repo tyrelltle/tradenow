@@ -15,12 +15,15 @@ CategoryList=Backbone.Collection.extend({
 
  
 CategoryListView=Backbone.View.extend({
-	initialize:function(){},
+	initialize:function(){
+		this.template=_.template($("#catlisttmp").html());
+	},
 	
 	render:function(){
+		$(this.el).html(this.template());
 		var self=this;
 		_.each(this.model.models,function(m){
-			$(self.el).append(new CategoryListItemView({model:m}).render().el);
+			$(self.el).find('#userMenu').append(new CategoryListItemView({model:m}).render().el);
 		});
 		return this;
 	}
@@ -29,11 +32,14 @@ CategoryListView=Backbone.View.extend({
 
 
 CategoryListItemView=Backbone.View.extend({
-	events:{"click":"clicked"},
-	className:"list-group-item",
-	tagName:"a",
+	initialize:function(){
+		this.template=_.template($("#catlistitemtmp").html());
+
+	},
+	events:{"click .link":"clicked"},
+	tagName:"li",
 	render:function(){
-		$(this.el).append(this.model.get("name"));
+		$(this.el).html(this.template(this.model.toJSON()));
 		return this;
 	},
 	clicked:function(){

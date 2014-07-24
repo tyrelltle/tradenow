@@ -20,22 +20,39 @@
 			.panel-thumbnail:hover{
 				cursor:pointer;
 			}
-		
+			
+						
+			i {
+			  font-size:16px;
+			}
+			
+			/* indent 2nd level */
+			.list-unstyled li > ul > li {
+			   margin-left:10px;
+			   padding:8px;
+			}
+		.
 	    </style>
 	</tiles:putAttribute>
 	<tiles:putAttribute name="left">
-	
-			<div class="list-group" style="width:200px">
-			  <a href="#" class="list-group-item active">
-			    Categories
-			  </a>
 			  <div class="catlist">
-				  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-				  <a href="#" class="list-group-item">Morbi leo risus</a>
-				  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				  <a href="#" class="list-group-item">Vestibulum at eros</a>
+							<ul class="list-unstyled" style="margin-left:20px">
+							        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+							          <h5>Categories <i class="glyphicon glyphicon-chevron-down"></i></h5>
+							          </a>
+							            <ul class="list-unstyled collapse in" id="userMenu">
+							                <li class="active"> <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Options</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Transactions</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
+							                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+							            </ul>
+							        </li> 
+							</ul>
 			  </div>
-			</div>
 	
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
@@ -67,7 +84,20 @@
 			</div>
 	<!--start bootstrap templates-->		 
 			
-	 		
+			<script type="text/template" id="catlistitemtmp">
+					<a class="link" href="#">{{name}}</a>
+			</script>
+	 		<script type="text/template" id="catlisttmp">
+							<ul class="list-unstyled" style="margin-left:20px">
+							        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+							          <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
+							          </a>
+							            <ul class="list-unstyled collapse in" id="userMenu">
+							            </ul>
+							        </li> 
+							</ul>
+
+			</script>
 	 		<script type="text/template" id="prodlisttmp">
 				<div id="prodlispanel" class="panel panel-default">
 			      		<div  class="panel-body">
@@ -89,12 +119,12 @@
 							<div class="row">
 								<div class="col-md-12" style="font-size:15px">{{title}}</div>
 							</div>
-						    <div class="row">
+						    <div class="row"  style="margin-top:8px">
 								<div class="col-md-4">
 									<img style="width:50px" src="{{ownerimgurl}}"/>
 								</div>
 								<div class="col-md-8">
-									<em>{{ownernm}}:</em> 
+									<em style="font-size:12px">{{ownernm}}:</em> 
 									<p style="font-size:12px">{{owneraddr}}</p>
 								</div>
 							</div>
