@@ -45,8 +45,8 @@ AppRouter=Backbone.Router.extend({
 					app.productList.fetch({remove:false});
 					
 				});
-				app.container = document.querySelector('.masonrycontainer');
 				iwait.showPleaseWait();
+				app.container = document.querySelector('.masonrycontainer');
 				app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 				imagesLoaded( app.container, function() {
 					iwait.hidePleaseWait();
@@ -70,7 +70,20 @@ AppRouter=Backbone.Router.extend({
 		$('#btn_trade').click(function(){document.location.href = 'tradepage/toprod/'+prod_id;});
 		this.product=this.productList.get(prod_id);
 		this.productView=new ProductView({model:this.product});
-		$('.modal-body').html(this.productView.render().el);
+		$('.modal-bodyy').html(this.productView.render().el);
+		$('#myModal').on('shown.bs.modal', function(e){
+			//load images
+			app.container = document.querySelector('#imglis');
+			iwait.showPleaseWait();
+			app.msnry= new Masonry( app.container,{itemSelector: '.galimg',columnWidth: 200});
+			imagesLoaded( app.container, function() {
+				iwait.hidePleaseWait();
+				app.msnry= new Masonry( app.container,{itemSelector: '.galimg',columnWidth: 200});
+				app.msnry.layout();
+				$("a[rel^='prettyPhoto']").prettyPhoto();
+			});
+		});
+		
 	},
 });
 

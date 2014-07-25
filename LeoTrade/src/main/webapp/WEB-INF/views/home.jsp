@@ -9,7 +9,14 @@
 	
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
+	
 	    <style type="text/css">	
+	    	.galitem{
+	    		width:200px;
+	    	}
+	    	.modallg{
+	    		width:1024px;
+	    	}
 			.masonryitem{
 				width: 200px;
 				margin: 10px;
@@ -66,14 +73,14 @@
 			 </div>
 		 	<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-lg modal-dialog">
+			  <div class="modallg modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 			      </div>
 			      <div class="modal-body">
-			      
+			      	<div class="modal-bodyy"></div>
 			      </div>
 			      <div class="modal-footer">
 			       
@@ -83,7 +90,11 @@
 			  </div>
 			</div>
 	<!--start bootstrap templates-->		 
-			
+			<script type="text/template" id="imglistitemtmp">
+					<a class='galimg' href='{{url}}' rel='prettyPhoto[pp_gal]'  href='{{url}}'>
+						<img class='galitem img-thumbnail' src='{{url}}' alt='asd'/>
+					</a>
+			</script>
 			<script type="text/template" id="catlistitemtmp">
 					<a class="link" href="#">{{name}}</a>
 			</script>
@@ -136,7 +147,7 @@
 			      
 			   
 				<div style="height:500px;">
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Title</span>
  						 	<label class="form-control"  > {{title}} </label>
@@ -170,11 +181,14 @@
  						 	<textarea id="tradefor" rows=6 class="form-control"  placeholder="Trade for what" readonly>{{tradefor}}</textarea>
 					</div>
 			   </div> <!-- property holder-->
-			   <div class="col-md-6">
+			   <div class="col-md-7">
 			  	 	<!--img viewer and uploader -->
 			   		<center>Photos</center>
 					
-					<div id="imglis" style="overflow:scroll;height:500px"></div>
+					<div id="imgliscontainer" style="overflow:scroll;height:500px">
+						<div id="imglis">
+						</div>
+					</div>
 				
 			   </div> <!-- img holder-->
 			 </div><!-- main content holder-->
@@ -198,7 +212,8 @@
 			 <script type="text/javascript" id="tmp" src="resources/scripts/application/browseproduct.js"></script>
 			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/category.js"></script>
 			 
-			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/homeapp.js"></script>
+			 <script type="text/javascript"  id="tmp3" src="resources/scripts/application/homeapp.js"></script>
+
 			 
 	<!--end bootstrap dependencies-->
 

@@ -9,14 +9,16 @@
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
-        
+
 		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">    
-		        <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
-		    
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> </script>
+		
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
+					 	   	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> </script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/spin.min.js"></script>		       
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
+	
+		
 		
         <script>var ctx = "${pageContext.request.contextPath}/"</script>
         
@@ -184,7 +186,7 @@
 	</div>
 	
 	<!--wait modal-->
-	<div id="waitmodal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div id="waitmodal" class="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog modal-sm">
 	  <div class="modal-content">
 	      <div class="modal-body">
@@ -274,7 +276,9 @@
 
 	<!--end bootstrap dependencies-->   
     <!-- JavaScript jQuery code from Bootply.com editor -->
-       
+        <script type="text/javascript" id="tmp4" language="javascript" src="${pageContext.request.contextPath}/resources/themes/prettyphoto/js/jquery.prettyPhoto.js" rel="stylesheet"> </script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/themes/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	
     <script type='text/javascript'>
     
     if (window.location.hash && window.location.hash == '#_=_') {
@@ -284,7 +288,9 @@
     
     
     
-    $(document).ready(function() {      
+    $(document).ready(function() {       		  
+    	
+    	
 				/* toggle layout */
 				$('#btnToggle').click(function(){
 					if ($(this).hasClass('on')) {

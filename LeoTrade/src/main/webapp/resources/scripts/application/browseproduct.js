@@ -91,10 +91,12 @@ ProductView=Backbone.View.extend({
 			async:false, 
 			success:function(lis){
 				_.each(lis.models,function(m){
+					var imgtmp=_.template($("#imglistitemtmp").html());
+					
 					if(useel)
-						$(self.el).find('#imglis').append("<img style='width:300px' src='"+m.get('url')+"'></img>");
+						$(self.el).find('#imglis').append(imgtmp(m.toJSON()));
 					else
-						$('#imglis').append("<img style='width:300px' src='"+m.get('url')+"'></img>");
+						$('#imglis').append(imgtmp(m.toJSON()));
 
 				});			
 			}

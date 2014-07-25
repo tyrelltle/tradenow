@@ -108,7 +108,7 @@
 			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 			      </div>
 			      <div class="modal-body">
-			      
+			      	<div class="modal-bodyy"></div>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" id="prod_del" data-dismiss="modal" class="btn btn-default">Delete</button>

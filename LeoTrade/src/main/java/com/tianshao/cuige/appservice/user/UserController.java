@@ -1,10 +1,15 @@
    package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
+import java.io.InputStream;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.MediaType;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.stereotype.Controller;
@@ -32,11 +37,13 @@ import com.tianshao.cuige.shared.Util;
 public class UserController {
 	    @Autowired
 	    private IUserRepository userRepository;
-
+	    
+	    private @Autowired ServletContext servletContext;
+	    
 	    @Autowired
 	    private IUserService userService;
 	    
-	    final String defaultimgurl="http://img.teapic.com/thumbs/201207/27/124104mawrcsfomsejkmvl.jpg.middle.jpg";
+	    final String defaultimgurl="defaultusericon.png";//"http://img.teapic.com/thumbs/201207/27/124104mawrcsfomsejkmvl.jpg.middle.jpg";
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
 			
@@ -93,20 +100,25 @@ public class UserController {
 		} 
 		
 		@RequestMapping(value="img",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-		public @ResponseBody byte[] getimg() throws IOException {
+		public @ResponseBody byte[] getimg(HttpServletRequest req) throws IOException {
 			
 			byte[] ret= userService.currentUser().getImage();
-			if(ret==null)
-				ret=Util.getimageByUrl(defaultimgurl);
+			if(ret==null){
+				InputStream in=servletContext.getResourceAsStream("/resources/img/"+defaultimgurl);				
+				ret=IOUtils.toByteArray(in);
+				
+			}
 			return ret;
 
 		}
 		
 		@RequestMapping(value="img/userid/{userid}",method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletResponse resp) throws IOException {
+		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletRequest req) throws IOException {
 			byte[] ret= userRepository.getByUserid(userid).getImage();
-			if(ret==null)
-				ret=Util.getimageByUrl(defaultimgurl);
+			if(ret==null){
+				InputStream in=servletContext.getResourceAsStream("/resources/img/"+defaultimgurl);				
+				ret=IOUtils.toByteArray(in);			
+			}
 			return ret;
 
 	    }	    

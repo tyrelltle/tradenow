@@ -2,7 +2,9 @@
 //non route driven router, due to Spring controller
 AppRouter=Backbone.Router.extend({
 	initialize:function(){	
-		$('#tab_prof').click(this.user);
+		$('#tab_prof').click(function (e){
+			app.navigate("",true);
+		});
 		$('#tab_prod').click(function (e){
 			app.navigate("prodlis",true);
 		});
@@ -11,6 +13,7 @@ AppRouter=Backbone.Router.extend({
 		});
 	},
 	routes:{
+		"":"user",
 		"tradelis":"tradelis",
 		"prodlis":"prodlis",
 		"proddetail:prod_id":"prodDetail",
@@ -58,13 +61,13 @@ AppRouter=Backbone.Router.extend({
 		//display productView in popup modal
 		this.product=this.productList.get(prod_id);
 		this.productView=new ProductView({model:this.product});
-		$('.modal-body').html(this.productView.render().el);
+		$('.modal-bodyy').html(this.productView.render().el);
 	},
 	newProd:function(){
 		//display productView in popup modal
 		var prod = new Product();
 		this.productView=new ProductView({model:prod});
-		$('.modal-body').html(this.productView.render().el);
+		$('.modal-bodyy').html(this.productView.render().el);
 	}
 	
 	
