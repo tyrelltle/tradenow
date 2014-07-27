@@ -5,11 +5,13 @@ import java.io.IOException;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,7 +66,7 @@ public class LogonController  {
 				User user=(userRepository.getByEmailPassword(dto.getEmail(),dto.getPassword()));
 				if(null!=user)
 				{
-										return "home";
+					return "home";
 				}else{
 					throw new Exception("user does not exists");
 				
@@ -76,7 +78,12 @@ public class LogonController  {
 	
 		}
 		@RequestMapping(value="nativeregister",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
-		public String nativeregister(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
+		public String nativeregister(@ModelAttribute("userForm") @Valid UserRegistrationDTO dto,BindingResult result, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
+			
+	        if(result.hasErrors()) {
+	            return "nativelogon";
+	        }
+			
 			try{
 			
 				if(userRepository.getByEmail(dto.getEmail())==null)
@@ -85,7 +92,7 @@ public class LogonController  {
 					userService.addNewRoledUser(user, UserRole.ROLES.ROLE_USER);
 
 					
-					model.addAttribute("error", "Success!");
+					model.addAttribute("succ", "Success!");
 				}else{
 					throw new Exception("user exists");
 				}	

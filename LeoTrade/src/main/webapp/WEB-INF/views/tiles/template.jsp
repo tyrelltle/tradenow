@@ -139,7 +139,8 @@
     
     <!-- HTML code from Bootply.com editor -->
     
-    <body  >
+    <body>
+    
         
         <div class="navbar navbar-fixed-top header">
  	<div class="col-md-12">
@@ -171,6 +172,7 @@
               </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
+             <li><a href="${pageContext.request.contextPath}"><i class="header_glyph glyphicon glyphicon-home"></i></a></li>          
              <li class="linotiflis">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
                 <ul class="notiflis dropdown-menu">
@@ -306,9 +308,8 @@
 					window.location=ctx+"search"+$('.searchtxt').val();
 					return false;
 				});
-				$('.dropdown-toggle').click(function(){
 					$('.dropdown-toggle').dropdown();
-				});
+				
 				var notiflis=new NotificationList();
 				var notiflisview =new NotificationListView({model:notiflis});
 				notiflis.fetch({

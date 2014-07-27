@@ -23,6 +23,8 @@ public class UserService implements IUserService{
 	@Override
 	public User currentUser(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal() instanceof IPrinciple))
+			return null;
 		IPrinciple u=  (IPrinciple) auth.getPrincipal();
 		return u.getUser();
 	}

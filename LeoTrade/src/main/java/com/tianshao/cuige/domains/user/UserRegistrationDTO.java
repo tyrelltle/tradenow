@@ -1,13 +1,23 @@
 package com.tianshao.cuige.domains.user;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class UserRegistrationDTO {
-	
+		@NotEmpty
+		@Size(min = 6, max = 30)
     	private String password;
+    	@NotEmpty
     	private String lastname;
+    	@NotEmpty
     	private String firstname;
     	private String lat;
     	private String lng;
+    	@NotEmpty
     	private String location;
+    	@NotEmpty @Email
     	private String email;
     	
     	

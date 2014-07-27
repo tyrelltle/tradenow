@@ -260,13 +260,27 @@ section {
 	padding-top:30px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
 }
-
+#facebookbtn{
+background-image: url('${pageContext.request.contextPath}/resources/img/facebook.png');
+height: 35px;
+width: 190px;
+border: none;
+border-radius: 11px;
+}
+#nativebtn{
+height: 35px;
+width: 190px;
+border-radius: 11px;
+}
         </style>
     <script style="">window["_GOOG_TRANS_EXT_VER"] = "1";</script><script type="text/javascript" charset="UTF-8" src="resources/themes/frontpage/{common,map}.js"></script><script type="text/javascript" charset="UTF-8" src="resources/themes/frontpage/{util,onion,infowindow}.js"></script><script type="text/javascript" charset="UTF-8" src="resources/themes/frontpage/{controls,stats}.js"></script><script type="text/javascript" charset="UTF-8" src="resources/themes/frontpage/{marker}.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
     
     <!-- HTML code from Bootply.com editor -->
     
     <body>
+
+    
+    
         
         <!-- Wrap all page content here -->
 <div id="wrap">
@@ -279,15 +293,18 @@ section {
           <p class="lead">"Swap with people arround world! "</p></h1>
       </div>
       <div class="col-sm-6">
-        <div class="pull-right  hidden-xs">    
+        <div class="pull-right  hidden-xs" style='margin-top: 30px;'>    
+        
+        
+        
+        
 			<h>
 			<form action="<c:url value="/auth/facebook" />" method="POST">
-		    	 <button type="submit">Sign in with Facebook</button>
-		   		 <input type="hidden" name="scope" value="email,publish_stream,offline_access" />	
+				 <button type="submit" id="facebookbtn"></button>
 		   		 	    
 			</form>
 			<form action="<c:url value="/nativelogon" />" method="GET">
-		    	 <button type="submit">Regular signon</button>		   		 	    
+		    	 <button class="btn btn-success" id="nativebtn" type="submit">Regular signon</button>		   		 	    
 			</form>
 			</h>          
         </div>

@@ -8,6 +8,8 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">  
+		<link href="${pageContext.request.contextPath}/resources/themes/semanticui/css/semantic.css" rel="stylesheet">  
+		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/autocompleteapi.js"></script>
 		
@@ -25,10 +27,10 @@
 	</tiles:putAttribute>
 	
 	<tiles:putAttribute name="main">
-	
-		<div class="logincontainer container">
-		  <div class="row">
-		      <form class="form col-md-6 center-block" method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
+	<div class="ui two column middle aligned relaxed grid basic segment">
+		  <div class="column">
+		   
+			      		<form  method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
 		                  <div class="form-group">
 		                    <input type="text" class="form-control input-lg" name="username" placeholder="Email"/>
 		                  </div>
@@ -40,25 +42,40 @@
 		                   <span><a href="#">${errorlogin}</a></span>
 		                  </div>
 		                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		      </form>
-		      <form:form class="form col-md-6 center-block" id="regform"  method="POST" commandName="userForm" action="nativeregister">
+		      			</form>
+		  
+		  </div>
+		  <div class="ui vertical divider">
+		    Or
+		  </div>
+		  <div class="center aligned column">
+		   				 <form:form  id="regform"  method="POST" commandName="userForm" action="nativeregister">
 						 
 		                  <div class="form-group">
 		                    <form:input type="text" class="form-control input-lg" path="email" placeholder="Email"/>
+		                    <form:errors path="email" cssclass="error"></form:errors>
 		                  </div>
 		                  <div class="form-group">
 		                    <form:input type="text" class="form-control input-lg" path="firstname" placeholder="First name"/>
+		                    <form:errors path="firstname" cssclass="error"></form:errors>
+		                    
 		                  </div>
 		        		  <div class="form-group">
 		                    <form:input type="text" class="form-control input-lg" path="lastname" placeholder="Last name"/>
+		                    <form:errors path="lastname" cssclass="error"></form:errors>
+		                    
 		                  </div>
 		        		  
 		                  <div class="form-group">
 		                    <form:input type="password" class="form-control input-lg" path="password" placeholder="Password"/>
+		                    <form:errors path="password" cssclass="error"></form:errors>
+		                    
 		                  </div>
 		
 		                  <div class="form-group">
 		                    <form:input type="text" id="autocomplete" onFocus="geolocate()" class="form-control input-lg" path="location" placeholder="Please enter your City,Country"/>
+		                    <form:errors path="location" cssclass="error"></form:errors>
+		                    
 		                    <form:input id="lat" type="hidden" class="form-control input-lg"  path="lat" />
 		                    <form:input id="lng" type="hidden" class="form-control input-lg" path="lng"  />
 		
@@ -76,10 +93,20 @@
 							</script>
 		                  <div class="form-group">
 		                    <form:button class="btn btn-primary btn-lg btn-block" type="submit">Register</form:button>
-		                    <span class="pull-right">${error}</span>
-		                  </div>
-		      </form:form>
+		                    <c:if test="${not empty succ}">
+ 								<div class="alert alert-success" role="alert">${succ}</div>		 
+ 			    			</c:if>
+		                    <c:if test="${not empty error}">
+		                    	<div class="alert alert-danger" role="alert">${error}</div>
+ 			    			</c:if>		                                      
+		     		 </form:form>
 		
+		  </div>
+	</div>
+		<div class="logincontainer container">
+		  <div class="row">
+		      
+		     
 		  </div>
 		</div>
 	</tiles:putAttribute>
