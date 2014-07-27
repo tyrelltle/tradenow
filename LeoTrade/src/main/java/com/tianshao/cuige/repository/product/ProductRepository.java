@@ -133,7 +133,7 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	@Transactional	
 	public List<Product> getByUserId(int userid){
 		Session session = sessionFactory.getCurrentSession();
-		Query query=session.createQuery("from Product b where b.owner.userid= "+ userid);
+		Query query=session.createQuery("from Product b where b.owner.userid= "+ userid+" ORDER BY update_date desc");
 		return query.list();
 		
 	}

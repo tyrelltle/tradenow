@@ -226,7 +226,7 @@ public class ProductController {
 		        prod_img.setImage_type(mpf.getContentType());
 		        prod_img.setImage_name(mpf.getOriginalFilename());
 		        prod_img.setProduct(prod);
-		        productService.addProductImage(prod_img);
+		        return String.valueOf(productService.addProductImage(prod_img));
 		 
 		    } catch (IOException e) {
 		        // TODO Auto-generated catch block
@@ -235,7 +235,6 @@ public class ProductController {
 		        return null;
 		    }
 		 
-		     return "success";
 		 
 		  }
 
@@ -244,7 +243,6 @@ public class ProductController {
 				//serv.get
 				return productRepository.getProductImageByImgId(img_id).getImage();
 				
-
 		    }
 			@RequestMapping(value="{prod_id}/img", method = RequestMethod.GET, headers={ "Accept=application/json" },produces="application/json")
 			public @ResponseBody List<ProductImageUrlDTP> geturls(@PathVariable int prod_id) {

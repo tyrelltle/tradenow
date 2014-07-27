@@ -6,7 +6,7 @@ AppRouter=Backbone.Router.extend({
 			app.navigate("",true);
 		});
 		$('#tab_prod').click(function (e){
-			app.navigate("prodlis",true);
+			app.navigate("prodlis",true);	
 		});
 		$('#tab_trade').click(function (e){
 			app.navigate("tradelis",true);

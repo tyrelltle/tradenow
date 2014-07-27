@@ -225,6 +225,17 @@ public class User implements IEntity{
 	public String getFullName() {
 		return this.firstname.toUpperCase()+" "+this.lastname.toUpperCase();
 	}
+
+	public static UserDTO toUserDTO(User user) {
+		UserDTO profwrap=new UserDTO();
+        profwrap.setEmail(user.getEmail());
+        profwrap.setFirstname(user.getFirstname());
+        profwrap.setLastname(user.getLastname());
+        profwrap.setLocation(user.getLocation());
+        profwrap.setUserid(user.getUserid());
+        profwrap.setAboutme(user.getAboutme());
+        return profwrap;		
+	}
 	
 
 

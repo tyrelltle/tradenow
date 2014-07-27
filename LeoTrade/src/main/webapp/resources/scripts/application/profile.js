@@ -31,13 +31,16 @@ ProfileView=Backbone.View.extend({
 	render: function(){
 
 		$(this.el).html(this.template(this.model.toJSON()));
+		$(this.el).find('#imgsubmit').submit(this.uploadimg);
 		return this;
 	},
 
 	save:function(){
 		this.model.set({
 			location:$(this.el).find('#txt_loc').val(),
-			aboutme:$(this.el).find('#txt_aboutme').val()
+			aboutme:$(this.el).find('#txt_aboutme').val(),
+			firstname:$(this.el).find('#fn').val(),
+			lastname:$(this.el).find('#ln').val()
 		});
 		
 			this.model.save(null,{success :this.succ, 
@@ -52,6 +55,34 @@ ProfileView=Backbone.View.extend({
 		
 		$(this.el).unbind();
 		$(this.el).remove();
+	},
+	uploadimg:function(e){
+		 var oMyForm = new FormData();
+		  oMyForm.append("file", $('#img_input').prop("files")[0]);
+		  var self=this;
+		  $.ajax({
+			url: ctx+'user/img/upload',
+		    data: oMyForm,
+		    dataType: 'text',
+		    processData: false,
+		    contentType: false,
+		    type: 'POST',
+		    success: function(data){
+		    	alert("success!");
+		    	//refresh img
+		    	var tmp=$('.prodpic').attr('src');
+		    	$('.prodpic').attr('src','');
+		    	$('.prodpic').attr('src',tmp);
+
+			},
+		    error: function(jqXHR, textStatus, errorThrown){
+		    	alert("Failed!"+errorThrown);
+	            console.log("FETCH FAILED: " + errorThrown);
+	        }
+		  });
+
+		  e.preventDefault();
+		
 	}
 	
 });

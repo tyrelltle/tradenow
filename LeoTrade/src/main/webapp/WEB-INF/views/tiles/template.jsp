@@ -13,7 +13,7 @@
 		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">    
 		
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
-					 	   	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js" rel="stylesheet"> </script>
+					 	   	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.js" rel="stylesheet"> </script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/spin.min.js"></script>		       
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
@@ -306,11 +306,15 @@
 					window.location=ctx+"search"+$('.searchtxt').val();
 					return false;
 				});
+				$('.dropdown-toggle').click(function(){
+					$('.dropdown-toggle').dropdown();
+				});
 				var notiflis=new NotificationList();
 				var notiflisview =new NotificationListView({model:notiflis});
 				notiflis.fetch({
 					success:function(lis){
 						notiflisview.render();
+
 					}
 				});
 	        

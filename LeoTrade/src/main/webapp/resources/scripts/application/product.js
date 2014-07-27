@@ -68,6 +68,11 @@ ProductView=Backbone.View.extend({
 
 	sav: function(event){
 		
+		if($('#imglis').html()=="")
+		{
+			alert('Please upload at least one product image!');
+			return false;
+		}
 		
 		
 		app.productView.model.set({
@@ -215,7 +220,7 @@ ProductListView=Backbone.View.extend({
 		var self=this;
 		$(this.el).html(this.template());
 		_.each(this.model.models,function(m){
-			$(self.el).find('.masconrycontainer').append(new ProductListItemView({model:m}).render().el);
+			$(self.el).find('.masonrycontainer').append(new ProductListItemView({model:m}).render().el);
 		});
 		
 		return this;

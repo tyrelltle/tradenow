@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.tianshao.cuige.domains.product.Image;
+import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserDTO;
 import com.tianshao.cuige.repository.user.IUserRepository;
@@ -63,15 +68,8 @@ public class UserController {
 //	    		userRepository.update(user);
 //	    	}
 	   
-		   
-	    	UserDTO profwrap=new UserDTO();
-	        profwrap.setEmail(user.getEmail());
-	        profwrap.setFirstname(user.getFirstname());
-	        profwrap.setLastname(user.getLastname());
-	        profwrap.setLocation(user.getLocation());
-	        profwrap.setUserid(user.getUserid());
-	        profwrap.setAboutme(user.getAboutme());
-	        return profwrap;
+	    	return User.toUserDTO(user);
+	    	
 	    	
 	    	
 		}
@@ -122,5 +120,22 @@ public class UserController {
 			return ret;
 
 	    }	    
-	
+		 @RequestMapping(value = "/img/upload", method = RequestMethod.POST)
+		   public @ResponseBody String upload(MultipartHttpServletRequest request, HttpServletResponse resp) throws IOException {                 
+			
+			 User user=userService.currentUser();
+	    	
+			 
+		     //0. notice, we have used MultipartHttpServletRequest
+		 
+		     //1. get the files from the request object
+		     Iterator<String> itr =  request.getFileNames();
+		 
+		     MultipartFile mpf = request.getFile(itr.next());
+		     user.setImage(mpf.getBytes());
+		     userRepository.update(user);
+		 
+		     return "success";
+		 
+		  }
 }

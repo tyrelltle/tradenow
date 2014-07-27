@@ -18,13 +18,13 @@
 				float:right;
 				margin-top:50px;
 			}
-			.masconryitem{
-				width: 200px;
+			.masonryitem{
 				margin: 10px;
+				width:200px;
 			}
 			
-			.masconrycontainer{
-				width: 500px;
+			.masonrycontainer{
+				width: 600px;
 				margin: 10px;
 			}
 		
@@ -119,28 +119,60 @@
 			</div>
 	<!--start bootstrap templates-->		 
 			 <script type="text/template" id="usertmp">
+			 <div class="row">
+				<div class="col-md-6">				
+					<div class="input-group input-group-md">
+  							<span class="input-group-addon">Email</span>
+ 						 	<label  class="form-control">{{email}}</label>
+					</div>
+					<div class="input-group input-group-md">
+  							<span class="input-group-addon">First Name</span>
+ 						 	<input id="fn" class="form-control"  value="{{firstname}}" placeholder="Firstname"/>
+					</div>
+					<div class="input-group input-group-md">
+  							<span class="input-group-addon">Last Name</span>
+ 						 	<input id="ln" class="form-control"  placeholder="Lastname" value="{{lastname}}"/>
+					</div>
+					<div class="input-group input-group-md">
+  							<span class="input-group-addon">Your City</span>
+ 						 	<input id="txt_loc" class="form-control"  placeholder="Location" value="{{location}}"/>
+					</div>
+					<div class="input-group input-group-md">
+  							<span class="input-group-addon">About you</span>
+ 						 	<textarea id="txt_aboutme" rows=6 class="form-control"  placeholder="About you">{{aboutme}}</textarea>
+					</div>
 
-			<p><label id="fn" >{{firstname}}</label>  <label id="ln">{{lastname}}</label></p>
-			<p>{{email}}</p>
-			<p>Your City: <input type="text" id="txt_loc" value = "{{location}}"/></p>
-			<p>About You: <input type="text" id="txt_aboutme" value ="{{aboutme}}"/> </p>
-			<input type="submit" id="submit"/>
+					<input type="submit" id="submit"/>
+				</div>
+				<div class="col-md-6">
+					<p><img alt="pic" class="img-thumbnail prodpic" style="width:250px" src="${pageContext.request.contextPath}/user/img/userid/{{userid}}"></p>
+					<div id="imgform">
+		  					<form id="imgsubmit" method="post" enctype="multipart/form-data">  
+		     					<td><input type="file" id="img_input" name="file" />     
+		     					<td><input type="submit" value="Upload" />   
+		  					</form>  
+					</div>
+				</div>
+			</div>
 	 		</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
-				<div class = "masconrycontainer list-group" >
+				<div class = "masonrycontainer list-group" >
 				</div>
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
 				      	<div class="row">
-				          <div id="thumbnail" class="col-md-3"  ><img style="width:30px" src="{{thumurl}}" class="img-responsive"></div>
+				          <div id="thumbnail" class="col-md-3"  ><img src="{{thumurl}}" class="img-responsive"></div>
 				          <div id="title" class="col-md-4" >{{title}}</div>
 				          <div id="button" style="float:right">
-								<button id="modalbtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-									Detail
-								</button>
+								<button id="modalbtn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+						            <span class="glyphicon glyphicon-circle-arrow-right"> </span>
+						        </button>  
 						  </div>
-						</div>
+				        </div>		  
+
+
+
 				          
 				       	        
 			</script>
