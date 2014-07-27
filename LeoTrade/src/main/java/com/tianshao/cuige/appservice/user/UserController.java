@@ -77,7 +77,7 @@ public class UserController {
 		
 		@RequestMapping(value="api/user/{userid}",method = RequestMethod.PUT,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody UserDTO update(@RequestBody UserDTO wrap,@PathVariable int userid, HttpServletResponse resp) throws IOException {
-			User user=userService.currentUser();
+			User user=userRepository.getUserWithProducts(userService.currentUser().getUserid());
 			if(user.getUserid()!=(userid)){
 	    		//currently logged on user is not claimed user
 	            resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
@@ -85,8 +85,11 @@ public class UserController {
 	    	}
 	    	try{
 	    		user.updateFromDTO(wrap);
-	    	
 	    		userRepository.update(user);
+	    		User principle =userService.currentUser();
+	    		principle.setLocation(wrap.getLocation());
+	    		principle.setLatitude(Double.valueOf(wrap.getLat()));
+	    		principle.setLongitude(Double.valueOf(wrap.getLng()));
 	    		return wrap;
 	    		
 	    	}catch(Exception e){

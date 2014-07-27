@@ -3,6 +3,7 @@ package com.tianshao.cuige.domains.user;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -27,6 +28,7 @@ import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.social.facebook.api.Reference;
 
 import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.trade.Trade;
 @Entity
@@ -74,6 +76,11 @@ public class User implements IEntity{
 	@Column(name="longitude")
     Double longitude=0.0;
 	
+	@OneToMany(fetch = FetchType.LAZY, 
+		       cascade = {CascadeType.ALL}, 
+		       mappedBy = "owner")
+	@Fetch(FetchMode.SELECT)
+	Set<Product> products=new HashSet<Product>();
 //	
 //	public User(String a, String b, boolean c, boolean d, boolean e, boolean f, Object g){
 //		super(a, b, c, d, e, f, (Collection<? extends GrantedAuthority>) g);
@@ -84,6 +91,7 @@ public class User implements IEntity{
 
 	public User(){
 	}
+	
 
 	public User(UserRegistrationDTO dto){
 		
@@ -110,6 +118,14 @@ public class User implements IEntity{
 		this.setLocation(prof.getLocation().getName());
 		this.setPassword("Dummy Social Password");
 		
+	}
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
 	}
 
 	public String getSocialuid() {
@@ -225,6 +241,23 @@ public class User implements IEntity{
 	public String getFullName() {
 		return this.firstname.toUpperCase()+" "+this.lastname.toUpperCase();
 	}
+	
+	public void updateLocation(String location,double lat,double lng){
+		if(!this.location.equals(location) || this.latitude!=lat||this.longitude!=lng){
+			this.location=location;
+			this.latitude=lat;
+			this.longitude=lng;
+			Iterator<Product> i=this.products.iterator();
+			while(i.hasNext()){
+				Product p=i.next();
+				p.setLatitude(lat);
+				p.setLongitude(lng);
+			}
+		}
+		this.location=location;
+		this.latitude=lat;
+		this.longitude=lng;
+	}
 
 	public static UserDTO toUserDTO(User user) {
 		UserDTO profwrap=new UserDTO();
@@ -242,11 +275,8 @@ public class User implements IEntity{
 	public void updateFromDTO(UserDTO wrap) {
 		this.firstname=wrap.getFirstname();
 		this.lastname=wrap.getLastname();
-		this.location=wrap.getLocation();
-		this.latitude=Double.valueOf(wrap.getLat());
-		this.longitude=Double.valueOf(wrap.getLng());
 		this.aboutme=wrap.getAboutme();
-	
+		this.updateLocation(wrap.getLocation(), Double.valueOf(wrap.getLat()), Double.valueOf(wrap.getLng()));
 		
 	}
 	

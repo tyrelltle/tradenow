@@ -2,12 +2,14 @@ package com.tianshao.cuige.repository.user;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.domains.IEntity;
+import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.BaseRepository;
 
@@ -85,6 +87,15 @@ public class UserRepository extends BaseRepository implements IUserRepository{
 		Session seesion = sessionFactory.getCurrentSession();
 		Query query=seesion.createQuery("from User where providerid='"+providerid+"' and provideruserid='"+provideruserid+"'");
 		return query.list();
+	}
+	@Override
+	@Transactional	
+	public User getUserWithProducts(int userid){
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from User where userid = "+userid);
+		User u=(User) query.uniqueResult();
+		Hibernate.initialize(u.getProducts());
+		return u;
 	}
 
 
