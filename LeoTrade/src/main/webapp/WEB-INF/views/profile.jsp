@@ -9,6 +9,9 @@
 
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>	    
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/autocompleteapi.js"></script>
+	    
 	    <style type="text/css">	
 	    	.tradelis{
 			width:700px;
@@ -133,10 +136,16 @@
   							<span class="input-group-addon">Last Name</span>
  						 	<input id="ln" class="form-control"  placeholder="Lastname" value="{{lastname}}"/>
 					</div>
-					<div class="input-group input-group-md">
+					
+		            <div class="input-group input-group-md">
   							<span class="input-group-addon">Your City</span>
- 						 	<input id="txt_loc" class="form-control"  placeholder="Location" value="{{location}}"/>
-					</div>
+
+		                    <input class="form-control" id="autocomplete" onFocus="geolocate()"  placeholder="Please enter your City,Country" value="{{location}}"/>
+		                    <input id="lat" type="hidden" value="{{lat}}" />
+		                    <input id="lng" type="hidden" value="{{lng}}"/>
+		            </div>
+
+
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">About you</span>
  						 	<textarea id="txt_aboutme" rows=6 class="form-control"  placeholder="About you">{{aboutme}}</textarea>

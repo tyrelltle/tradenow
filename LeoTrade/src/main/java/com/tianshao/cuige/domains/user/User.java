@@ -234,7 +234,20 @@ public class User implements IEntity{
         profwrap.setLocation(user.getLocation());
         profwrap.setUserid(user.getUserid());
         profwrap.setAboutme(user.getAboutme());
+        profwrap.setLat(String.valueOf(user.getLatitude()));
+        profwrap.setLng(String.valueOf(user.getLongitude()));
         return profwrap;		
+	}
+
+	public void updateFromDTO(UserDTO wrap) {
+		this.firstname=wrap.getFirstname();
+		this.lastname=wrap.getLastname();
+		this.location=wrap.getLocation();
+		this.latitude=Double.valueOf(wrap.getLat());
+		this.longitude=Double.valueOf(wrap.getLng());
+		this.aboutme=wrap.getAboutme();
+	
+		
 	}
 	
 

@@ -84,9 +84,8 @@ public class UserController {
 	            return null;
 	    	}
 	    	try{
-	    		
-	    		user.setAboutme(wrap.getAboutme());
-	    		user.setLocation(wrap.getLocation());
+	    		user.updateFromDTO(wrap);
+	    	
 	    		userRepository.update(user);
 	    		return wrap;
 	    		

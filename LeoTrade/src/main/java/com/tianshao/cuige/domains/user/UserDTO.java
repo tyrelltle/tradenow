@@ -5,6 +5,8 @@ public class UserDTO {
     	private int userid;
     	private String aboutme;
     	private String location;
+    	private String lat;
+    	private String lng;
     	private String lastname;
     	private String firstname;
     	private String email;
@@ -15,6 +17,30 @@ public class UserDTO {
     	}
     	
     	
+
+		public String getLat() {
+			return lat;
+		}
+
+
+
+		public void setLat(String lat) {
+			this.lat = lat;
+		}
+
+
+
+		public String getLng() {
+			return lng;
+		}
+
+
+
+		public void setLng(String lng) {
+			this.lng = lng;
+		}
+
+
 
 		public int getUserid() {
 			return userid;

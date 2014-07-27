@@ -3,7 +3,7 @@
 
 Profile=Backbone.Model.extend({
 	defaults:{"userid":0,"aboutme":"","location":"",
-			  "lastname":"", "firstname":"","email":""},
+			  "lastname":"", "firstname":"","email":"","lat":'0',"lng":'0'},
 	urlRoot:"user/api/user",
 	idAttribute: "userid"
 		
@@ -37,7 +37,9 @@ ProfileView=Backbone.View.extend({
 
 	save:function(){
 		this.model.set({
-			location:$(this.el).find('#txt_loc').val(),
+			location:$(this.el).find('#autocomplete').val(),
+			lat:$(this.el).find('#lat').val(),
+			lng:$(this.el).find('#lng').val(),
 			aboutme:$(this.el).find('#txt_aboutme').val(),
 			firstname:$(this.el).find('#fn').val(),
 			lastname:$(this.el).find('#ln').val()

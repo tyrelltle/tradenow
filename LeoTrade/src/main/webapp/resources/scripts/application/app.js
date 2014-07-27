@@ -29,6 +29,7 @@ AppRouter=Backbone.Router.extend({
 		app.profile.fetch({
 			success:function(model){
 				$('#profile_detail').html(app.profileView.render().el);
+				 initializeAutocomplete();
 			}
 		});
 	},
