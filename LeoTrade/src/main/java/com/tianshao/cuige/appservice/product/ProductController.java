@@ -254,7 +254,7 @@ public class ProductController {
 				for(Image i:prod.getImages()){
 					ProductImageUrlDTP t=new ProductImageUrlDTP();
 					t.setImg_Id(i.getImg_id());
-					t.setUrl("http://localhost:8080/cuige/api/product/img/"+i.getImg_id());
+					t.setUrl("api/product/img/"+i.getImg_id());
 					ret.add(t);
 				}
 
@@ -294,7 +294,7 @@ public class ProductController {
 				dto.setThumurl(prod.getThumurl());
 				dto.setTradefor(prod.getTradefor());
 				dto.setOwneraddr(prod.getOwner().getLocation());
-				dto.setOwnerimgurl("http://localhost:8080/cuige/user/img/userid/"+prod.getOwner().getUserid());
+				dto.setOwnerimgurl("user/img/userid/"+prod.getOwner().getUserid());
 				dto.setOwnernm(prod.getOwner().getFullName());
 			}
 }

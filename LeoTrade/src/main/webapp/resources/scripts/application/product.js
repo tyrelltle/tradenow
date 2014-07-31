@@ -165,7 +165,7 @@ ProductView=Backbone.View.extend({
 		  oMyForm.append("file", $('#prod_img_input').prop("files")[0]);
 		  var self=this;
 		  $.ajax({
-			url: 'http://localhost:8080/cuige/api/product/img/upload/'+this.model.get("prod_id"),
+			url: ctx+'api/product/img/upload/'+this.model.get("prod_id"),
 		    data: oMyForm,
 		    dataType: 'text',
 		    processData: false,

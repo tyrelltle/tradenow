@@ -132,7 +132,7 @@ AppRouter=Backbone.Router.extend({
 	},
 	prodsel:function(prod_id){
 		var prod=this.productList.get(prod_id);
-		$('#leftprodpic').attr("src", prod.get("thumurl"));
+		$('#leftprodpic').attr("src", ctx+prod.get("thumurl"));
 		$('#prod1id').val(prod_id);
 		$('#prodlismodel').modal('hide');
 		app.navigate("",true);

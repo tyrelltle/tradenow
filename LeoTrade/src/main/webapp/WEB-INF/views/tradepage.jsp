@@ -93,7 +93,7 @@
 				              <li class="list-group-item">
 									<p class="fromusernm">${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
 									<input type="hidden" id="hide_fromuserid" value="${trade.prod1.owner.userid}"/>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod1.owner.userid}">
+				              		<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod1.owner.userid}">
 				                 </li>
 				             <li class="list-group-item"> Status: <span  id="label_status1" style="color:white"></span></li>
 				              <li class="list-group-item">
@@ -114,7 +114,7 @@
 				                <div id="two_prod_row" class="row">
 				                    <div id="prod_left" class="col-md-5">
 				                    	<p>${trade.prod1.title}</p>
-				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${trade.prod1.thumurl}">
+				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">
 				                    </div>
 				                    <div class="col-md-2" style="margin-top:40px">
 				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
@@ -133,7 +133,7 @@
 				                    </div>
 				                    <div id="prod_right" class="col-md-5">
 				                    	<p>${trade.prod2.title}</p>
-				                        <img alt="pic" class="img-thumbnail prodpic" src="${trade.prod2.thumurl}">
+				                        <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod2.thumurl}">
 				                    </div>
 				                </div>
 				                <div id="msg_row" class="row">
@@ -192,7 +192,7 @@
 				      		<ul class="list-group">
 				              <li class="list-group-item">
 				              		<p class="tousernm">${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="http://localhost:8080/cuige/user/img/userid/${trade.prod2.owner.userid}">
+				              		<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod2.owner.userid}">
 				              </li>
 				              <li class="list-group-item"> Status: <span id="label_status2" style="color:white"></span></li>
 				              
@@ -270,7 +270,11 @@
 			  </div>
 			</div>
 		<!--start bootstrap templates-->		 
-			
+			<script type="text/template" id="imglistitemtmp">
+					<a class='galimg' href='${pageContext.request.contextPath}/{{url}}' rel='prettyPhoto[pp_gal]'  href='{{url}}'>
+						<img class='galitem img-thumbnail' src='${pageContext.request.contextPath}/{{url}}' alt='asd'/>
+					</a>
+			</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
 				<div class = "masonrycontainer"   style="margin-top: 60px;">
@@ -306,7 +310,7 @@
 	 		<script type="text/template" id="prodlistitemtmp">
 				      <div class="masonryitem">			      
 				      	<div class="panel panel-default">
-				          <div class="panel-thumbnail"><img src="{{thumurl}}" class="img-responsive"></div>
+				          <div class="panel-thumbnail"><img src="${pageContext.request.contextPath}/{{thumurl}}" class="img-responsive"></div>
 				          <div class="panel-body">
 				            <p class="lead">{{title}}</p>
 				          <!-- Button trigger modal -->

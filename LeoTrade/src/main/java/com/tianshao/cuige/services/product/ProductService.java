@@ -24,7 +24,7 @@ public class ProductService implements IProductService{
 		if(productRepository.countProductImage(img.getProduct().getProd_id())==1){
 			//this is the first image uploaded for the product. make it thumbail
 			Product ownerPro=img.getProduct();
-			ownerPro.setThumurl("http://localhost:8080/cuige/api/product/img/"+img.getImg_id());
+			ownerPro.setThumurl("api/product/img/"+img.getImg_id());
 			productRepository.update(ownerPro);
 		}
 		return img.getImg_id();
