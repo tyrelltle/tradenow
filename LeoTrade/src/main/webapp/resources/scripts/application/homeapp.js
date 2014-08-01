@@ -14,7 +14,8 @@ AppRouter=Backbone.Router.extend({
 		app.navigate("",true);
 	},
 	prodlis:function(){
-		
+		if(this.categoryList!=null && this.productList!=null)
+			return;
 		//init category list
 		this.categoryList=new CategoryList();
 		this.categoryListView=new CategoryListView({model:this.categoryList});
@@ -36,6 +37,7 @@ AppRouter=Backbone.Router.extend({
 
 			success:function(productList){
 				$('#prodlist').html(app.productListView.render().el);
+				$('#prodlist').hide();
 				$('#loadmore').click(function(e){
 					app.productList.addstart();
 					if($('.searchtxt').val()!="")
@@ -50,6 +52,7 @@ AppRouter=Backbone.Router.extend({
 				app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 				imagesLoaded( app.container, function() {
 					iwait.hidePleaseWait();
+					$('#prodlist').show();
 					app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 					app.msnry.layout();
 				});

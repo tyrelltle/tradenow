@@ -129,7 +129,7 @@
 				      	<div class="panel panel-default">
 				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="btn_detail img-responsive"></a></div>
 
-						  <div class="panel-footer">
+						  <div class="panel-footer" style="background-color:#FFFFFF">
 							<div class="row">
 								<div class="col-md-12" style="font-size:15px">{{title}}</div>
 							</div>
