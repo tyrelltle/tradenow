@@ -93,8 +93,10 @@
 				              <li class="list-group-item">
 									<p class="fromusernm">${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
 									<input type="hidden" id="hide_fromuserid" value="${trade.prod1.owner.userid}"/>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod1.owner.userid}">
-				                 </li>
+									<a href="${pageContext.request.contextPath}/user/userid/${trade.prod1.owner.userid}">
+				              			<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod1.owner.userid}">
+				                 	</a>
+				             </li>
 				             <li class="list-group-item"> Status: <span  id="label_status1" style="color:white"></span></li>
 				              <li class="list-group-item">
 				              	  <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
@@ -192,7 +194,9 @@
 				      		<ul class="list-group">
 				              <li class="list-group-item">
 				              		<p class="tousernm">${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
-				              		<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod2.owner.userid}">
+				              		<a href="${pageContext.request.contextPath}/user/userid/${trade.prod2.owner.userid}">
+				              			<img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/user/img/userid/${trade.prod2.owner.userid}">
+				              		</a>
 				              </li>
 				              <li class="list-group-item"> Status: <span id="label_status2" style="color:white"></span></li>
 				              

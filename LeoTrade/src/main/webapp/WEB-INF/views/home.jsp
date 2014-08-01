@@ -112,6 +112,9 @@
 	 		<script type="text/template" id="prodlisttmp">
 				<div id="prodlispanel" class="panel panel-default">
 			      		<div  class="panel-body">
+							<blockquote>
+  								<p>Discover, Choose, Trade!.</p>
+							</blockquote>
 							<div class = "masonrycontainer"   >
 							</div>
 							<center>
@@ -132,7 +135,7 @@
 							</div>
 						    <div class="row"  style="margin-top:8px">
 								<div class="col-md-4">
-									<img style="width:50px" src="{{ownerimgurl}}"/>
+									<a href="user/userid/{{userid}}"><img style="width:50px" src="{{ownerimgurl}}"/></a>
 								</div>
 								<div class="col-md-8">
 									<em style="font-size:12px">{{ownernm}}:</em> 

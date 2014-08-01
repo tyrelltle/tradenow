@@ -52,22 +52,27 @@ public class UserController {
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {
 			
-
 	        return "profile";
 	    }
 
-	    
+	    @RequestMapping(value="userid/{userid}", method=RequestMethod.GET)
+	    public String publicuserpage(@PathVariable int userid,Model model) {
+			
+	    	model.addAttribute("userid", userid);
+	        return "publicuserpage";
+	    }
 
 		
 		@RequestMapping(value="api/user/{userid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody UserDTO get( @PathVariable int userid,HttpServletResponse resp) throws IOException {
-	    	User user=userService.currentUser();
-	    	user= userRepository.getByUserid(user.getUserid());
-//	    	if(user.isSocialUserAndNeedImage()){
-//	    		user.setImage(facebook.userOperations().getUserProfileImage());
-//	    		userRepository.update(user);
-//	    	}
-	   
+	    	User user=null;
+	    	if(userid<0){
+	    		//client is requesting current user
+		    	user=userService.currentUser();
+		    	user= userRepository.getByUserid(user.getUserid());
+	    	}else{
+	    		user=userRepository.getByUserid(userid);
+	    	}
 	    	return User.toUserDTO(user);
 	    	
 	    	

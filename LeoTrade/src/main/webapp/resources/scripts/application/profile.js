@@ -2,9 +2,9 @@
 
 
 Profile=Backbone.Model.extend({
-	defaults:{"userid":0,"aboutme":"","location":"",
+	defaults:{"userid":-1,"aboutme":"","location":"",
 			  "lastname":"", "firstname":"","email":"","lat":'0',"lng":'0'},
-	urlRoot:"user/api/user",
+	urlRoot:ctx+"user/api/user",
 	idAttribute: "userid"
 		
 });
