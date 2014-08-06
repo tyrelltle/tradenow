@@ -27,7 +27,9 @@
 			.panel-thumbnail:hover{
 				cursor:pointer;
 			}
-			
+			.boxshadow:hover{
+			box-shadow: 0 0 20px rgb(131, 131, 158) !important;
+			}
 						
 			i {
 			  font-size:16px;
@@ -75,9 +77,9 @@
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modallg modal-dialog">
 			    <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			        <div class="modal-title" id="myModalLabel">Item Detail</div>
 			      </div>
 			      <div class="modal-body">
 			      	<div class="modal-bodyy"></div>
@@ -85,6 +87,7 @@
 			      <div class="modal-footer">
 			       
 			        <button type="button" id="btn_trade" class="btn btn-primary">Trade!</button>
+			        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cancel</button>
 			      </div>
 			    </div>
 			  </div>
@@ -118,7 +121,7 @@
 							<div class = "masonrycontainer"   >
 							</div>
 							<center>
-								<button type="button" id="loadmore" class="btn btn-default">Load More</button>
+								<div  id="loadmore" >Load More</div>
 							</center>
 						</div>
 				</div>
@@ -126,7 +129,7 @@
 
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
-				      	<div class="panel panel-default">
+				      	<div class="boxshadow panel panel-default">
 				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="btn_detail img-responsive"></a></div>
 
 						  <div class="panel-footer" style="background-color:#FFFFFF">

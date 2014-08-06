@@ -19,6 +19,7 @@
         <intercept-url pattern="/login/**" access="permitAll"/>
         <intercept-url pattern="/signin/**" access="permitAll"/>
         <intercept-url pattern="/nativelogon" access="permitAll"/>
+        <intercept-url pattern="/loginerror" access="permitAll"/>
         <intercept-url pattern="/nativeregister" access="permitAll"/>
         <intercept-url pattern="/api/notification" access="permitAll"/>
 
@@ -30,7 +31,7 @@
 		<form-login 
 		    login-page="/signin" 
 		    default-target-url=""
-			authentication-failure-url="/login?error" 
+			authentication-failure-url="/loginerror" 
 			username-parameter="username"
 			password-parameter="password" />
 			

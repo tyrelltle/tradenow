@@ -115,7 +115,7 @@
 				            <div class="midcontainer container">
 				                <div id="two_prod_row" class="row">
 				                    <div id="prod_left" class="col-md-5">
-				                    	<p>${trade.prod1.title}</p>
+				                    	<p id="prod1title">${trade.prod1.title}</p>
 				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">
 				                    </div>
 				                    <div class="col-md-2" style="margin-top:40px">
@@ -222,9 +222,9 @@
 			<div class="modal fade" id="dealdone" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg-cust modal-dialog">
 			    <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Congradulations!</h4>
+			        <div class="modal-title" id="myModalLabel">Congradulations!</div>
 			      </div>
 			      <div id="div_dealdone" class="modal-body">
 			      	 This trade has been finished because both of you have aceepted the offer!
@@ -240,9 +240,9 @@
 			<div class="modal fade" id="prodlismodel" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg-cust modal-dialog">
 			    <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			        <div class="modal-title" id="myModalLabel">Choose an item from the list!</div>
 			      </div>
 			      <div id="prodlist" class="modal-body">
 			      
@@ -260,9 +260,9 @@
 			<div class="modal fade" id="proddetail" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg modal-dialog">
 			    <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			        <div class="modal-title" id="myModalLabel">Item detail</div>
 			      </div>
 			      <div class="proddetailcontent">
 			      

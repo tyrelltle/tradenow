@@ -38,15 +38,23 @@ AppRouter=Backbone.Router.extend({
 			success:function(productList){
 				$('#prodlist').html(app.productListView.render().el);
 				$('#prodlist').hide();
-				$('#loadmore').click(function(e){
-					app.productList.addstart();
-					if($('.searchtxt').val()!="")
-						app.productList.addsearch($('.searchtxt').val());
-					else if($('#catid').length>0)
-						app.productList.makecategorize($('#catid').val());
-					app.productList.fetch({remove:false});
-					
-				});
+			    $(window).scroll(function () {
+			        if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+			        	app.productList.addstart();
+						if($('.searchtxt').val()!="")
+							app.productList.addsearch($('.searchtxt').val());
+						else if($('#catid').length>0)
+							app.productList.makecategorize($('#catid').val());
+						var loadmore=document.getElementById('loadmore');
+						app.spinner = new Spinner(optsloadmore).spin(loadmore);
+						app.productList.fetch({remove:false,success:function(){
+							$('#loadmore').empty();
+							app.spinner.stop();
+						}});
+						
+			        }
+			    });
+				
 				iwait.showPleaseWait();
 				app.container = document.querySelector('.masonrycontainer');
 				app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});

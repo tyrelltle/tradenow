@@ -56,7 +56,11 @@
 			.btn-danger,.label-danger,.progress-bar-danger{background-color:#dd4b39;}
 			.btn-warning,.label-warning,.progress-bar-warning{background-color:#f4b400;color:#444444;}
 
-
+			.modalheader{
+				
+				background-color: #428bca;
+			color: white;
+			}
 			.tooltip {z-index: 2000 !important;}
 			hr {border-color:#ececec;}
 			button {
@@ -146,7 +150,7 @@
  	<div class="col-md-12">
         <div class="navbar-header">
           
-          <a href="${pageContext.request.contextPath}" class="header_glyph navbar-brand">Trade Now!</a>
+          <a href="${pageContext.request.contextPath}/home" class="header_glyph navbar-brand">Trade Now!</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
           <i class="glyphicon glyphicon-search"></i>
           </button>
@@ -172,7 +176,7 @@
               </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
-             <li><a href="${pageContext.request.contextPath}"><i class="header_glyph glyphicon glyphicon-home"></i></a></li>          
+             <li><a href="${pageContext.request.contextPath}/home"><i class="header_glyph glyphicon glyphicon-home"></i></a></li>          
              <li class="linotiflis">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
                 <ul class="notiflis dropdown-menu">

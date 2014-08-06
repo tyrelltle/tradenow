@@ -59,6 +59,12 @@ public class LogonController  {
 
 			return "nativelogon";
 		}
+
+		@RequestMapping(value="loginerror",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public String failedlogin(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserRegistrationDTO dto2,Model model,HttpServletResponse resp) throws IOException {
+			model.addAttribute("loginerror","Authentication Failed!");
+			return "nativelogon";
+		}
 		
 		@RequestMapping(value="nativesignin",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 		public String nativesignin(@ModelAttribute("signinForm")UserLogonDTO dto, @ModelAttribute("userForm")UserRegistrationDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {

@@ -110,15 +110,17 @@ AppRouter=Backbone.Router.extend({
 							msnry= new Masonry( container,{isInitLayout: true});
 						});
 					});
-					$('#prodlismodel').on('hide.bs.modal', function (e) {
-						app.navigate("",true);
-					});
-					$('#prodlismodel').modal({show:true});
+
 					
 				}else{
-					$('#prodlist').append("Please add some item to your inventory!");
+					$('#prodlist').html("Please add some item to your inventory! ");
+					$('#prodlist').append("<a href='"+ctx+"user#prodlis'><span class='glyphicon glyphicon-forward'></span> Got to Add new item!</a>");
 				}
-				
+				$('#prodlismodel').on('hide.bs.modal', function (e) {
+					app.navigate("",true);
+				});
+
+				$('#prodlismodel').modal({show:true});
 			}
 		});
 	},
@@ -132,6 +134,7 @@ AppRouter=Backbone.Router.extend({
 	},
 	prodsel:function(prod_id){
 		var prod=this.productList.get(prod_id);
+		$('#prod1title').html(prod.get("title"));
 		$('#leftprodpic').attr("src", ctx+prod.get("thumurl"));
 		$('#prod1id').val(prod_id);
 		$('#prodlismodel').modal('hide');

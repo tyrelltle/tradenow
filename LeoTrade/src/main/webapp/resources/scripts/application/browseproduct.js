@@ -125,17 +125,18 @@ ProductListView=Backbone.View.extend({
 			
 		});
 		this.model.bind("add",function(e){
+			
 			var newelm=new ProductListItemView({model:e}).render().el;
 			$(self.el).find('.masonrycontainer').append(newelm);
 			if($('.masonrycontainer').length>0){
 				var container = document.querySelector('.masonrycontainer');
 				var msnry;
-				msnry= new Masonry(container);
-				msnry.appended([newelm]);
-				msnry.layout();
+				//msnry= new Masonry(container);
+				app.msnry.appended([newelm]);
+				//msnry.layout();
 				imagesLoaded( container, function() {
-					msnry.layout();
-				
+					app.msnry.layout();
+					
 				});
 			}
 		});

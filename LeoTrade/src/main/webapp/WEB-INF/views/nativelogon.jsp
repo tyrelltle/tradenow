@@ -42,6 +42,9 @@
 		                   <span><a href="#">${errorlogin}</a></span>
 		                  </div>
 		                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		                  <c:if test="${not empty loginerror}">
+		                    	<div class="alert alert-danger" role="alert">${loginerror}</div>
+ 			    		  </c:if>		
 		      			</form>
 		  
 		  </div>

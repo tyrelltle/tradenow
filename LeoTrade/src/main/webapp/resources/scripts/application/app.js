@@ -45,6 +45,7 @@ AppRouter=Backbone.Router.extend({
 		});
 	},
 	prodlis:function(){
+		$('#tab_prod').tab('show');
 		$('#newbtn').click(function(e){
 			app.navigate("newprod",true);
 		});

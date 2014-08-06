@@ -106,9 +106,9 @@
 			<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-lg modal-dialog">
 			    <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			        <div class="modal-title" id="myModalLabel">Item Detail</div>
 			      </div>
 			      <div class="modal-body">
 			      	<div class="modal-bodyy"></div>
