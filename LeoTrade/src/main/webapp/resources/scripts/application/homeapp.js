@@ -79,22 +79,12 @@ AppRouter=Backbone.Router.extend({
 			app.navigate("",true);
 		});
 		$('#btn_trade').click(function(){document.location.href = 'tradepage/toprod/'+prod_id;});
-		this.product=this.productList.get(prod_id);
-		this.productView=new ProductView({model:this.product});
-		$('.modal-bodyy').html(this.productView.render().el);
-		$('#myModal').on('shown.bs.modal', function(e){
-			//load images
-			app.container = document.querySelector('#imglis');
-			iwait.showPleaseWait();
-			app.msnry= new Masonry( app.container,{itemSelector: '.galimg',columnWidth: 200});
-			imagesLoaded( app.container, function() {
-				iwait.hidePleaseWait();
-				app.msnry= new Masonry( app.container,{itemSelector: '.galimg',columnWidth: 200});
-				app.msnry.layout();
-				$("a[rel^='prettyPhoto']").prettyPhoto();
-			});
-		});
 		
+		//$('#myModal').on('shown.bs.modal', function(e){
+			app.product=app.productList.get(prod_id);
+			app.productView=new ProductView({model:app.product});
+			$('.modal-bodyy').html(app.productView.render().el);
+
 	},
 });
 

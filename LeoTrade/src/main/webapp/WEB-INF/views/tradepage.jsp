@@ -274,10 +274,21 @@
 			  </div>
 			</div>
 		<!--start bootstrap templates-->		 
-			<script type="text/template" id="imglistitemtmp">
-					<a class='galimg' href='${pageContext.request.contextPath}/{{url}}' rel='prettyPhoto[pp_gal]'  href='{{url}}'>
-						<img class='galitem img-thumbnail' src='${pageContext.request.contextPath}/{{url}}' alt='asd'/>
-					</a>
+	 		<script type="text/template" id="imglistitemtmp">
+	<div class="item active">
+      <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+			</script>
+			<script type="text/template" id="imglistitemtmp2">
+	<div class="item">
+      <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
 			</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
@@ -333,8 +344,8 @@
 			<script type="text/template" id="proddetailtmp">
 			      
 			   
-				<div style="height:500px;">
-				<div class="col-md-6">
+				<div class="row" >
+				<div class="col-md-5">
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Title</span>
  						 	<label class="form-control"  > {{title}} </label>
@@ -368,21 +379,42 @@
  						 	<textarea id="tradefor" rows=6 class="form-control"  placeholder="Trade for what" readonly>{{tradefor}}</textarea>
 					</div>
 			   </div> <!-- property holder-->
-			   <div class="col-md-6">
+			   <div class="col-md-7">
 			  	 	<!--img viewer and uploader -->
-			   		<center>Photos</center>
 					
-					<div id="imglis" style="overflow:scroll;height:500px"></div>
+					<div id="imgliscontainer" >
+						<div id="imgliss">
+
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  <!--   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+						</div>
+					</div>
 				
 			   </div> <!-- img holder-->
 			 </div><!-- main content holder-->
 			      
-
-			     
-
-
-
-			  
 	 		</script>
 	<!--end bootstrap templates--> 	
 	

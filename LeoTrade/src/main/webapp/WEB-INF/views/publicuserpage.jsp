@@ -58,7 +58,7 @@
 			        <h4 class="modal-title" id="myModalLabel"></h4>
 			      </div>
 			      <div class="modal-body">
-			      	<div class="modal-bodyy"></div>
+			      	<div class="modal-bodyy row"></div>
 			      </div>
 			      <div class="modal-footer">
 			       
@@ -96,9 +96,20 @@
 	 		</script>
 	 		
 	 		<script type="text/template" id="imglistitemtmp">
-					<a class='galimg' href='${pageContext.request.contextPath}/{{url}}' rel='prettyPhoto[pp_gal]'>
-						<img class='galitem img-thumbnail' src='${pageContext.request.contextPath}/{{url}}' alt='asd'/>
-					</a>
+	<div class="item active">
+      <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+			</script>
+			<script type="text/template" id="imglistitemtmp2">
+	<div class="item">
+      <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
 			</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
@@ -127,8 +138,10 @@
 				        </div>		        
 			</script>
 	 		
-	 		<script type="text/template" id="proddetailtmp">	   
-				<div style="height:500px;">
+			<script type="text/template" id="proddetailtmp">
+			      
+			   
+				<div class="row" >
 				<div class="col-md-5">
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Title</span>
@@ -165,15 +178,40 @@
 			   </div> <!-- property holder-->
 			   <div class="col-md-7">
 			  	 	<!--img viewer and uploader -->
-			   		<center>Photos</center>
 					
-					<div id="imgliscontainer" style="overflow:scroll;height:500px">
-						<div id="imglis">
+					<div id="imgliscontainer" >
+						<div id="imgliss">
+
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  <!--   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
 						</div>
 					</div>
 				
 			   </div> <!-- img holder-->
-			 </div><!-- main content holder-->	  
+			 </div><!-- main content holder-->
+			      
 	 		</script>
 	 	
 	<!--end bootstrap templates--> 	

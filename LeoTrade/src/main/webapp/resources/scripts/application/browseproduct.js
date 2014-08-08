@@ -80,9 +80,9 @@ ProductView=Backbone.View.extend({
 	renderGallery:function(useel){
 		//render product image list
 		if(useel)
-			$(this.el).find('#imglis').empty();
+			$(this.el).find('.carousel-inner').empty();
 		else
-			$('#imglis').empty();
+			$('.carousel-inner').empty();
 		var self=this;
 		var imglis=new ImageList();
 		imglis.prod_id=this.model.get("prod_id");
@@ -90,15 +90,25 @@ ProductView=Backbone.View.extend({
 		imglis.fetch({
 			async:false, 
 			success:function(lis){
+				var i=0;
 				_.each(lis.models,function(m){
-					var imgtmp=_.template($("#imglistitemtmp").html());
-					
+					if(i==0){
+						var imgtmp=_.template($("#imglistitemtmp").html());
+						$(self.el).find('.carousel-indicators').append('<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>');
+					}
+					else{
+						var imgtmp=_.template($("#imglistitemtmp2").html());
+						$(self.el).find('.carousel-indicators').append('<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>');
+					}
+					i++;
 					if(useel)
-						$(self.el).find('#imglis').append(imgtmp(m.toJSON()));
+						$(self.el).find('.carousel-inner').append(imgtmp(m.toJSON()));
 					else
-						$('#imglis').append(imgtmp(m.toJSON()));
+						$('.carousel-inner').append(imgtmp(m.toJSON()));
 
 				});			
+				
+
 			}
 		});
 		

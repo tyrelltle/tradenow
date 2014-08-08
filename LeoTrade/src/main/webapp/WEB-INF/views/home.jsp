@@ -11,6 +11,11 @@
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
 	
 	    <style type="text/css">	
+	    .carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 100%; /* use this, or not */
+margin: auto;
+}
 	    	.galitem{
 	    		width:200px;
 	    	}
@@ -82,7 +87,7 @@
 			        <div class="modal-title" id="myModalLabel">Item Detail</div>
 			      </div>
 			      <div class="modal-body">
-			      	<div class="modal-bodyy"></div>
+			      	<div class="row modal-bodyy"></div>
 			      </div>
 			      <div class="modal-footer">
 			       
@@ -93,11 +98,7 @@
 			  </div>
 			</div>
 	<!--start bootstrap templates-->		 
-			<script type="text/template" id="imglistitemtmp">
-					<a class='galimg' href='{{url}}' rel='prettyPhoto[pp_gal]'  href='{{url}}'>
-						<img class='galitem img-thumbnail' src='{{url}}' alt='asd'/>
-					</a>
-			</script>
+
 			<script type="text/template" id="catlistitemtmp">
 					<a class="link" href="#">{{name}}</a>
 			</script>
@@ -152,7 +153,7 @@
 			<script type="text/template" id="proddetailtmp">
 			      
 			   
-				<div style="height:500px;">
+				<div >
 				<div class="col-md-5">
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Title</span>
@@ -189,23 +190,58 @@
 			   </div> <!-- property holder-->
 			   <div class="col-md-7">
 			  	 	<!--img viewer and uploader -->
-			   		<center>Photos</center>
 					
-					<div id="imgliscontainer" style="overflow:scroll;height:500px">
-						<div id="imglis">
+					<div id="imgliscontainer" >
+						<div id="imgliss">
+
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  <!--   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
 						</div>
 					</div>
 				
 			   </div> <!-- img holder-->
 			 </div><!-- main content holder-->
 			      
-
-			     
-
-
-
-			  
 	 		</script>
+	 		
+	 		<script type="text/template" id="imglistitemtmp">
+	<div class="item active">
+      <img class="galimg" src="{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+			</script>
+			<script type="text/template" id="imglistitemtmp2">
+	<div class="item">
+      <img class="galimg" src="{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+			</script>
 	<!--end bootstrap templates--> 	
 	
 	

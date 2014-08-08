@@ -207,11 +207,11 @@
 	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/iwait.js"></script>
 
 	<!--left -->
-	<div id="leftpanel" style="float:left;margin-top:56px">
+	<div id="leftpanel" class="col-md-1" style="float:left;margin-top:56px">
 		<tiles:insertAttribute name="left" />
 	</div>
 	<!--main-->
-	<div class="container" id="main">
+	<div class="container col-md-9" id="main" style="margin-left: 75px;">
 	   <tiles:insertAttribute name="main" />
 	</div><!--/main-->
 
@@ -282,9 +282,7 @@
 
 	<!--end bootstrap dependencies-->   
     <!-- JavaScript jQuery code from Bootply.com editor -->
-        <script type="text/javascript" id="tmp4" language="javascript" src="${pageContext.request.contextPath}/resources/themes/prettyphoto/js/jquery.prettyPhoto.js" rel="stylesheet"> </script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/themes/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
-	
+      
     <script type='text/javascript'>
     
     if (window.location.hash && window.location.hash == '#_=_') {
