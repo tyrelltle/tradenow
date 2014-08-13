@@ -38,10 +38,18 @@
 			  -webkit-font-smoothing: antialiased;
 			  font: normal 14px Roboto,arial,sans-serif;
 			}
+			.header_button{
+				font-family: cursive;
+				color: white;
+			}
+			.navbar {
+			box-shadow: 0 0 38px rgb(12, 12, 12) !important;
+			}
 			.navbar-default {background-color:#f4f4f4;margin-top:50px;border-width:0;z-index:5;}
 			.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li:hover > a {border:0 solid #4285f4;border-bottom-width:2px;font-weight:800;background-color:transparent;}
 			.navbar-default .dropdown-menu {background-color:#ffffff;}
 			.navbar-default .dropdown-menu li > a {padding-left:30px;}
+			.header_brand {font-family: Trebuchet MS Bold Italic;}
 			.header_glyph {color:white;}
 			.header {background-color:#2a6496;border-width:0;}
 			.header .navbar-collapse {background-color:#2a6496;}
@@ -150,7 +158,7 @@
  	<div class="col-md-12">
         <div class="navbar-header">
           
-          <a href="${pageContext.request.contextPath}/home" class="header_glyph navbar-brand">Trade Now!</a>
+          <a href="${pageContext.request.contextPath}/home" class="header_glyph navbar-brand header_brand">Trade Now!</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
           <i class="glyphicon glyphicon-search"></i>
           </button>
@@ -176,15 +184,15 @@
               </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
-             <li><a href="${pageContext.request.contextPath}/home"><i class="header_glyph glyphicon glyphicon-home"></i></a></li>          
+             <li><a class="header_button" href="${pageContext.request.contextPath}/home"><i class="header_glyph glyphicon glyphicon-home"></i>HOME</a></li>          
              <li class="linotiflis">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
+                <a href="#" class="header_button dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i>NOTIFICATION</a>
                 <ul class="notiflis dropdown-menu">
 
                 </ul>
              </li>
-             <li><a href="${pageContext.request.contextPath}/user"><i class="header_glyph glyphicon glyphicon-user"></i></a></li>
-             <li><a href="${pageContext.request.contextPath}/signout"><i class="header_glyph glyphicon glyphicon-log-out"></i></a></li>
+             <li><a class="header_button" href="${pageContext.request.contextPath}/user"><i class="header_glyph glyphicon glyphicon-user"></i>USER DETAIL</a></li>
+             <li><a class="header_button" href="${pageContext.request.contextPath}/signout"><i class="header_glyph glyphicon glyphicon-log-out"></i>LOGOUT</a></li>
              
            </ul>
         </div>	

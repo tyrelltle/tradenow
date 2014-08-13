@@ -1,0 +1,124 @@
+/**
+* @author     Bourhaouta http://about.me/bourhaouta <bourhaouta@gmail.com>
+* @codecanyon http://codecanyon.net/user/bourhaouta?ref=bourhaouta
+*/
+@import url(http://fonts.googleapis.com/css?family=Prosto+One);
+@import url(font-awesome.css);
+
+*{padding:0px;margin:0px}
+body{background:#ecf0f1}
+
+#sidebar {
+    z-index: 999;
+    position: fixed;
+    height: 100%;
+}
+
+#sidebar label {
+    position: fixed;
+    top: 66px;
+    left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #bdc3c7;
+}
+#sidebar input#slide {
+    display: none;
+}
+#sidebar input#slide:checked~label.open {
+    color: black;
+}
+#sidebar #menu a span, #sidebar label {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+#sidebar #menu {
+    position: absolute;
+    top: 46px;
+}
+#sidebar input#slide:checked~#menu a {
+    left: 0;
+}
+#sidebar #menu a {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    left: -110%;
+    text-decoration: none;
+    margin: 5px 0;
+    clear: both;
+    white-space: nowrap;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+    -moz-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+    -ms-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+    -o-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+    transition: left .4s cubic-bezier(.45,.25,.01,.92);
+}
+
+#sidebar #menu a div.icon {
+    width: 40px;
+    text-align: center;
+}
+#sidebar #menu a div.title {
+    font-family: sans-serif;
+    padding: 0 20px;
+}
+#sidebar #menu a.active div.title, #sidebar #menu a div.title:hover {
+    margin-left: -4px;
+}
+#sidebar #menu a div.title:hover {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+#sidebar #menu a div.title, #sidebar #menu a div.icon {
+    vertical-align: top;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    font-size: 14px;
+}
+#sidebar #menu a span, #sidebar #menu #social a div, #sidebar label {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+#sidebar #menu #social{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#sidebar #menu #social a div {
+	width: 30px;
+	height: 30px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+    background: #fff;
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+#sidebar #menu #social a div:hover {
+    color: #fff;
+}
+
+#sidebar #menu #social #facebook div:hover{
+    background: #3b5998;
+}
+#sidebar #menu #social #twitter div:hover{
+    background: #00aced;
+}
+#sidebar #menu #social #instagram div:hover{
+    background: #517fa4;
+}

@@ -9,6 +9,8 @@
 	
 	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
+	    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/themes/sidemenu/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/themes/sidemenu/assets/css/colors/blue.css">
 	
 	    <style type="text/css">	
 	    .carousel-inner > .item > img, 
@@ -16,6 +18,9 @@
 width: 100%; /* use this, or not */
 margin: auto;
 }
+			.footer{
+				border:none;
+			}
 	    	.galitem{
 	    		width:200px;
 	    	}
@@ -23,7 +28,7 @@ margin: auto;
 	    		width:1024px;
 	    	}
 			.masonryitem{
-				width: 200px;
+				width: 260px;
 				margin: 10px;
 			}
 			#catlistpanel{
@@ -35,7 +40,11 @@ margin: auto;
 			.boxshadow:hover{
 			box-shadow: 0 0 20px rgb(131, 131, 158) !important;
 			}
-						
+			#prodlispanel{
+
+			background-color: inherit !important;
+			border: none !important;
+			}			
 			i {
 			  font-size:16px;
 			}
@@ -50,23 +59,10 @@ margin: auto;
 	</tiles:putAttribute>
 	<tiles:putAttribute name="left">
 			  <div class="catlist">
-							<ul class="list-unstyled" style="margin-left:20px">
-							        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-							          <h5>Categories <i class="glyphicon glyphicon-chevron-down"></i></h5>
-							          </a>
-							            <ul class="list-unstyled collapse in" id="userMenu">
-							                <li class="active"> <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Options</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Transactions</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
-							                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
-							            </ul>
-							        </li> 
-							</ul>
+
 			  </div>
+
+			
 	
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
@@ -100,17 +96,34 @@ margin: auto;
 	<!--start bootstrap templates-->		 
 
 			<script type="text/template" id="catlistitemtmp">
-					<a class="link" href="#">{{name}}</a>
+					<div class="icon">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                    <div class="title">{{name}}</div>
+					
 			</script>
 	 		<script type="text/template" id="catlisttmp">
-							<ul class="list-unstyled" style="margin-left:20px">
-							        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-							          <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
-							          </a>
-							            <ul class="list-unstyled collapse in" id="userMenu">
-							            </ul>
-							        </li> 
-							</ul>
+      <nav id="sidebar">
+            <input id="slide" name="slide" type="checkbox">
+            <label for="slide" class="icon open">
+                <span class="glyphicon glyphicon-list"></span>
+            </label>
+            <div id="menu">
+   			<c:if test="${not empty catid}">
+      			<a href="home" class="allcat link">
+    		</c:if>
+   			<c:if test="${empty catid}">
+      			<a href="home" class="allcat link active">
+    		</c:if>
+                    <div class="icon">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="title">All Categories</div>
+                </a>
+               
+            </div>
+        </nav>
+							
 
 			</script>
 	 		<script type="text/template" id="prodlisttmp">
@@ -133,17 +146,17 @@ margin: auto;
 				      	<div class="boxshadow panel panel-default">
 				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="btn_detail img-responsive"></a></div>
 
-						  <div class="panel-footer" style="background-color:#FFFFFF">
-							<div class="row">
+						  <div class="footer panel-footer" style="background-image: url(resources/img/prodlistitem.png);color:white;background-color: #1E1F20;">
+							<!--<div class="row">
 								<div class="col-md-12" style="font-size:15px">{{title}}</div>
-							</div>
+							</div>-->
 						    <div class="row"  style="margin-top:8px">
-								<div class="col-md-4">
-									<a href="user/userid/{{userid}}"><img style="width:50px" src="{{ownerimgurl}}"/></a>
+								<div class="col-md-3">
+									<a href="user/userid/{{userid}}"><img style="width:50px;border-radius: 12px;" src="{{ownerimgurl}}"/></a>
 								</div>
-								<div class="col-md-8">
-									<em style="font-size:12px">{{ownernm}}:</em> 
-									<p style="font-size:12px">{{owneraddr}}</p>
+								<div class="col-md-9">
+									<p style="font-size:20px;text-transform:uppercase;">{{title}}:</p> 
+									<p style="font-size:10px">{{owneraddr}}</p>
 								</div>
 							</div>
 						  </div>

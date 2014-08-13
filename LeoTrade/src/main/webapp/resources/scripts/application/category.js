@@ -23,7 +23,7 @@ CategoryListView=Backbone.View.extend({
 		$(this.el).html(this.template());
 		var self=this;
 		_.each(this.model.models,function(m){
-			$(self.el).find('#userMenu').append(new CategoryListItemView({model:m}).render().el);
+			$(self.el).find('#menu').append(new CategoryListItemView({model:m}).render().el);
 		});
 		return this;
 	}
@@ -36,10 +36,16 @@ CategoryListItemView=Backbone.View.extend({
 		this.template=_.template($("#catlistitemtmp").html());
 
 	},
-	events:{"click .link":"clicked"},
-	tagName:"li",
+	events:{"click":"clicked"},
+	tagName:"a",
+	className:"link",
 	render:function(){
 		$(this.el).html(this.template(this.model.toJSON()));
+		if($('#catid').length>0){
+			if(parseInt($('#catid').val()) == this.model.get("catid")){
+				$(this.el).attr('class', 'link').addClass("active");		
+			}
+		}
 		return this;
 	},
 	clicked:function(){

@@ -63,6 +63,8 @@ AppRouter=Backbone.Router.extend({
 					$('#prodlist').show();
 					app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 					app.msnry.layout();
+					$('#slide').click();
+
 				});
 			
 			}

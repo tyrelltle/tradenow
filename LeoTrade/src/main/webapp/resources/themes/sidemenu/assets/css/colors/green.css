@@ -1,0 +1,13 @@
+#sidebar #menu a div.icon {
+    background: #2ecc71;
+    color: #27ae60;
+}
+#sidebar #menu a div.title {
+    background: #fff;
+    color: #7f8c8d;
+}
+#sidebar #menu a.active div.title, #sidebar #menu a div.title:hover {
+    margin-left: -4px;
+    color: #ecf0f1;
+    background: #2ecc71;
+}
