@@ -1,337 +1,331 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!doctype html>
+<html class="no-js" lang="en-US">
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-        <title>Bootply.com - Bootstrap Google Plus Theme</title>
-        <meta name="generator" content="Bootply" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--
+	HTML with Open Graph attributes
+	<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+-->
 
-		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">    
-		
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
-					 	   	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.js" rel="stylesheet"> </script>
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/spin.min.js"></script>		       
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/underscore.js"></script>
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/backbone.js"></script>
+<head> 
+
+	<meta charset="UTF-8">
+	<title>All in one</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.png">
+
+	<!-- Add some of The Open Graph protocol -->
+		<!-- Open Graph meta tags -->
+	<!--
+	<meta content="Blog" property="og:title">
+	<meta content="website" property="og:type">
+	<meta content="http://des111gn.com/all-in-1/blog-3.html" property="og:url">
+	<meta content="" property="og:image">
+	<meta content="All in one" property="og:site_name">
+	<meta content="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable [...]" property="og:description">
+	-->
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- Main CSS Style -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" />
+
+	<!-- Main CSS Style (in less) delete in real project-->
+	<link rel="stylesheet/less" type="text/css" href="${pageContext.request.contextPath}/resources/css/styles.less">
+	<!-- Less -->
+	<script src="${pageContext.request.contextPath}/resources/js/less.js" type="text/javascript"></script>
+
+	<!-- Bootstrap Grid Framework -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='${pageContext.request.contextPath}/resources/text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='${pageContext.request.contextPath}/resources/text/css'>
 	
-		
-		
-        <script>var ctx = "${pageContext.request.contextPath}/"</script>
-        
-        <!--[if lt IE 9]>
-          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.css">
 
-		<tiles:insertAttribute name="header" />
+	<!-- Dropdown menu -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.css">
 
-        <!-- CSS code from Bootply.com editor -->
-        
-        <style type="text/css">
-            /* custom google plus style theme */
-			@import url(http://fonts.googleapis.com/css?family=Roboto:400);
-			body {
-			  background-color:#ffffff;
-			  -webkit-font-smoothing: antialiased;
-			  font: normal 14px Roboto,arial,sans-serif;
-			}
-			.header_button{
-				font-family: cursive;
-				color: white;
-			}
-			.navbar {
-			box-shadow: 0 0 38px rgb(12, 12, 12) !important;
-			}
-			.navbar-default {background-color:#f4f4f4;margin-top:50px;border-width:0;z-index:5;}
-			.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li:hover > a {border:0 solid #4285f4;border-bottom-width:2px;font-weight:800;background-color:transparent;}
-			.navbar-default .dropdown-menu {background-color:#ffffff;}
-			.navbar-default .dropdown-menu li > a {padding-left:30px;}
-			.header_brand {font-family: Trebuchet MS Bold Italic;}
-			.header_glyph {color:white;}
-			.header {background-color:#2a6496;border-width:0;}
-			.header .navbar-collapse {background-color:#2a6496;}
-			.btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
-			.form-control {border-color:#d7d7d7;}
-			.btn-primary {border-color:transparent;}
-			.btn-primary,.label-primary,.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {background-color:#4285f4;}
-			.btn-plus {background-color:#ffffff;border-width:1px;border-color:#dddddd;box-shadow:1px 1px 0 #999999;border-radius:3px;color:#666666;text-shadow:0 0 1px #bbbbbb;}
-			.well,.panel {border-color:#d2d2d2;box-shadow:0 1px 0 #cfcfcf;border-radius:3px;}
-			.btn-success,.label-success,.progress-bar-success{background-color:#65b045;}
-			.btn-info,.label-info,.progress-bar-info{background-color:#a0c3ff,border-color:#a0c3ff;}
-			.btn-danger,.label-danger,.progress-bar-danger{background-color:#dd4b39;}
-			.btn-warning,.label-warning,.progress-bar-warning{background-color:#f4b400;color:#444444;}
+    <!-- Owl Carousel Assets -->
+    <link href="${pageContext.request.contextPath}/resources/css/owl.carousel.css" rel="stylesheet">
 
-			.modalheader{
+    <!-- Animate css -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/animate.css">
+	
+	<!-- Scripts that is required -->
+	<!-- jQuery -->
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/spin.min.js"></script>
+	<script>var ctx = "${pageContext.request.contextPath}/"</script>
+	<script src="${pageContext.request.contextPath}/resources/js/underscore.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
+	
+	
+	<tiles:insertAttribute name="header" />
+
+</head>
+
+<body>
+	
+
+	<div id="wrap">
+
+
+		<!-- Top bar -->
+			<!-- Top bar -->
+		<header>
+			<!-- Dropdown menu -->
+			<nav>
 				
-				background-color: #428bca;
-			color: white;
-			}
-			.tooltip {z-index: 2000 !important;}
-			hr {border-color:#ececec;}
-			button {
-				outline: 0;
-			}
-			textarea {
-			  resize: none;
-			  outline: 0;
-			  
-			}
-			.panel .btn i,.btn span{
-			  color:#666666;
-			}
-			.panel .panel-heading {
-			  background-color:#ffffff;
-			  font-weight:700;
-			  font-size:16px;
-			  color:#262626;
-			  border-color:#ffffff;
-			}
-			.panel .panel-heading a {
-			  font-weight:400;
-			  font-size:11px;
-			}
-			.panel .panel-default {
-			  border-color:#cccccc;
-			}
-			.panel .panel-thumbnail {
-			  padding:0;
-			}
-			.panel .img-circle {
-			  width:50px;
-			  height:50px;
-			}
-			.list-group-item:first-child,.list-group-item:last-child {
-				border-radius:0;
-			}
-			h3,h4,h5 { 
-			  border:0 solid #efefef; 
-			  border-bottom-width:1px;
-			  padding-bottom:10px;
-			}
-			
-			/* .modal-dialog { */
-			/*  width: 450px; */
-			/* } */
-			
-			.modal-footer {
-			 border-width:0;
-			}
-			
-			.dropdown-menu {
-			   background-color:#f4f4f4;
-			   border-color:#f0f0f0;
-			   border-radius:0;
-			   margin-top:-1px;
-			}
-			/* end theme */
-			
-			/* template layout*/
-			#subnav {
-				position:fixed;
-			    width:100%;
-			}
-			
-			@media (max-width: 768px) {
-				#subnav {
-				padding-top: 6px;
-				}
-			}
-			
-			#main {
-				padding-top:56px;
-			}
-			.notiflisitem{
-				font-size:11px;
-			}
-        </style>
-    </head>
-    
-    <!-- HTML code from Bootply.com editor -->
-    
-    <body>
-    
-        
-        <div class="navbar navbar-fixed-top header">
- 	<div class="col-md-12">
-        <div class="navbar-header">
-          
-          <a href="${pageContext.request.contextPath}/home" class="header_glyph navbar-brand header_brand">Trade Now!</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
-          <i class="glyphicon glyphicon-search"></i>
-          </button>
-      
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse1">
-          <form class="navbar-form pull-left">
-              <div class="input-group" style="max-width:470px;">
-              
-              <c:choose>
-			      <c:when test="${not empty searchkey}">
-			           <input type="text" class="searchtxt form-control" placeholder="Search By Item Titles" value="${searchkey}">   			
-			      </c:when>
-			      <c:otherwise>
-			           <input type="text" class="searchtxt form-control" placeholder="Search By Item Titles">   			
-			      </c:otherwise>
-			  </c:choose>
-              
-              
-                <div class="input-group-btn">
-                  <button class="searchbtn btn btn-default btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-             <li><a class="header_button" href="${pageContext.request.contextPath}/home"><i class="header_glyph glyphicon glyphicon-home"></i>HOME</a></li>          
-             <li class="linotiflis">
-                <a href="#" class="header_button dropdown-toggle" data-toggle="dropdown"><i class="notibell header_glyph glyphicon glyphicon-bell"></i>NOTIFICATION</a>
-                <ul class="notiflis dropdown-menu">
+				<div class="header">
+					<div class="container">
+						<div class="row">
 
-                </ul>
-             </li>
-             <li><a class="header_button" href="${pageContext.request.contextPath}/user"><i class="header_glyph glyphicon glyphicon-user"></i>USER DETAIL</a></li>
-             <li><a class="header_button" href="${pageContext.request.contextPath}/signout"><i class="header_glyph glyphicon glyphicon-log-out"></i>LOGOUT</a></li>
-             
-           </ul>
-        </div>	
-	     </div>	
-	</div>
-	
-	<!--wait modal-->
-	<div id="waitmodal" class="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	  <div class="modal-content">
-	      <div class="modal-body">
-				<div style="height:200px">
-			      <span id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
-			    </div>
+
+							<div class="col-md-2 col-sm-2 col-xs-2">
+								<!-- Your logo -->
+								<div class="logo"><a href="index.html"><img src="img/logo.png" alt="All in 1"></a></div>
+								<!-- and Your logo -->
+							</div>
+							
+							<div class="col-md-10 col-sm-10 col-xs-10">
+								
+								<div class="menu-container">
+									
+									<!-- Menu nav bar -->
+									<ul id="menu">
+
+									    <li><a href="#">Home <i class="fa fa-angle-down"></i></a>
+									    	<ul class="sub-menu slideDown">
+									            <li><a href="index.html">Classic view</a></li>
+									            <li><a href="index-2.html">Fullscreen slider & Seo</a></li>
+									            <li><a href="index-3.html">WooCommerce view</a></li>
+									        </ul>
+									    </li>
+									    <li class="features"><a href="#" >Features <i class="fa fa-angle-down"></i></a>
+										   
+									    </li>
+									    <li><a href="#" class="slideUp">Portfolio <i class="fa fa-angle-down"></i></a>
+									       
+									    </li>
+									    <li><a href="#">Blog <i class="fa fa-angle-down"></i></a>
+									    	
+									    </li>
+									    <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+									        
+									    </li>
+									    <li class="shop-menu"><a href="#">Shop <i class="fa fa-angle-down"></i></a>
+										   
+									    </li>
+									    <li><a href="contact.html">Contacts</a></li>
+										<li class="search">
+								    			<i class="fa fa-search"></i>
+										</li>
+									</ul>
+									<!-- and Menu nav bar -->
+								</div> <!-- and menu-container -->
+							</div> <!-- and col-md-10 -->
+
+						</div> <!-- and row -->
+					</div> <!-- and container -->
+				</div> <!-- and header -->
+
+			</nav> <!-- and Dropdown menu -->
+			
+		</header> <!-- and header -->
+
+
+		<!-- Page title -->
+		<section>
+			<div class="page-title">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 col-sm-5">
+							<h3>Blog masonry 3 columns</h3>
+						</div>
+						<div class="col-md-7 col-sm-7 hidden-xs">
+							<div class="page-title-address">
+								<a href="">3 columns </a><i class="fa fa-angle-right"></i>
+								<a href="">Masonry blog</a><i class="fa fa-angle-right"></i>
+								<a href="">Blog</a><i class="fa fa-angle-right"></i>
+								<a href="">Home</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-	      </div>
-	  </div>
-	  </div>
-	</div>
-	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/iwait.js"></script>
+		</section> <!-- and Page title -->
+		
 
-	<!--left -->
-	<div id="leftpanel" class="col-md-1" style="float:left;margin-top:56px">
-		<tiles:insertAttribute name="left" />
-	</div>
-	<!--main-->
-	<div class="container col-md-9" id="main" style="margin-left: 75px;">
-	   <tiles:insertAttribute name="main" />
-	</div><!--/main-->
+		<!-- main -->
+		<section>
+		<div class="blog">
+				<div class="container">
+					<div class="row">
+							<!--tiles left -->
+							<div id="leftpanel" class="col-md-1" style="float:left;margin-top:56px">
+								<tiles:insertAttribute name="left" />
+							</div><!-- /tiles left -->
+							<!--tiles main-->
+							<div class="container col-md-9" id="main" style="margin-left: 75px;">
+							   <tiles:insertAttribute name="main" />
+							</div><!--/tiles main-->
+		</div></div></div>
+		</section>
+		<!-- and main -->
 
+		<footer id="footer">
+			
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small about">
+							<img class="logo-small" src="img/logo_small.png" alt="">
+							<p>There are many variations of passages of 
+							Lorem Ipsum available, but the majority 
+							have suffered alteration in some form. </p>
+							<ul class="social-small list-inline left">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small latest-posts">
+							<h3 class="title">Latest posts</h3>
+							<ul>
+								<li>
+									<a href="blog-1.html" class="c-pointer">Some design blog post</a>
+									<span><b>14 May 2013</b></span>
+								</li>
+								<li>
+									<a href="blog-1.html" class="c-pointer">WordPress code for responsive</a>
+									<span><b>12 May 2013</b></span>
+								</li>
+								<li>
+									<a href="blog-1.html" class="c-pointer">Creative technologies of our time</a>
+									<span><b>7 May 2013</b></span>
+								</li>
+								<li>
+									<a href="blog-1.html" class="c-pointer">Time for your site</a>
+									<span><b>21 June 2013</b></span>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small new-twitt">
+							<h3 class="title">News on Twitter</h3>
+							<ul>
+								<li>
+									<i class="fa fa-twitter"></i>
+									<p>Check out our new #themeforest 
+									item “Energy - responsive WordPress 
+									theme” at http://t.co/kfjLLhhfl9348jv</p>
+									<span><b>3 days ago</b></span>
+								</li>
+								<li>
+									<i class="fa fa-twitter"></i>
+									<p>Check out our new #themeforest 
+									item “Multipress - responsive 
+									WordPress theme” at 
+									http://t.co/kfjLLhhfl9348jv</p>
+									<span><b>18 days ago</b></span>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small footer-contact">
+							<h3 class="title">Contact</h3>
+							<span>Box 32145 Some Street Str, Lviv city 2314</span>
+							<span>Phone: +38 (321) 65498732</span>
+							<span>Fax: +38 (321) 65498732</span>
+							<h3 class="newsletter">Newsletter</h3>
+							<form>
+								<input type="text" placeholder="Enter your e-mail address">
+								<button>GO</button>
+							</form>
+							<span>By subscribing you will get the latest news from us.</span>
+						</div>
+					</div> <!-- and row -->
+				</div> <!-- and container -->
+			</div> <!-- and footer -->
 
+		</footer> <!-- and footer -->
 
-	<!--login modal-->
-	<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog">
-	  <div class="modal-content">
-	      <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	          <h2 class="text-center"><img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"><br>Login</h2>
-	      </div>
-	      <div class="modal-body">
-	          <form class="form col-md-12 center-block">
-	            <div class="form-group">
-	              <input type="text" class="form-control input-lg" placeholder="Email">
-	            </div>
-	            <div class="form-group">
-	              <input type="password" class="form-control input-lg" placeholder="Password">
-	            </div>
-	            <div class="form-group">
-	              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-	              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
-	            </div>
-	          </form>
-	      </div>
-	      <div class="modal-footer">
-	          <div class="col-md-12">
-	          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-			  </div>	
-	      </div>
-	  </div>
-	  </div>
-	</div>
+		<!-- Bottom bar -->
+		<section>
+			
+			<div class="bottom-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small pull-right">
+
+							<ul class="list-inline pull-right">
+								<li><a href="index.html">HOME</a></li>
+								<li><a href="blog.html">OUR BLOG</a></li>
+								<li><a href="shop-1.html">SHOP</a></li>
+								<li><a href="#">TERMS</a></li>
+								<li><a href="contact.html">CONTACTS</a></li>
+							</ul>
+							
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small copyright">
+							<p>&#169; 2014 All in one. All Rights Reserved by <a href="#">Design_service</a></p>
+						</div>						
+					</div> <!-- and row -->
+				</div> <!-- and container -->
+			</div> <!-- and bottom-bar -->
+
+		</section> <!-- and Bottom bar -->
+
+		<a href="#" class="back-to-top"></a>
+
+	</div> <!-- and wrap -->
+	
 
 	
-	<!--about modal-->
-	<div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog">
-	  <div class="modal-content">
-	      <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	          <h2 class="text-center">About</h2>
-	      </div>
-	      <div class="modal-body">
-	          <div class="col-md-12 text-center">
-	            <a href="http://bootply.com/90113">This Bootstrap Template</a><br>was made with <i class="glyphicon glyphicon-heart"></i> by <a href="http://bootply.com/templates">Bootply</a>
-	            <br><br>
-	            <a href="https://github.com/iatek/bootstrap-google-plus">GitHub Fork</a>
-	          </div>
-	      </div>
-	      <div class="modal-footer">
-	          <button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
-	      </div>
-	  </div>
-	  </div>
-	</div>
-        
-    <script type='text/javascript' src="${pageContext.request.contextPath}/resources/scripts/jquery-1.10.2.js"></script>
+  	<!-- Modernizr -->
+	<script src="${pageContext.request.contextPath}/resources/js/modernizr.js"></script>
 
 
-    <script type='text/javascript' src="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/js/bootstrap.min.js"></script>	 
 
-    <!--start bootstrap dependencies-->	
-	<script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/notification.js"></script>
+	<!-- Owl carousel -->
+    <script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+
+	<!-- Bootstrap Plagins -->
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+
+	<!-- Dropdown menu if screen < 650px -->
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.min.js"></script>
 	
+	<!-- Fixed Dropdown menu if scroll -->
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 
-	<!--end bootstrap dependencies-->   
-    <!-- JavaScript jQuery code from Bootply.com editor -->
-      
-    <script type='text/javascript'>
-    
-    if (window.location.hash && window.location.hash == '#_=_') {
-        window.location.hash = '';
-    }
+	<!-- jQuery -->
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.7.2.min.js"></script>
 
-    
-    
-    
-    $(document).ready(function() {       		  
-    	
-    	
-				/* toggle layout */
-				$('#btnToggle').click(function(){
-					if ($(this).hasClass('on')) {
-				    	$('#main .col-md-6').addClass('col-md-4').removeClass('col-md-6');
-				    	$(this).removeClass('on');
-				    }
-				  	else {
-				    	$('#main .col-md-4').addClass('col-md-6').removeClass('col-md-4');
-				      	$(this).addClass('on');
-				  	}
-				});
-				$('.searchbtn').click(function(){
-					window.location=ctx+"search"+$('.searchtxt').val();
-					return false;
-				});
-					$('.dropdown-toggle').dropdown();
-				
-				var notiflis=new NotificationList();
-				var notiflisview =new NotificationListView({model:notiflis});
-				notiflis.fetch({
-					success:function(lis){
-						notiflisview.render();
+	<!-- Animation offset -->
+	<script src="${pageContext.request.contextPath}/resources/js/wow.js"></script>
 
-					}
-				});
-	        
-    });
-       
-    </script>
-        
-    </body>
+	<!-- Layout Style -->
+	<script src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
+	
+	<!-- Application Domain scripts -->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/appscript.js"></script>
+	
+	<!-- Other scripts -->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+
+
+</body>
 </html>
