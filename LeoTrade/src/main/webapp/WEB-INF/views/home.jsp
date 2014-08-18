@@ -26,8 +26,7 @@ margin: auto;
 	    		width:1024px;
 	    	}
 			.masonryitem{
-				width: 260px;
-				margin: 10px;
+				margin: 0px;
 			}
 			#catlistpanel{
 				float:left;
@@ -55,13 +54,44 @@ margin: auto;
 		.
 	    </style>
 	</tiles:putAttribute>
-	<tiles:putAttribute name="left">
-			  <div class="catlist">
-
-			  </div>
-
-			
 	
+	<tiles:putAttribute name="pagetitle">
+<div class="top-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7 col-md-8 col-sm-7">
+							<ul class="top-bar-nav list-inline pull-left">
+								<li id="lang">
+									<a href="#" class="lang-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
+									<ul class="lang" id="catlis" style="display: none;">
+									
+									</ul>
+								</li>
+								<li id="lang">
+											
+											<form class="sidebar-search-form">
+											  <c:choose>
+											      <c:when test="${not empty searchkey}">
+											           <input type="text" class="searchtxt" placeholder="Search By Item Titles" value="${searchkey}">   			
+											      </c:when>
+											      <c:otherwise>
+											           <input type="text" class="searchtxt" placeholder="Search By Item Titles">   			
+											      </c:otherwise>
+											  </c:choose>
+													<a class="searchbtn"><i class="fa fa-search"></i></a>
+											
+												</form>
+								</li>
+
+							</ul>
+						</div>
+
+					</div> <!-- and row -->
+				</div> <!-- and container -->
+</div>
+	</tiles:putAttribute>
+	
+	<tiles:putAttribute name="left">
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
    			<c:if test="${not empty catid}">
@@ -94,39 +124,11 @@ margin: auto;
 	<!--start bootstrap templates-->		 
 
 			<script type="text/template" id="catlistitemtmp">
-					<div class="icon">
-                        <i class="fa fa-chevron-right"></i>
-                    </div>
-                    <div class="title">{{name}}</div>
-					
+					<a href="#">{{name}}</a>
 			</script>
-	 		<script type="text/template" id="catlisttmp">
-      <nav id="sidebar">
-            <input id="slide" name="slide" type="checkbox">
-            <label for="slide" class="icon open">
-                <span class="glyphicon glyphicon-list"></span>
-            </label>
-            <div id="menu">
-   			<c:if test="${not empty catid}">
-      			<a href="home" class="allcat link">
-    		</c:if>
-   			<c:if test="${empty catid}">
-      			<a href="home" class="allcat link active">
-    		</c:if>
-                    <div class="icon">
-                        <i class="fa fa-home"></i>
-                    </div>
-                    <div class="title">All Categories</div>
-                </a>
-               
-            </div>
-        </nav>
-							
 
-			</script>
 	 		<script type="text/template" id="prodlisttmp">
-				<div id="prodlispanel" class="panel panel-default">
-			      		<div  class="panel-body">
+
 							<blockquote>
   								<p>Discover, Choose, Trade!.</p>
 							</blockquote>
@@ -135,30 +137,39 @@ margin: auto;
 							<center>
 								<div  id="loadmore" >Load More</div>
 							</center>
-						</div>
-				</div>
+				
 				
 
 			</script>
-	 		<script type="text/template" id="prodlistitemtmp">
-				      	<div class="boxshadow panel panel-default">
-				          <div class="panel-thumbnail"><a><img src="{{thumurl}}" class="btn_detail img-responsive"></a></div>
+			
 
-						  <div class="footer panel-footer" style="background-image: url(resources/img/prodlistitem.png);color:white;background-color: #1E1F20;">
-							<!--<div class="row">
-								<div class="col-md-12" style="font-size:15px">{{title}}</div>
-							</div>-->
-						    <div class="row"  style="margin-top:8px">
-								<div class="col-md-3">
+			
+			
+	 		<script type="text/template" id="prodlistitemtmp">
+								<div class="blog-item">
+									<img alt="" class="btn_detail" src="{{thumurl}}">
+									<div class="blog-item-description">
+										<h3>{{title}}</h3>
+							<div class="row">
+								<div class="col-md-4">
 									<a href="user/userid/{{userid}}"><img style="width:50px;border-radius: 12px;" src="{{ownerimgurl}}"/></a>
 								</div>
-								<div class="col-md-9">
-									<p style="font-size:20px;text-transform:uppercase;">{{title}}:</p> 
-									<p style="font-size:10px">{{owneraddr}}</p>
+								<div class="col-md-8">
+									<p class="ownernm">{{ownernm}}</p> 
+									<p>{{owneraddr}}</p>
 								</div>
+
 							</div>
-						  </div>
-				        </div>		        
+									<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+									</div>
+								</div>
+								<div class="bottom-border">
+								</div>
+
+
+
+
+	        
 			</script>
 			
 			<script type="text/template" id="proddetailtmp">

@@ -7,8 +7,8 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
 	    
 	    <style type="text/css">	
 
@@ -29,6 +29,8 @@
 				width:940px;
 			}
 	    </style>
+	</tiles:putAttribute>
+		<tiles:putAttribute name="pagetitle">
 	</tiles:putAttribute>
 	<tiles:putAttribute name="left">
 			  <div></div>	
@@ -223,9 +225,9 @@
 	
 		
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/browseproduct.js"></script>
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/scripts/application/userpageapp.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/userpageapp.js"></script>
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>

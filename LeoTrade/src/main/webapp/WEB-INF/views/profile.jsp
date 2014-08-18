@@ -7,10 +7,10 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 
-	    <script type="text/javascript" language="javascript" src="resources/scripts/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="resources/scripts/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="resources/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="resources/js/imagesloaded.pkgd.js"></script>
 	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>	    
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/autocompleteapi.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
 	    
 	    <style type="text/css">	
 	    	.tradelis{
@@ -32,6 +32,8 @@
 			}
 		
 	    </style>
+	</tiles:putAttribute>
+		<tiles:putAttribute name="pagetitle">
 	</tiles:putAttribute>
 	<tiles:putAttribute name="left">
 			  <div></div>	
@@ -285,10 +287,10 @@
 	
 		
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="resources/scripts/application/product.js"></script>
-			 <script type="text/javascript" id="tmp" src="resources/scripts/application/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/app.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/scripts/application/tradelist.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/js/application/product.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/js/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/js/application/app.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/js/application/tradelist.js"></script>
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>

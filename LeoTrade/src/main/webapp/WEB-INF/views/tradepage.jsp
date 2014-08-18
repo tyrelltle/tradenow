@@ -7,8 +7,8 @@
 	<tiles:putAttribute name="header">
 	
 			<script>var ctx = "${pageContext.request.contextPath}/"</script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/masonry.pkgd.js"></script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/imagesloaded.pkgd.js"></script>
+		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/masonry.pkgd.js"></script>
+		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
 				<style>
 				/* CSS used here will be applied after bootstrap.css */
 				.btnsubmit{
@@ -65,6 +65,8 @@
 					margin-left:125px;
 				}
 				</style>
+</tiles:putAttribute>
+	<tiles:putAttribute name="pagetitle">
 </tiles:putAttribute>
 <tiles:putAttribute name="left">
 		  <div></div>	
@@ -427,10 +429,10 @@
 	
 		
 	<!--start bootstrap dependencies-->	
-				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/scripts/application/trademessage.js"></script>
+				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/trademessage.js"></script>
 	
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/scripts/application/browseproduct.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/scripts/application/tradeapp.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/tradeapp.js"></script>
 			 
 	<!--end bootstrap dependencies-->
 				

@@ -2529,7 +2529,7 @@ p.price-range > .button-green {
   margin: 0;
 }
 .blog-item p {
-  padding: 0 0 15px 0;
+/*   padding: 0 0 15px 0; */
   margin: 0;
 }
 .blog-item a.more {
@@ -2562,7 +2562,7 @@ p.price-range > .button-green {
   position: relative;
   float: right;
 }
-.blog-item-description .post-date {
+.blog-item-description .ownernm {
   font-family: 'Oswald';
   color: #b2d231;
   font-size: 16px;

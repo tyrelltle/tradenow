@@ -21,7 +21,7 @@ AppRouter=Backbone.Router.extend({
 		this.categoryListView=new CategoryListView({model:this.categoryList});
 		this.categoryList.fetch({
 			success:function(lis){
-				$('.catlist').html(app.categoryListView.render().el);
+				app.categoryListView.render();
 			}
 		});
 		

@@ -56,7 +56,8 @@
 
     <!-- Owl Carousel Assets -->
     <link href="${pageContext.request.contextPath}/resources/css/owl.carousel.css" rel="stylesheet">
-
+	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/settings.css" media="screen" />
     <!-- Animate css -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/animate.css">
 	
@@ -69,7 +70,8 @@
 	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
-	
+	<!--Preaty Photo-->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" type="text/css"/>
 	
 	<tiles:insertAttribute name="header" />
 
@@ -92,44 +94,26 @@
 						<div class="row">
 
 
-							<div class="col-md-2 col-sm-2 col-xs-2">
+							<div class="col-md-5 col-sm-5 col-xs-5">
 								<!-- Your logo -->
 								<div class="logo"><a href="index.html"><img src="resources/img/logo.png" alt="All in 1"></a></div>
 								<!-- and Your logo -->
 							</div>
 							
-							<div class="col-md-10 col-sm-10 col-xs-10">
-								
-								<div class="menu-container">
-									
-									<!-- Menu nav bar -->
-									
-									
-									<ul id="menu">
-									    <li>
-									    	<a href="${pageContext.request.contextPath}/home">
-									    		Home<i class="header_glyph glyphicon glyphicon-home"></i>
-									    	</a>
-									    </li>
-									    <li class="linotiflis">
-									    	<a href="#" >Notification<i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
-										   	<ul class="notiflis sub-menu slideDown">
-									            
-									        </ul>
-									    </li>
-									    <li><a href="${pageContext.request.contextPath}/user">
-									    			User Detail <i class="glyphicon glyphicon-user"></i>
-									    	</a>
-									    </li>
-									    <li><a href="${pageContext.request.contextPath}/signout">
-									    			User Detail <i class="glyphicon glyphicon-log-out"></i>
-									    	</a>
-									    </li>
-									</ul>
-									<!-- and Menu nav bar -->
-								</div> <!-- and menu-container -->
+							<div class="col-md-3 col-sm-3 col-xs-3">
+											<form action="<c:url value="/auth/facebook" />" method="POST">
+														<a style="font-size:10px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
+															<i class="fa fa-facebook"></i>
+														Sing in with Google</a> 
+											</form>
+											
 							</div> <!-- and col-md-10 -->
-
+							<div class="col-md-3 col-sm-3 col-xs-3">
+											
+											<form action="<c:url value="/nativelogon" />" method="GET">
+										    	 <button class="btn btn-success" id="nativebtn" type="submit">Regular signon</button>		   		 	    
+											</form>
+							</div> <!-- and col-md-10 -->
 						</div> <!-- and row -->
 					</div> <!-- and container -->
 				</div> <!-- and header -->
@@ -145,19 +129,11 @@
 
 		<!-- main -->
 		<section>
-		<div class="blog">
-				<div class="container">
-					<div class="row">
-							<!--tiles left -->
-							<div id="leftpanel" >
+
 								<tiles:insertAttribute name="left" />
-							</div><!-- /tiles left -->
-							<!--tiles main-->
-							<div class="container col-md-12" id="main" >
+		
 							   <tiles:insertAttribute name="main" />
-							</div><!--/tiles main-->
-		</div></div></div>
-		</section>
+
 		<!-- and main -->
 
 		<footer id="footer">
@@ -301,7 +277,27 @@
 	
 	<!-- Other scripts -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+  	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.revolution.min.js"></script>
 
+	
+    <!-- REVOLUTION SLIDER -->
+	<script type="text/javascript">
+		var revapi;
+		jQuery(document).ready(function() {
+			   revapi = jQuery('.tp-banner').revolution(
+				{
+					delay:9999,
+					startwidth:1350,
+					startheight:588,
+					hideThumbs:10,
+					fullWidth:"on",
+				});
+
+		});	//ready
+	</script>
+	<!-- END REVOLUTION SLIDER -->
 
 </body>
 </html>

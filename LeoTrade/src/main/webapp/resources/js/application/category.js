@@ -16,14 +16,11 @@ CategoryList=Backbone.Collection.extend({
  
 CategoryListView=Backbone.View.extend({
 	initialize:function(){
-		this.template=_.template($("#catlisttmp").html());
 	},
 	
 	render:function(){
-		$(this.el).html(this.template());
-		var self=this;
 		_.each(this.model.models,function(m){
-			$(self.el).find('#menu').append(new CategoryListItemView({model:m}).render().el);
+			$('#catlis').append(new CategoryListItemView({model:m}).render().el);
 		});
 		return this;
 	}
@@ -37,8 +34,7 @@ CategoryListItemView=Backbone.View.extend({
 
 	},
 	events:{"click":"clicked"},
-	tagName:"a",
-	className:"link",
+	tagName:"li",
 	render:function(){
 		$(this.el).html(this.template(this.model.toJSON()));
 		if($('#catid').length>0){
@@ -48,8 +44,9 @@ CategoryListItemView=Backbone.View.extend({
 		}
 		return this;
 	},
-	clicked:function(){
+	clicked:function(e){
 		window.location.replace(ctx+"catid"+this.model.get("catid"));
+		e.preventDefault();
 	}
 	
 });

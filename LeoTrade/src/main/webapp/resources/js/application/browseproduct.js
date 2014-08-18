@@ -181,7 +181,7 @@ ProductListItemView=Backbone.View.extend({
 		this.template=_.template($("#prodlistitemtmp").html());
 	},
 	
-	className:"masonryitem",
+	className:"masonryitem col-md-3",
 	events:{"click .btn_detail":"clicked",
 		"click .btn_select":"selected"},
 	selected:function(){

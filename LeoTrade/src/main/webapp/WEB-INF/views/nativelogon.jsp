@@ -5,13 +5,12 @@
 
 
 
-<tiles:insertDefinition name="template">
+<tiles:insertDefinition name="logintemplate">
 	<tiles:putAttribute name="header">
-		<link href="${pageContext.request.contextPath}/resources/themes/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">  
-		<link href="${pageContext.request.contextPath}/resources/themes/semanticui/css/semantic.css" rel="stylesheet">  
+		<link href="${pageContext.request.contextPath}/resources/semanticui/css/semantic.css" rel="stylesheet">  
 		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/scripts/application/autocompleteapi.js"></script>
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
 		
 		<style>
 		.logincontainer{
@@ -22,12 +21,23 @@
 		</style>
 
 	</tiles:putAttribute>
+		<tiles:putAttribute name="pagetitle">
+	</tiles:putAttribute>
 	<tiles:putAttribute name="left">
 			  <div></div>	
 	</tiles:putAttribute>
 	
 	<tiles:putAttribute name="main">
-	<div class="ui two column middle aligned relaxed grid basic segment">
+			<section>
+		<div class="blog">
+				<div class="container">
+					<div class="row">
+							
+						
+							<!--tiles main-->
+							<div class="container col-md-12" id="main" >
+
+<div class="ui two column middle aligned relaxed grid basic segment">
 		  <div class="column">
 		   
 			      		<form  method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
@@ -112,5 +122,10 @@
 		     
 		  </div>
 		</div>
+
+							</div><!--/tiles main-->
+		</div></div></div>
+		</section>
+	
 	</tiles:putAttribute>
 </tiles:insertDefinition>
