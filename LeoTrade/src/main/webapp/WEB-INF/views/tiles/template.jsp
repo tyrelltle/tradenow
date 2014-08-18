@@ -68,7 +68,6 @@
 	<script src="${pageContext.request.contextPath}/resources/js/underscore.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
 	
 	
 	<tiles:insertAttribute name="header" />
@@ -94,7 +93,7 @@
 
 							<div class="col-md-2 col-sm-2 col-xs-2">
 								<!-- Your logo -->
-								<div class="logo"><a href="index.html"><img src="resources/img/logo.png" alt="All in 1"></a></div>
+								<div class="logo"><a href="${pageContext.request.contextPath}/home"><img src="resources/img/logo.png" alt="All in 1"></a></div>
 								<!-- and Your logo -->
 							</div>
 							
@@ -138,9 +137,56 @@
 			
 		</header> <!-- and header -->
 
-		<tiles:insertAttribute name="pagetitle" />
+
+	<div class="top-bar">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-7 col-md-8 col-sm-7">
+								<ul class="top-bar-nav list-inline pull-left">
+									<li id="lang">
+										<a href="#" class="lang-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
+										<ul class="lang" id="catlis" style="display: none;">
+										
+										</ul>
+									</li>
+									<li id="lang">
+												
+												<form class="sidebar-search-form">
+												  <c:choose>
+												      <c:when test="${not empty searchkey}">
+												           <input type="text" class="searchtxt" placeholder="Search By Item Titles" value="${searchkey}">   			
+												      </c:when>
+												      <c:otherwise>
+												           <input type="text" class="searchtxt" placeholder="Search By Item Titles">   			
+												      </c:otherwise>
+												  </c:choose>
+														<a class="searchbtn"><i class="fa fa-search"></i></a>
+												
+													</form>
+									</li>
+	
+								</ul>
+							</div>
+	
+						</div> <!-- and row -->
+					</div> <!-- and container -->
+	</div>
 
 
+	<!--wait modal-->
+	<div id="waitmodal" class="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	      <div class="modal-body">
+				<div style="height:200px">
+			      <span id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 50%;"></span>
+			    </div>
+			</div>
+	      </div>
+	  </div>
+	  </div>
+	</div>
+		<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
 		
 
 		<!-- main -->
@@ -244,19 +290,8 @@
 			<div class="bottom-bar">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small pull-right">
-
-							<ul class="list-inline pull-right">
-								<li><a href="index.html">HOME</a></li>
-								<li><a href="blog.html">OUR BLOG</a></li>
-								<li><a href="shop-1.html">SHOP</a></li>
-								<li><a href="#">TERMS</a></li>
-								<li><a href="contact.html">CONTACTS</a></li>
-							</ul>
-							
-						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small copyright">
-							<p>&#169; 2014 All in one. All Rights Reserved by <a href="#">Design_service</a></p>
+							<p>&#169; All Rights Reserved by <a href="#">Trade-now.ca</a></p>
 						</div>						
 					</div> <!-- and row -->
 				</div> <!-- and container -->

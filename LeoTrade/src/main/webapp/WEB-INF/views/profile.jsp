@@ -33,8 +33,7 @@
 		
 	    </style>
 	</tiles:putAttribute>
-		<tiles:putAttribute name="pagetitle">
-	</tiles:putAttribute>
+
 	<tiles:putAttribute name="left">
 			  <div></div>	
 	</tiles:putAttribute>

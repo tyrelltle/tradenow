@@ -101,7 +101,7 @@
 							</div>
 							
 							<div class="col-md-3 col-sm-3 col-xs-3">
-											<form action="<c:url value="/auth/facebook" />" method="POST">
+											<form action="<c:url value="/auth/facebook" />" style="float:right" method="POST">
 														<a style="font-size:10px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
 															<i class="fa fa-facebook"></i>
 														Sing in with Google</a> 
@@ -122,7 +122,6 @@
 			
 		</header> <!-- and header -->
 
-		<tiles:insertAttribute name="pagetitle" />
 
 
 		
@@ -220,19 +219,9 @@
 			<div class="bottom-bar">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small pull-right">
-
-							<ul class="list-inline pull-right">
-								<li><a href="index.html">HOME</a></li>
-								<li><a href="blog.html">OUR BLOG</a></li>
-								<li><a href="shop-1.html">SHOP</a></li>
-								<li><a href="#">TERMS</a></li>
-								<li><a href="contact.html">CONTACTS</a></li>
-							</ul>
-							
-						</div>
+	
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small copyright">
-							<p>&#169; 2014 All in one. All Rights Reserved by <a href="#">Design_service</a></p>
+							<p>&#169; All Rights Reserved by <a href="#">Trade-Now.ca</a></p>
 						</div>						
 					</div> <!-- and row -->
 				</div> <!-- and container -->

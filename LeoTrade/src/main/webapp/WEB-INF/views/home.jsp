@@ -55,41 +55,7 @@ margin: auto;
 	    </style>
 	</tiles:putAttribute>
 	
-	<tiles:putAttribute name="pagetitle">
-<div class="top-bar">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7 col-md-8 col-sm-7">
-							<ul class="top-bar-nav list-inline pull-left">
-								<li id="lang">
-									<a href="#" class="lang-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
-									<ul class="lang" id="catlis" style="display: none;">
-									
-									</ul>
-								</li>
-								<li id="lang">
-											
-											<form class="sidebar-search-form">
-											  <c:choose>
-											      <c:when test="${not empty searchkey}">
-											           <input type="text" class="searchtxt" placeholder="Search By Item Titles" value="${searchkey}">   			
-											      </c:when>
-											      <c:otherwise>
-											           <input type="text" class="searchtxt" placeholder="Search By Item Titles">   			
-											      </c:otherwise>
-											  </c:choose>
-													<a class="searchbtn"><i class="fa fa-search"></i></a>
-											
-												</form>
-								</li>
 
-							</ul>
-						</div>
-
-					</div> <!-- and row -->
-				</div> <!-- and container -->
-</div>
-	</tiles:putAttribute>
 	
 	<tiles:putAttribute name="left">
 	</tiles:putAttribute>
