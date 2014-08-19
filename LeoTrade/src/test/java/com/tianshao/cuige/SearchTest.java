@@ -16,6 +16,7 @@ import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.User;
+import com.tianshao.cuige.repository.BaseRepository;
 import com.tianshao.cuige.repository.product.IProductRepository;
 import com.tianshao.cuige.repository.product.ProductRepository;
 import com.tianshao.cuige.repository.user.IUserRepository;
@@ -31,7 +32,9 @@ import com.tianshao.cuige.services.user.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
-public class SearchTest {
+public class SearchTest{
+	@Autowired
+	Repo repo;
 	@Autowired
 	IProductRepository productRepository;
 
@@ -75,7 +78,7 @@ public class SearchTest {
 
 		cat=new Category();
 		cat.setName("testcat");
-		productRepository.addNew(cat);
+		userRepository.addNew(cat);
 
 	}
 	
@@ -85,27 +88,27 @@ public class SearchTest {
 		Product prod1,prod2,prod3,prod4;
 		Category cat2=new Category();
 		cat2.setName("wowcat");
-		productRepository.addNew(cat2);
+		userRepository.addNew(cat2);
 		
 		prod1=new Product();
 		prod1.setCategory(cat);
 		prod1.setOwner(u1);
-		productRepository.addNew(prod1);
+		userRepository.addNew(prod1);
 		
 		prod2=new Product();
 		prod2.setCategory(cat2);
 		prod2.setOwner(u3);
-		productRepository.addNew(prod2);
+		userRepository.addNew(prod2);
 		
 		prod3=new Product();
 		prod3.setCategory(cat2);
 		prod3.setOwner(u3);
-		productRepository.addNew(prod3);
+		userRepository.addNew(prod3);
 		
 		prod4=new Product();
 		prod4.setCategory(cat2);
 		prod4.setOwner(u4);
-		productRepository.addNew(prod4);
+		userRepository.addNew(prod4);
 		
 //		search by cat2. prod2,3,4 are under cat2, but prod4 is too far. so result is prod2,3 		
 		List<Product> lis=productRepository.getByCatId(u1, cat2.getCatid(), 0, 100);
@@ -175,27 +178,20 @@ public class SearchTest {
 		prod.setCategory(cat);
 		productRepository.addNew(prod);
 		
-		List<Product> lis=productRepository.searchByTitle("product1",0,100);
+		List<Product> lis=productRepository.searchByTitle(u3.getUserid(),"product1",0,100);
 		assertEquals(lis.size(),2);
 		
 	}
 	
 	@After
 	public void truncate(){
-		try{
-			productRepository.truncateTable("Notification");
-		}catch(Exception e){}
+		repo.truncateTable("Notification");
+	
 		
-		try{
-			productRepository.truncateTable("Product");
-		}catch(Exception e){}
+		repo.truncateTable("Product");
 		
-		try{
-			productRepository.truncateTable("Category");
-		}catch(Exception e){}
-		try{
-			productRepository.truncateTable("User");
-		}catch(Exception e){}
+		repo.truncateTable("Category");
+		repo.truncateTable("User");
 
 	}
 }

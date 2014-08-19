@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -100,6 +101,10 @@ public class Product implements IEntity{
 	@Fetch(FetchMode.SELECT)
 	Set<Trade> trades2=new HashSet<Trade>();
 	
+    @ManyToMany(fetch = FetchType.LAZY, 
+    			cascade = {CascadeType.ALL}, 
+    			mappedBy="favorites")
+    private Set<User> likers = new HashSet<User>();
 	
 	@Column(name="thumurl")
 	String thumurl="";
@@ -261,7 +266,9 @@ public class Product implements IEntity{
 	}
 
 
-
+	public Set<User> getLikers(){
+		return likers;
+	}
 	
 
 

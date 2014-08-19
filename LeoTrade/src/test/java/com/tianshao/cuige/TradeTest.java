@@ -29,7 +29,9 @@ import com.tianshao.cuige.services.user.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
-public class TradeTest {
+public class TradeTest{
+	@Autowired
+	Repo repo;
 	@Autowired
 	IProductService productserv;
 
@@ -66,7 +68,7 @@ public class TradeTest {
 
 		cat=new Category();
 		cat.setName("testcat");
-		productRepository.addNew(cat);
+		userRepository.addNew(cat);
 	}
 	/*
 
@@ -208,24 +210,16 @@ public class TradeTest {
 	}
 	@After
 	public void truncate(){
-		try{
-			tradeRepository.truncateTable("Trade");
-		}catch(Exception e){}	
 		
-		try{
-			tradeRepository.truncateTable("Product");
-		}catch(Exception e){}
+		repo.truncateTable("Trade");
 		
-		try{
-			tradeRepository.truncateTable("Category");
-		}catch(Exception e){}
-		try{
-			tradeRepository.truncateTable("Image");
-		}catch(Exception e){}
+		repo.truncateTable("Product");
 		
-		try{
-			tradeRepository.truncateTable("Profile");
-		}catch(Exception e){}
+		repo.truncateTable("Category");
+		
+		repo.truncateTable("Image");
+		
+		repo.truncateTable("User");
 
 	}
 	

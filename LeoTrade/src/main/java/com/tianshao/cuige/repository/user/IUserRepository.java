@@ -35,4 +35,5 @@ public interface IUserRepository{
 	
 
 	public User getUserWithProducts(int userid);
+	public User getUserWithFavorites(int userid);
 }

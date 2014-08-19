@@ -1,24 +1,18 @@
 package com.tianshao.cuige.repository.product;
 
 import java.sql.Timestamp;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.lucene.search.Sort;
-import org.apache.lucene.search.SortField;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.criterion.SimpleExpression;
 import org.hibernate.search.FullTextQuery;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
 import org.hibernate.search.query.dsl.QueryBuilder;
-import org.hibernate.search.query.dsl.Unit;
-import org.hibernate.search.spatial.DistanceSortField;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,7 +31,6 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	@Override
 	@Transactional
 	public List<Product> getAllButMe(User curuser, int limitL, int limitR) throws Exception{
-	//	public List<Product> getNearBy(int st, int ct, User centraluser, SimpleExpression... exps) 
 		
 		
 
@@ -200,6 +193,16 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		Product p =(Product)obj;
 		p.setUpdate_date(new Timestamp(new Date().getTime()));
 		super.update(obj);
+	}
+
+	@Override
+	@Transactional	
+	public Product getProductWithLikers(int prod_id) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from Product where prod_id = "+prod_id);
+		Product prod=(Product) query.uniqueResult();
+		Hibernate.initialize(prod.getLikers());
+		return prod;
 	}
 
 

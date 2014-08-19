@@ -97,6 +97,15 @@ public class UserRepository extends BaseRepository implements IUserRepository{
 		Hibernate.initialize(u.getProducts());
 		return u;
 	}
+	@Override
+	@Transactional	
+	public User getUserWithFavorites(int userid) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from User where userid = "+userid);
+		User u=(User) query.uniqueResult();
+		Hibernate.initialize(u.getFavorites());
+		return u;
+	}
 
 
 

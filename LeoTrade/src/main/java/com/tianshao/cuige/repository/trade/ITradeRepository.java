@@ -20,8 +20,6 @@ public interface ITradeRepository{
 	public void remove(IEntity obj);
 
 	public void update(IEntity obj);
-
-	public int truncateTable(String tab);
 	
 	public void addNew(IEntity obj);
 

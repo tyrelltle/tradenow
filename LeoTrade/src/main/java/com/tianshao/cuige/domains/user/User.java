@@ -1,10 +1,7 @@
 package com.tianshao.cuige.domains.user;
 
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,24 +10,18 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.Latitude;
-import org.hibernate.search.annotations.Longitude;
-import org.hibernate.search.annotations.Spatial;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.social.facebook.api.Reference;
-
 import com.tianshao.cuige.domains.IEntity;
-import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
-import com.tianshao.cuige.domains.trade.Trade;
 @Entity
 @Table(name="user")
 public class User implements IEntity{
@@ -81,6 +72,14 @@ public class User implements IEntity{
 		       mappedBy = "owner")
 	@Fetch(FetchMode.SELECT)
 	Set<Product> products=new HashSet<Product>();
+	
+	@ManyToMany(fetch = FetchType.LAZY,
+				cascade = {CascadeType.ALL})
+	@JoinTable(name="favorite", 
+	           joinColumns={@JoinColumn(name="userid")}, 
+	           inverseJoinColumns={@JoinColumn(name="prod_id")})
+	private Set<Product> favorites = new HashSet<Product>();
+	
 //	
 //	public User(String a, String b, boolean c, boolean d, boolean e, boolean f, Object g){
 //		super(a, b, c, d, e, f, (Collection<? extends GrantedAuthority>) g);
@@ -278,6 +277,17 @@ public class User implements IEntity{
 		this.aboutme=wrap.getAboutme();
 		this.updateLocation(wrap.getLocation(), Double.valueOf(wrap.getLat()), Double.valueOf(wrap.getLng()));
 		
+	}
+
+	public Set<Product> getFavorites() {
+		return favorites;
+	}
+
+	public void addFavorite(Product fav) throws Exception {
+		if(null != fav)
+			this.favorites.add(fav);
+		else
+			throw new Exception("add new favorite: null passed in");
 	}
 	
 

@@ -36,13 +36,7 @@ public abstract class BaseRepository {
 	}
 
 
-	@Transactional
-	public int truncateTable(String tab){
-		Session session = sessionFactory.getCurrentSession();
-	    String hql = String.format("delete from %s",tab);
-	    Query query = session.createQuery(hql);
-	    return query.executeUpdate();
-	}
+
 //	@Transactional
 //	public Object getByColumn(String tablenm,String columnnm, String columnval){
 //		Session session = sessionFactory.getCurrentSession();

@@ -22,6 +22,9 @@ public interface IProductRepository{
 	public abstract Product getByProductId(int prodid);
 
 	public abstract Product getProductWithImages(int prod_id);
+	
+	public abstract Product getProductWithLikers(int prod_id);
+
 
 	public abstract List<Product> getAllButMe(User curuser, int limitL, int limitR)
 			throws Exception;

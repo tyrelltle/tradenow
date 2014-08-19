@@ -13,10 +13,8 @@ public interface INotificationRepository {
 	public void remove(IEntity obj);
 
 	public void remove(int id);
-	public void update(IEntity obj);
 
-	
-	public int truncateTable(String tab);
+	public void update(IEntity obj);
 
 	public void addNew(String msg, String url, int userid);
 	
