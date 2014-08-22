@@ -179,12 +179,7 @@
 						            <span class="glyphicon glyphicon-circle-arrow-right"> </span>
 						        </button>  
 						  </div>
-				        </div>		  
-
-
-
-				          
-				       	        
+				        </div>		       	        
 			</script>
 			<script type="text/template" id="tradelisttmp">
 						<ul class="tradelis list-group">

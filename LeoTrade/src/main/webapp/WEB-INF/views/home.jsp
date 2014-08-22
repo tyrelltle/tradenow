@@ -11,11 +11,17 @@
 	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
 		
 	    <style type="text/css">	
-	    .carousel-inner > .item > img, 
-.carousel-inner > .item > a > img{
-width: 100%; /* use this, or not */
-margin: auto;
-}
+			.btnlike{
+				color:red;
+			}
+			.btnunlike{
+				color:gray;
+			}
+			.carousel-inner > .item > img, 
+			.carousel-inner > .item > a > img{
+				width: 100%; /* use this, or not */
+				margin: auto;
+			}
 			.footer{
 				border:none;
 			}
@@ -116,17 +122,18 @@ margin: auto;
 									<img alt="" class="btn_detail" src="{{thumurl}}">
 									<div class="blog-item-description">
 										<h3>{{title}}</h3>
-							<div class="row">
-								<div class="col-md-4">
-									<a href="user/userid/{{userid}}"><img style="width:50px;border-radius: 12px;" src="{{ownerimgurl}}"/></a>
-								</div>
-								<div class="col-md-8">
-									<p class="ownernm">{{ownernm}}</p> 
-									<p>{{owneraddr}}</p>
-								</div>
+										<div class="row">
+											<div class="col-md-4">
+												<a href="user/userid/{{userid}}"><img style="width:50px;border-radius: 12px;" src="{{ownerimgurl}}"/></a>
+											</div>
+											<div class="col-md-8">
+												<p class="ownernm">{{ownernm}}</p> 
+												<p>{{owneraddr}}</p>
+											</div>
 
-							</div>
-									<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										</div>
+										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
 									</div>
 								</div>
 								<div class="bottom-border">

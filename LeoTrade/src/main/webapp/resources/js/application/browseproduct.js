@@ -4,7 +4,7 @@ Product=Backbone.Model.extend({
 	defaults:{"prod_id":null,"userid":0,"catid":0,"title":"",
 			  "detail":"", "price":0,"quantity":0,"status":"",
 			  "tradefor":"","thumurl":"","ownerimgurl":"",
-			  "ownernm":"","owneraddr":""},
+			  "ownernm":"","owneraddr":"","liked":0},
 	urlRoot:"api/product",
 	idAttribute: "prod_id"
 		
@@ -183,17 +183,41 @@ ProductListItemView=Backbone.View.extend({
 	
 	className:"masonryitem col-md-3",
 	events:{"click .btn_detail":"clicked",
-		"click .btn_select":"selected"},
+			"click .btn_select":"selected",
+			"click .btnunlike":"like",
+			"click .btnlike":"unlike"},
+	like:function(){
+		var self=this;
+		$.ajax({
+			  type: "POST",
+			  url: ctx+"api/product/like/"+this.model.get("prod_id")
+			})
+			  .done(function( msg ) {
+					$(self.el).find('.btnunlike').attr("class","glyphicon glyphicon-heart btnlike"); 
+			  });	
+	},
+	unlike:function(){
+		var self=this;
+		$.ajax({
+			  type: "POST",
+			  url: ctx+"api/product/unlike/"+this.model.get("prod_id")
+			})
+			  .done(function( msg ) {
+					$(self.el).find('.btnlike').attr("class","glyphicon glyphicon-heart btnunlike"); 
+			  });	
+	},
 	selected:function(){
-			app.navigate("prodselected"+this.model.get("prod_id"),true);
-		},
+		app.navigate("prodselected"+this.model.get("prod_id"),true);
+	},
 	clicked:function(){
 		//app.navigate("proddetail"+this.model.get("prod_id"),true);
 		app.prodDetail(this.model.get("prod_id"));
 	},
 	render:function(){
-
 		$(this.el).html(this.template(this.model.toJSON()));
+		if(this.model.get("liked")==1){
+			$(this.el).find('.btnunlike').attr("class","glyphicon glyphicon-heart btnlike"); 
+		}
 		return this;
 	},
 	close:function(){

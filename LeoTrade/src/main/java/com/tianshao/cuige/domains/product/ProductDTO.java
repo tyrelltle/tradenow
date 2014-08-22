@@ -26,6 +26,7 @@ public class ProductDTO{
 	String ownernm="";
 	String owneraddr="";
 	String ownerimgurl="";
+	int liked=0;
 	public ProductDTO(){}
 
 	
@@ -152,6 +153,18 @@ public class ProductDTO{
 
 	public void setThumurl(String thumurl) {
 		this.thumurl = thumurl;
+	}
+
+
+
+	public int getLiked() {
+		return liked;
+	}
+
+
+
+	public void setLiked(int liked) {
+		this.liked = liked;
 	}
 	
 	

@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.IPrinciple;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserRole;
@@ -49,5 +50,28 @@ public class UserService implements IUserService{
 	@Override
 	public User loadUserBySocialuid(String userId) {
 		return userRepository.getBySocialUid(userId);
+	}
+
+	@Override
+	public void addFavorite(Product p) throws Exception {
+			User u=this.currentUser();
+			u=userRepository.getUserWithFavorites(u.getUserid());
+			u.addFavorite(p);
+			userRepository.update(u);
+
+	}
+
+	@Override
+	public void delFavorite(int prod_id) throws Exception {
+		User u=this.currentUser();
+		u=userRepository.getUserWithFavorites(u.getUserid());
+		u.delFavorite(prod_id);
+		userRepository.update(u);
+	}
+
+	@Override
+	public User loadUserWithLikes(){
+		User u=this.currentUser();
+		return userRepository.getUserWithFavorites(u.getUserid());
 	}
 }

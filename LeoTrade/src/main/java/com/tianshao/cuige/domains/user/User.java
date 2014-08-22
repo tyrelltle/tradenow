@@ -15,11 +15,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
+
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Product;
 @Entity
@@ -73,12 +75,14 @@ public class User implements IEntity{
 	@Fetch(FetchMode.SELECT)
 	Set<Product> products=new HashSet<Product>();
 	
-	@ManyToMany(fetch = FetchType.LAZY,
-				cascade = {CascadeType.ALL})
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name="favorite", 
 	           joinColumns={@JoinColumn(name="userid")}, 
 	           inverseJoinColumns={@JoinColumn(name="prod_id")})
 	private Set<Product> favorites = new HashSet<Product>();
+	
+	@Transient
+	private Set<Integer> favorite_lookup_map;
 	
 //	
 //	public User(String a, String b, boolean c, boolean d, boolean e, boolean f, Object g){
@@ -290,7 +294,28 @@ public class User implements IEntity{
 			throw new Exception("add new favorite: null passed in");
 	}
 	
+	public void delFavorite(int prod_id){
+		Iterator<Product> i=this.favorites.iterator();
+		while(i.hasNext()){
+			Product p=i.next();
+			if(p.getProd_id()==prod_id){
+				i.remove();
+			}
+		}
+	}
 
+	public void build_favorite_lookup(){
+		favorite_lookup_map=new HashSet<Integer>();
+		Iterator<Product> i=this.favorites.iterator();
+		while(i.hasNext()){
+			Product p=i.next();
+			favorite_lookup_map.add(p.getProd_id());
+		}
+	}
+	
+	public boolean likes(Product p){
+		return favorite_lookup_map.contains(p.getProd_id());
+	}
 
 	
 }

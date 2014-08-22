@@ -102,7 +102,7 @@ public class Product implements IEntity{
 	Set<Trade> trades2=new HashSet<Trade>();
 	
     @ManyToMany(fetch = FetchType.LAZY, 
-    			cascade = {CascadeType.ALL}, 
+    			cascade = {CascadeType.REMOVE}, 
     			mappedBy="favorites")
     private Set<User> likers = new HashSet<User>();
 	

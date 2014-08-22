@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import com.tianshao.cuige.domains.product.ProductDTO;
 import com.tianshao.cuige.domains.product.ProductImageUrlDTP;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.product.IProductRepository;
+import com.tianshao.cuige.repository.user.IUserRepository;
 import com.tianshao.cuige.services.product.IProductService;
 import com.tianshao.cuige.services.user.IUserService;
 
@@ -42,17 +44,18 @@ public class ProductController {
 	   
 	    @Autowired
 	    private IUserService userService;
+	    
 	    @Autowired
 	    private IProductRepository productRepository;
 	  
 		@RequestMapping(value={"start/{st}/count/{ct}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> get(@PathVariable int st, @PathVariable int ct, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
+			User u=userService.loadUserWithLikes();
+			u.build_favorite_lookup();
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
-	    	
-	    	List<Product> prods=productRepository.getAllButMe(userService.currentUser(),st,ct);
-	    	
-	    	toRrodListDTO(ret, prods);
+	    	List<Product> prods=productRepository.getAllButMe(u,st,ct);
+	    	toRodListDTO_like(u,ret, prods);
 	    	return ret;
 	    	
 		}
@@ -74,11 +77,14 @@ public class ProductController {
 		@RequestMapping(value={"start/{st}/count/{ct}/catid/{catid}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> getbycategory(@PathVariable int st, @PathVariable int ct, @PathVariable int catid, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
+			User u=userService.loadUserWithLikes();
+			u.build_favorite_lookup();
+
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.getByCatId(userService.currentUser(), catid,st,ct);
+	    	List<Product> prods=productRepository.getByCatId(u, catid,st,ct);
 	    	
-	    	toRrodListDTO(ret, prods);
+	    	toRodListDTO_like(u,ret, prods);
 	    	return ret;
 	    	
 		}
@@ -87,11 +93,13 @@ public class ProductController {
 		@RequestMapping(value={"start/{st}/count/{ct}/search/{key}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> search(@PathVariable int st, @PathVariable int ct, @PathVariable String key, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
+			User u=userService.loadUserWithLikes();
+			u.build_favorite_lookup();
 			List<ProductDTO> ret=new ArrayList<ProductDTO>();
 	    	
-	    	List<Product> prods=productRepository.searchByTitle(userService.currentUser().getUserid(),key, st, ct);
+	    	List<Product> prods=productRepository.searchByTitle(u.getUserid(),key, st, ct);
 	    	
-	    	toRrodListDTO(ret, prods);
+	    	toRodListDTO_like(u,ret, prods);
 	    	return ret;
 	    	
 		}
@@ -129,9 +137,39 @@ public class ProductController {
 	    	
 		}
 
+//		@RequestMapping(value="likes",method = RequestMethod.GET, produces="application/json")
+//		public @ResponseBody List<ProductDTO> getfavlis(HttpServletRequest req) throws IOException {
+//			List<Product> prods=userService.loadUserWithLikes();
+//			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+//			toRrodListDTO(ret, prods);
+//			return ret;
+//	    }	 
+		
+		@RequestMapping(value="/like/{prod_id}", method = RequestMethod.POST)
+		public @ResponseBody String like(@PathVariable int prod_id, HttpServletResponse resp) throws IOException {			
+			try {
+				Product p=productRepository.getByProductId(prod_id);
+				userService.addFavorite(p);
+				return "suc";
+			} catch (Exception e) {
+				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());	    
+				return "err";
+			}		
+			
+		}
 
-
-	    
+	    @RequestMapping(value="/unlike/{prod_id}", method = RequestMethod.POST)
+		public @ResponseBody String unlike(@PathVariable int prod_id, HttpServletResponse resp) throws IOException {			
+			try {
+				Product p=productRepository.getByProductId(prod_id);
+				userService.delFavorite(p.getProd_id());
+				return "suc";
+			} catch (Exception e) {
+				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());	    
+				return "err";
+			}		
+			
+		}
 		@RequestMapping(method = RequestMethod.POST,headers="Accept=application/json", produces="application/json")
 		public @ResponseBody ProductDTO post(@RequestBody ProductDTO dto,HttpServletResponse resp) throws IOException {
 			
@@ -260,17 +298,34 @@ public class ProductController {
 
 		        return  ret;
 		    }
-			
+			//withlike=true when product list contains boolean of if current user liked it
 			private void toRrodListDTO(List<ProductDTO> ret, List<Product> prods) {
 				Iterator<Product> i=prods.iterator();
-		    
 		    	while(i.hasNext()){
 		    		Product prod=i.next();
 		    		ProductDTO dto = new ProductDTO();
-		    		PROD_TO_DTO(prod, dto);
+					PROD_TO_DTO(prod, dto);
 		    		ret.add(dto);
 		    	}
 			}
+			
+			/**
+			 * initialaize like flag in DTO
+			 */
+			private void toRodListDTO_like(User u,List<ProductDTO> ret, List<Product> prods){
+				Iterator<Product> i=prods.iterator();
+		    	while(i.hasNext()){
+		    		Product prod=i.next();
+		    		ProductDTO dto = new ProductDTO();
+		    		
+					PROD_TO_DTO(prod, dto);
+		    		dto.setLiked(u.likes(prod)?1:0);
+					ret.add(dto);
+		    	}
+				
+			}
+			
+			
 			private void DTO_to_PROD(ProductDTO dto, Product prod) {
 				prod.setDetail(dto.getDetail());
 				prod.setPrice(dto.getPrice());
