@@ -33,6 +33,9 @@ ProductList=Backbone.Collection.extend({
 	},
 	addsearch:function(key){
 		this.url=this.url+"/search/"+key;
+	},
+	favorilize:function(){
+		this.url=ctx+"api/product/likes";
 	}
 });
 

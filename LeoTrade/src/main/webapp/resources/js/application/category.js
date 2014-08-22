@@ -3,14 +3,14 @@
 
 Category=Backbone.Model.extend({
 	defaults:{"catid":1,"name":""},
-	urlRoot:"api/category",
+	urlRoot:ctx+"api/category",
 	idAttribute: "catid"
 		
 });
 
 CategoryList=Backbone.Collection.extend({
 	model:Product,
-	url:"api/category"	
+	url:ctx+"api/category"	
 });
 
  

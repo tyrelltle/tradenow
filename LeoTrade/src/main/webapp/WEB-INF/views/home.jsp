@@ -11,12 +11,7 @@
 	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
 		
 	    <style type="text/css">	
-			.btnlike{
-				color:red;
-			}
-			.btnunlike{
-				color:gray;
-			}
+
 			.carousel-inner > .item > img, 
 			.carousel-inner > .item > a > img{
 				width: 100%; /* use this, or not */
@@ -69,7 +64,9 @@
    			<c:if test="${not empty catid}">
       			<input id="catid" type="hidden" value="${catid}"/>
     		</c:if>
-   			
+   			<c:if test="${not empty likes}">
+      			<input id="likes" type="hidden" />
+    		</c:if>   			
    			<div id="prodlist">
 		
 			      
@@ -95,9 +92,7 @@
 			</div>
 	<!--start bootstrap templates-->		 
 
-			<script type="text/template" id="catlistitemtmp">
-					<a href="#">{{name}}</a>
-			</script>
+
 
 	 		<script type="text/template" id="prodlisttmp">
 
@@ -247,7 +242,6 @@
 		
 	<!--start bootstrap dependencies-->	
 			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/category.js"></script>
 			 
 			 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/homeapp.js"></script>
 

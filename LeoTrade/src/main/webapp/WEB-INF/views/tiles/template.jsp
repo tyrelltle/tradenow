@@ -151,7 +151,7 @@
 									</li>
 									<li id="lang">
 												
-												<form class="sidebar-search-form">
+												<form class="sidebar-search-form-small">
 												  <c:choose>
 												      <c:when test="${not empty searchkey}">
 												           <input type="text" class="searchtxt" placeholder="Search By Item Titles" value="${searchkey}">   			
@@ -164,6 +164,7 @@
 												
 													</form>
 									</li>
+									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</li></a>
 	
 								</ul>
 							</div>
@@ -303,8 +304,10 @@
 
 	</div> <!-- and wrap -->
 	
-
-	
+	<!-- _ templates -->
+				<script type="text/template" id="catlistitemtmp">
+					<a href="#">{{name}}</a>
+			</script>
   	<!-- Modernizr -->
 	<script src="${pageContext.request.contextPath}/resources/js/modernizr.js"></script>
 
@@ -332,6 +335,8 @@
 	<script src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
 	
 	<!-- Application Domain scripts -->
+	<script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/category.js"></script>
+	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/appscript.js"></script>
 	
 	<!-- Other scripts -->

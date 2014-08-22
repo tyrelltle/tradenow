@@ -132,4 +132,9 @@ public class LogonController  {
 	    	model.addAttribute("searchkey",key);	      
 	        return "home";
 	    }
+	    @RequestMapping(value="likes", method=RequestMethod.GET)
+	    public String likes( Model model) {
+	    	model.addAttribute("likes",1);	      
+	        return "home";
+	    }
 }

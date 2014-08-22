@@ -48,6 +48,16 @@ public class ProductController {
 	    @Autowired
 	    private IProductRepository productRepository;
 	  
+	    
+		@RequestMapping(value="likes",method = RequestMethod.GET, produces="application/json")
+		public @ResponseBody List<ProductDTO> getfavlis(HttpServletRequest req) throws IOException {
+			User u=userService.loadUserWithLikes();
+			List<Product> likes=new ArrayList<Product>(u.getFavorites());
+			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+			toRodListDTO_like(null,ret, likes);
+			return ret;
+	    }	 
+	    
 		@RequestMapping(value={"start/{st}/count/{ct}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> get(@PathVariable int st, @PathVariable int ct, HttpServletResponse resp) throws Exception {
 			//st and ct are used in LIMIT st,ct
@@ -137,13 +147,6 @@ public class ProductController {
 	    	
 		}
 
-//		@RequestMapping(value="likes",method = RequestMethod.GET, produces="application/json")
-//		public @ResponseBody List<ProductDTO> getfavlis(HttpServletRequest req) throws IOException {
-//			List<Product> prods=userService.loadUserWithLikes();
-//			List<ProductDTO> ret=new ArrayList<ProductDTO>();
-//			toRrodListDTO(ret, prods);
-//			return ret;
-//	    }	 
 		
 		@RequestMapping(value="/like/{prod_id}", method = RequestMethod.POST)
 		public @ResponseBody String like(@PathVariable int prod_id, HttpServletResponse resp) throws IOException {			
@@ -311,6 +314,8 @@ public class ProductController {
 			
 			/**
 			 * initialaize like flag in DTO
+			 * if user parameter is not null, flag is 1 if the product is in user's liked list
+			 * if user parameter is null, liked flag is always set to 1
 			 */
 			private void toRodListDTO_like(User u,List<ProductDTO> ret, List<Product> prods){
 				Iterator<Product> i=prods.iterator();
@@ -319,7 +324,7 @@ public class ProductController {
 		    		ProductDTO dto = new ProductDTO();
 		    		
 					PROD_TO_DTO(prod, dto);
-		    		dto.setLiked(u.likes(prod)?1:0);
+		    		dto.setLiked(null!=u?(u.likes(prod)?1:0):1);
 					ret.add(dto);
 		    	}
 				

@@ -9,7 +9,7 @@ Website: http://des111gn.com/all-in-1/index.html
 /*------------------------------------------------------------------
 
 TABLE OF CONTENTS
-
+0. application custom styles
 1. Body
 	1.1 Typography
 	1.2 Body style
@@ -53,6 +53,21 @@ TABLE OF CONTENTS
 	@media (min-width: 990px) and (max-width: 1170px)
 	@media (max-width: 1200px)
 -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+0. Application custom styles
+-------------------------------------------------------------------*/
+.btnlike{
+	color:#b2d231;
+}
+.likesbtn_cur{
+		color:#b2d231 !important;
+	
+	
+}
+
+.btnunlike{
+	color:gray;
+}
 /*------------------------------------------------------------------
 
 1. Body 
@@ -1283,6 +1298,15 @@ ul.sub-menu li ul.sub-sub-l-menu {
   margin-right: -28px;
   padding: 8px 25px 8px 8px;
 }
+
+.sidebar-search-form-small > input {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  margin-right: -28px;
+  padding: 3px 19px 1px 18px;
+}
+
 .sidebar-search-form > a > i {
   color: #43474d;
 }

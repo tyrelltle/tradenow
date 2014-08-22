@@ -14,16 +14,7 @@ AppRouter=Backbone.Router.extend({
 		app.navigate("",true);
 	},
 	prodlis:function(){
-		if(this.categoryList!=null && this.productList!=null)
-			return;
-		//init category list
-		this.categoryList=new CategoryList();
-		this.categoryListView=new CategoryListView({model:this.categoryList});
-		this.categoryList.fetch({
-			success:function(lis){
-				app.categoryListView.render();
-			}
-		});
+
 		
 		
 		//init product list
@@ -32,6 +23,10 @@ AppRouter=Backbone.Router.extend({
 			app.productList.addsearch($('.searchtxt').val());
 		else if($('#catid').length>0)
 			app.productList.makecategorize($('#catid').val());
+		else if($('#likes').length>0){
+			app.productList.favorilize();
+			$('.likesbtn').attr("class","likesbtn_cur");
+		}
 		app.productListView = new ProductListView({model:app.productList});
 		app.productList.fetch({
 
