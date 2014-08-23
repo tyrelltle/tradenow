@@ -34,13 +34,15 @@ $(document).ready(function() {
 				
 
 				//init category list
-				var categoryList=new CategoryList();
-				var categoryListView=new CategoryListView({model:categoryList});
-				categoryList.fetch({
-					success:function(lis){
-						categoryListView.render();
-					}
-				});
+				if(typeof(CategoryList) != 'undefined'){
+					var categoryList=new CategoryList();
+					var categoryListView=new CategoryListView({model:categoryList});
+					categoryList.fetch({
+						success:function(lis){
+							categoryListView.render();
+						}
+					});
+				}
 				$('.likesbtn,.likesbtn_cur').click(function(){
 					window.location=ctx+"likes";
 					return false;

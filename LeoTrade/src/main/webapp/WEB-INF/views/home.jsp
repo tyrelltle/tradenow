@@ -96,9 +96,7 @@
 
 	 		<script type="text/template" id="prodlisttmp">
 
-							<blockquote>
-  								<p>Discover, Choose, Trade!.</p>
-							</blockquote>
+
 							<div class = "masonrycontainer"   >
 							</div>
 							<center>
