@@ -48,7 +48,7 @@
 	   </beans:props>
 	  </beans:property>
 	 </beans:bean>
-	<beans:bean id="mailer" class="com.tianshao.cuige.services.mail.Mailer">
+	<beans:bean id="mailer" class="com.tianshao.cuige.services.mail.RegconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>

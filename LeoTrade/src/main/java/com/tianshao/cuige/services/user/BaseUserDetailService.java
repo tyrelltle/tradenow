@@ -18,7 +18,7 @@ public class BaseUserDetailService {
 
 
 
-	public List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
+	public static List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
 	
 		Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
 	

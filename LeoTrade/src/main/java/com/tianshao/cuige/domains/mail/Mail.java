@@ -2,23 +2,21 @@ package com.tianshao.cuige.domains.mail;
 
 import java.util.Date;
 
+import com.tianshao.cuige.domains.user.User;
+
 public class Mail {
 
-	 private String mailFrom;
+	 protected User mailTo;
 
-	 private String mailTo;
+	 protected String mailCc;
 
-	 private String mailCc;
+	 protected String mailBcc;
 
-	 private String mailBcc;
+	 protected String mailSubject;
 
-	 private String mailSubject;
+	 protected String mailContent;
 
-	 private String mailContent;
-
-	 private String templateName;
-
-	 private String contentType;
+	 protected String contentType;
 
 	 public Mail() {
 	  contentType = "text/html";
@@ -36,14 +34,6 @@ public class Mail {
 	  return mailBcc;
 	 }
 
-	 public String getTemplateName() {
-	  return templateName;
-	 }
-
-	 public void setTemplateName(String templateName) {
-	  this.templateName = templateName;
-	 }
-
 	 public void setMailBcc(String mailBcc) {
 	  this.mailBcc = mailBcc;
 	 }
@@ -56,14 +46,6 @@ public class Mail {
 	  this.mailCc = mailCc;
 	 }
 
-	 public String getMailFrom() {
-	  return mailFrom;
-	 }
-
-	 public void setMailFrom(String mailFrom) {
-	  this.mailFrom = mailFrom;
-	 }
-
 	 public String getMailSubject() {
 	  return mailSubject;
 	 }
@@ -72,11 +54,11 @@ public class Mail {
 	  this.mailSubject = mailSubject;
 	 }
 
-	 public String getMailTo() {
+	 public User getMailTo() {
 	  return mailTo;
 	 }
 
-	 public void setMailTo(String mailTo) {
+	 public void setMailTo(User mailTo) {
 	  this.mailTo = mailTo;
 	 }
 
@@ -95,7 +77,6 @@ public class Mail {
 	 @Override
 	 public String toString() {
 	  StringBuilder lBuilder = new StringBuilder();
-	  lBuilder.append("Mail From:- ").append(getMailFrom());
 	  lBuilder.append("Mail To:- ").append(getMailTo());
 	  lBuilder.append("Mail Cc:- ").append(getMailCc());
 	  lBuilder.append("Mail Bcc:- ").append(getMailBcc());

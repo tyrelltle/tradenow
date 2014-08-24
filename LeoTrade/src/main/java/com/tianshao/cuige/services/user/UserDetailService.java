@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tianshao.cuige.domains.user.Principle;
 import com.tianshao.cuige.domains.user.SocialPrinciple;
 import com.tianshao.cuige.repository.user.IUserRepository;
 @Component ("userDetailsService")
@@ -29,7 +30,7 @@ public class UserDetailService extends BaseUserDetailService implements UserDeta
 		throws UsernameNotFoundException {
 		com.tianshao.cuige.domains.user.User u;
 		Session session = sessionFactory.getCurrentSession();
-		Query query= session.createQuery("from User where email='"+email+"'");
+		Query query= session.createQuery("from User where enabled=true and email='"+email+"'");
 		try{
 		u=(com.tianshao.cuige.domains.user.User) query.uniqueResult();	
 		}catch(Exception e){
@@ -43,11 +44,16 @@ public class UserDetailService extends BaseUserDetailService implements UserDeta
 		return buildUserForAuthentication(u, authorities);
  
 	}
-	
-	public User buildUserForAuthentication(com.tianshao.cuige.domains.user.User user, List<GrantedAuthority> authorities) {
+	public static User toUser(com.tianshao.cuige.domains.user.User user){
+		List<GrantedAuthority> authorities = 
+                buildUserAuthority(user.getUserRoles());
+		return buildUserForAuthentication(user, authorities);
+		
+	}
+	public static User buildUserForAuthentication(com.tianshao.cuige.domains.user.User user, List<GrantedAuthority> authorities) {
 		
 		
-		User p = new SocialPrinciple (user, true, true, true, authorities);
+		User p = new Principle (user, true, true, true, authorities);
 		
 		return p;
 	}

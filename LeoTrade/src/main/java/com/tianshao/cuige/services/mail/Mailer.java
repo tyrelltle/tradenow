@@ -7,12 +7,13 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
 import com.tianshao.cuige.domains.mail.Mail;
 
 
-public class Mailer {
+public abstract class Mailer {
 
 	 private MailSender mailSender;
 	 private VelocityEngine velocityEngine;
@@ -26,18 +27,20 @@ public class Mailer {
 	 }
 
 	 public void sendMail(Mail mail) {
+
 	  SimpleMailMessage message = new SimpleMailMessage();
 	  
-	  message.setFrom(mail.getMailFrom());
-	  message.setTo(mail.getMailTo());
+	  message.setFrom(((JavaMailSenderImpl)mailSender).getUsername());
+	  message.setTo(mail.getMailTo().getEmail());
 	  message.setSubject(mail.getMailSubject());
 
-	  Template template = velocityEngine.getTemplate("./templates/" + mail.getTemplateName());
+	  Template template = velocityEngine.getTemplate("./templates/" + getTemplateName());
 
 	  VelocityContext velocityContext = new VelocityContext();
-	  velocityContext.put("firstName", "Yashwant");
-	  velocityContext.put("lastName", "Chavan");
-	  velocityContext.put("location", "Pune");
+//	  velocityContext.put("firstName", "Yashwant");
+//	  velocityContext.put("lastName", "Chavan");
+//	  velocityContext.put("location", "Pune");
+	  fillParameters(velocityContext,mail);
 	  
 	  StringWriter stringWriter = new StringWriter();
 	  
@@ -47,5 +50,7 @@ public class Mailer {
 	  
 	  mailSender.send(message);
 	 }
+	 protected abstract String getTemplateName();
+	 protected abstract void fillParameters(VelocityContext context,Mail mail );
 	 
 }

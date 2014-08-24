@@ -1,5 +1,8 @@
 Dear ${firstName} ${lastName}
  
-Sending Email Using Spring Smtp Email + Velocity Template from ${location} location.
+Please validate your account registration at below link:
+${addr}
 
 Thanks
+
+Barbarian Netword Ltd.

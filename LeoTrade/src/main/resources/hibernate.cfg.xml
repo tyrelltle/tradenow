@@ -16,6 +16,7 @@
         <mapping class="com.tianshao.cuige.domains.trade.Trade" />
         <mapping class="com.tianshao.cuige.domains.trade.Message" />
         <mapping class="com.tianshao.cuige.domains.notification.Notification" />
+        <mapping class="com.tianshao.cuige.domains.mail.Regconfirm" />
 
     </session-factory>
 	    

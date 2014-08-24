@@ -19,6 +19,7 @@
         <intercept-url pattern="/login/**" access="permitAll"/>
         <intercept-url pattern="/signin/**" access="permitAll"/>
         <intercept-url pattern="/nativelogon" access="permitAll"/>
+        <intercept-url pattern="/nativeregister/regcon/**" access="permitAll"/>    
         <intercept-url pattern="/loginerror" access="permitAll"/>
         <intercept-url pattern="/nativeregister" access="permitAll"/>
         <intercept-url pattern="/api/notification" access="permitAll"/>

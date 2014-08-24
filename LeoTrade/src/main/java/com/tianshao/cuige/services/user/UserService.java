@@ -32,7 +32,10 @@ public class UserService implements IUserService{
 
 	@Override
 	public void addNewRoledUser(User u, ROLES r) {
-		u.setEnabled(true);
+		/*
+		 * new user needs to be enabled by activating with email
+		 */
+		u.setEnabled(false);
 		if(u.getPassword()!=null && !u.getPassword().equals(""))
 		{	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 			String hashedPassword = passwordEncoder.encode(u.getPassword());

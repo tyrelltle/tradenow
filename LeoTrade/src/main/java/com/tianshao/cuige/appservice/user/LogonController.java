@@ -1,6 +1,7 @@
 package com.tianshao.cuige.appservice.user;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,12 +25,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tianshao.cuige.config.SocialContext;
+import com.tianshao.cuige.domains.mail.Mail;
+import com.tianshao.cuige.domains.mail.Regconfirm;
+import com.tianshao.cuige.domains.mail.RegconfirmMail;
+import com.tianshao.cuige.domains.user.Principle;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserLogonDTO;
 import com.tianshao.cuige.domains.user.UserRegistrationDTO;
 import com.tianshao.cuige.domains.user.UserRole;
+import com.tianshao.cuige.repository.mail.IMailRepository;
 import com.tianshao.cuige.repository.user.IUserRepository;
+import com.tianshao.cuige.services.mail.Mailer;
+import com.tianshao.cuige.services.mail.RegconfirmMailer;
 import com.tianshao.cuige.services.user.IUserService;
+import com.tianshao.cuige.services.user.UserDetailService;
 
 
 
@@ -35,6 +50,11 @@ import com.tianshao.cuige.services.user.IUserService;
 public class LogonController  {
 	  @Inject
       private final IUserRepository userRepository=null;
+	  
+	  @Autowired
+	  RegconfirmMailer regconfirmMailer;
+	  @Autowired
+	  IMailRepository mailRepository;
 
 	  @Autowired
 	  private final SocialContext socialContext=null;
@@ -60,6 +80,24 @@ public class LogonController  {
 			return "nativelogon";
 		}
 
+		@RequestMapping(value="nativeregister/regcon/{regid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public String regcon(@PathVariable String regid,HttpServletRequest req,HttpServletResponse resp) throws IOException {
+
+			Regconfirm regc=mailRepository.getRegconfirmById(regid);
+			User u=regc.getUser();
+			mailRepository.remove(regc);
+			u.setEnabled(true);
+			userRepository.update(u);
+			
+			
+			Principle userDetails = (Principle) UserDetailService.toUser(u);
+			Authentication authentication = new UsernamePasswordAuthenticationToken(
+			                userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+			return "redirect:/";
+		}
+		
+		
 		@RequestMapping(value="loginerror",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public String failedlogin(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserRegistrationDTO dto2,Model model,HttpServletResponse resp) throws IOException {
 			model.addAttribute("loginerror","Authentication Failed!");
@@ -85,20 +123,23 @@ public class LogonController  {
 		}
 		@RequestMapping(value="nativeregister",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 		public String nativeregister(@ModelAttribute("userForm") @Valid UserRegistrationDTO dto,BindingResult result, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
-			
 	        if(result.hasErrors()) {
 	            return "nativelogon";
 	        }
-			
 			try{
 			
 				if(userRepository.getByEmail(dto.getEmail())==null)
-				{
+				{   //register new user, send validation email
 					User user=new User(dto);
 					userService.addNewRoledUser(user, UserRole.ROLES.ROLE_USER);
-
+					Regconfirm regc=mailRepository.newRegconfirm_gen(user);
 					
-					model.addAttribute("succ", "Success!");
+				    RegconfirmMail mail = new RegconfirmMail(regc,req.getRequestURL().toString());
+				    mail.setMailTo(user);
+				    mail.setMailSubject("Confirm your account registration!");
+				    regconfirmMailer.sendMail(mail);
+					  
+					model.addAttribute("succ", "An Email has been sent to you to verify your registration!");
 				}else{
 					throw new Exception("user exists");
 				}	

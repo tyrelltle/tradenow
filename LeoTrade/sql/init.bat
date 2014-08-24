@@ -10,4 +10,5 @@ source trade.sql;
 source message.sql;
 source notification.sql;
 source favorite.sql;
+source regconfirm.sql;
 exit
