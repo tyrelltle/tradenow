@@ -39,17 +39,28 @@
 <div class="ui two column middle aligned relaxed grid basic segment">
 		  <div class="column">
 		   
-			      		<form  method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
+			      		<form  id="regform" method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
 		                  <div class="form-group">
 		                    <input type="text" class="form-control input-lg" name="username" placeholder="Email"/>
 		                  </div>
 		                  <div class="form-group">
 		                    <input type="password" class="form-control input-lg" name="password" placeholder="Password"/>
 		                  </div>
+
 		                  <div class="form-group">
 		                    <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
 		                   <span><a href="#">${errorlogin}</a></span>
 		                  </div>
+		                  <div>
+		                  	<a href="#" onclick="$('.ps_email').show();"><h4>Forgot Password</h4></a>
+		                    <div class="form-group">
+		                    	<h5 class="ps_email" style="display:none">We will send you an email containing password reset information</h5>
+		                    	<input type="text" style="display:none" class="ps_email form-control input-lg" id="ps_email" placeholder="Enter your email"/>
+		                    	<button style="display:none;width:25%" id="btn_send_reset_email" class="ps_email btn btn-primary btn-lg btn-block">Send</button>
+		                    
+		                    </div>
+		                  </div>
+
 		                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		                  <c:if test="${not empty loginerror}">
 		                    	<div class="alert alert-danger" role="alert">${loginerror}</div>
@@ -102,6 +113,22 @@
 								       }
 								   }
 								});
+								
+								$('#btn_send_reset_email').click(function(e){
+									 var btn = $(this)
+									 btn.button('loading');
+									$.ajax({
+										  type: "POST",
+										  url: ctx+"resetpassword/"+$('#ps_email').val()+"/",
+										})
+										  .done(function( msg ) {
+										   btn.button('reset');
+										   alert(msg);
+									 });	
+									e.preventDefault();
+									
+								});
+								
 							</script>
 		                  <div class="form-group">
 		                    <form:button class="btn btn-primary btn-lg btn-block" type="submit">Register</form:button>

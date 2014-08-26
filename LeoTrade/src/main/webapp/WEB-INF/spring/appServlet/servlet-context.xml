@@ -31,7 +31,7 @@
 	
 	
 	
-	
+	<!-- start mail beans -->
 	
 	 <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 	  <beans:property name="host" value="smtp.gmail.com" />
@@ -52,6 +52,10 @@
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>
+	 <beans:bean id="pswmailer" class="com.tianshao.cuige.services.mail.PswResetconfirmMailer">
+	  <beans:property name="mailSender" ref="mailSender" />
+	  <beans:property name="velocityEngine" ref="velocityEngine"/>
+	 </beans:bean>
 	
 	  <beans:bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
 	    <beans:property name="velocityProperties">
@@ -64,7 +68,7 @@
 	    </beans:property>
 	 </beans:bean>
 	
-	
+	<!-- end mail beans -->
 	
 	
 	

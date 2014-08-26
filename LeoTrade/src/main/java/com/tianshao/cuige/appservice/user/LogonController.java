@@ -15,6 +15,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +25,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianshao.cuige.config.SocialContext;
 import com.tianshao.cuige.domains.mail.Mail;
 import com.tianshao.cuige.domains.mail.Regconfirm;
 import com.tianshao.cuige.domains.mail.RegconfirmMail;
+import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.domains.user.PasswordChangeForm;
 import com.tianshao.cuige.domains.user.Principle;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.domains.user.UserLogonDTO;
@@ -36,6 +41,7 @@ import com.tianshao.cuige.domains.user.UserRole;
 import com.tianshao.cuige.repository.mail.IMailRepository;
 import com.tianshao.cuige.repository.user.IUserRepository;
 import com.tianshao.cuige.services.mail.Mailer;
+import com.tianshao.cuige.services.mail.PswResetconfirmMailer;
 import com.tianshao.cuige.services.mail.RegconfirmMailer;
 import com.tianshao.cuige.services.user.IUserService;
 import com.tianshao.cuige.services.user.UserDetailService;
@@ -53,6 +59,10 @@ public class LogonController  {
 	  
 	  @Autowired
 	  RegconfirmMailer regconfirmMailer;
+
+	  @Autowired
+	  PswResetconfirmMailer pswMailer;
+	  
 	  @Autowired
 	  IMailRepository mailRepository;
 
@@ -80,29 +90,70 @@ public class LogonController  {
 			return "nativelogon";
 		}
 
-		@RequestMapping(value="nativeregister/regcon/{regid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public String regcon(@PathVariable String regid,HttpServletRequest req,HttpServletResponse resp) throws IOException {
+
+//========reset password		
+		/**
+		 *handles the address included in user password reset email
+		 */
+		@RequestMapping(value="pswcon/{regid}",method = RequestMethod.POST,headers="Accept=*/*")
+		public String submitpswcon(@PathVariable String regid, @ModelAttribute("form") @Valid PasswordChangeForm form,BindingResult result, Model model,HttpServletRequest req,HttpServletResponse resp) throws IOException {
+			Regconfirm regc=mailRepository.getRegconfirmById(regid);
+			User u=regc.getUser();
+			model.addAttribute("user", u);
+			model.addAttribute("uuid",regid);
+			
+			if(result.hasErrors())
+				return "pswconpage";
+			
+			PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+			String hashedPassword = passwordEncoder.encode(form.getPassword());
+			u.setPassword(hashedPassword);
+			userRepository.update(u);
+			//remove request record 
+			mailRepository.remove(regc);
+			model.addAttribute("succ","true");
+			return "pswconpage";
+		}	
+		@RequestMapping(value="pswcon/{regid}",method = RequestMethod.GET,headers="Accept=*/*")
+		public String pswcon(@PathVariable String regid, @ModelAttribute("form")PasswordChangeForm form, Model model,HttpServletRequest req,HttpServletResponse resp) throws IOException {
 
 			Regconfirm regc=mailRepository.getRegconfirmById(regid);
 			User u=regc.getUser();
-			mailRepository.remove(regc);
-			u.setEnabled(true);
-			userRepository.update(u);
+			model.addAttribute("user", u);
+			model.addAttribute("uuid",regid);
+			return "pswconpage";
+		}	
+		
+		//sends email to user for reseting password. the email should include a callback link to password reset page
+	    @RequestMapping(value="/resetpassword/{email}/", method = RequestMethod.POST)
+		public @ResponseBody String send_resetpswdemail(@PathVariable String email, HttpServletResponse resp, HttpServletRequest req) throws IOException {			
+	    	User u;
+	    	
+	    	if((u=userRepository.getByEmail(email))!=null)
+			{   
+				
+	    		Regconfirm regc=mailRepository.newRegconfirm_gen(u);
+				
+			    RegconfirmMail mail = new RegconfirmMail(regc,"http://"+req.getServerName()+":"+req.getServerPort()+req.getContextPath());
+			    mail.setMailTo(u);
+			    mail.setMailSubject("Confirm your password reset request!");
+			    pswMailer.sendMail(mail);
+				  
+				return "An Email has been sent to you to confirm your password reset!";
+			}else{
+				return "Sorry, user does not exist with this email";
+			}	
 			
-			
-			Principle userDetails = (Principle) UserDetailService.toUser(u);
-			Authentication authentication = new UsernamePasswordAuthenticationToken(
-			                userDetails, userDetails.getPassword(), userDetails.getAuthorities());
-			SecurityContextHolder.getContext().setAuthentication(authentication);
-			return "redirect:/";
 		}
-		
-		
+	    
+	    
+//===========signin	   
 		@RequestMapping(value="loginerror",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public String failedlogin(@ModelAttribute("userForm")UserRegistrationDTO dto, @ModelAttribute("signinForm")UserRegistrationDTO dto2,Model model,HttpServletResponse resp) throws IOException {
 			model.addAttribute("loginerror","Authentication Failed!");
 			return "nativelogon";
 		}
+		
 		
 		@RequestMapping(value="nativesignin",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 		public String nativesignin(@ModelAttribute("signinForm")UserLogonDTO dto, @ModelAttribute("userForm")UserRegistrationDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
@@ -121,6 +172,8 @@ public class LogonController  {
 			}
 	
 		}
+		
+//=======native register
 		@RequestMapping(value="nativeregister",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 		public String nativeregister(@ModelAttribute("userForm") @Valid UserRegistrationDTO dto,BindingResult result, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
 	        if(result.hasErrors()) {
@@ -150,7 +203,25 @@ public class LogonController  {
 			return "nativelogon";
 		}
 	    
-		
+		/**
+		 *handles the address included in user registration email
+		 */
+		@RequestMapping(value="nativeregister/regcon/{regid}",method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public String regcon(@PathVariable String regid,HttpServletRequest req,HttpServletResponse resp) throws IOException {
+
+			Regconfirm regc=mailRepository.getRegconfirmById(regid);
+			User u=regc.getUser();
+			mailRepository.remove(regc);
+			u.setEnabled(true);
+			userRepository.update(u);
+			
+			
+			Principle userDetails = (Principle) UserDetailService.toUser(u);
+			Authentication authentication = new UsernamePasswordAuthenticationToken(
+			                userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+			return "redirect:/";
+		}
 	    @RequestMapping( method=RequestMethod.GET)
 	    public String home(Model model) {	      
 	        return "home";

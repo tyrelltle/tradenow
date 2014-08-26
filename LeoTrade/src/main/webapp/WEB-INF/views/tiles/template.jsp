@@ -93,7 +93,7 @@
 
 							<div class="col-md-2 col-sm-2 col-xs-2">
 								<!-- Your logo -->
-								<div class="logo"><a href="${pageContext.request.contextPath}/home"><img src="resources/img/logo.png" alt="All in 1"></a></div>
+								<div class="logo"><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"></a></div>
 								<!-- and Your logo -->
 							</div>
 							

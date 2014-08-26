@@ -9,8 +9,8 @@ public class RegconfirmMail extends Mail{
 		url=rooturl;
 	}
 	
-	public String getfullurl(){
-		return url+"/regcon/"+regcon.getId();
+	public String getUrl(){
+		return url;
 	}
 	public Regconfirm getRegcon() {
 		return regcon;
