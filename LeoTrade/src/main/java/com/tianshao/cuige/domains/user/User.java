@@ -1,5 +1,6 @@
 package com.tianshao.cuige.domains.user;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -24,6 +25,9 @@ import org.springframework.social.facebook.api.FacebookProfile;
 
 import com.tianshao.cuige.domains.IEntity;
 import com.tianshao.cuige.domains.product.Product;
+import com.tianshao.cuige.shared.googlegeo.AddressConverter;
+import com.tianshao.cuige.shared.googlegeo.GoogleResponse;
+import com.tianshao.cuige.shared.googlegeo.Location;
 @Entity
 @Table(name="user")
 public class User implements IEntity{
@@ -96,15 +100,28 @@ public class User implements IEntity{
 	}
 	
 
-	public User(UserRegistrationDTO dto){
+	public User(UserRegistrationDTO dto) throws IOException{
 		
 		
 		this.email=dto.getEmail();
 		this.firstname=dto.getFirstname();
 		this.lastname=dto.getLastname();
 		this.password=dto.getPassword();
-		this.latitude=Double.valueOf(dto.getLat());
-		this.longitude=Double.valueOf(dto.getLng());
+		
+		if(dto.getLat()==null || dto.getLng()==null){
+			AddressConverter a=new AddressConverter();
+			GoogleResponse gres=a.convertToLatLong(dto.getLocation());
+			Location loc=gres.getResults()[0].getGeometry().getLocation();
+			this.latitude=Double.valueOf(loc.getLat());
+			this.longitude=Double.valueOf(loc.getLng());
+			
+		}else{
+			this.latitude=Double.valueOf(dto.getLat());
+			this.longitude=Double.valueOf(dto.getLng());
+			
+		}
+		
+		
 		this.location=dto.getLocation();
 		
 	}
