@@ -21,6 +21,8 @@ AppRouter=Backbone.Router.extend({
 		app.productList = new ProductList();
 		if($('.searchtxt').val()!="")
 			app.productList.addsearch($('.searchtxt').val());
+		else if ($('.locsearchtxt').val()!="")
+			app.productList.addlocsearch($('.locsearchtxt').val());
 		else if($('#catid').length>0)
 			app.productList.makecategorize($('#catid').val());
 		else if($('#likes').length>0){
@@ -38,6 +40,8 @@ AppRouter=Backbone.Router.extend({
 			        	app.productList.addstart();
 						if($('.searchtxt').val()!="")
 							app.productList.addsearch($('.searchtxt').val());
+						else if ($('.locsearchtxt').val()!="")
+							app.productList.addlocsearch($('.locsearchtxt').val());
 						else if($('#catid').length>0)
 							app.productList.makecategorize($('#catid').val());
 						var loadmore=document.getElementById('loadmore');

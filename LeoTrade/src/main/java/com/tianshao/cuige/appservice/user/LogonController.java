@@ -244,6 +244,11 @@ public class LogonController  {
 	    	model.addAttribute("searchkey",key);	      
 	        return "home";
 	    }
+	    @RequestMapping(value="location{loc}", method=RequestMethod.GET)
+	    public String searchloc(@PathVariable String loc, Model model) {
+	    	model.addAttribute("location",loc);	      
+	        return "home";
+	    }
 	    @RequestMapping(value="likes", method=RequestMethod.GET)
 	    public String likes( Model model) {
 	    	model.addAttribute("likes",1);	      

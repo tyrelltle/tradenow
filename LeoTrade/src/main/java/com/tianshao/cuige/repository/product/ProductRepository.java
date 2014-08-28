@@ -22,6 +22,9 @@ import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.User;
 import com.tianshao.cuige.repository.BaseRepository;
+import com.tianshao.cuige.shared.googlegeo.AddressConverter;
+import com.tianshao.cuige.shared.googlegeo.GoogleResponse;
+import com.tianshao.cuige.shared.googlegeo.Location;
 
 @Repository("productRepository")
 
@@ -50,6 +53,7 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		
 	}
 	
+
 	@Override
 	@Transactional
 	public List<Product> getByCatId(User curuser, int catid,int st, int ct) {
@@ -204,6 +208,7 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		Hibernate.initialize(prod.getLikers());
 		return prod;
 	}
+
 
 
 	

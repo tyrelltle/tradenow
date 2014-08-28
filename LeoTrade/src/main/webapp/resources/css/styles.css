@@ -429,6 +429,7 @@ textarea:focus {
   font-size: 13px;
   padding: 9px 0 9px 0;
 }
+
 .top-bar ul {
   margin: 0;
 }
@@ -4359,6 +4360,7 @@ li.active > a:focus {
   margin: 15px 0 20px 0;
 }
 #footer ::-webkit-input-placeholder,
+.top-bar ::-webkit-input-placeholder,
 .contact-form ::-webkit-input-placeholder,
 .sidebar-right ::-webkit-input-placeholder,
 .news ::-webkit-input-placeholder {

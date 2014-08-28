@@ -10,6 +10,7 @@ import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
 import com.tianshao.cuige.domains.product.Product;
 import com.tianshao.cuige.domains.user.User;
+import com.tianshao.cuige.shared.googlegeo.Location;
 
 public interface IProductRepository{
 
@@ -24,7 +25,6 @@ public interface IProductRepository{
 	public abstract Product getProductWithImages(int prod_id);
 	
 	public abstract Product getProductWithLikers(int prod_id);
-
 
 	public abstract List<Product> getAllButMe(User curuser, int limitL, int limitR)
 			throws Exception;
@@ -46,6 +46,7 @@ public interface IProductRepository{
 			throws Exception;
 
 	List<Product> getByCatId(User curuser, int catid, int st, int ct);
+	
 	
 
 

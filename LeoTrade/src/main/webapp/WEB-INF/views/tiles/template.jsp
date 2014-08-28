@@ -68,6 +68,8 @@
 	<script src="${pageContext.request.contextPath}/resources/js/underscore.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
 	
 	
 	<tiles:insertAttribute name="header" />
@@ -141,7 +143,7 @@
 	<div class="top-bar">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-7 col-md-8 col-sm-7">
+							<div class="col-lg-12 col-md-12 col-sm-12">
 								<ul class="top-bar-nav list-inline pull-left">
 									<li id="lang">
 										<a href="#" class="lang-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
@@ -151,10 +153,10 @@
 									</li>
 									<li id="lang">
 												
-												<form class="sidebar-search-form-small">
+												<form class="searchform sidebar-search-form-small">
 												  <c:choose>
 												      <c:when test="${not empty searchkey}">
-												           <input type="text" class="searchtxt" placeholder="Search By Item Titles" value="${searchkey}">   			
+												           <input type="text" class="searchtxt" value="${searchkey}">   			
 												      </c:when>
 												      <c:otherwise>
 												           <input type="text" class="searchtxt" placeholder="Search By Item Titles">   			
@@ -162,17 +164,50 @@
 												  </c:choose>
 														<a class="searchbtn"><i class="fa fa-search"></i></a>
 												
-													</form>
+												</form>
 									</li>
-									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</li></a>
-	
+									
+									<li id="lang">
+												
+												<form class="searchform sidebar-search-form-small">
+												  <c:choose>
+												      <c:when test="${not empty location}">
+												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" value="${location}">   			
+												      </c:when>
+												      <c:otherwise>
+												           <input type="text" class="locsearchtxt" placeholder="Search By location">   			
+												      </c:otherwise>
+												  </c:choose>
+														
+													<a class="loc_srch_btn"><i class="fa fa-search"></i></a>
+													<input id="lat" type="hidden" class="form-control input-lg"  />
+			                    					<input id="lng" type="hidden" class="form-control input-lg" />
+			
+												</form>
+									</li>
+									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
+									</li>
+
 								</ul>
 							</div>
 	
 						</div> <!-- and row -->
 					</div> <!-- and container -->
 	</div>
-
+							<script type="text/javascript">
+								initializeAutocomplete();
+								$(".searchform").keypress(function(e){
+								    if (e.which == 13) {
+								       var tagName = e.target.tagName.toLowerCase(); 
+								       if (tagName !== "textarea") {
+								           return false;
+								       }
+								   }
+								});
+								
+								
+								
+							</script>
 
 	<!--wait modal-->
 	<div id="waitmodal" class="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">

@@ -21,7 +21,14 @@ $(document).ready(function() {
 					window.location=ctx+"search"+$('.searchtxt').val();
 					return false;
 				});
-					$('.dropdown-toggle').dropdown();
+	
+				$('.loc_srch_btn').click(function(){
+					window.location=ctx+"location"+$('.locsearchtxt').val();
+					return false;
+				});
+				
+				
+				$('.dropdown-toggle').dropdown();
 				
 				var notiflis=new NotificationList();
 				var notiflisview =new NotificationListView({model:notiflis});

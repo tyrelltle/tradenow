@@ -29,6 +29,9 @@ import com.tianshao.cuige.repository.product.IProductRepository;
 import com.tianshao.cuige.repository.user.IUserRepository;
 import com.tianshao.cuige.services.product.IProductService;
 import com.tianshao.cuige.services.user.IUserService;
+import com.tianshao.cuige.shared.googlegeo.AddressConverter;
+import com.tianshao.cuige.shared.googlegeo.GoogleResponse;
+import com.tianshao.cuige.shared.googlegeo.Location;
 
 
 
@@ -99,6 +102,25 @@ public class ProductController {
 	    	
 		}
 		
+		
+		
+		@RequestMapping(value={"start/{st}/count/{ct}/location/{key}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
+		public @ResponseBody List<ProductDTO> locationsearch(@PathVariable int st, @PathVariable int ct, @PathVariable String key, HttpServletResponse resp) throws Exception {
+			//st and ct are used in LIMIT st,ct
+			User u=userService.loadUserWithLikes();
+			u.build_favorite_lookup();
+			List<ProductDTO> ret=new ArrayList<ProductDTO>();
+			//manually set user's location to the one being searched. 
+			AddressConverter a=new AddressConverter();
+			GoogleResponse gres=a.convertToLatLong(key);
+			Location loc=gres.getResults()[0].getGeometry().getLocation();
+			u.setLatitude(Double.valueOf(loc.getLat()));
+			u.setLongitude(Double.valueOf(loc.getLng()));
+	    	List<Product> prods=productRepository.getAllButMe(u,st,ct);
+	    	toRodListDTO_like(u,ret, prods);
+	    	return ret;
+	    	
+		}
 		
 		@RequestMapping(value={"start/{st}/count/{ct}/search/{key}"},method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
 		public @ResponseBody List<ProductDTO> search(@PathVariable int st, @PathVariable int ct, @PathVariable String key, HttpServletResponse resp) throws Exception {
