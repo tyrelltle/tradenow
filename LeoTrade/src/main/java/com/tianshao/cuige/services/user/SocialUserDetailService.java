@@ -58,13 +58,15 @@ public class SocialUserDetailService extends BaseUserDetailService implements So
 		if(u == null || success==false)
 		{
 			Facebook api=socialContext.facebook(userId);
-			u=new User(api);
+			u=User.newFacebookUser(api);
 			AddressConverter a=new AddressConverter();
 			try{
-				GoogleResponse gres=a.convertToLatLong(u.getLocation());
-				Location loc=gres.getResults()[0].getGeometry().getLocation();
-				u.setLatitude(Double.valueOf(loc.getLat()));
-				u.setLongitude(Double.valueOf(loc.getLng()));
+				if(u.getLocation()!=null && !u.getLocation().equals("")){
+					GoogleResponse gres=a.convertToLatLong(u.getLocation());
+					Location loc=gres.getResults()[0].getGeometry().getLocation();
+					u.setLatitude(Double.valueOf(loc.getLat()));
+					u.setLongitude(Double.valueOf(loc.getLng()));
+				}
 				u.setSocialuid(userId);
 				userService.addNewRoledUser(u, UserRole.ROLES.ROLE_USER);
 				

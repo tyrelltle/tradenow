@@ -12,4 +12,8 @@ public interface IUserService {
 	User loadUserWithLikes();
 	void addFavorite(Product p) throws Exception;
 	void delFavorite(int prod_id) throws Exception;
+	/*
+	 * set current user's isnoon to false
+	 */
+	void no_longer_noob();
 }

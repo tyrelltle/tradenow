@@ -10,6 +10,7 @@ create table user(
 	latitude double,
 	longitude double,
 	image   MEDIUMBLOB,
-	enabled TINYINT NOT NULL DEFAULT 1 ,
+	enabled TINYINT NOT NULL DEFAULT 1,
+	isnoob	TINYINT not null default 1,
 	primary key (userid)
 )

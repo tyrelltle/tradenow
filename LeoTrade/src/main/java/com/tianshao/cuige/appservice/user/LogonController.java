@@ -183,7 +183,7 @@ public class LogonController  {
 			
 				if(userRepository.getByEmail(dto.getEmail())==null)
 				{   //register new user, send validation email
-					User user=new User(dto);
+					User user=User.newNativeUser(dto);
 					userService.addNewRoledUser(user, UserRole.ROLES.ROLE_USER);
 					Regconfirm regc=mailRepository.newRegconfirm_gen(user);
 					
@@ -222,8 +222,31 @@ public class LogonController  {
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			return "redirect:/";
 		}
+		
+		
+		
+		/**
+		 * newbie controller
+		 */
+		@RequestMapping(value="unnewbie",method = RequestMethod.POST)
+		public @ResponseBody String iamnotnewbie(HttpServletResponse resp) throws IOException {
+			try{
+				userService.no_longer_noob();
+				
+			}catch(Exception e){
+				return e.getMessage();
+			}
+			return "succ";
+		}
+		
+		
 	    @RequestMapping( method=RequestMethod.GET)
-	    public String home(Model model) {	      
+	    public String home(Model model) {	 
+	    	
+	    	if(userService.currentUser().isIsnoob())
+	    		//require first time user complete their address
+	    		return "newbiehome";
+	    	
 	        return "home";
 	    }
 	    

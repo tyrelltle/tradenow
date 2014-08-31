@@ -59,19 +59,15 @@
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/settings.css" media="screen" />
     <!-- Animate css -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/animate.css">
 	
 	<!-- Scripts that is required -->
 	<!-- jQuery -->
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/spin.min.js"></script>
 	<script>var ctx = "${pageContext.request.contextPath}/"</script>
 	<script src="${pageContext.request.contextPath}/resources/js/underscore.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
 	<!--Preaty Photo-->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" type="text/css"/>
 	
 	<tiles:insertAttribute name="header" />
 
@@ -94,27 +90,20 @@
 						<div class="row">
 
 
-							<div class="col-md-5 col-sm-5 col-xs-5">
+							<div class="col-md-4 col-sm-4 col-xs-4">
 								<!-- Your logo -->
 								<div class="logo"><a href="index.html"><img src="resources/img/logo.png" alt="All in 1"></a></div>
 								<!-- and Your logo -->
 							</div>
 							
-							<div class="col-md-3 col-sm-3 col-xs-3">
-											<form action="<c:url value="/auth/facebook" />" style="float:right" method="POST">
-														<input type="hidden" name="scope" value="email,user_location" />
-														<a style="font-size:10px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
-															<i class="fa fa-facebook"></i>
-														Sing in with Google</a> 
-											</form>
-											
+							<div class="col-md-5 col-sm-5 col-xs-5">
+								<h2 style="margin: 1px !important;">Complete your profile</h2>
 							</div> <!-- and col-md-10 -->
 							<div class="col-md-3 col-sm-3 col-xs-3">
-											
-											<form action="<c:url value="/nativelogon" />" method="GET">
-										    	 <button class="btn btn-success" id="nativebtn" type="submit">Regular signon</button>		   		 	    
-											</form>
-							</div> <!-- and col-md-10 -->
+								<a href="${pageContext.request.contextPath}/signout">
+									    			Log out <i class="glyphicon glyphicon-log-out"></i>
+								</a>
+							</div>
 						</div> <!-- and row -->
 					</div> <!-- and container -->
 				</div> <!-- and header -->
@@ -272,22 +261,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.revolution.min.js"></script>
 
 	
-    <!-- REVOLUTION SLIDER -->
-	<script type="text/javascript">
-		var revapi;
-		jQuery(document).ready(function() {
-			   revapi = jQuery('.tp-banner').revolution(
-				{
-					delay:9999,
-					startwidth:1350,
-					startheight:588,
-					hideThumbs:10,
-					fullWidth:"on",
-				});
-
-		});	//ready
-	</script>
-	<!-- END REVOLUTION SLIDER -->
+  
 
 </body>
 </html>

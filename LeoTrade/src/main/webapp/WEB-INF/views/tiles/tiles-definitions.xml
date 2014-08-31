@@ -7,7 +7,10 @@
     <definition name="template" template="/WEB-INF/views/tiles/template.jsp">
     
     </definition>
-        <definition name="logintemplate" template="/WEB-INF/views/tiles/logintemplate.jsp">
+    <definition name="logintemplate" template="/WEB-INF/views/tiles/logintemplate.jsp">
+    
+    </definition>
+    <definition name="newbietemplate" template="/WEB-INF/views/tiles/newbietemplate.jsp">
     
     </definition>
   

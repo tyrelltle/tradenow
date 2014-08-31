@@ -45,7 +45,8 @@ public class SocialContext implements SocialConfigurer {
 
         cfConfig.addConnectionFactory(new FacebookConnectionFactory(
         		"735073026515165",
-    	        "e7803872fe0e1ee72b1d7e1860382ad3"
+    	        "e7803872fe0e1ee72b1d7e1860382ad3",
+    	        "leotylertrade"
         ));
     }
 

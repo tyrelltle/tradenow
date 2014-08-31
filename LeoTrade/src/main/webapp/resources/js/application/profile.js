@@ -18,7 +18,7 @@ ProfileView=Backbone.View.extend({
 			    evaluate: /\{\{(.+?)\}\}/gim,
 			    escape: /\{\{\-(.+?)\}\}/gim
 			};
-		this.model.bind("change",this.render,this);
+		//this.model.bind("change",this.render,this);
 		this.model.bind("destroy",this.close,this);
 		this.template=_.template($('#usertmp').html());
 	},
@@ -36,13 +36,23 @@ ProfileView=Backbone.View.extend({
 	},
 
 	save:function(){
+		if($(this.el).find('#autocomplete').val().trim()==""||
+		   $(this.el).find('#fn').val().trim()==""||
+		   $(this.el).find('#ln').val().trim()==""||
+		   $(this.el).find('#email').val().trim()==""){
+			alert('email, address, firstname and lastname have to be filled!');
+			return false;
+		}
+		
 		this.model.set({
 			location:$(this.el).find('#autocomplete').val(),
 			lat:$(this.el).find('#lat').val(),
 			lng:$(this.el).find('#lng').val(),
 			aboutme:$(this.el).find('#txt_aboutme').val(),
 			firstname:$(this.el).find('#fn').val(),
-			lastname:$(this.el).find('#ln').val()
+			lastname:$(this.el).find('#ln').val(),
+			email:$(this.el).find('#email').val()
+
 		});
 		
 			this.model.save(null,{success :this.succ, 

@@ -46,6 +46,9 @@ public class User implements IEntity{
 	@Column(name = "enabled", nullable = false)
 	private boolean enabled;
 	
+	@Column(name = "isnoob", nullable = false)
+	private boolean isnoob;
+	
 	@Column(name="password")
 	private String password;
 
@@ -100,44 +103,57 @@ public class User implements IEntity{
 	}
 	
 
-	public User(UserRegistrationDTO dto) throws IOException{
+	public static User newNativeUser(UserRegistrationDTO dto) throws IOException{
 		
-		
-		this.email=dto.getEmail();
-		this.firstname=dto.getFirstname();
-		this.lastname=dto.getLastname();
-		this.password=dto.getPassword();
+		User ret=new User();
+		ret.email=dto.getEmail();
+		ret.firstname=dto.getFirstname();
+		ret.lastname=dto.getLastname();
+		ret.password=dto.getPassword();
 		
 		if(dto.getLat()==null || dto.getLng()==null){
 			AddressConverter a=new AddressConverter();
 			GoogleResponse gres=a.convertToLatLong(dto.getLocation());
 			Location loc=gres.getResults()[0].getGeometry().getLocation();
-			this.latitude=Double.valueOf(loc.getLat());
-			this.longitude=Double.valueOf(loc.getLng());
+			ret.latitude=Double.valueOf(loc.getLat());
+			ret.longitude=Double.valueOf(loc.getLng());
 			
 		}else{
-			this.latitude=Double.valueOf(dto.getLat());
-			this.longitude=Double.valueOf(dto.getLng());
+			ret.latitude=Double.valueOf(dto.getLat());
+			ret.longitude=Double.valueOf(dto.getLng());
 			
 		}
 		
 		
-		this.location=dto.getLocation();
-		
+		ret.location=dto.getLocation();
+		/*
+		 * new user needs to be enabled by activating with email
+		 */
+		ret.setEnabled(false);
+		return ret;
 	}
 	
 
 
-	public User(Facebook api) {
+	public static User newFacebookUser(Facebook api) {
+		User ret=new User();
+		String tmpval;
 		FacebookProfile prof=api.userOperations().getUserProfile();
-		this.setFirstname(prof.getFirstName());
-		this.setLastname(prof.getLastName());
-		this.setEmail(prof.getEmail());
-		this.setEnabled(true);
-		this.setImage(api.userOperations().getUserProfileImage());
-		this.setLocation(prof.getLocation().getName());
-		this.setPassword("Dummy Social Password");
-		
+		tmpval=prof.getFirstName();
+		ret.setFirstname(tmpval==null?" ":tmpval);
+		tmpval=prof.getLastName();
+		ret.setLastname(tmpval==null?" ":tmpval);
+		tmpval=prof.getEmail();
+		ret.setEmail(tmpval==null?" ":tmpval);
+		ret.setEnabled(true);
+		ret.setImage(api.userOperations().getUserProfileImage());
+		try{
+			ret.setLocation(prof.getLocation().getName());
+		}catch(Exception e){
+			//expected to not have location in facebook users profile
+		}
+		ret.setPassword("Dummy Social Password");
+		return ret;
 	}
 
 	public Set<Product> getProducts() {
@@ -293,6 +309,7 @@ public class User implements IEntity{
 	}
 
 	public void updateFromDTO(UserDTO wrap) {
+		this.email=wrap.getEmail();
 		this.firstname=wrap.getFirstname();
 		this.lastname=wrap.getLastname();
 		this.aboutme=wrap.getAboutme();
@@ -332,6 +349,26 @@ public class User implements IEntity{
 	
 	public boolean likes(Product p){
 		return favorite_lookup_map.contains(p.getProd_id());
+	}
+
+	public boolean isIsnoob() {
+		return isnoob;
+	}
+
+	public void setIsnoob(boolean isnoob) {
+		this.isnoob = isnoob;
+	}
+
+	public Set<Integer> getFavorite_lookup_map() {
+		return favorite_lookup_map;
+	}
+
+	public void setFavorite_lookup_map(Set<Integer> favorite_lookup_map) {
+		this.favorite_lookup_map = favorite_lookup_map;
+	}
+
+	public void setFavorites(Set<Product> favorites) {
+		this.favorites = favorites;
 	}
 
 	

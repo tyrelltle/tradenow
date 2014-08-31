@@ -127,7 +127,7 @@
 				<div class="col-md-6">				
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">Email</span>
- 						 	<label  class="form-control">{{email}}</label>
+ 						 	<input  id="email" class="form-control" value="{{email}}" placeholder="Email"/>
 					</div>
 					<div class="input-group input-group-md">
   							<span class="input-group-addon">First Name</span>

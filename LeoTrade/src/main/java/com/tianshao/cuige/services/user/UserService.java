@@ -32,16 +32,13 @@ public class UserService implements IUserService{
 
 	@Override
 	public void addNewRoledUser(User u, ROLES r) {
-		/*
-		 * new user needs to be enabled by activating with email
-		 */
-		u.setEnabled(false);
+
 		if(u.getPassword()!=null && !u.getPassword().equals(""))
 		{	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 			String hashedPassword = passwordEncoder.encode(u.getPassword());
 			u.setPassword(hashedPassword);
 		}
-		
+		u.setIsnoob(true);
 		userRepository.addNew(u);
 		
 		UserRole role = new UserRole(u,r);
@@ -76,5 +73,13 @@ public class UserService implements IUserService{
 	public User loadUserWithLikes(){
 		User u=this.currentUser();
 		return userRepository.getUserWithFavorites(u.getUserid());
+	}
+
+	@Override
+	public void no_longer_noob() {
+		User u = this.currentUser();
+		u.setIsnoob(false);
+		userRepository.update(u);
+		
 	}
 }

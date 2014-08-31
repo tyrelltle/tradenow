@@ -74,20 +74,16 @@ AppRouter=Backbone.Router.extend({
 	
 	
 });
+var app=new AppRouter();
 
 $(document).ready(function ()
 	    { 
 
-			_.templateSettings = {
-				    interpolate: /\{\{(.+?)\}\}/gim,
-				    evaluate: /\{\{(.+?)\}\}/gim,
-				    escape: /\{\{\-(.+?)\}\}/gim
-				};
+	Backbone.history.start();
 	    });
 
 	    
-var app=new AppRouter();
-Backbone.history.start();
+
 //app.initTab();
 //app.initTab();
 

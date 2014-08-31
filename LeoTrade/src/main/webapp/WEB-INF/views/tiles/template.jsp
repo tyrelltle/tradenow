@@ -120,10 +120,10 @@
 									    </li>
 									    <li><a href="${pageContext.request.contextPath}/user">
 									    			User Detail <i class="glyphicon glyphicon-user"></i>
-									    	</a>
+									    	</a><%-- <img alt="pic" class="img-thumbnail" src="${pageContext.request.contextPath}/user/img"> --%>
 									    </li>
 									    <li><a href="${pageContext.request.contextPath}/signout">
-									    			User Detail <i class="glyphicon glyphicon-log-out"></i>
+									    			Logout <i class="glyphicon glyphicon-log-out"></i>
 									    	</a>
 									    </li>
 									</ul>
@@ -175,7 +175,7 @@
 												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" value="${location}">   			
 												      </c:when>
 												      <c:otherwise>
-												           <input type="text" class="locsearchtxt" placeholder="Search By location">   			
+												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" placeholder="Search By location">   			
 												      </c:otherwise>
 												  </c:choose>
 														
@@ -187,6 +187,8 @@
 									</li>
 									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
 									</li>
+									
+									
 
 								</ul>
 							</div>
