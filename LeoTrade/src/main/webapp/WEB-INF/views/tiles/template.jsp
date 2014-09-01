@@ -95,7 +95,12 @@
 
 							<div class="col-md-2 col-sm-2 col-xs-2">
 								<!-- Your logo -->
-								<div class="logo"><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"></a></div>
+								<div class="logo">
+									<a href="${pageContext.request.contextPath}/home">
+<%-- 										<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"> --%>
+										<h1>Barbarian</h1>
+									</a>
+								</div>
 								<!-- and Your logo -->
 							</div>
 							
@@ -244,84 +249,7 @@
 		</section>
 		<!-- and main -->
 
-		<footer id="footer">
-			
-			<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small about">
-							<img class="logo-small" src="resources/img/logo_small.png" alt="">
-							<p>There are many variations of passages of 
-							Lorem Ipsum available, but the majority 
-							have suffered alteration in some form. </p>
-							<ul class="social-small list-inline left">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small latest-posts">
-							<h3 class="title">Latest posts</h3>
-							<ul>
-								<li>
-									<a href="blog-1.html" class="c-pointer">Some design blog post</a>
-									<span><b>14 May 2013</b></span>
-								</li>
-								<li>
-									<a href="blog-1.html" class="c-pointer">WordPress code for responsive</a>
-									<span><b>12 May 2013</b></span>
-								</li>
-								<li>
-									<a href="blog-1.html" class="c-pointer">Creative technologies of our time</a>
-									<span><b>7 May 2013</b></span>
-								</li>
-								<li>
-									<a href="blog-1.html" class="c-pointer">Time for your site</a>
-									<span><b>21 June 2013</b></span>
-								</li>
-							</ul>
-						</div>
-						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small new-twitt">
-							<h3 class="title">News on Twitter</h3>
-							<ul>
-								<li>
-									<i class="fa fa-twitter"></i>
-									<p>Check out our new #themeforest 
-									item “Energy - responsive WordPress 
-									theme” at http://t.co/kfjLLhhfl9348jv</p>
-									<span><b>3 days ago</b></span>
-								</li>
-								<li>
-									<i class="fa fa-twitter"></i>
-									<p>Check out our new #themeforest 
-									item “Multipress - responsive 
-									WordPress theme” at 
-									http://t.co/kfjLLhhfl9348jv</p>
-									<span><b>18 days ago</b></span>
-								</li>
-							</ul>
-						</div>
-						<div class="col-md-3 col-sm-6 col-xs-6 col-xs-small footer-contact">
-							<h3 class="title">Contact</h3>
-							<span>Box 32145 Some Street Str, Lviv city 2314</span>
-							<span>Phone: +38 (321) 65498732</span>
-							<span>Fax: +38 (321) 65498732</span>
-							<h3 class="newsletter">Newsletter</h3>
-							<form>
-								<input type="text" placeholder="Enter your e-mail address">
-								<button>GO</button>
-							</form>
-							<span>By subscribing you will get the latest news from us.</span>
-						</div>
-					</div> <!-- and row -->
-				</div> <!-- and container -->
-			</div> <!-- and footer -->
-
-		</footer> <!-- and footer -->
-
+		
 		<!-- Bottom bar -->
 		<section>
 			

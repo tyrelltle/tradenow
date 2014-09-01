@@ -13,6 +13,9 @@
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
 		
 		<style>
+		.step{
+		margin-top:56px;
+		}
 		.logincontainer{
 		 margin-top:100px; 
 		  
@@ -41,26 +44,7 @@
 							<img src="${pageContext.request.contextPath}/resources/img/header-bg.jpg"  alt="slider-1"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 
-							<!-- LAYER White Line -->
-							<div class="tp-caption customout white-line-t"
-								data-x="center"
-								data-y="top"
-								data-speed="25"
-								data-start="0"
-								data-easing="Power4.easeOut"
-								data-captionhidden="on"
-								><div class="line"></div>
-							</div>
-							<!-- LAYER White Line -->
-							<div class="tp-caption customout white-line-b"
-								data-x="center"
-								data-y="bottom"
-								data-speed="25"
-								data-start="0"
-								data-easing="Power4.easeOut"
-								data-captionhidden="on"
-								><div class="line"></div>
-							</div>
+							
 							
 							<!-- LAYER 1 -->
 							<div class="tp-caption sfl customout layer-1"
@@ -73,7 +57,7 @@
 								data-endspeed="900"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p class="upp" >Welcome to <b>TradeNow!</b></p>
+								><p class="upp" >Welcome to <b>Barbarian Network!</b></p>
 							</div>
 
 							<!-- LAYER 2 -->
@@ -132,10 +116,20 @@
 								data-endspeed="500"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p class="slide_text_hide_768" >Exchange your stuff with people arround world!</p>
+								><p class="slide_text_hide_768" >Wanna go back to the old age with no currency concept?</p>
 							</div>
 
-							
+							<!-- LAYER 7 -->
+							<div class="tp-caption sfr start"
+								data-endspeed="300"
+								data-easing="Back.easeOut"
+								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformOrigin:50% 50%;"
+								data-start="150"
+								data-speed="600"
+								data-x="600"
+								data-y="-46">
+							<img src="${pageContext.request.contextPath}/resources/img/rev_slider/pad.png" alt="">
+							</div>
 
 						</li>
 
@@ -158,20 +152,14 @@
 				<!-- Features tools -->
 		<section>
 			
-			<div class="features-tools-header">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h2 class="wow fadeIn">Let us introduce our best bartering app!</h2>
-						</div>
-					</div> <!-- and row -->
-				</div> <!-- and container -->
-			</div> <!-- and features-tools-header -->
+	
 
 			<div class="wow fadeIn features-tools-content">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
+							<h2 class="wow fadeIn">Let us introduce our best bartering app!</h2>
+						
 							<p class="wow fadeIn" data-wow-delay="0.8s">Trade-Now.ca is an online bartering system,
 							focusing on making it easier for people to exchange their stuffs with other people. Our
 							system provide the best user experience for managering your unwanted stuff in your backlog,
@@ -201,7 +189,7 @@
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
 							<div class="features-list-img wow fadeInRight" data-wow-delay=".8s">
-								<img src="${pageContext.request.contextPath}/resources/img/shakehand.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/img/shakehand.jpg" style="width: 441px;" alt="">
 							</div>
 						</div>
 					</div> <!-- and row -->
@@ -213,19 +201,119 @@
 		<section><!-- Tutorial -->
 
 				<div class="container" id="section3">
-					<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">				      
+				<!-- Step One -->
+				
+					<div class="col-md-12 col-sm-12 col-xs-12 col-xs-small">				      
 						<h2 class="wow fadeIn">Step One - Browse on public marketplace, and find out what you want to own </h2>
 				      
 				      <p class="wow fadeIn">
 						  People has their own public backlog of stuffs that they want to throw away, and other people can view them
 				      </p>
 				      
-				  	</div><!--/col-->
-			 		<div class="row">
-					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/masonry.PNG" class="img-responsive"></div>
-					</div>
-					<div style="height:100px"></div>
-				  	<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
+							<div class="masonrycontainer" style="position: relative;">
+							<div class="masonryitem col-md-3">
+								<div class="blog-item">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p1.jpg">
+									<div class="blog-item-description">
+										<h3>Nice XBOX</h3>
+										<div class="row">
+											<div class="col-md-4">
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+											</div>
+											<div class="col-md-8">
+												<p class="ownernm">Tian Shao</p> 
+												<p>New Westminster, BC, Canada</p>
+											</div>
+
+										</div>
+										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
+									</div>
+								</div>
+								<div class="bottom-border">
+								</div>
+
+
+
+
+	        
+							</div><div class="masonryitem col-md-3">
+								<div class="blog-item">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p2.jpg">
+									<div class="blog-item-description">
+										<h3>Newest TV!</h3>
+										<div class="row">
+											<div class="col-md-4">
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+											</div>
+											<div class="col-md-8">
+												<p class="ownernm">Leo Liu</p> 
+												<p>New Westminster, BC, Canada</p>
+											</div>
+
+										</div>
+										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
+									</div>
+								</div>
+								<div class="bottom-border">
+								</div>
+
+
+
+
+	        
+								</div><div class="masonryitem col-md-3">
+								<div class="blog-item">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p3.jpg">
+									<div class="blog-item-description">
+										<h3>Your dream phone</h3>
+										<div class="row">
+											<div class="col-md-4">
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+											</div>
+											<div class="col-md-8">
+												<p class="ownernm">Natasha black</p> 
+												<p>New Westminster, BC, Canada</p>
+											</div>
+
+										</div>
+										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
+									</div>
+								</div>
+								<div class="bottom-border">
+								</div>
+
+
+
+
+	        
+								</div><div class="masonryitem col-md-3">
+								<div class="blog-item">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p4.jpg">
+									<div class="blog-item-description">
+										<h3>Lovely Sofa</h3>
+										<div class="row">
+											<div class="col-md-4">
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+											</div>
+											<div class="col-md-8">
+												<p class="ownernm">Sophia Weng</p> 
+												<p>New Westminster, BC, Canada</p>
+											</div>
+
+										</div>
+										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
+										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
+									</div>
+								</div>
+								<div class="bottom-border">
+								</div>
+				</div></div>
+				<!-- and Step One -->	
+				<!-- Step Two -->
+				  	<div class="step col-md-12 col-sm-12 col-xs-12 col-xs-small">
 				      <h2 class="wow fadeIn">Step Two - Find what you can offer, and negotiate with others</h2>
 				      
 				      <p class="wow fadeIn">
@@ -235,9 +323,9 @@
 					 <div class="row">
 					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/letstrade.jpg" class="img-responsive"></div>
 					</div>
-					<div style="height:100px"></div>
-					
-				  	 <div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
+			     <!-- and Step Two -->
+			     <!-- Step Three -->
+				  	 <div class="step col-md-12 col-sm-12 col-xs-12 col-xs-small">
 				      <h2 class="wow fadeIn">Step Three - Negotiation about the delivery method on site</h2>
 				      
 				      <p class="wow fadeIn">
@@ -251,8 +339,10 @@
 					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/mailtype.jpg" class="img-responsive"></div>
 					</div>	
 										<div style="height:100px"></div>
+				<!-- and Step Three -->
 					
 				</div><!--/container-->
+				</div>
 		</section><!-- and Tutorial -->
 	</tiles:putAttribute>
 </tiles:insertDefinition>
