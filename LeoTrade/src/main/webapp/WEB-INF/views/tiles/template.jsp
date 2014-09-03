@@ -149,13 +149,31 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
-								<ul class="top-bar-nav list-inline pull-left">
-									<li id="lang">
-										<a href="#" class="lang-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
-										<ul class="lang" id="catlis" style="display: none;">
-										
+								<ul class="menu top-bar-nav list-inline pull-left">
+									<li id="catmenu">
+										<a href="#" class="catmenu-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
+										<ul class="catmenu slideDown topbar-mega-menu shop-mega-menu" style="overflow: hidden; display: none;">
+<!-- 										    	<li class="col-xs-6 col-sm-6 col-md-3 col-lg-2"> -->
+<!-- 										    		<ul> -->
+<!-- 											    		<li><a href="shop-1.html">Men's coats</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Women's coats</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Shos</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Children clothes</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Sport clothes</a></li> -->
+<!-- 										    		</ul> -->
+<!-- 										    	</li> -->
+<!-- 										    	<li class="col-xs-6 col-sm-6 col-md-3 col-lg-2"> -->
+<!-- 										    		<ul> -->
+<!-- 											    		<li><a href="shop-1.html">Women's jewelry</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Belts</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Women's hats</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Watches</a></li> -->
+<!-- 											    		<li><a href="shop-1.html">Gasses</a></li> -->
+<!-- 										    		</ul> -->
+<!-- 										    	</li> -->
 										</ul>
 									</li>
+								
 									<li id="lang">
 												
 												<form class="searchform sidebar-search-form-small">

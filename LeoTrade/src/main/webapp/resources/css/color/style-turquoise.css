@@ -2,6 +2,9 @@ a:hover, .avatar li:hover h3, .avatar li:hover p {
 	color: #4bd0ea !important;
 	text-decoration: none !important;
 }
+#catmenu:hover > ul.catmenu > li > a:hover, #catmenu:hover>a:hover {
+	color: #4bd0ea !important;
+}
 #lang:hover > ul.lang > li > a:hover, #lang:hover>a:hover {
 	color: #4bd0ea !important;
 }
@@ -124,9 +127,9 @@ a:hover, .avatar li:hover h3, .avatar li:hover p {
 .our-banners-description:hover > .our-banners-border > a, .our-banners-description:hover > .our-banners-border > .banners-header {
 	color: #4bd0ea !important;
 }
-.top-bar ul.top-bar-nav li a:hover {
-	color: #4bd0ea;
-}
+/* .top-bar ul.top-bar-nav li a:hover { */
+/* 	color: #4bd0ea; */
+/* } */
 .recent-post-date {
 	color: #4bd0ea;
 }

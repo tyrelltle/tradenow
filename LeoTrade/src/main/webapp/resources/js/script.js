@@ -155,7 +155,18 @@ jQuery.noConflict()( function($){
     });
 	/* and submenu slidedown */
 
-	 	
+	/* catmenu changer */
+	$(document).ready(function(){
+	    $(function () {
+	        $('#catmenu').hover(
+	        function () {
+	            $('.catmenu').slideDown(100);
+	        },
+	        function () {
+	            $('.catmenu').slideUp(150);
+	        });
+	    });
+	 }); 	
 
 	/* lang changer */
 	$(document).ready(function(){

@@ -17,10 +17,24 @@ CategoryList=Backbone.Collection.extend({
 CategoryListView=Backbone.View.extend({
 	initialize:function(){
 	},
+	li_str:"<li class='col-xs-6 col-sm-6 col-md-3 col-lg-2'></li>",
+	liul_str:"<ul></ul>",
 	
 	render:function(){
+		var li=$(this.li_str);
+		var liul=$(this.liul_str);
+		var i=1;
+		var self=this;
 		_.each(this.model.models,function(m){
-			$('#catlis').append(new CategoryListItemView({model:m}).render().el);
+			if(i%5!=0){
+				liul.append(new CategoryListItemView({model:m}).render().el);
+			}else{
+				li.append(liul);
+				$('.catmenu').append(li);
+				li=$(self.li_str);
+				liul=$(self.liul_str);
+			}
+			i++;
 		});
 		return this;
 	}
