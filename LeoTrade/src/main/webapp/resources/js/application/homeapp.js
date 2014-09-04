@@ -19,12 +19,18 @@ AppRouter=Backbone.Router.extend({
 		
 		//init product list
 		app.productList = new ProductList();
-		if($('.searchtxt').val()!="")
+		if($('.searchtxt').val()!=""){
 			app.productList.addsearch($('.searchtxt').val());
-		else if ($('.locsearchtxt').val()!="")
+			$('.searchtxt').attr("class","searchtxt").addClass("likesbtn_cur");
+		}
+		else if ($('.locsearchtxt').val()!=""){
 			app.productList.addlocsearch($('.locsearchtxt').val());
-		else if($('#catid').length>0)
+			$('.locsearchtxt').attr("class","locsearchtxt").addClass("likesbtn_cur");
+		}
+		else if($('#catid').length>0){
 			app.productList.makecategorize($('#catid').val());
+			$('.catmenu-active').attr("class","catmenu-active").addClass("likesbtn_cur");
+		}
 		else if($('#likes').length>0){
 			app.productList.favorilize();
 			$('.likesbtn').attr("class","likesbtn_cur");
@@ -44,6 +50,8 @@ AppRouter=Backbone.Router.extend({
 							app.productList.addlocsearch($('.locsearchtxt').val());
 						else if($('#catid').length>0)
 							app.productList.makecategorize($('#catid').val());
+						else if($('#likes').length>0)
+							return;//likes list is always full list not chuncated into pages
 						var loadmore=document.getElementById('loadmore');
 						app.spinner = new Spinner(optsloadmore).spin(loadmore);
 						app.productList.fetch({remove:false,success:function(){

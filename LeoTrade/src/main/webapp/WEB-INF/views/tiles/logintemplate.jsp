@@ -117,7 +117,7 @@
 														<input type="hidden" name="scope" value="email,user_location" />
 														<a style="font-size:12px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
 															<i class="fa fa-facebook"></i>
-														Sing in with Google</a> 
+														Sing in with Facebook</a> 
 											</form>
 											
 									    </li>
@@ -126,7 +126,7 @@
 									    <form action="<c:url value="/nativelogon" />" method="GET">
 														<a style="font-size:12px" class="c-pointer social social-tradenow" onclick="$(this).closest('form').submit()">
 															<i class="fa fa fa-sign-in"></i>
-																Sing in with Google</a>
+																Normal Signin</a>
 
 										</form>
 									    
