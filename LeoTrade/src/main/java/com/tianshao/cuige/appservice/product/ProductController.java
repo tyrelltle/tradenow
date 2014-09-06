@@ -114,9 +114,8 @@ public class ProductController {
 			AddressConverter a=new AddressConverter();
 			GoogleResponse gres=a.convertToLatLong(key);
 			Location loc=gres.getResults()[0].getGeometry().getLocation();
-			u.setLatitude(Double.valueOf(loc.getLat()));
-			u.setLongitude(Double.valueOf(loc.getLng()));
-	    	List<Product> prods=productRepository.getAllButMe(u,st,ct);
+			
+	    	List<Product> prods=productRepository.getAllButMeByAddr(u,Double.valueOf(loc.getLat()),Double.valueOf(loc.getLng()),st,ct);
 	    	toRodListDTO_like(u,ret, prods);
 	    	return ret;
 	    	

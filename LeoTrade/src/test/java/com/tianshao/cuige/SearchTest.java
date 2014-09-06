@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +14,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tianshao.cuige.domains.product.Category;
 import com.tianshao.cuige.domains.product.Image;
@@ -181,6 +185,40 @@ public class SearchTest{
 		List<Product> lis=productRepository.searchByTitle(u3.getUserid(),"product1",0,100);
 		assertEquals(lis.size(),2);
 		
+	}
+	
+	
+	@Test
+	@Transactional
+	public void testSerachByLocation() throws Exception{
+		
+		Product prod2=new Product();
+		prod2=new Product();
+		prod2.setTitle("product2 product1");
+		prod2.setOwner(u2);
+		prod2.setCategory(cat);
+		productRepository.addNew(prod2);
+		
+		Product prod=new Product();
+		prod.setTitle("product1");
+		prod.setOwner(u1);
+		prod.setCategory(cat);
+		productRepository.addNew(prod);
+		
+
+		
+		Product prod3=new Product();
+		prod3.setTitle("product3");
+		prod3.setOwner(u4);
+		prod3.setCategory(cat);
+		productRepository.addNew(prod3);
+		//prod1 belong u1, prod2 belong u2, prod3 belong to u4 which is far from u1 and u2
+		//test search u1's location, the result is sorted, first elements is prod1,2, last one is prod3
+		List<Product> p =productRepository.getAllButMeByAddr(u3, u1.getLatitude(), u1.getLongitude(), 0, 100);
+		assertTrue(p.get(0).getTitle().equals(prod.getTitle()));
+		assertTrue(p.get(1).getTitle().equals(prod2.getTitle()));
+		assertTrue(p.get(2).getTitle().equals(prod3.getTitle()));
+
 	}
 	
 	@After

@@ -29,7 +29,7 @@ import com.tianshao.cuige.shared.googlegeo.Location;
 @Repository("productRepository")
 
 public class ProductRepository extends BaseRepository implements IProductRepository{
-	private static final int locationrange = 200;
+	private static final int locationrange = 100000;
 	private static final String spatialsql="";
 	@Override
 	@Transactional
@@ -54,6 +54,26 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 	}
 	
 
+	@Override
+	@Transactional
+	public List<Product> getAllButMeByAddr(User curuser, Double lat, Double lng, int limitL, int limitR) throws Exception{
+		Query query = sessionFactory.getCurrentSession()
+		.createSQLQuery("select *, ((6371 * 2 * ASIN(SQRT(POWER(SIN((:ulatitude - abs(latitude)) * pi()/180 / 2),2) +" +
+											"COS(:ulatitude * pi()/180 ) * COS(abs(latitude) * pi()/180) *" +
+											"POWER(SIN((:ulongitude - longitude) * pi()/180 / 2), 2))))*1000) as dist " +
+											"from product where ownerid != "+curuser.getUserid()+" ORDER BY dist asc")
+        .addEntity(Product.class);
+	
+		query.setParameter("ulongitude", lng);
+		query.setParameter("ulatitude", lat);
+		query.setFirstResult(limitL);
+		query.setMaxResults(limitR);
+		
+		return (List<Product>) query.list();
+	}
+
+	
+	
 	@Override
 	@Transactional
 	public List<Product> getByCatId(User curuser, int catid,int st, int ct) {
@@ -208,6 +228,8 @@ public class ProductRepository extends BaseRepository implements IProductReposit
 		Hibernate.initialize(prod.getLikers());
 		return prod;
 	}
+
+
 
 
 

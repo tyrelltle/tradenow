@@ -26,9 +26,9 @@
    <context:component-scan base-package="com.tianshao.cuige" />
    
    
-   
-   
-   	 <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+   <!-- start mail beans -->
+	
+	 <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 	  <beans:property name="host" value="smtp.gmail.com" />
 	  <beans:property name="port" value="587" />
 	  <beans:property name="username" value="tyrelltle@gmail.com" />
@@ -43,7 +43,11 @@
 	   </beans:props>
 	  </beans:property>
 	 </beans:bean>
-	<beans:bean id="mailer" class="com.tianshao.cuige.services.mail.Mailer">
+	<beans:bean id="mailer" class="com.tianshao.cuige.services.mail.RegconfirmMailer">
+	  <beans:property name="mailSender" ref="mailSender" />
+	  <beans:property name="velocityEngine" ref="velocityEngine"/>
+	 </beans:bean>
+	 <beans:bean id="pswmailer" class="com.tianshao.cuige.services.mail.PswResetconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>
@@ -58,6 +62,8 @@
 	        </beans:props>
 	    </beans:property>
 	 </beans:bean>
+	
+	<!-- end mail beans -->
 
    <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>

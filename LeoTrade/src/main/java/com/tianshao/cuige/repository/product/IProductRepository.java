@@ -29,6 +29,9 @@ public interface IProductRepository{
 	public abstract List<Product> getAllButMe(User curuser, int limitL, int limitR)
 			throws Exception;
 
+	public abstract List<Product> getAllButMeByAddr(User curuser, Double lat, Double lng, int limitL, int limitR)
+			throws Exception;
+	
 	public abstract void update(IEntity ownerPro);
 
 	public abstract Category getCategory(int catid);
