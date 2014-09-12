@@ -2488,6 +2488,7 @@ p.price-range > .button-green {
   margin-top: 25px;
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid #DCDCDC;
 }
 .blog-item-top {
   margin-top: 0;
@@ -2683,6 +2684,15 @@ p.price-range > .button-green {
   background-image: url('../img/blog/quote.png');
   background-repeat: no-repeat;
   background-position: 95% 10%;
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
+.blog-item-quote2 {
+  background-image: url('../img/blog/quote.png');
+  background-repeat: no-repeat;
+  background-position: 0% 10%;
   margin-top: 25px;
   padding: 20px;
   border: 1px solid #dcdcdc;

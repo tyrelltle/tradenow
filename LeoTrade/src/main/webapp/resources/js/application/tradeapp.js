@@ -16,6 +16,11 @@ AppRouter=Backbone.Router.extend({
 		});
 		
 		$('#msgbtn').click(function(){
+			if($('#tradeid').val()=="0"){
+				$('#msgholder').attr("class","alert alert-success");
+				$('#msg').html('Please propose an item in your backlog before sending message to the user!');
+				return false;
+			}
 			app.msgsend();
 		})
 		

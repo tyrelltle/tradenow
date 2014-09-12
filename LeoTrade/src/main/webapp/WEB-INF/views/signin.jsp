@@ -13,6 +13,9 @@
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
 		
 		<style>
+		.letestrade{
+		width:100%;
+		}
 		.step{
 		margin-top:56px;
 		}
@@ -321,8 +324,8 @@
 				      </p>    
 				  	</div><!--/col-->
 					 <div class="row">
-					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/letstrade.jpg" class="img-responsive"></div>
-					</div>
+					  <div class="col-lg-10"><img class="letestrade wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/letstrade.jpg" class="img-responsive"></div>
+					</div> 
 			     <!-- and Step Two -->
 			     <!-- Step Three -->
 				  	 <div class="step col-md-12 col-sm-12 col-xs-12 col-xs-small">

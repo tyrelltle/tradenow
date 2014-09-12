@@ -4,8 +4,21 @@
         window.location.hash = '';
     }
 $(document).ready(function() {       		  
-    	
-    	
+    			var origtourbtnleft=$('#tourbtn').position().left;
+    			$('#tourbtn').hover(
+    				function(){
+    					$('#tourbtn').animate({
+    					    left: "0px"
+    					  }, 500 );
+    					
+    				},
+    				function(){
+    					$('#tourbtn').animate({
+    					    left: origtourbtnleft
+    					  }, 500 );
+    					
+    				}
+    			);
 				/* toggle layout */
 				$('#btnToggle').click(function(){
 					if ($(this).hasClass('on')) {

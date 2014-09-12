@@ -12,9 +12,7 @@
 				<style>
 				/* CSS used here will be applied after bootstrap.css */
 				.btnsubmit{
-				margin-left:-12px;
 				margin-top:10px;
-				border-radius:20px;
 				}
 				.midblock{
 				margin-top:45px;
@@ -89,7 +87,7 @@
 			      			<input id="srvrmsg" type="hidden" value="${msg}"/>
 			    		</c:if>
 				    <div id="block" class="panel col-md-12">
-				        <div id="userpanel" class="sidepanel col-md-2">
+				        <div id="userpanel" class="sidepanel col-md-2 col-sm-2 col-xs-2">
 				             <ul class="list-group">
 				              <li class="list-group-item">
 									<p class="fromusernm">${trade.prod1.owner.firstname} ${trade.prod1.owner.lastname}</p>
@@ -112,16 +110,14 @@
 				              
 				            </ul>
 				      	</div>
-				        <div class="midblock col-md-7">
-				            <div class="midcontainer container">
+				        <div class="midblock col-md-7 col-sm-7 col-xs-7">
 				                <div id="two_prod_row" class="row">
-				                    <div id="prod_left" class="col-md-5">
+				                    <div id="prod_left" class="col-md-5 col-sm-5 col-xs-5">
 				                    	<p id="prod1title">${trade.prod1.title}</p>
 				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">
 				                    </div>
-				                    <div class="col-md-2" style="margin-top:40px">
-				                        <button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-transfer"></span> 
-				                        </button>
+				                    <div class="col-md-2 col-sm-2 col-xs-2" style="margin-top:40px">
+				                        <img class="col-md-12 col-sm-12 col-xs-12" src="${pageContext.request.contextPath}/resources/img/twoarrow.png"/>
 		                         		<input type="hidden" id="tradeid" value="${trade.trade_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod1id" value="${trade.prod1.prod_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>	
@@ -130,11 +126,11 @@
 		                         					                         		
 		                         		<input type="hidden" id="side" value="${side}" placeholder="Last name"/>
 		                         						                         			
-		                       			<button type="submit" id="btnpropose" style="border-radius: 20px" class="btnsubmit btn btn-success">Propose!</button>
-				                        <button type="button" id="btnaccepted" style="width:100%;margin-top: 5px;margin-left: -4px;border-radius: 20px" class="btn btn-success">Accept!</button>
+		                       			<button type="submit" id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success">Propose!</button>
+				                        <button type="button" id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
 				                        
 				                    </div>
-				                    <div id="prod_right" class="col-md-5">
+				                    <div id="prod_right" class="col-md-5 col-sm-5 col-xs-5">
 				                    	<p>${trade.prod2.title}</p>
 				                        <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod2.thumurl}">
 				                    </div>
@@ -189,9 +185,8 @@
 				                     </div>
 				                   </div>
 				                </div>
-				            </div>
 				        </div>
-				    	<div id="userpanel" class="sidepanel upblock col-md-2">
+				    	<div id="userpanel" class="sidepanel upblock col-md-2 col-sm-2 col-xs-2">
 				      		<ul class="list-group">
 				              <li class="list-group-item">
 				              		<p class="tousernm">${trade.prod2.owner.firstname} ${trade.prod2.owner.lastname}</p>
@@ -302,20 +297,20 @@
 			</script>
 			
 	 		<script type="text/template" id="msglisitemtmp1">			
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-2">
 	                 <img alt="pic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/{{imgurl}}">
 	            </div>
-				<div class="message_body col-md-7">
+				<div class="message_body col-md-8 col-sm-8 col-xs-8">
 		             <div class="msgdate">{{date}}</div>
-		             <div class="well well-sm">
+		             <div class="blog-item-quote2">
 		                 {{message}}
 		             </div>
 	            </div>     
 			</script>
 			<script type="text/template" id="msglisitemtmp2">			
-				<div class="message_body col-md-offset-2 col-md-7">
+				<div class="message_body col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8">
 		             <div class="msgdate">{{date}}</div>
-		             <div class="well well-sm">
+		             <div class="blog-item-quote">
 		                 {{message}}
 		             </div>
 	            </div> 

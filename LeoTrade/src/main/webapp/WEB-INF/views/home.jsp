@@ -24,7 +24,7 @@
 	    		width:200px;
 	    	}
 	    	.modallg{
-	    		width:1024px;
+	    		width:60%;
 	    	}
 			.masonryitem{
 				margin: 0px;

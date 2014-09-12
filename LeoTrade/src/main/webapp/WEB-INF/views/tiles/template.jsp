@@ -43,6 +43,7 @@
 
 	<!-- Bootstrap Grid Framework -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-tour.css" />
 
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='${pageContext.request.contextPath}/resources/text/css'>
@@ -80,8 +81,8 @@
 	
 
 	<div id="wrap">
-
-
+		<!-- Tour toggle button  -->
+		<div id="tourbtn" style="position: fixed;top: 50%;left:-33px"><button>wowow</button></div>
 		<!-- Top bar -->
 			<!-- Top bar -->
 		<header>
@@ -151,7 +152,7 @@
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<ul class="menu top-bar-nav list-inline pull-left">
 									<li id="catmenu">
-										<a href="#" class="catmenu-active"><i class="fa fa-globe"></i> By Categories <i class="fa fa-angle-down"></i></a>
+										<a href="#" class="catmenu-active"><i class="fa fa-globe"></i>Category<i class="fa fa-angle-down"></i></a>
 										<ul class="catmenu slideDown topbar-mega-menu shop-mega-menu" style="overflow: hidden; display: none;">
 <!-- 										    	<li class="col-xs-6 col-sm-6 col-md-3 col-lg-2"> -->
 <!-- 										    		<ul> -->
@@ -173,7 +174,8 @@
 <!-- 										    	</li> -->
 										</ul>
 									</li>
-								
+									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
+									</li>
 									<li id="lang">
 												
 												<form class="searchform sidebar-search-form-small">
@@ -208,8 +210,7 @@
 			
 												</form>
 									</li>
-									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
-									</li>
+									
 									
 									
 
@@ -301,6 +302,7 @@
 
 	<!-- Bootstrap Plagins -->
 	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap-tour.js"></script>
 
 	<!-- Dropdown menu if screen < 650px -->
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.min.js"></script>
@@ -324,6 +326,7 @@
 	
 	<!-- Other scripts -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/application/tour.js"></script>
 
 
 </body>
