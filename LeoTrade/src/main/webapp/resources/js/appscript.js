@@ -3,22 +3,25 @@
     if (window.location.hash && window.location.hash == '#_=_') {
         window.location.hash = '';
     }
-$(document).ready(function() {       		  
-    			var origtourbtnleft=$('#tourbtn').position().left;
-    			$('#tourbtn').hover(
-    				function(){
-    					$('#tourbtn').animate({
-    					    left: "0px"
-    					  }, 500 );
-    					
-    				},
-    				function(){
-    					$('#tourbtn').animate({
-    					    left: origtourbtnleft
-    					  }, 500 );
-    					
-    				}
-    			);
+$(document).ready(function() {
+                if($('#tourbtn').length>0) {
+                    var origtourbtnleft = $('#tourbtn').position().left;
+                    $('#tourbtn').hover(
+                        function () {
+                            $('#tourbtn').animate({
+                                left: "0px"
+                            }, 500);
+
+                        },
+                        function () {
+                            $('#tourbtn').animate({
+                                left: origtourbtnleft
+                            }, 500);
+
+                        }
+                    );
+
+                }
 				/* toggle layout */
 				$('#btnToggle').click(function(){
 					if ($(this).hasClass('on')) {

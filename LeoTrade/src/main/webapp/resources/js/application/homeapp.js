@@ -67,7 +67,7 @@ AppRouter=Backbone.Router.extend({
 				app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 				imagesLoaded( app.container, function() {
 					iwait.hidePleaseWait();
-					TourManager.startHomeTour();
+					TourManager.startHomeTour(false);
 					$('#prodlist').show();
 					app.msnry= new Masonry( app.container,{itemSelector: '.masonryitem'});
 					app.msnry.layout();

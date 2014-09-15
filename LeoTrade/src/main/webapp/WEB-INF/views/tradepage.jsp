@@ -70,8 +70,15 @@
 </tiles:putAttribute>
 <tiles:putAttribute name="main">
 
-				
 
+                <!-- Tour toggle button  -->
+                <div id="tourbtn"><button>Take A Tour<i class="fa fa-question-circle"></i></button></div>
+                <script>
+                    $('#tourbtn').click(function () {
+                                TourManager.startTradeTour(true);
+                            }
+                    );
+                </script>
 				<div class="container">
 			      		<div id="msgholder" class="hid">
 			      			<div class="row">

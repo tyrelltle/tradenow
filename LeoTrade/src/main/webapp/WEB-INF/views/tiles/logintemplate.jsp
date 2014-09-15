@@ -209,9 +209,7 @@
 	<!-- Layout Style -->
 	<script src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
 	
-	<!-- Application Domain scripts -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/appscript.js"></script>
-	
+
 	<!-- Other scripts -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
   	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->

@@ -61,6 +61,15 @@
 	<tiles:putAttribute name="left">
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
+
+        <!-- Tour toggle button  -->
+        <div id="tourbtn"><button>Take A Tour<i class="fa fa-question-circle"></i></button></div>
+        <script>
+            $('#tourbtn').click(function () {
+                        TourManager.startHomeTour(true);
+                    }
+            );
+        </script>
    			<c:if test="${not empty catid}">
       			<input id="catid" type="hidden" value="${catid}"/>
     		</c:if>
@@ -112,7 +121,7 @@
 			
 	 		<script type="text/template" id="prodlistitemtmp">
 								<div class="blog-item">
-									<img alt="" class="btn_detail" src="{{thumurl}}">
+									<img alt="" id="btn_detail" class="btn_detail" src="{{thumurl}}">
 									<div class="blog-item-description">
 										<h3>{{title}}</h3>
 										<div class="row">
@@ -126,7 +135,7 @@
 
 										</div>
 										<a class="btn_detail more">Keep reading <i class="fa fa-angle-right"></i></a>
-										<a><i class="glyphicon glyphicon-heart btnunlike"></i></a>
+										<a id="likebtn"><i class="glyphicon glyphicon-heart btnunlike"></i></a>
 									</div>
 								</div>
 								<div class="bottom-border">

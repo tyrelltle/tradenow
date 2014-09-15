@@ -81,8 +81,6 @@
 	
 
 	<div id="wrap">
-		<!-- Tour toggle button  -->
-		<div id="tourbtn" style="position: fixed;top: 50%;left:-33px"><button>wowow</button></div>
 		<!-- Top bar -->
 			<!-- Top bar -->
 		<header>
@@ -174,11 +172,13 @@
 <!-- 										    	</li> -->
 										</ul>
 									</li>
-									<li><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
+                                    <li id="additembtn"><a href="${pageContext.request.contextPath}/user#prodlis"><i class="fa fa-plus-circle"></i>Add Item</a>
+                                    </li>
+									<li id="tolikesbtn"><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
 									</li>
 									<li id="lang">
 												
-												<form class="searchform sidebar-search-form-small">
+												<form id="searchform" class="searchform sidebar-search-form-small">
 												  <c:choose>
 												      <c:when test="${not empty searchkey}">
 												           <input type="text" class="searchtxt" value="${searchkey}">   			
@@ -194,7 +194,7 @@
 									
 									<li id="lang">
 												
-												<form class="searchform sidebar-search-form-small">
+												<form id="locform" class="searchform sidebar-search-form-small">
 												  <c:choose>
 												      <c:when test="${not empty location}">
 												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" value="${location}">   			
