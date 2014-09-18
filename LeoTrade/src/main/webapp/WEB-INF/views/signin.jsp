@@ -130,8 +130,8 @@
 								data-start="150"
 								data-speed="600"
 								data-x="600"
-								data-y="-46">
-							<img src="${pageContext.request.contextPath}/resources/img/rev_slider/pad.png" alt="">
+								data-y="0">
+							<img src="${pageContext.request.contextPath}/resources/img/logo/logo.png" alt="">
 							</div>
 
 						</li>

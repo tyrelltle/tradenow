@@ -92,18 +92,24 @@
 						<div class="row">
 
 
-							<div class="col-md-2 col-sm-2 col-xs-2">
+							<div class="col-md-3 col-sm-3 col-xs-3">
 								<!-- Your logo -->
 								<div class="logo">
 									<a href="${pageContext.request.contextPath}/home">
 <%-- 										<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"> --%>
-										<h1>Barbarian</h1>
+										<h1 style="float:left">Barbarian</h1>
+
 									</a>
+                                    <img alt="" src="${pageContext.request.contextPath}/resources/img/logo/logo.png" style="
+                                        width: 107px;
+                                        float: right;
+                                        top:0;
+                                        position: fixed;">
 								</div>
 								<!-- and Your logo -->
 							</div>
 							
-							<div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="col-md-9 col-sm-9 col-xs-9">
 								
 								<div class="menu-container">
 									

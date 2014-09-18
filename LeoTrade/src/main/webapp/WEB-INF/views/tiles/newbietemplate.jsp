@@ -90,15 +90,22 @@
 						<div class="row">
 
 
-							<div class="col-md-4 col-sm-4 col-xs-4">
-								<!-- Your logo -->
-								<div class="logo">
-									<a href="${pageContext.request.contextPath}/home">
-<%-- 										<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"> --%>
-										<h1>Barbarian</h1>
-									</a>
-								</div>								<!-- and Your logo -->
-							</div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <!-- Your logo -->
+                                <div class="logo">
+                                    <a href="${pageContext.request.contextPath}/home">
+                                        <%-- 										<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"> --%>
+                                        <h1 style="float:left">Barbarian</h1>
+
+                                    </a>
+                                    <img alt="" src="${pageContext.request.contextPath}/resources/img/logo/logo.png" style="
+                                        width: 107px;
+                                        float: right;
+                                        top:0;
+                                        position: fixed;">
+                                </div>
+                                <!-- and Your logo -->
+                            </div>
 							
 							<div class="col-md-5 col-sm-5 col-xs-5">
 								<h2 style="margin: 1px !important;">Complete your profile</h2>
