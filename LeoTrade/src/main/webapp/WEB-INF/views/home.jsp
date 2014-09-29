@@ -203,7 +203,7 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-   
+
   </div>
 
   <!-- Controls -->
@@ -217,12 +217,12 @@
 
 						</div>
 					</div>
-				
+
 			   </div> <!-- img holder-->
 			 </div><!-- main content holder-->
-			      
+
 	 		</script>
-	 		
+
 	 		<script type="text/template" id="imglistitemtmp">
 	<div class="item active">
       <img class="galimg" src="{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
@@ -239,21 +239,40 @@
       </div>
     </div>
 			</script>
-	<!--end bootstrap templates--> 	
-	
-	
-	
-						
-	
-	
-		
-	<!--start bootstrap dependencies-->	
+	<!--end bootstrap templates-->
+
+
+
+
+
+
+
+	<!--start bootstrap dependencies-->
 			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
-			 
+
 			 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/homeapp.js"></script>
 
-			 
+
 	<!--end bootstrap dependencies-->
+
+        <!--Translation-->
+        <script type="text/javascript">
+            i18n.init({
+                        lng: 'zh',
+                        fallbackLng: false,
+                        load:'unspecific',
+                        resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
+                        ns: {
+                            namespaces: ['translation'],
+                            defaultNs: 'translation'
+                        }
+                    }, function(){
+                        $("#home").i18n();
+
+
+                    }
+            );
+        </script>
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>

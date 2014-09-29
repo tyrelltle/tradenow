@@ -199,8 +199,27 @@ ProductListItemView=Backbone.View.extend({
 			  url: ctx+"api/product/like/"+this.model.get("prod_id")
 			})
 			  .done(function( msg ) {
-					$(self.el).find('.btnunlike').attr("class","glyphicon glyphicon-heart btnlike"); 
-			  });	
+                $(self.el).find('.btnunlike').attr("class","glyphicon glyphicon-heart btnlike");
+
+                var clonedheart=$(self.el).find('.btnlike').clone();
+                clonedheart.offset({top:$(self.el).find('.btnlike').offset().top,
+                                    left:$(self.el).find('.btnlike').offset().left});
+                clonedheart.css({'position':'absolute',
+                                 'font-size':'50px'});
+                clonedheart.appendTo($('body'));
+
+                clonedheart.animate({
+                        left:$('#tolikesbtn .likesbtn i').offset().left,
+                        top:$('#tolikesbtn .likesbtn i').offset().top
+                    });
+                clonedheart.animate({
+                    fontSize:'0px',
+                    opacity:0.5
+                },function(){
+                    $(this).detach();
+                });
+
+            });
 	},
 	unlike:function(){
 		var self=this;

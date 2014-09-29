@@ -71,8 +71,9 @@
 	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
-	
-	
+
+    <!--Internationalization-->
+    <script src="${pageContext.request.contextPath}/resources/js/i18next-1.7.4.js"></script>
 	<tiles:insertAttribute name="header" />
 
 </head>
@@ -119,7 +120,7 @@
 									<ul id="menu">
 									    <li>
 									    	<a href="${pageContext.request.contextPath}/home">
-									    		Home<i class="header_glyph glyphicon glyphicon-home"></i>
+									    		<span id="home" data-i18n="app.home">Home</span><i class="header_glyph glyphicon glyphicon-home"></i>
 									    	</a>
 									    </li>
 									    <li class="linotiflis">

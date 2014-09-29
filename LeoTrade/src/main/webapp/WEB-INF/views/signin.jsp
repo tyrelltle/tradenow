@@ -60,7 +60,7 @@
 								data-endspeed="900"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p class="upp" >Welcome to <b>Barbarian Network!</b></p>
+								><p class="upp" ><span data-i18n="app.welcome" class="translatee">Welcome to </span><b data-i18n="app.barbarian" class="translatee">Barbarian Network!</b></p>
 							</div>
 
 							<!-- LAYER 2 -->
@@ -119,7 +119,7 @@
 								data-endspeed="500"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p class="slide_text_hide_768" >Wanna go back to the old age with no currency concept?</p>
+								><p data-i18n="app.gobackstone" class="translatee slide_text_hide_768" >Wanna go back to the old age when there was no concept of currency?</p>
 							</div>
 
 							<!-- LAYER 7 -->
@@ -161,7 +161,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
-							<h2 class="wow fadeIn">Let us introduce our best bartering app!</h2>
+							<h2 class="translatee wow fadeIn" data-i18n="app.intro_best">Let us introduce our best bartering app!</h2>
 						
 							<p class="wow fadeIn" data-wow-delay="0.8s">Trade-Now.ca is an online bartering system,
 							focusing on making it easier for people to exchange their stuffs with other people. Our
@@ -347,5 +347,8 @@
 				</div><!--/container-->
 				</div>
 		</section><!-- and Tutorial -->
+
+
+
 	</tiles:putAttribute>
 </tiles:insertDefinition>

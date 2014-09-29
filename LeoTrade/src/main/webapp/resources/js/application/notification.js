@@ -15,14 +15,29 @@ NotificationListView=Backbone.View.extend({
 	
 	render:function(){
 		var self=this;
-		if(this.model.length>0)
-			$('.notibell').attr("style","color:red");
-		else
-			$('.notiflis').html("No new notification");
+
+        //only render the notifications with url that user is not currently viewing
+
+        var dellist=[]
 		_.each(this.model.models,function(m){
-			$('.notiflis').append(new NotificationListItemView({model:m}).render().el);
-		});
-		
+            if(document.URL.indexOf(m.get('url'))!=-1) {
+                dellist.push(m);
+            }
+            else {
+                $('.notiflis').append(new NotificationListItemView({model: m}).render().el);
+            }
+        });
+		//for notifications whose url is currently being viewed by user, remove them just as user clicked them manually
+        for(i =0; i < dellist.length;i++){
+            dellist[i].destroy({wait:true});
+        }
+
+        if(this.model.length>0&&this.model.length!=dellist.length)
+            $('.notibell').attr("style","color:red");
+        else
+            $('.notiflis').html("No new notification");
+
+
 		return this;
 	}
 	

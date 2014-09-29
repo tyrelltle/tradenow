@@ -72,7 +72,8 @@
 	<script src="${pageContext.request.contextPath}/resources/js/application/iwait.js"></script>
 	<!--Preaty Photo-->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" type="text/css"/>
-	
+	<!--Internationalization-->
+    <script src="${pageContext.request.contextPath}/resources/js/i18next-1.7.4.js"></script>
 	<tiles:insertAttribute name="header" />
 
 </head>
@@ -123,7 +124,7 @@
 														<input type="hidden" name="scope" value="email,user_location" />
 														<a style="font-size:12px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
 															<i class="fa fa-facebook"></i>
-														Sing in with Facebook</a> 
+														<span class="translatee" id="fb_signon" data-i18n="app.fb_login">Sing in with Facebook</span></a>
 											</form>
 											
 									    </li>
@@ -132,7 +133,7 @@
 									    <form action="<c:url value="/nativelogon" />" method="GET">
 														<a style="font-size:12px" class="c-pointer social social-tradenow" onclick="$(this).closest('form').submit()">
 															<i class="fa fa fa-sign-in"></i>
-																Normal Signin</a>
+																<span class="translatee" id="normal_signon" data-i18n="app.bar_login"> Normal Signin</span></a>
 
 										</form>
 									    
@@ -149,7 +150,7 @@
 				</div> <!-- and header -->
 
 			</nav> <!-- and Dropdown menu -->
-			
+
 		</header> <!-- and header -->
 
 
@@ -186,8 +187,31 @@
 		<a href="#" class="back-to-top"></a>
 
 	</div> <!-- and wrap -->
-	
 
+    <!--Langurage selection modal-->
+    <div id="lngModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="myModalLabel">Choose Your Langurage | &#35831;&#36873;&#25321;&#26174;&#31034;&#35821;&#35328;</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button id="btn_en" data-lng="en" class="lngbtn btn">English</button>
+
+                        </div>
+                        <div class="col-md-6">
+                            <button id="btn_ch" data-lng="zh" class="lngbtn btn">&#20013;&#25991;</button>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 	
   	<!-- Modernizr -->
 	<script src="${pageContext.request.contextPath}/resources/js/modernizr.js"></script>
@@ -222,7 +246,41 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.plugins.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.revolution.min.js"></script>
 
-	
+    <!--Translation-->
+    <script type="text/javascript">
+
+        $('#lngModal').modal('show');
+
+
+        $('.lngbtn').click(
+                function() {
+                    i18n.init({
+                                lng:  $(this).attr('data-lng'),
+                                fallbackLng: false,
+                                load:'unspecific',
+                                resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
+                                ns: {
+                                    namespaces: ['translation'],
+                                    defaultNs: 'translation'
+                                }
+                            }, function(){
+                                $('.translatee').each(function(){
+                                            $(this).i18n();
+                                        }
+                                );
+                            }
+                    );
+                    $('#lngModal').modal('hide');
+
+                }
+        );
+
+
+
+
+
+
+    </script>
     <!-- REVOLUTION SLIDER -->
 	<script type="text/javascript">
 		var revapi;
@@ -233,7 +291,7 @@
 					startwidth:1350,
 					startheight:588,
 					hideThumbs:10,
-					fullWidth:"on",
+					fullWidth:"on"
 				});
 
 		});	//ready

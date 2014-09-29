@@ -33,7 +33,12 @@ AppRouter=Backbone.Router.extend({
 			
 			alert($('#srvrmsg').val());
 		}
-		this.initstatus($('#status1').val(),$('#status2').val());
+        $('#method1').val($('#h_method1').val());
+        $('#method2').val($('#h_method2').val());
+        $('#method1,#method2').change(function(){
+            $('#btnpropose,#btnaccepted').attr("disabled",false);
+        });
+        this.initstatus($('#status1').val(),$('#status2').val());
 	},
 	start:function(){
 		//not put in initialize() because at that time app is not defined yet
@@ -59,16 +64,22 @@ AppRouter=Backbone.Router.extend({
 		app.messageList.create(message,{success:app.start});
 	},
 	initstatus:function(status1,status2){
+        //if user is trader, and status1 is accepted, disable accept button
 		if(status1=="PENDING"){
 			$('#label_status1').attr("class","label label-warning");
 		}else if(status1=="ACCEPTED"){
 			$('#label_status1').attr("class","label label-success");
+            if($('#side').val() == "FROM")
+                $('#btnaccepted').attr("disabled",true);
 		}
-		$('#label_status1').html(status1);
+        //if user is tradee, and status2 is accepted, disable accept button
+        $('#label_status1').html(status1);
 		if(status2=="PENDING"){
 			$('#label_status2').attr("class","label label-warning");
 		}else if(status2=="ACCEPTED"){
 			$('#label_status2').attr("class","label label-success");
+            if($('#side').val() == "TO")
+                $('#btnaccepted').attr("disabled",true);
 		}
 		$('#label_status2').html(status2);
 		if(status1==status2 && status1=='ACCEPTED'){
@@ -78,6 +89,10 @@ AppRouter=Backbone.Router.extend({
 				$('#msgholder').attr("class","hid");
 			});
 		}
+        //final principle, if product1 (when user is trader) or product2 (otherwise) is not selected, disabled accept button
+        if(($('#side').val() == "TO" && $('#prod2id').val()=="-1")||
+           ($('#side').val() == "FROM" && $('#prod1id').val()=="-1") )
+            $('#btnaccepted').attr("disabled",true);
 
 	},
 	routes:{
@@ -141,12 +156,21 @@ AppRouter=Backbone.Router.extend({
 		$('#leftprodpic').attr("src", ctx+prod.get("thumurl"));
 		$('#prod1id').val(prod_id);
 		$('#prodlismodel').modal('hide');
-		app.navigate("",true);
+        $('#btnpropose').attr('disabled',false);
+        $('#btnaccepted').attr('disabled',false);
+
+        app.navigate("",true);
 
 	},
 	
 	proposed:function(){
-		$.ajax({
+        var newmethod;
+        if($('#side').val()=="FROM")
+            newmethod=$('#method1').val();
+        else
+            newmethod=$('#method2').val();
+
+        $.ajax({
 			  type: "POST",
 		      contentType: "application/json",
 		      dataType: "json",
@@ -155,7 +179,7 @@ AppRouter=Backbone.Router.extend({
 				  	  prod1id: $('#prod1id').val(), 
 				  	  prod2id: $('#prod2id').val(),
 				  	  side:$('#side').val(),
-				  	  method: "", 
+				  	  method: newmethod,
 				  	  msg: "", 
 				  	  msgtype: ""})
 			})
@@ -163,6 +187,7 @@ AppRouter=Backbone.Router.extend({
 					var jstr=JSON.stringify(msg);
 					var jsn=jQuery.parseJSON(jstr);
 					if(jsn.msgtype=="suc"){
+                        $('#btnpropose').attr('disabled',true);
 						$('#msgholder').attr("class","alert alert-success");
 						$('#msg').html(jsn.msg);
 						$('.msgdismiss').click(function(){
@@ -191,7 +216,8 @@ AppRouter=Backbone.Router.extend({
 					var jstr=JSON.stringify(msg);
 					var jsn=jQuery.parseJSON(jstr);
 					if(jsn.msgtype=="suc"){
-						if(jsn.status1==jsn.status2 & jsn.status1=="ACCEPTED"){
+                        $('#btnaccepted').attr('disabled',true);
+                        if(jsn.status1==jsn.status2 & jsn.status1=="ACCEPTED"){
 							$('#dealdone').modal({show:true});
 						}else{
 							$('#msgholder').attr("class","alert alert-success");

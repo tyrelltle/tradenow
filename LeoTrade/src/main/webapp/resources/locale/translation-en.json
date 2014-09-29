@@ -1,0 +1,11 @@
+{
+    "app": {
+        "fb_login": "Facebook Logon",
+        "bar_login":"Email Logon",
+        "home":"Home",
+        "welcome":"Welcome To ",
+        "barbarian":"Barbarian Network!",
+        "gobackstone":"Wanna go back to the old age when there was no concept of currency?",
+        "intro_best":"Let us introduce our best bartering app!"
+    }
+}

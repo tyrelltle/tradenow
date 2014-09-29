@@ -62,6 +62,11 @@
 				.msgdate{
 					margin-left:125px;
 				}
+                #msgholder{
+                    width: 587px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
 				</style>
 </tiles:putAttribute>
 
@@ -109,9 +114,21 @@
 				              </li>
 				              <li class="list-group-item">
 				                Delivery Method
-				                  <select class="form-control">
-				                    <option>In Person</option>
-				                  </select> 
+
+                                  <c:choose>
+                                      <c:when test="${side=='FROM'}">
+                                          <select id="method1" class="form-control">
+                                              <option>N/A</option>
+                                              <option>In Person</option>
+                                              <option>Mail</option>
+                                              <option>Delivery</option>
+                                          </select>
+                                      </c:when>
+
+                                      <c:otherwise>
+                                          <label id="method1" class="form-control"  > ${trade.method1}</label>
+                                      </c:otherwise>
+                                  </c:choose>
 				               
 				              </li>
 				              
@@ -129,11 +146,13 @@
 		                         		<input type="hidden" id="prod1id" value="${trade.prod1.prod_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>	
 		                         		<input type="hidden" id="status1" value="${trade.status1}" placeholder="Last name"/>				                         		
-		                         		<input type="hidden" id="status2" value="${trade.status2}" placeholder="Last name"/>				                         		
-		                         					                         		
-		                         		<input type="hidden" id="side" value="${side}" placeholder="Last name"/>
+		                         		<input type="hidden" id="status2" value="${trade.status2}" placeholder="Last name"/>
+                                        <input type="hidden" id="h_method1" value="${trade.method1}" placeholder="Last name"/>
+                                        <input type="hidden" id="h_method2" value="${trade.method2}" placeholder="Last name"/>
+
+                                        <input type="hidden" id="side" value="${side}" placeholder="Last name"/>
 		                         						                         			
-		                       			<button type="submit" id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success">Propose!</button>
+		                       			<button type="submit" id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success" disabled>Propose!</button>
 				                        <button type="button" id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
 				                        
 				                    </div>
@@ -205,11 +224,24 @@
 				              
 				              <li class="list-group-item">
 				                Delivery Method
-				                  <select class="form-control">
-				                    <option>In Person</option>
-				                  </select> 
-				               
-				              </li>
+
+                                  <c:choose>
+                                      <c:when test="${side=='TO'}">
+                                          <select id="method2" class="form-control">
+                                              <option>N/A</option>
+                                              <option>In Person</option>
+                                              <option>Mail</option>
+                                              <option>Delivery</option>
+                                          </select>
+                                      </c:when>
+
+                                      <c:otherwise>
+                                          <label id="method2" class="form-control"  > ${trade.method2} </label>
+                                      </c:otherwise>
+                                  </c:choose>
+
+
+                              </li>
 				              
 				            </ul>
 				      
@@ -421,14 +453,7 @@
 	 		</script>
 	<!--end bootstrap templates--> 	
 	
-	
-		
-	
-	
-						
-	
-	
-		
+
 	<!--start bootstrap dependencies-->	
 				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/trademessage.js"></script>
 	
