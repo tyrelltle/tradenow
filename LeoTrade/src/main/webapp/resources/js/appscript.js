@@ -4,6 +4,22 @@
         window.location.hash = '';
     }
 $(document).ready(function() {
+                i18n.init({
+                        fallbackLng: false,
+                        load: 'unspecific',
+                        resGetPath: ctx+"resources/locale/__ns__-__lng__.json",
+                        ns: {
+                            namespaces: ['translation'],
+                            defaultNs: 'translation'
+                        }
+                    }, function () {
+                        $('.translatee').each(function () {
+                                $(this).i18n();
+                            }
+                        );
+                    }
+                );
+
                 if($('#tourbtn').length>0) {
                     var origtourbtnleft = $('#tourbtn').position().left;
                     $('#tourbtn').hover(

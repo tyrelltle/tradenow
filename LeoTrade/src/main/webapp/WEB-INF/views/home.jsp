@@ -258,7 +258,7 @@
         <!--Translation-->
         <script type="text/javascript">
             i18n.init({
-                        lng: 'zh',
+                        //lng: 'zh',
                         fallbackLng: false,
                         load:'unspecific',
                         resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",

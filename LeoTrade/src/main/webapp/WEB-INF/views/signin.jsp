@@ -60,7 +60,7 @@
 								data-endspeed="900"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p class="upp" ><span data-i18n="app.welcome" class="translatee">Welcome to </span><b data-i18n="app.barbarian" class="translatee">Barbarian Network!</b></p>
+								><p class="upp" ><span data-i18n="signin.welcome" class="translatee">Welcome to </span><b data-i18n="signin.barbarian" class="translatee">Barbarian Network!</b></p>
 							</div>
 
 							<!-- LAYER 2 -->
@@ -119,7 +119,7 @@
 								data-endspeed="500"
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
-								><p data-i18n="app.gobackstone" class="translatee slide_text_hide_768" >Wanna go back to the old age when there was no concept of currency?</p>
+								><p data-i18n="signin.gobackstone" class="translatee slide_text_hide_768" >Wanna go back to the old age when there was no concept of currency?</p>
 							</div>
 
 							<!-- LAYER 7 -->
@@ -161,9 +161,9 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
-							<h2 class="translatee wow fadeIn" data-i18n="app.intro_best">Let us introduce our best bartering app!</h2>
+							<h2 class="translatee wow fadeIn" data-i18n="signin.intro_best">Let us introduce our best bartering app!</h2>
 						
-							<p class="wow fadeIn" data-wow-delay="0.8s">Trade-Now.ca is an online bartering system,
+							<p class="translatee wow fadeIn" data-wow-delay="0.8s" data-i18n="signin.intro_best_long">Trade-Now.ca is an online bartering system,
 							focusing on making it easier for people to exchange their stuffs with other people. Our
 							system provide the best user experience for managering your unwanted stuff in your backlog,
 							browsing other users' stuffs which are posted on public wall, and user-to-user
@@ -173,16 +173,16 @@
 							<div class="features-list-block">
 								<ul class="features-list features-list-left">
 									<li class="wow fadeInUp">
-										<i class="fa fa-angle-right"></i>Supports facebook signon
+										<i class="fa fa-angle-right"></i><span class="translatee"  data-i18n="signin.fb_support">Supports facebook signon</span>
 									</li>
 									<li class="wow fadeInUp" data-wow-delay=".2s">
-										<i class="fa fa-angle-right"></i>User friendly interface
+										<i class="fa fa-angle-right"></i><span class="translatee" data-i18n="signin.userfriendly">User friendly interface</span>
 									</li>
 									<li class="wow fadeInUp" data-wow-delay=".4s">
-										<i class="fa fa-angle-right"></i>All-In-One user collaboration,trading transaction interface
+										<i class="fa fa-angle-right"></i><span class="translatee" data-i18n="signin.allinone">All-In-One user collaboration,trading transaction interface</span>
 									</li>
 									<li class="wow fadeInUp" data-wow-delay=".6s">
-										<i class="fa fa-angle-right"></i>Easy to find the nearest users' posted items
+										<i class="fa fa-angle-right"></i><span class="translatee" data-i18n="signin.easyneaest">Easy to find the nearest users' posted items</span>
 									</li>
 								</ul>
 
@@ -207,9 +207,9 @@
 				<!-- Step One -->
 				
 					<div class="col-md-12 col-sm-12 col-xs-12 col-xs-small">				      
-						<h2 class="wow fadeIn">Step One - Browse on public marketplace, and find out what you want to own </h2>
+						<h2 class="translatee wow fadeIn" data-i18n="signin.stepone">Step One - Browse on public marketplace, and find out what you want to own </h2>
 				      
-				      <p class="wow fadeIn">
+				      <p class="translatee wow fadeIn" data-i18n="signin.steponee">
 						  People has their own public backlog of stuffs that they want to throw away, and other people can view them
 				      </p>
 				      
@@ -317,9 +317,9 @@
 				<!-- and Step One -->	
 				<!-- Step Two -->
 				  	<div class="step col-md-12 col-sm-12 col-xs-12 col-xs-small">
-				      <h2 class="wow fadeIn">Step Two - Find what you can offer, and negotiate with others</h2>
+				      <h2 class="translatee wow fadeIn" data-i18n="signin.steptwo">Step Two - Find what you can offer, and negotiate with others</h2>
 				      
-				      <p class="wow fadeIn">
+				      <p class="translatee wow fadeIn" data-i18n="signin.steptwoo">
 						  Looks like you have choose to own that Xbox One! Now you can choose one of your belongings from your own backlog, and negotiate with the Xbox owner within our site
 				      </p>    
 				  	</div><!--/col-->
@@ -329,12 +329,12 @@
 			     <!-- and Step Two -->
 			     <!-- Step Three -->
 				  	 <div class="step col-md-12 col-sm-12 col-xs-12 col-xs-small">
-				      <h2 class="wow fadeIn">Step Three - Negotiation about the delivery method on site</h2>
+				      <h2 class="translatee wow fadeIn" data-i18n="signin.stepthree">Step Three - Negotiation about the delivery method on site</h2>
 				      
-				      <p class="wow fadeIn">
+				      <p class="translatee wow fadeIn" data-i18n="signin.stepthreee">
 						 Ok! Now you have had the deal to trade Xbox One with your cool TV. Next, you can choose either delivery in-person or use commertial delivery/mailing services.
 						</p>
-						<p> 
+						<p class="translatee" data-i18n="signin.stepthreeee">
 						 Our system will keep track of every trade history and their user-defined delivery methods. Therefore don't worry if you feel been spamed. We have your back covered. 	 
 				      </p>    
 				  	</div><!--/col-->
@@ -347,8 +347,5 @@
 				</div><!--/container-->
 				</div>
 		</section><!-- and Tutorial -->
-
-
-
-	</tiles:putAttribute>
+</tiles:putAttribute>
 </tiles:insertDefinition>

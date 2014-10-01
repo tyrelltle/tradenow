@@ -41,21 +41,21 @@
 		   
 			      		<form  id="regform" method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
 		                  <div class="form-group">
-		                    <input type="text" class="form-control input-lg" name="username" placeholder="Email"/>
+		                    <input type="text" class="translatee form-control input-lg" name="username" data-i18n="[placeholder]signin.email" placeholder="Email"/>
 		                  </div>
 		                  <div class="form-group">
-		                    <input type="password" class="form-control input-lg" name="password" placeholder="Password"/>
+		                    <input type="password" class="translatee form-control input-lg" name="password" data-i18n="[placeholder]signin.password" placeholder="Password"/>
 		                  </div>
 
 		                  <div class="form-group">
-		                    <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
+		                    <button class="translatee btn btn-primary btn-lg btn-block" type="submit" data-i18n="signin.signin">Sign In</button>
 		                   <span><a href="#">${errorlogin}</a></span>
 		                  </div>
 		                  <div>
-		                  	<a href="#" onclick="$('.ps_email').show();"><h4>Forgot Password</h4></a>
+		                  	<a href="#" onclick="$('.ps_email').show();"><h4 class="translatee" data-i18n="signin.forgot">Forgot Password</h4></a>
 		                    <div class="form-group">
-		                    	<h5 class="ps_email" style="display:none">We will send you an email containing password reset information</h5>
-		                    	<input type="text" style="display:none" class="ps_email form-control input-lg" id="ps_email" placeholder="Enter your email"/>
+		                    	<h5 class="translatee ps_email" style="display:none" data-i18n="signin.sendemail">We will send you an email containing password reset information</h5>
+		                    	<input type="text" style="display:none" class="translatee ps_email form-control input-lg" id="ps_email" data-i18n="[placeholder]signin.email" placeholder="Enter your email"/>
 		                    	<button style="display:none;width:25%" id="btn_send_reset_email" class="ps_email btn btn-primary btn-lg btn-block">Send</button>
 		                    
 		                    </div>
@@ -75,28 +75,28 @@
 		   				 <form:form  id="regform"  method="POST" commandName="userForm" action="nativeregister">
 						 
 		                  <div class="form-group">
-		                    <form:input type="text" class="form-control input-lg" path="email" placeholder="Email"/>
+		                    <form:input type="text" class="translatee form-control input-lg" data-i18n="[placeholder]signin.email" path="email" placeholder="Email"/>
 		                    <form:errors path="email" cssclass="error"></form:errors>
 		                  </div>
 		                  <div class="form-group">
-		                    <form:input type="text" class="form-control input-lg" path="firstname" placeholder="First name"/>
+		                    <form:input type="text" class="translatee form-control input-lg" path="firstname" data-i18n="[placeholder]signin.firstname" placeholder="First name"/>
 		                    <form:errors path="firstname" cssclass="error"></form:errors>
 		                    
 		                  </div>
 		        		  <div class="form-group">
-		                    <form:input type="text" class="form-control input-lg" path="lastname" placeholder="Last name"/>
+		                    <form:input type="text" class="translatee form-control input-lg" path="lastname" data-i18n="[placeholder]signin.lastname" placeholder="Last name"/>
 		                    <form:errors path="lastname" cssclass="error"></form:errors>
 		                    
 		                  </div>
 		        		  
 		                  <div class="form-group">
-		                    <form:input type="password" class="form-control input-lg" path="password" placeholder="Password"/>
+		                    <form:input type="password" class="translatee form-control input-lg" path="password" data-i18n="[placeholder]signin.password" placeholder="Password"/>
 		                    <form:errors path="password" cssclass="error"></form:errors>
 		                    
 		                  </div>
 		
 		                  <div class="form-group">
-		                    <form:input type="text" id="autocomplete" onFocus="geolocate()" class="form-control input-lg" path="location" placeholder="Please enter your City,Country"/>
+		                    <form:input type="text" id="autocomplete" onFocus="geolocate()" class="translatee form-control input-lg" data-i18n="[placeholder]signin.loc"  path="location" placeholder="Please enter your City,Country"/>
 		                    <form:errors path="location" cssclass="error"></form:errors>
 		                    
 		                    <form:input id="lat" type="hidden" class="form-control input-lg"  path="lat" />
@@ -131,7 +131,7 @@
 								
 							</script>
 		                  <div class="form-group">
-		                    <form:button class="btn btn-primary btn-lg btn-block" type="submit">Register</form:button>
+		                    <form:button class="translatee btn btn-primary btn-lg btn-block" type="submit" data-i18n="signin.register">Register</form:button>
 		                    <c:if test="${not empty succ}">
  								<div class="alert alert-success" role="alert">${succ}</div>		 
  			    			</c:if>

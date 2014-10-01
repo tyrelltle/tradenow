@@ -124,7 +124,7 @@
 														<input type="hidden" name="scope" value="email,user_location" />
 														<a style="font-size:12px" class="c-pointer social social-facebook" onclick="$(this).closest('form').submit()">
 															<i class="fa fa-facebook"></i>
-														<span class="translatee" id="fb_signon" data-i18n="app.fb_login">Sing in with Facebook</span></a>
+														<span class="translatee" id="fb_signon" data-i18n="signin.fb_login">Sing in with Facebook</span></a>
 											</form>
 											
 									    </li>
@@ -133,7 +133,7 @@
 									    <form action="<c:url value="/nativelogon" />" method="GET">
 														<a style="font-size:12px" class="c-pointer social social-tradenow" onclick="$(this).closest('form').submit()">
 															<i class="fa fa fa-sign-in"></i>
-																<span class="translatee" id="normal_signon" data-i18n="app.bar_login"> Normal Signin</span></a>
+																<span class="translatee" id="normal_signon" data-i18n="signin.bar_login"> Normal Signin</span></a>
 
 										</form>
 									    
@@ -148,7 +148,7 @@
 						</div> <!-- and row -->
 					</div> <!-- and container -->
 				</div> <!-- and header -->
-
+            </div>
 			</nav> <!-- and Dropdown menu -->
 
 		</header> <!-- and header -->
@@ -248,32 +248,49 @@
 
     <!--Translation-->
     <script type="text/javascript">
+        if(document.URL.indexOf('nativelogon')==-1) {
+            $('#lngModal').modal('show');
 
-        $('#lngModal').modal('show');
 
-
-        $('.lngbtn').click(
-                function() {
-                    i18n.init({
-                                lng:  $(this).attr('data-lng'),
-                                fallbackLng: false,
-                                load:'unspecific',
-                                resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
-                                ns: {
-                                    namespaces: ['translation'],
-                                    defaultNs: 'translation'
+            $('.lngbtn').click(
+                    function () {
+                        i18n.init({
+                                    lng: $(this).attr('data-lng'),
+                                    fallbackLng: false,
+                                    load: 'unspecific',
+                                    resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
+                                    ns: {
+                                        namespaces: ['translation'],
+                                        defaultNs: 'translation'
+                                    }
+                                }, function () {
+                                    $('.translatee').each(function () {
+                                                $(this).i18n();
+                                            }
+                                    );
                                 }
-                            }, function(){
-                                $('.translatee').each(function(){
-                                            $(this).i18n();
-                                        }
-                                );
-                            }
-                    );
-                    $('#lngModal').modal('hide');
+                        );
+                        $('#lngModal').modal('hide');
 
-                }
-        );
+                    }
+            );
+        }else{
+            i18n.init({
+                        fallbackLng: false,
+                        load: 'unspecific',
+                        resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
+                        ns: {
+                            namespaces: ['translation'],
+                            defaultNs: 'translation'
+                        }
+                    }, function () {
+                        $('.translatee').each(function () {
+                                    $(this).i18n();
+                                }
+                        );
+                    }
+            );
+        }
 
 
 
