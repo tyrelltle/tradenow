@@ -28,7 +28,35 @@
         "forgot":"Forgot Password",
         "sendemail":"We will send you an email containing password reset information"
     },
-    "home":{
-        "home":"home"
+    "menu":{
+        "home":"Home",
+        "notif":"Notification",
+        "nonotif":"No new notification",
+        "profile":"User Detail",
+        "logout":"Logout",
+        "additem":"Add Item",
+        "category":"Category",
+        "fav":"Favorite",
+        "searchnm":"Search Item Name",
+        "searchlc":"Search Item Location"
+    },
+    "category":{
+        "Woman":"Woman",
+        "Electronics":"Electronics",
+        "Books":"Books",
+        "Services":"Services",
+        "Pet":"Pet",
+        "Computer Software":"Computer Software",
+        "Computer Hardware":"Computer Hardware",
+        "Mobile Devices":"Mobile Devices",
+        "Games":"Games",
+        "sports equipment":"Sports",
+        "Men stuff":"Men",
+        "Children stuff":"Child",
+        "Furniture":"Funniture",
+        "Entertainment":"Entertainment",
+        "Health, Beauty":"Health, Beauty"
+
+
     }
 }

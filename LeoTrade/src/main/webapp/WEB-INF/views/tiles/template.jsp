@@ -120,21 +120,21 @@
 									<ul id="menu">
 									    <li>
 									    	<a href="${pageContext.request.contextPath}/home">
-									    		<span id="home" data-i18n="app.home">Home</span><i class="header_glyph glyphicon glyphicon-home"></i>
+									    		<span id="home" class="translatee" data-i18n="menu.home">Home</span><i class="header_glyph glyphicon glyphicon-home"></i>
 									    	</a>
 									    </li>
 									    <li class="linotiflis">
-									    	<a href="#" >Notification<i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
+									    	<a href="#" ><span class="translatee" data-i18n="menu.notif" >Notification</span><i class="notibell header_glyph glyphicon glyphicon-bell"></i></a>
 										   	<ul class="notiflis sub-menu slideDown">
 									            
 									        </ul>
 									    </li>
 									    <li><a href="${pageContext.request.contextPath}/user">
-									    			User Detail <i class="glyphicon glyphicon-user"></i>
+									    			<span class="translatee" data-i18n="menu.profile" >User Detail</span> <i class="glyphicon glyphicon-user"></i>
 									    	</a><%-- <img alt="pic" class="img-thumbnail" src="${pageContext.request.contextPath}/user/img"> --%>
 									    </li>
-									    <li><a href="${pageContext.request.contextPath}/signout">
-									    			Logout <i class="glyphicon glyphicon-log-out"></i>
+									    <li><a class="translatee" data-i18n="menu.logout" href="${pageContext.request.contextPath}/signout">
+									    			<span class="translatee" data-i18n="menu.logout">Logout</span> <i class="glyphicon glyphicon-log-out"></i>
 									    	</a>
 									    </li>
 									</ul>
@@ -157,7 +157,7 @@
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<ul class="menu top-bar-nav list-inline pull-left">
 									<li id="catmenu">
-										<a href="#" class="catmenu-active"><i class="fa fa-globe"></i>Category<i class="fa fa-angle-down"></i></a>
+										<a href="#" class="catmenu-active"><i class="fa fa-globe"></i><span class="translatee" data-i18n="menu.category">Category</span><i class="fa fa-angle-down"></i></a>
 										<ul class="catmenu slideDown topbar-mega-menu shop-mega-menu" style="overflow: hidden; display: none;">
 <!-- 										    	<li class="col-xs-6 col-sm-6 col-md-3 col-lg-2"> -->
 <!-- 										    		<ul> -->
@@ -179,9 +179,12 @@
 <!-- 										    	</li> -->
 										</ul>
 									</li>
-                                    <li id="additembtn"><a href="${pageContext.request.contextPath}/user#prodlis"><i class="fa fa-plus-circle"></i>Add Item</a>
+                                    <li id="additembtn">
+                                        <a href="${pageContext.request.contextPath}/user#prodlis"><i class="fa fa-plus-circle"></i>
+                                                    <span class="translatee" data-i18n="menu.additem">Add Item</span></a>
                                     </li>
-									<li id="tolikesbtn"><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>Favorites</a>
+									<li id="tolikesbtn"><a class="likesbtn" href="#"><i class="glyphicon glyphicon-heart"></i>
+                                                    <span class="translatee" data-i18n="menu.fav">Favorites</span></a>
 									</li>
 									<li id="lang">
 												
@@ -191,7 +194,7 @@
 												           <input type="text" class="searchtxt" value="${searchkey}">   			
 												      </c:when>
 												      <c:otherwise>
-												           <input type="text" class="searchtxt" placeholder="Search By Item Titles">   			
+												           <input type="text" class="translatee searchtxt" data-i18n="[placeholder]menu.searchnm" placeholder="Search By Item Titles">
 												      </c:otherwise>
 												  </c:choose>
 														<a class="searchbtn"><i class="fa fa-search"></i></a>
@@ -207,7 +210,7 @@
 												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" value="${location}">   			
 												      </c:when>
 												      <c:otherwise>
-												           <input type="text" class="locsearchtxt" id="autocomplete" onFocus="geolocate()" placeholder="Search By location">   			
+												           <input type="text" class="translatee locsearchtxt" id="autocomplete" onFocus="geolocate()" data-i18n="[placeholder]menu.searchlc" placeholder="Search By location">
 												      </c:otherwise>
 												  </c:choose>
 														
@@ -296,7 +299,7 @@
 	</div> <!-- and wrap -->
 	
 	<!-- _ templates -->
-				<script type="text/template" id="catlistitemtmp">
+			<script type="text/template" id="catlistitemtmp">
 					<a href="#">{{name}}</a>
 			</script>
   	<!-- Modernizr -->

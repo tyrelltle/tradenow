@@ -55,7 +55,8 @@ CategoryListItemView=Backbone.View.extend({
 	events:{"click":"clicked"},
 	tagName:"li",
 	render:function(){
-		$(this.el).html(this.template(this.model.toJSON()));
+        this.model.set("name",i18n.t('category.'+this.model.get("name")));
+        $(this.el).html(this.template(this.model.toJSON()));
 		if($('#catid').length>0){
 			if(parseInt($('#catid').val()) == this.model.get("catid")){
 				$(this.el).attr('class', 'link').addClass("active");		

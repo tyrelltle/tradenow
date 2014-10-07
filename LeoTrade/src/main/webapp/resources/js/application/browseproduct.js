@@ -209,8 +209,8 @@ ProductListItemView=Backbone.View.extend({
                 clonedheart.appendTo($('body'));
 
                 clonedheart.animate({
-                        left:$('#tolikesbtn .likesbtn i').offset().left,
-                        top:$('#tolikesbtn .likesbtn i').offset().top
+                        left:$('#tolikesbtn i').offset().left,
+                        top:$('#tolikesbtn i').offset().top
                     });
                 clonedheart.animate({
                     fontSize:'0px',

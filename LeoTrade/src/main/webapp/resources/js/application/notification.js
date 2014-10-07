@@ -35,7 +35,7 @@ NotificationListView=Backbone.View.extend({
         if(this.model.length>0&&this.model.length!=dellist.length)
             $('.notibell').attr("style","color:red");
         else
-            $('.notiflis').html("No new notification");
+            $('.notiflis').html(i18n.t('menu.nonotif'));
 
 
 		return this;

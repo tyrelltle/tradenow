@@ -28,7 +28,33 @@
         "forgot":"忘记密码了？",
         "sendemail":"请输入您注册所用邮箱地址，我们会尽快发送您一份密码重置邮件"
     },
-    "home":{
-        "home":"首页"
+    "menu":{
+        "home":"首页",
+        "notif":"消息",
+        "nonotif":"没有新消息",
+        "profile":"用户档案",
+        "logout":"注销",
+        "additem":"上传物品",
+        "category":"分类",
+        "fav":"收藏",
+        "searchnm":"搜索物品名称",
+        "searchlc":"搜索物品地址"
+    },
+    "category":{
+        "Woman":"女士用品",
+        "Electronics":"电子",
+        "Books":"书籍",
+        "Services":"服务",
+        "Pet":"宠物",
+        "Computer Software":"软件",
+        "Computer Hardware":"电脑软件",
+        "Mobile Devices":"移动产品",
+        "Games":"游戏",
+        "sports equipment":"运动",
+        "Men stuff":"男士用品",
+        "Children stuff":"儿童用品",
+        "Furniture":"家具",
+        "Entertainment":"娱乐",
+        "Health, Beauty":"健康，美容"
     }
 }
