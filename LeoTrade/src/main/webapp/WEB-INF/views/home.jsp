@@ -7,8 +7,8 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 	
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/imagesloaded.pkgd.js"></script>
 		
 	    <style type="text/css">	
 
@@ -27,7 +27,8 @@
 	    		width:60%;
 	    	}
 			.masonryitem{
-				margin: 0px;
+				padding: 10px;
+                width:290px
 			}
 			#catlistpanel{
 				float:left;
@@ -62,14 +63,14 @@
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
 
-        <!-- Tour toggle button  -->
+ <%--       <!-- Tour toggle button  -->
         <div id="tourbtn"><button>Take A Tour<i class="fa fa-question-circle"></i></button></div>
         <script>
             $('#tourbtn').click(function () {
                         TourManager.startHomeTour(true);
                     }
             );
-        </script>
+        </script>--%>
    			<c:if test="${not empty catid}">
       			<input id="catid" type="hidden" value="${catid}"/>
     		</c:if>
@@ -248,9 +249,9 @@
 
 
 	<!--start bootstrap dependencies-->
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/application/browseproduct.js"></script>
 
-			 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/homeapp.js"></script>
+			 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/application/homeapp.js"></script>
 
 
 	<!--end bootstrap dependencies-->

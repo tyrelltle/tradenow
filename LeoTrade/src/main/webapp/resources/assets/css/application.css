@@ -1,0 +1,46 @@
+/*------------------------------------------------*/
+/*	Trade Path application specific CSS  --- not for template!
+
+/*------------------------------------------------*/
+
+.blog-item img {
+    position: relative;
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.blog-item {
+    margin-top: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-color: lightgrey;
+}
+
+.blog-item > .blog-item-description {
+    padding: 20px;
+    border-bottom: 1px solid #DCDCDC;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid #DCDCDC;
+    border-right: 1px solid #DCDCDC;
+}
+
+.bottom-border {
+    height: 8px;
+    margin-top: -4px;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
