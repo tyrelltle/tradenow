@@ -54,7 +54,36 @@
         </div>
     </div>
 </div>
+
+<!--category modal-->
+<div class="modal" id="catmodal" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-category modal-dialog">
+        <div class="modal-content">
+            <div class="modalheader modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title" id="myModalLabel">Choose a cateogory</div>
+            </div>
+            <div class="modal-body">
+                <div class="widget-content">
+                    <table class="table">
+                        <tbody class="catmenu">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
+
+</div>
+
+<!--underscore templates -->
+<script type="text/template" id="catlistitemtmp">
+    <a href="#">{{name}}</a>
+</script>
+
 <script src="${pageContext.request.contextPath}/resources/application/iwait.js"></script>
 <body class="demo-only-page-blank">
 <!-- WRAPPER -->
@@ -89,13 +118,15 @@
     </div>
     <!-- end search box -->
 </div>
+
+
 <div class="col-md-9">
 <div class="top-bar-right">
 <!-- responsive menu bar icon -->
 <a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i></a>
 <!-- end responsive menu bar icon -->
-<button type="button" id="start-tour" class="btn btn-link"><i class="fa fa-refresh"></i> Start Tour</button>
-<button type="button" id="global-volume" class="btn btn-link btn-global-volume"><i class="fa"></i> <span class="badge element-bg-color-blue">New</span></button>
+<button type="button" id="btn_cat" class="btn btn-link"><i class="fa fa-th-list"></i> Categories</button>
+<button type="button" id="global-volume" class="btn btn-link"><i class="fa fa-heart"></i> Favorites</button>
 <div class="notifications">
     <ul>
         <!-- notification: inbox -->
@@ -448,7 +479,7 @@
             <!-- end left sidebar -->
 
             <!-- content-wrapper -->
-            <div class="col-md-10 content-wrapper">
+            <div class="col-md-10 content-wrapper expanded">
 
 
                 <!-- main -->
@@ -492,7 +523,7 @@
 
 <!-- Application Domain scripts -->
 <%--<script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/category.js"></script>--%>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/category.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/appscript.js"></script>
 <script src="${pageContext.request.contextPath}/resources/application/tour.js"></script>
 

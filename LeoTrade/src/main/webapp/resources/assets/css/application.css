@@ -2,6 +2,20 @@
 /*	Trade Path application specific CSS  --- not for template!
 
 /*------------------------------------------------*/
+.modal-category{
+    width:800px;
+}
+
+.btnlike{
+    color:#b2d231;
+}
+.likesbtn_cur{
+    color:#b2d231 !important;
+}
+
+.btnunlike{
+    color:gray;
+}
 
 .blog-item img {
     position: relative;
