@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="cuige:war">
+    <output-path>$PROJECT_DIR$/../LeoTrade/target</output-path>
+    <root id="archive" name="cuige-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cuige:war exploded" />
+    </root>
+  </artifact>
+</component>
