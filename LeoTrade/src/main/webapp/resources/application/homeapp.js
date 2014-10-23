@@ -21,11 +21,11 @@ AppRouter=Backbone.Router.extend({
 		app.productList = new ProductList();
 		if($('.searchtxt').length>0 &&$('.searchtxt').val()!=""){
 			app.productList.addsearch($('.searchtxt').val());
-			$('.searchtxt').attr("class","searchtxt").addClass("likesbtn_cur");
+			$('.searchtxt').attr("class","searchtxt form-control").addClass("likesbtn_cur");
 		}
 		else if ($('.locsearchtxt').length > 0 && $('.locsearchtxt').val()!=""){
 			app.productList.addlocsearch($('.locsearchtxt').val());
-			$('.locsearchtxt').attr("class","locsearchtxt").addClass("likesbtn_cur");
+			$('.locsearchtxt').attr("class","locsearchtxt form-control").addClass("likesbtn_cur");
 		}
 		else if($('#catid').length>0){
 			app.productList.makecategorize($('#catid').val());

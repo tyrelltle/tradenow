@@ -15,9 +15,12 @@ NotificationListView=Backbone.View.extend({
 	
 	render:function(){
 		var self=this;
+        //this.model.add({"message":"There is no news","url":"home","date":""});
 
         //only render the notifications with url that user is not currently viewing
-
+        if(this.model.length==0)
+            return this;
+        $('.notiflis').html("");
         var dellist=[]
 		_.each(this.model.models,function(m){
             if(document.URL.indexOf(m.get('url'))!=-1) {
@@ -33,7 +36,7 @@ NotificationListView=Backbone.View.extend({
         }
 
         if(this.model.length>0&&this.model.length!=dellist.length)
-            $('.notibell').attr("style","color:red");
+            $('.count').html(this.model.length);
         else
             $('.notiflis').html(i18n.t('menu.nonotif'));
 
@@ -45,11 +48,14 @@ NotificationListView=Backbone.View.extend({
 
 
 NotificationListItemView=Backbone.View.extend({
+
 	tagName:"li",
 	className:"notiflisitem list-group-item",
 	events:{"click":"clicked"},
 	render:function(){
-		$(this.el).append("<a href='#''>"+this.model.get('message')+"</a>");
+        this.template= _.template($('#notifitemtmp').html());
+
+		$(this.el).html(this.template(this.model.toJSON()));
 		return this;
 	},
 	clicked:function(){

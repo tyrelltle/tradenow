@@ -28,6 +28,10 @@
 .top-bar {
   padding: 5px 0;
   background-color: #555555;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
 }
 .top-bar .logo {
   position: relative;

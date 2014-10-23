@@ -302,14 +302,14 @@ $(document).ready(function(){
 	/*	SWITCH INIT
 	/********************************************/
 
-	if( $('.bs-switch').length > 0 ) {
+	/*if( $('.bs-switch').length > 0 ) {
 		$('.bs-switch').bootstrapSwitch();
 	}
 
-	/* set minimum height for the left content wrapper, demo purpose only  */
+	*//* set minimum height for the left content wrapper, demo purpose only  *//*
 	if( $('.demo-only-page-blank').length > 0 ) {
 		$('.content-wrapper').css('min-height', $('.wrapper').outerHeight(true) - $('.top-bar').outerHeight(true));
-	}
+	}*/
 
 
 	//*******************************************

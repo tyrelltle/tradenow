@@ -7,10 +7,9 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 
-	    <script type="text/javascript" language="javascript" src="resources/js/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="resources/js/imagesloaded.pkgd.js"></script>
-	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>	    
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/autocompleteapi.js"></script>
 	    
 	    <style type="text/css">	
 	    	.tradelis{
@@ -38,70 +37,196 @@
 			  <div></div>	
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
-   
 
-		      <div class="panel panel-default">
-		      		<div  class="panel-body">
-						<div class="tabbable tabs-left">
-						  <ul class="nav nav-tabs">
-						  		
-							    <li><a href="#lA" id="tab_prof" data-toggle="tab">My Profile</a></li>
-							    <li><a href="#lB" id="tab_prod" data-toggle="tab">My Products</a></li>
-							    <li><a href="#lC" id="tab_trade" data-toggle="tab">My Trades</a></li>
+    <div class="main-content">
+    <!-- NAV TABS -->
+    <ul class="nav nav-tabs">
+        <li class=""><a href="#lA" id="tab_prof" data-toggle="tab"><i class="fa fa-user"></i> Profile</a></li>
+        <li class=""><a href="#lB" id="tab_prod" data-toggle="tab"><i class="fa fa-th-large"></i> Item Repository</a></li>
+        <li class=""><a href="#lC" id="tab_trade" data-toggle="tab"><i class="fa fa-exchange"></i> Historical Trades</a></li>
+    </ul>
+    <!-- END NAV TABS -->
 
-						  </ul>
-						  <div class="tab-content">
-							    <div class="tab-pane active" id="lA">
-							    		<div id="profile_detail">
-		
-						                </div>
-						        </div>
-						        <div class="tab-pane" id="lB">
-						        		<div style="margin-top: 15px;">
-						        			<button type="button" id="newbtn" data-toggle="modal" data-target="#myModal" 
-						        					class="btn btn-default btn-lg">
-						        						<span class="glyphicon glyphicon-plus"></span> 
-						        								Add
-						        			</button>
-						        		</div>
-						                <div id="prodlist">
-	                
-						                
-						                </div><!-- end productlist -->
-						                <div style="height:300px"></div>
-						        </div>
-						        
-						        <div class="tab-pane" id="lC">
-							    		<div id="tradelist">
-																	<ul class="tradelis list-group">
-																      <li class="list-group-item">
-																        <span class="badge">Pending</span>
-																            <div class="row">
-																                <div class="col-md-4"><center>title1</center></div>
-																              	<div class="col-md-4"><center>title1</center></div>
-																          	</div>
-																        	<div class="row">
-																           
-																          		<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></div>
-																              <span style="z-index:3;position: absolute;margin-top:80px;left: 230px;" class="glyphicon glyphicon-transfer"> </span>
-																              	<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="http://img.vip.xunlei.com/img/banner/201307291420313509.jpg"></div>
-																                <div class="col-md-4"> 
-																                  <button type="button" class="detailsglyph btn btn-default btn-lg">
-																                  	<span class="glyphicon glyphicon-circle-arrow-right"> </span>
-																                  </button>              
-																                </div>
-																          	</div>       
-																      </li>
-																
-																</ul>
+    <div class="tab-content profile-page">
+    <!-- PROFILE TAB CONTENT -->
+    <div class="tab-pane profile active" id="lA">
+        <div id="profile_detail">
 
-		
-						                </div>
-						        </div>
-						  </div>
-						</div>
-					</div>
-			 </div>
+        </div>
+    </div>
+    <!-- END PROFILE TAB CONTENT -->
+
+    <!-- ACTIVITY TAB CONTENT -->
+    <div class="tab-pane activity" id="lB">
+        <ul class="list-unstyled activity-list">
+            <li>
+                <i class="fa fa-shopping-cart activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> commented on <a href="#">Special Deal 2013</a> <span class="timestamp">12 minutes ago</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-pencil activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> posted <a href="#">a new blog post</a> <span class="timestamp">4 hours ago</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-user activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> edited his profile <span class="timestamp">11 hours ago</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-pencil activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> has added review on <a href="#">jQuery Complete Guide</a> book <span class="timestamp">Yesterday</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-thumbs-up activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> liked <a href="#">a post</a> <span class="timestamp">December 12</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-tasks activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> has completed one task <span class="timestamp">December 11</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-picture-o activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> uploaded <a href="#">new photos</a> <span class="timestamp">December 5</span>
+                </p>
+            </li>
+            <li>
+                <i class="fa fa-credit-card activity-icon pull-left"></i>
+                <p>
+                    <a href="#">Jonathan</a> has updated his credit card info <span class="timestamp">September 28</span>
+                </p>
+            </li>
+
+        </ul>
+        <p class="text-center more"><a href="#" class="btn btn-custom-primary">View more <i class="fa fa-long-arrow-right"></i></a></p>
+    </div>
+    <!-- END ACTIVITY TAB CONTENT -->
+
+    <!-- SETTINGS TAB CONTENT -->
+    <div class="tab-pane settings" id="lC">
+        <form class="form-horizontal" role="form">
+            <fieldset>
+                <h3><i class="fa fa-square"></i> Change Password</h3>
+                <div class="form-group">
+                    <label for="old-password" class="col-sm-3 control-label">Old Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" id="old-password" name="old-password" class="form-control">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">New Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" id="password" name="password" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password2" class="col-sm-3 control-label">Repeat Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" id="password2" name="password2" class="form-control">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <h3><i class="fa fa-square"></i> Privacy</h3>
+                <div class="simple-checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">Show my display name</label>
+                </div>
+                <div class="simple-checkbox">
+                    <input type="checkbox" id="checkbox2">
+                    <label for="checkbox2">Show my birth date</label>
+                </div>
+                <div class="simple-checkbox">
+                    <input type="checkbox" id="checkbox3">
+                    <label for="checkbox3">Show my email</label>
+                </div>
+                <div class="simple-checkbox">
+                    <input type="checkbox" id="checkbox4">
+                    <label for="checkbox4">Show my online status on chat</label>
+                </div>
+            </fieldset>
+
+            <h3><i class="fa fa-square"> </i>Notifications</h3>
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">Receive message from administrator</label>
+                    <ul class="col-sm-7 list-inline">
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">New product has been added</label>
+                    <ul class="col-sm-7 list-inline">
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">Product review has been approved</label>
+                    <ul class="col-sm-7 list-inline">
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">Others liked your post</label>
+                    <ul class="col-sm-7 list-inline">
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
+                        </li>
+                        <li>
+                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+        </form>
+
+        <p class="text-center"><a href="#" class="btn btn-custom-primary"><i class="fa fa-floppy-o"></i> Save Changes</a></p>
+
+    </div>
+    <!-- END SETTINGS TAB CONTENT -->
+    </div>
+
+    </div>
 			  
 		 	<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -122,48 +247,74 @@
 			  </div>
 			</div>
 	<!--start bootstrap templates-->		 
-			 <script type="text/template" id="usertmp">
-			 <div class="row">
-				<div class="col-md-6">				
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">Email</span>
- 						 	<input  id="email" class="form-control" value="{{email}}" placeholder="Email"/>
-					</div>
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">First Name</span>
- 						 	<input id="fn" class="form-control"  value="{{firstname}}" placeholder="Firstname"/>
-					</div>
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">Last Name</span>
- 						 	<input id="ln" class="form-control"  placeholder="Lastname" value="{{lastname}}"/>
-					</div>
-					
-		            <div class="input-group input-group-md">
-  							<span class="input-group-addon">Your City</span>
-
-		                    <input class="form-control" id="autocomplete" onFocus="geolocate()"  placeholder="Please enter your City,Country" value="{{location}}"/>
-		                    <input id="lat" type="hidden" value="{{lat}}" />
-		                    <input id="lng" type="hidden" value="{{lng}}"/>
-		            </div>
-
-
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">About you</span>
- 						 	<textarea id="txt_aboutme" rows=6 class="form-control"  placeholder="About you">{{aboutme}}</textarea>
-					</div>
-
-					<input type="submit" id="submit"/>
-				</div>
-				<div class="col-md-6">
-					<p><img alt="pic" class="img-thumbnail prodpic" style="width:250px" src="${pageContext.request.contextPath}/user/img/userid/{{userid}}"></p>
-					<div id="imgform">
-		  					<form id="imgsubmit" method="post" enctype="multipart/form-data">  
-		     					<td><input type="file" id="img_input" name="file" />     
-		     					<td><input type="submit" value="Upload" />   
-		  					</form>  
-					</div>
-				</div>
-			</div>
+			<script type="text/template" id="usertmp">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="user-info-left">
+                            <h2>Your Profile Photo</h2>
+                            <span id="span_uimg">
+                                <img style="max-width: 300px;" class="prodpic" src="${pageContext.request.contextPath}/user/img/userid/{{userid}}" alt="Profile Picture">
+                            </span>
+                            <div class="contact" id="imgform">
+                                <form id="imgsubmit" method="post" enctype="multipart/form-data">
+                                    <td><input class="btn btn-block" type="file" id="img_input" name="file" />
+                                    <td><input class="btn btn-block btn-custom-secondary" type="submit" value="Upload" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="user-info-right">
+                            <div class="basic-info">
+                                <h3><i class="fa fa-square"></i> Basic Information</h3>
+                                <p class="data-row">
+                                    <span class="data-name">Username</span>
+                                    <span class="data-value">jonasmith</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Birth Date</span>
+                                    <span class="data-value">Nov 20, 1988</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Gender</span>
+                                    <span class="data-value">Male</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Website</span>
+                                    <span class="data-value"><a href="#">www.jonasmith.com</a></span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Last Login</span>
+                                    <span class="data-value">2 hours ago</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Date Joined</span>
+                                    <span class="data-value">Feb 22, 2012</span>
+                                </p>
+                            </div>
+                            <div class="contact_info">
+                                <h3><i class="fa fa-square"></i> Contact Information</h3>
+                                <p class="data-row">
+                                    <span class="data-name">Email</span>
+                                    <span class="data-value">me@jonasmith.com</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Phone</span>
+                                    <span class="data-value">(1800) 221 - 876543</span>
+                                </p>
+                                <p class="data-row">
+                                    <span class="data-name">Address</span>
+                                    <span class="data-value">Riverside City 66, 80123 Denver<br>Colorado</span>
+                                </p>
+                            </div>
+                            <div class="about">
+                                <h3><i class="fa fa-square"></i> About Me</h3>
+                                <p>Dramatically facilitate proactive solutions whereas professional intellectual capital. Holisticly utilize competitive e-markets through intermandated meta-services. Objectively.</p>
+                                <p>Monotonectally foster future-proof infomediaries before principle-centered interfaces. Assertively recaptiualize cutting-edge web services rather than emerging "outside the box" thinking. Phosfluorescently cultivate resource maximizing technologies and user-centric convergence. Completely underwhelm cross functional innovation vis-a-vis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 	 		</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
@@ -273,18 +424,13 @@
 			  
 	 		</script>
 	<!--end bootstrap templates--> 	
-	
-	
-	
-						
-	
-	
+
 		
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="resources/js/application/product.js"></script>
-			 <script type="text/javascript" id="tmp" src="resources/js/application/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/js/application/app.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/js/application/tradelist.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/application/product.js"></script>
+			 <script type="text/javascript" id="tmp" src="resources/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/application/app.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="resources/application/tradelist.js"></script>
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>

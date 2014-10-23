@@ -82,9 +82,9 @@ ProfileView=Backbone.View.extend({
 		    success: function(data){
 		    	alert("success!");
 		    	//refresh img
-		    	var tmp=$('.prodpic').attr('src');
-		    	$('.prodpic').attr('src','');
-		    	$('.prodpic').attr('src',tmp);
+                var tmp=$('.prodpic').attr('src');
+                $('.prodpic').removeAttr('src').replaceWith($('.prodpic').clone());
+                $('.prodpic').attr('src',tmp);
 
 			},
 		    error: function(jqXHR, textStatus, errorThrown){
