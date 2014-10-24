@@ -39,6 +39,10 @@
     <tiles:putAttribute name="main">
 
     <div class="main-content">
+    <div class="main-header">
+        <h2>Profile</h2>
+        <em>User Profile Page</em>
+    </div>
     <!-- NAV TABS -->
     <ul class="nav nav-tabs">
         <li class=""><a href="#lA" id="tab_prof" data-toggle="tab"><i class="fa fa-user"></i> Profile</a></li>
@@ -263,55 +267,53 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         <div class="user-info-right">
-                            <div class="basic-info">
-                                <h3><i class="fa fa-square"></i> Basic Information</h3>
-                                <p class="data-row">
-                                    <span class="data-name">Username</span>
-                                    <span class="data-value">jonasmith</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Birth Date</span>
-                                    <span class="data-value">Nov 20, 1988</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Gender</span>
-                                    <span class="data-value">Male</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Website</span>
-                                    <span class="data-value"><a href="#">www.jonasmith.com</a></span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Last Login</span>
-                                    <span class="data-value">2 hours ago</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Date Joined</span>
-                                    <span class="data-value">Feb 22, 2012</span>
-                                </p>
-                            </div>
-                            <div class="contact_info">
-                                <h3><i class="fa fa-square"></i> Contact Information</h3>
-                                <p class="data-row">
-                                    <span class="data-name">Email</span>
-                                    <span class="data-value">me@jonasmith.com</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Phone</span>
-                                    <span class="data-value">(1800) 221 - 876543</span>
-                                </p>
-                                <p class="data-row">
-                                    <span class="data-name">Address</span>
-                                    <span class="data-value">Riverside City 66, 80123 Denver<br>Colorado</span>
-                                </p>
-                            </div>
-                            <div class="about">
-                                <h3><i class="fa fa-square"></i> About Me</h3>
-                                <p>Dramatically facilitate proactive solutions whereas professional intellectual capital. Holisticly utilize competitive e-markets through intermandated meta-services. Objectively.</p>
-                                <p>Monotonectally foster future-proof infomediaries before principle-centered interfaces. Assertively recaptiualize cutting-edge web services rather than emerging "outside the box" thinking. Phosfluorescently cultivate resource maximizing technologies and user-centric convergence. Completely underwhelm cross functional innovation vis-a-vis.</p>
-                            </div>
+                            <form class="form-horizontal" role="form">
+                                <fieldset>
+                                    <legend>User Information</legend>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email" value="{{email}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">First Name</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="fn" value="{{firstname}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="ln" value="{{lastname}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Your City</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" id="autocomplete" onFocus="geolocate()" placeholder="Please enter your City,Country" value="{{location}}">
+                                            <input id="lat" type="hidden" value="{{lat}}" />
+                                            <input id="lng" type="hidden" value="{{lng}}"/>
+                                        </div>
+                                    </div>
+
+
+                                    <legend>About You</legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-9">
+                                            <textarea id="txt_aboutme" class="form-control" name="ticket-message" rows="5" cols="30" placeholder="Lets introduce yourself...">{{aboutme}}</textarea>
+                                        </div>
+                                    </div>
+                                    <input class="btn btn-primary" value="submit" id="submit"/>
+
+                                </fieldset>
+
+                            </form>
+
                         </div>
                     </div>
                 </div>

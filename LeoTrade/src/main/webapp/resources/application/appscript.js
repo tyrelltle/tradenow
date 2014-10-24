@@ -95,6 +95,8 @@ $(document).ready(function() {
 					window.location=ctx+"likes";
 					return false;
 				});
-				
-	        
+
+                $.extend( $.gritter.options, {
+                    position: 'top-left' // possibilities: bottom-left, bottom-right, top-left, top-right
+                });
     });

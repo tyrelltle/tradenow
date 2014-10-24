@@ -300,11 +300,13 @@
 <script src="${pageContext.request.contextPath}/resources/assets/js/modernizr.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-tour.custom.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/js/king-common.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.gritter.min.js"></script>
 
 <!-- Application Domain scripts -->
 <%--<script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/category.js"></script>--%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/category.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/appscript.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/application/tour.js"></script>
 
 </body>

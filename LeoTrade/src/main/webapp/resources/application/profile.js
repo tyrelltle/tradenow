@@ -32,6 +32,7 @@ ProfileView=Backbone.View.extend({
 
 		$(this.el).html(this.template(this.model.toJSON()));
 		$(this.el).find('#imgsubmit').submit(this.uploadimg);
+        $(this.el).find('#img_input').change(this.selectimg);
 		return this;
 	},
 
@@ -60,14 +61,37 @@ ProfileView=Backbone.View.extend({
 		
 		
 	},
+
 	
-	succ: function(){alert("success");},
-	error:function(){alert("fail");},
+	succ: function(){
+        $.gritter.add({
+            title: 'Success!!',
+            text: 'Successfully updated profile!'
+        });
+    },
+	error:function(){
+        $.gritter.add({
+            title: 'Failed!!',
+            text: 'Failed to updated profile!'
+        });
+    },
 	close: function(){
 		
 		$(this.el).unbind();
 		$(this.el).remove();
 	},
+    selectimg:function(){
+        var input=this;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.prodpic').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    },
 	uploadimg:function(e){
 		 var oMyForm = new FormData();
 		  oMyForm.append("file", $('#img_input').prop("files")[0]);
@@ -80,15 +104,17 @@ ProfileView=Backbone.View.extend({
 		    contentType: false,
 		    type: 'POST',
 		    success: function(data){
-		    	alert("success!");
-		    	//refresh img
-                var tmp=$('.prodpic').attr('src');
-                $('.prodpic').removeAttr('src').replaceWith($('.prodpic').clone());
-                $('.prodpic').attr('src',tmp);
+                $.gritter.add({
+                    title: 'Success!!',
+                    text: 'Successfully uploaded!'
+                });
 
 			},
 		    error: function(jqXHR, textStatus, errorThrown){
-		    	alert("Failed!"+errorThrown);
+                $.gritter.add({
+                    title: 'Failed!!',
+                    text: 'Sorry, Image upload failed!'
+                });
 	            console.log("FETCH FAILED: " + errorThrown);
 	        }
 		  });
