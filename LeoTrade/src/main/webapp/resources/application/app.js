@@ -34,6 +34,7 @@ AppRouter=Backbone.Router.extend({
 		});
 	},
 	tradelis:function(){
+        $('#tab_trade').tab('show');
 		$('#tradelist').empty();
 		this.tradeList = new TradeList();
 		this.tradeListView = new TradeListView({model:this.tradeList});

@@ -193,6 +193,7 @@ public class NewProductTest{
 		repo.truncateTable("Product");
 		
 		repo.truncateTable("Category");
+        repo.truncateTable("Regconfirm");
 		repo.truncateTable("User");
 
 	}

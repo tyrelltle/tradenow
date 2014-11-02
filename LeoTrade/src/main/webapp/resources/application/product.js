@@ -103,7 +103,10 @@ ProductView=Backbone.View.extend({
 
 	
 	succ: function(){
-		alert("successed!");
+        $.gritter.add({
+            title: 'Success!!',
+            text: 'Successfully Added Item!'
+        });
 		app.navigate("prodlis",true);
 	},
 	
@@ -172,7 +175,10 @@ ProductView=Backbone.View.extend({
 		    contentType: false,
 		    type: 'POST',
 		    success: function(data){
-		    	alert("success!");
+                $.gritter.add({
+                    title: 'Success!!',
+                    text: 'Successfully uploaded item photo!'
+                });
 		    	//app.navigate("prodDetail",true);
 		    	
 				self.onformsuccess();
@@ -244,7 +250,7 @@ ProductListItemView=Backbone.View.extend({
 		this.template=_.template($("#prodlistitemtmp").html());
 	},
 	
-	className:"list-group-item",
+	className:"item col-md-3 col-sm-6",
 	events:{"click #modalbtn":"clicked"},
 	
 	clicked:function(){

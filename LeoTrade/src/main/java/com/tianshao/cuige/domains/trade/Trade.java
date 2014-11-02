@@ -50,10 +50,10 @@ public class Trade implements IEntity{
 	String status2="";
 	
 	@Column(name="method1")
-	String method1="";
+	String method1="N/A";
 	
 	@Column(name="method2")
-	String method2="";
+	String method2="N/A";
 
 	public Trade(){}
 	

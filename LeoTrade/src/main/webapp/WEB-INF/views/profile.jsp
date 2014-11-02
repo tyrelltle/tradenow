@@ -20,15 +20,9 @@
 				float:right;
 				margin-top:50px;
 			}
-			.masonryitem{
-				margin: 10px;
-				width:200px;
-			}
-			
-			.masonrycontainer{
-				width: 600px;
-				margin: 10px;
-			}
+            .modallg{
+                width:60%;
+            }
 		
 	    </style>
 	</tiles:putAttribute>
@@ -39,7 +33,7 @@
     <tiles:putAttribute name="main">
 
     <div class="main-content">
-    <div class="main-header">
+    <div class="main-header" style="margin-bottom: 20px">
         <h2>Profile</h2>
         <em>User Profile Page</em>
     </div>
@@ -60,181 +54,33 @@
     </div>
     <!-- END PROFILE TAB CONTENT -->
 
-    <!-- ACTIVITY TAB CONTENT -->
+    <!-- PRODUCT TAB CONTENT -->
     <div class="tab-pane activity" id="lB">
-        <ul class="list-unstyled activity-list">
-            <li>
-                <i class="fa fa-shopping-cart activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> commented on <a href="#">Special Deal 2013</a> <span class="timestamp">12 minutes ago</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-pencil activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> posted <a href="#">a new blog post</a> <span class="timestamp">4 hours ago</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-user activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> edited his profile <span class="timestamp">11 hours ago</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-pencil activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> has added review on <a href="#">jQuery Complete Guide</a> book <span class="timestamp">Yesterday</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-thumbs-up activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> liked <a href="#">a post</a> <span class="timestamp">December 12</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-tasks activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> has completed one task <span class="timestamp">December 11</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-picture-o activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> uploaded <a href="#">new photos</a> <span class="timestamp">December 5</span>
-                </p>
-            </li>
-            <li>
-                <i class="fa fa-credit-card activity-icon pull-left"></i>
-                <p>
-                    <a href="#">Jonathan</a> has updated his credit card info <span class="timestamp">September 28</span>
-                </p>
-            </li>
+        <div class="gallery-buttons bottom-30px">
+            <button id="newbtn" data-target="#myModal" data-toggle="modal" type="button" class="btn btn-custom-primary btn-md"><i class="fa fa-upload"></i> Add New Item</button>
+        </div>
 
-        </ul>
-        <p class="text-center more"><a href="#" class="btn btn-custom-primary">View more <i class="fa fa-long-arrow-right"></i></a></p>
+        <div id="prodlist"></div>
+
     </div>
-    <!-- END ACTIVITY TAB CONTENT -->
+    <!-- END PRODUCT TAB CONTENT -->
 
-    <!-- SETTINGS TAB CONTENT -->
+    <!-- TRADE TAB CONTENT -->
     <div class="tab-pane settings" id="lC">
-        <form class="form-horizontal" role="form">
-            <fieldset>
-                <h3><i class="fa fa-square"></i> Change Password</h3>
-                <div class="form-group">
-                    <label for="old-password" class="col-sm-3 control-label">Old Password</label>
-                    <div class="col-sm-4">
-                        <input type="password" id="old-password" name="old-password" class="form-control">
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">New Password</label>
-                    <div class="col-sm-4">
-                        <input type="password" id="password" name="password" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password2" class="col-sm-3 control-label">Repeat Password</label>
-                    <div class="col-sm-4">
-                        <input type="password" id="password2" name="password2" class="form-control">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <h3><i class="fa fa-square"></i> Privacy</h3>
-                <div class="simple-checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <label for="checkbox">Show my display name</label>
-                </div>
-                <div class="simple-checkbox">
-                    <input type="checkbox" id="checkbox2">
-                    <label for="checkbox2">Show my birth date</label>
-                </div>
-                <div class="simple-checkbox">
-                    <input type="checkbox" id="checkbox3">
-                    <label for="checkbox3">Show my email</label>
-                </div>
-                <div class="simple-checkbox">
-                    <input type="checkbox" id="checkbox4">
-                    <label for="checkbox4">Show my online status on chat</label>
-                </div>
-            </fieldset>
-
-            <h3><i class="fa fa-square"> </i>Notifications</h3>
-            <fieldset>
-                <div class="form-group">
-                    <label class="col-sm-5 control-label">Receive message from administrator</label>
-                    <ul class="col-sm-7 list-inline">
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5 control-label">New product has been added</label>
-                    <ul class="col-sm-7 list-inline">
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5 control-label">Product review has been approved</label>
-                    <ul class="col-sm-7 list-inline">
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-on" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" checked="" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5 control-label">Others liked your post</label>
-                    <ul class="col-sm-7 list-inline">
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-globe"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-globe"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-globe'></i>" data-off-label="<i class='glyphicon glyphicon-globe'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-phone"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-phone"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-phone'></i>" data-off-label="<i class='glyphicon glyphicon-phone'></i>"></div></div>
-                        </li>
-                        <li>
-                            <div class="has-switch switch-animate switch-small switch-off" tabindex="0"><div><span class="switch-left"><i class="glyphicon glyphicon-envelope"></i></span><label>&nbsp;</label><span class="switch-right switch-default"><i class="glyphicon glyphicon-envelope"></i></span><input type="checkbox" class="bs-switch switch-small" data-off="default" data-on-label="<i class='glyphicon glyphicon-envelope'></i>" data-off-label="<i class='glyphicon glyphicon-envelope'></i>"></div></div>
-                        </li>
-                    </ul>
-                </div>
-            </fieldset>
-        </form>
-
-        <p class="text-center"><a href="#" class="btn btn-custom-primary"><i class="fa fa-floppy-o"></i> Save Changes</a></p>
+        <div id="tradelist">
+            <ul class="tradelis list-group">
+            </ul>
+        </div>
 
     </div>
-    <!-- END SETTINGS TAB CONTENT -->
+    <!-- END TRADE TAB CONTENT -->
     </div>
 
     </div>
 			  
 		 	<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-lg modal-dialog">
+			  <div class="modallg  modal-dialog">
 			    <div class="modal-content">
 			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -320,19 +166,20 @@
 	 		</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
-				<div class = "masonrycontainer list-group" >
-				</div>
+                <div class="row list-group masonrycontainer king-gallery"></div>
 			</script>
 	 		<script type="text/template" id="prodlistitemtmp">
-				      	<div class="row">
-				          <div id="thumbnail" class="col-md-3"  ><img src="{{thumurl}}" class="img-responsive"></div>
-				          <div id="title" class="col-md-4" >{{title}}</div>
-				          <div id="button" style="float:right">
-								<button id="modalbtn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
-						            <span class="glyphicon glyphicon-circle-arrow-right"> </span>
-						        </button>  
-						  </div>
-				        </div>		       	        
+                    <div class="thumbnail">
+                        <img class="list-group-image" src="{{thumurl}}" alt="">
+                        <div class="caption">
+                            <h3 class="inner list-group-item-heading">{{title}}</h3>
+                            <div class="action-buttons">
+                                <a id="modalbtn" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-pencil"></i>Edit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 			</script>
 			<script type="text/template" id="tradelisttmp">
 						<ul class="tradelis list-group">
@@ -417,13 +264,7 @@
 				
 			   </div> <!-- img holder-->
 			 </div><!-- main content holder-->
-			      
 
-			     
-
-
-
-			  
 	 		</script>
 	<!--end bootstrap templates--> 	
 

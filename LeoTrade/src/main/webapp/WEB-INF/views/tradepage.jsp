@@ -7,8 +7,8 @@
 	<tiles:putAttribute name="header">
 	
 			<script>var ctx = "${pageContext.request.contextPath}/"</script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/masonry.pkgd.js"></script>
-		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
+		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/masonry.pkgd.js"></script>
+		    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/imagesloaded.pkgd.js"></script>
 				<style>
 				/* CSS used here will be applied after bootstrap.css */
 				.btnsubmit{
@@ -117,7 +117,7 @@
 
                                   <c:choose>
                                       <c:when test="${side=='FROM'}">
-                                          <select id="method1" class="form-control">
+                                          <select id="method1" selected="${trade.method1}" class="form-control">
                                               <option>N/A</option>
                                               <option>In Person</option>
                                               <option>Mail</option>
@@ -152,8 +152,8 @@
 
                                         <input type="hidden" id="side" value="${side}" placeholder="Last name"/>
 		                         						                         			
-		                       			<button type="submit" id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success" disabled>Propose!</button>
-				                        <button type="button" id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
+		                       			<button  id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success" disabled>Propose!</button>
+				                        <button  id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
 				                        
 				                    </div>
 				                    <div id="prod_right" class="col-md-5 col-sm-5 col-xs-5">
@@ -227,7 +227,7 @@
 
                                   <c:choose>
                                       <c:when test="${side=='TO'}">
-                                          <select id="method2" class="form-control">
+                                          <select id="method2" selected="${trade.method2}" class="form-control">
                                               <option>N/A</option>
                                               <option>In Person</option>
                                               <option>Mail</option>
@@ -455,10 +455,10 @@
 	
 
 	<!--start bootstrap dependencies-->	
-				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/js/application/trademessage.js"></script>
+				 <script type="text/javascript"  id="tmp3" src="${pageContext.request.contextPath}/resources/application/trademessage.js"></script>
 	
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/tradeapp.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/application/browseproduct.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/tradeapp.js"></script>
 			 
 	<!--end bootstrap dependencies-->
 				

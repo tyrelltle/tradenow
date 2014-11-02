@@ -49,10 +49,10 @@ TradeListItemView=Backbone.View.extend({
 	render:function(){
 		$(this.el).html(this.template(this.model.toJSON()));
 		if(this.model.get('status')=='DONE')
-			$(this.el).find('#span_status').attr('class','badge label label-success');
+			$(this.el).find('#span_status').attr('class','label label-success');
 		else
-			$(this.el).find('#span_status').attr('class','badge label label-warning');
-
+			$(this.el).find('#span_status').attr('class','label label-warning');
+        $(this.el).find('#span_status').attr('style','float:right');
 		return this;
 	},
 	close:function(){

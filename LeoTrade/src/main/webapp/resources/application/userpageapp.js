@@ -17,6 +17,9 @@ AppRouter=Backbone.Router.extend({
 		app.profile.fetch({
 			success:function(model){
 				$('#profile_detail').html(app.profileView.render().el);
+                //render header username
+                headertmp=_.template($('#headertmp').html());
+                $('.main-header').html(headertmp(app.profile.toJSON()));
 			}
 		});
 		

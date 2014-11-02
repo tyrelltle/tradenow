@@ -7,8 +7,8 @@
 <tiles:insertDefinition name="template">
 	<tiles:putAttribute name="header">
 
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/imagesloaded.pkgd.js"></script>
 	    
 	    <style type="text/css">	
 
@@ -16,6 +16,9 @@
 				float:right;
 				margin-top:50px;
 			}
+            .modallg{
+                width:60%;
+            }
 			.masonryitem{
 				margin: 10px;
 				width:200px;
@@ -25,9 +28,7 @@
 				width: 900px;
 				margin: 10px;
 			}
-			#prodlispanel{
-				width:940px;
-			}
+
 	    </style>
 	</tiles:putAttribute>
 
@@ -35,21 +36,22 @@
 			  <div></div>	
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
-   
-			  <input type="hidden" id="userid" value="${userid}"/>
-		      <div class="panel panel-default">
-		      		<div  class="panel-body">
-							<div id="profile_detail" class="col-md-offset-1">
+    <div class="main-content">
+                <div class="main-header" style="margin-bottom: 20px"> </div>
+			    <input type="hidden" id="userid" value="${userid}"/>
 
-			                </div>		
-			                <div id="prodlist" class="col-md-offset-1">
+                <div id="profile_detail" >
 
-			                </div>				
-					</div>
+                </div>
+                <h2>Choose something you like from this person :)</h2>
+                <div id="prodlist" >
+
+                </div>
+
 							
 		
 				
-			 </div>
+
 			<!-- product detail Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modallg modal-dialog">
@@ -68,31 +70,47 @@
 			    </div>
 			  </div>
 			</div>
-	<!--start bootstrap templates-->		 
+	<!--start bootstrap templates-->
+        <script type="text/template" id="headertmp">
+            <h2><i class="fa fa-user"></i>{{firstname}}, {{lastname}}</h2>
+        </script>
+
+
 			 <script type="text/template" id="usertmp">
-		<div id="prodlispanel" class="panel panel-default">
-			<div  class="panel-body">
-			 <div class="row">
-				<div class="col-md-offset-1 col-md-6">				
-					<address>
-  						<strong style="font-size:50px">{{firstname}}, {{lastname}}</strong><br>
-  						{{location}}
-					</address>
-					
+		<div id="prodlispanel" class="profile-page">
 
 
-					<div class="input-group input-group-md">
-  							<span class="input-group-addon">About me</span>
- 						 	<textarea id="txt_aboutme" rows=6 class="form-control"  placeholder="About you" readonly>{{aboutme}}</textarea>
-					</div>
+                <div class="tab-pane profile active" id="profile-tab">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="user-info-left">
+                                <img src="${pageContext.request.contextPath}/user/img/userid/{{userid}}" style="width:60%" alt="Profile Picture">
+                                <%--<h1><i class="fa fa-user"></i>{{firstname}}, {{lastname}}</h1>--%>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="user-info-right">
+                                <div class="basic-info">
+                                    <h3><i class="fa fa-square"></i> Basic Information</h3>
+                                    <p class="data-row">
+                                        <span class="data-name">Email</span>
+                                        <span class="data-value"><a href="#">{{email}}</a></span>
+                                    </p>
+                                    <p class="data-row">
+                                        <span class="data-name">Location</span>
+                                        <span class="data-value">{{location}}</span>
+                                    </p>
 
-				</div>
-				<div class="col-md-5">
-					<p><img alt="pic" class="img-thumbnail prodpic" style="width:250px" src="${pageContext.request.contextPath}/user/img/userid/{{userid}}"></p>
+                                </div>
 
-				</div>
-			</div>
-		</div> 
+                                <div class="about">
+                                    <h3><i class="fa fa-square"></i> About Me</h3>
+                                    <p>{{aboutme}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 		</div>
 	 		</script>
 	 		
@@ -224,10 +242,10 @@
 	
 		
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/browseproduct.js"></script>
-			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/js/application/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/js/application/userpageapp.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/application/browseproduct.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/userpageapp.js"></script>
 	<!--end bootstrap dependencies-->
-
+    </div>
 	</tiles:putAttribute>
 </tiles:insertDefinition>
