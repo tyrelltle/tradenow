@@ -15,7 +15,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.png">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/landingpage_assets/img/favicon.png">
 
 	<!-- Add some of The Open Graph protocol -->
 		<!-- Open Graph meta tags -->
@@ -34,39 +34,39 @@
 	<![endif]-->
 
 	<!-- Main CSS Style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/styles.css" type="text/css" />
 
 	<!-- Main CSS Style (in less) delete in real project-->
-	<link rel="stylesheet/less" type="text/css" href="${pageContext.request.contextPath}/resources/css/styles.less">
+	<link rel="stylesheet/less" type="text/css" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/styles.less">
 	<!-- Less -->
-	<script src="${pageContext.request.contextPath}/resources/js/less.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/less.js" type="text/javascript"></script>
 
 	<!-- Bootstrap Grid Framework -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/bootstrap.css" />
 
 	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='${pageContext.request.contextPath}/resources/text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='${pageContext.request.contextPath}/resources/text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='${pageContext.request.contextPath}/resources/landingpage_assets/text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='${pageContext.request.contextPath}/resources/landingpage_assets/text/css'>
 	
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/font-awesome.css">
 
 	<!-- Dropdown menu -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/slicknav.css">
 
     <!-- Owl Carousel Assets -->
-    <link href="${pageContext.request.contextPath}/resources/css/owl.carousel.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/landingpage_assets/css/owl.carousel.css" rel="stylesheet">
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/settings.css" media="screen" />
     <!-- Animate css -->
 	
 	<!-- Scripts that is required -->
 	<!-- jQuery -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-1.11.1.min.js"></script>
 	<script>var ctx = "${pageContext.request.contextPath}/"</script>
-	<script src="${pageContext.request.contextPath}/resources/js/underscore.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/backbone.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/application/notification.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/underscore.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/backbone.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/application/notification.js"></script>
 	<!--Preaty Photo-->
 	
 	<tiles:insertAttribute name="header" />
@@ -94,11 +94,11 @@
                                 <!-- Your logo -->
                                 <div class="logo">
                                     <a href="${pageContext.request.contextPath}/home">
-                                        <%-- 										<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="All in 1"> --%>
+                                        <%-- 										<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/logo.png" alt="All in 1"> --%>
                                         <h1 style="float:left">Barbarian</h1>
 
                                     </a>
-                                    <img alt="" src="${pageContext.request.contextPath}/resources/img/logo/logo.png" style="
+                                    <img alt="" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/logo/logo.png" style="
                                         width: 107px;
                                         float: right;
                                         top:0;
@@ -160,39 +160,39 @@
 
 	
   	<!-- Modernizr -->
-	<script src="${pageContext.request.contextPath}/resources/js/modernizr.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/modernizr.js"></script>
 
 
 
 	<!-- Owl carousel -->
-    <script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/owl.carousel.min.js"></script>
 
 	<!-- Bootstrap Plagins -->
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/bootstrap.min.js"></script>
 
 	<!-- Dropdown menu if screen < 650px -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.slicknav.min.js"></script>
 	
 	<!-- Fixed Dropdown menu if scroll -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 
 	<!-- jQuery -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.7.2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-1.7.2.min.js"></script>
 
 	<!-- Animation offset -->
-	<script src="${pageContext.request.contextPath}/resources/js/wow.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/wow.js"></script>
 
 	<!-- Layout Style -->
-	<script src="${pageContext.request.contextPath}/resources/js/layout.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/layout.js"></script>
 	
 	<!-- Application Domain scripts -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/appscript.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/appscript.js"></script>
 	
 	<!-- Other scripts -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/script.js"></script>
   	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.themepunch.revolution.min.js"></script>
 
 	
   

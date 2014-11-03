@@ -7,10 +7,10 @@
 
 <tiles:insertDefinition name="logintemplate">
 	<tiles:putAttribute name="header">
-		<link href="${pageContext.request.contextPath}/resources/semanticui/css/semantic.css" rel="stylesheet">  
+		<link href="${pageContext.request.contextPath}/resources/landingpage_assets/semanticui/css/semantic.css" rel="stylesheet">  
 		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/application/autocompleteapi.js"></script>
 		
 		<style>
 		.logincontainer{

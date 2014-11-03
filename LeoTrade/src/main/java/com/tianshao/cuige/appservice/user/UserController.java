@@ -109,7 +109,7 @@ public class UserController {
 			
 			byte[] ret= userService.currentUser().getImage();
 			if(ret==null){
-				InputStream in=servletContext.getResourceAsStream("/resources/img/"+defaultimgurl);				
+				InputStream in=servletContext.getResourceAsStream("/resources/assets/img/"+defaultimgurl);
 				ret=IOUtils.toByteArray(in);
 				
 			}
@@ -121,7 +121,7 @@ public class UserController {
 		public @ResponseBody byte[] getimgbyuid(@PathVariable int userid,HttpServletRequest req) throws IOException {
 			byte[] ret= userRepository.getByUserid(userid).getImage();
 			if(ret==null){
-				InputStream in=servletContext.getResourceAsStream("/resources/img/"+defaultimgurl);				
+				InputStream in=servletContext.getResourceAsStream("/resources/assets/img/"+defaultimgurl);
 				ret=IOUtils.toByteArray(in);			
 			}
 			return ret;

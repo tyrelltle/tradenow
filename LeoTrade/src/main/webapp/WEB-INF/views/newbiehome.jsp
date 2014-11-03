@@ -7,10 +7,10 @@
 <tiles:insertDefinition name="newbietemplate">
 	<tiles:putAttribute name="header">
 
-	    <script type="text/javascript" language="javascript" src="resources/js/masonry.pkgd.js"></script>
-	    <script type="text/javascript" language="javascript" src="resources/js/imagesloaded.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/masonry.pkgd.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/imagesloaded.pkgd.js"></script>
 	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>	    
-	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
+	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/autocompleteapi.js"></script>
 	    
 	    <style type="text/css">	
 			
@@ -94,8 +94,8 @@
 	 	
 	<!--end bootstrap templates--> 	
 	<!--start bootstrap dependencies-->	
-			 <script type="text/javascript" id="tmp" src="resources/js/application/profile.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/js/application/newbieapp.js"></script>
+			 <script type="text/javascript" id="tmp" src="${pageContext.request.contextPath}/resources/application/profile.js"></script>
+			 <script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/newbieapp.js"></script>
 	<!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>

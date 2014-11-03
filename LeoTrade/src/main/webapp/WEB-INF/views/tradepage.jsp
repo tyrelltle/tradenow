@@ -141,7 +141,7 @@
 				                        <img alt="pic" id="leftprodpic" class="img-thumbnail prodpic" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">
 				                    </div>
 				                    <div class="col-md-2 col-sm-2 col-xs-2" style="margin-top:40px">
-				                        <img class="col-md-12 col-sm-12 col-xs-12" src="${pageContext.request.contextPath}/resources/img/twoarrow.png"/>
+				                        <img class="col-md-12 col-sm-12 col-xs-12" src="${pageContext.request.contextPath}/resources/assets/img/twoarrow.png"/>
 		                         		<input type="hidden" id="tradeid" value="${trade.trade_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod1id" value="${trade.prod1.prod_id}" placeholder="Last name"/>
 		                         		<input type="hidden" id="prod2id" value="${trade.prod2.prod_id}" placeholder="Last name"/>	

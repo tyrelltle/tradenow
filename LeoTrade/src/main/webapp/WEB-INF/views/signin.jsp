@@ -7,10 +7,10 @@
 
 <tiles:insertDefinition name="logintemplate">
 	<tiles:putAttribute name="header">
-		<link href="${pageContext.request.contextPath}/resources/semanticui/css/semantic.css" rel="stylesheet">  
+		<link href="${pageContext.request.contextPath}/resources/landingpage_assets/semanticui/css/semantic.css" rel="stylesheet">  
 		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/js/application/autocompleteapi.js"></script>
+		<script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/application/autocompleteapi.js"></script>
 		
 		<style>
 		.letestrade{
@@ -44,7 +44,7 @@
 						<!-- SLIDE 1 -->
 						<li id="pad" data-transition="fade" data-slotamount="3" data-masterspeed="1500" class="slide-1">
 							<!-- MAIN IMAGE -->
-							<img src="${pageContext.request.contextPath}/resources/img/header-bg.jpg"  alt="slider-1"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+							<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/header-bg.jpg"  alt="slider-1"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 
 							
@@ -75,7 +75,7 @@
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
 								>
-								<img src="${pageContext.request.contextPath}/resources/img/rev_slider/ico-s-1.png" alt="">
+								<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/rev_slider/ico-s-1.png" alt="">
 							</div>
 
 							<!-- LAYER 3 -->
@@ -90,7 +90,7 @@
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
 								>
-								<img src="${pageContext.request.contextPath}/resources/img/rev_slider/ico-s-2.png" alt="">
+								<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/rev_slider/ico-s-2.png" alt="">
 							</div>
 
 							<!-- LAYER 4 -->
@@ -105,7 +105,7 @@
 								data-endeasing="Power1.easeIn"
 								data-captionhidden="on"
 								>
-								<img src="${pageContext.request.contextPath}/resources/img/rev_slider/ico-s-3.png" alt="">
+								<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/rev_slider/ico-s-3.png" alt="">
 							</div>
 
 							<!-- LAYER 5 -->
@@ -131,7 +131,7 @@
 								data-speed="600"
 								data-x="600"
 								data-y="0">
-							<img src="${pageContext.request.contextPath}/resources/img/logo/logo.png" alt="">
+							<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/logo/logo.png" alt="">
 							</div>
 
 						</li>
@@ -192,7 +192,7 @@
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small">
 							<div class="features-list-img wow fadeInRight" data-wow-delay=".8s">
-								<img src="${pageContext.request.contextPath}/resources/img/shakehand.jpg" style="width: 441px;" alt="">
+								<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/shakehand.jpg" style="width: 441px;" alt="">
 							</div>
 						</div>
 					</div> <!-- and row -->
@@ -216,12 +216,12 @@
 							<div class="masonrycontainer" style="position: relative;">
 							<div class="masonryitem col-md-3">
 								<div class="blog-item">
-									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p1.jpg">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/featured-projects/p1.jpg">
 									<div class="blog-item-description">
 										<h3>Nice XBOX</h3>
 										<div class="row">
 											<div class="col-md-4">
-												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/defaultusericon.png"></a>
 											</div>
 											<div class="col-md-8">
 												<p class="ownernm">Tian Shao</p> 
@@ -242,12 +242,12 @@
 	        
 							</div><div class="masonryitem col-md-3">
 								<div class="blog-item">
-									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p2.jpg">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/featured-projects/p2.jpg">
 									<div class="blog-item-description">
 										<h3>Newest TV!</h3>
 										<div class="row">
 											<div class="col-md-4">
-												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/defaultusericon.png"></a>
 											</div>
 											<div class="col-md-8">
 												<p class="ownernm">Leo Liu</p> 
@@ -268,12 +268,12 @@
 	        
 								</div><div class="masonryitem col-md-3">
 								<div class="blog-item">
-									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p3.jpg">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/featured-projects/p3.jpg">
 									<div class="blog-item-description">
 										<h3>Your dream phone</h3>
 										<div class="row">
 											<div class="col-md-4">
-												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/defaultusericon.png"></a>
 											</div>
 											<div class="col-md-8">
 												<p class="ownernm">Natasha black</p> 
@@ -294,12 +294,12 @@
 	        
 								</div><div class="masonryitem col-md-3">
 								<div class="blog-item">
-									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/img/featured-projects/p4.jpg">
+									<img alt="" class="btn_detail" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/featured-projects/p4.jpg">
 									<div class="blog-item-description">
 										<h3>Lovely Sofa</h3>
 										<div class="row">
 											<div class="col-md-4">
-												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/img/defaultusericon.png"></a>
+												<a><img style="width:50px;border-radius: 12px;" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/defaultusericon.png"></a>
 											</div>
 											<div class="col-md-8">
 												<p class="ownernm">Sophia Weng</p> 
@@ -324,7 +324,7 @@
 				      </p>    
 				  	</div><!--/col-->
 					 <div class="row">
-					  <div class="col-lg-10"><img class="letestrade wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/letstrade.jpg" class="img-responsive"></div>
+					  <div class="col-lg-10"><img class="letestrade wow fadeInRight" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/tutorial/letstrade.jpg" class="img-responsive"></div>
 					</div> 
 			     <!-- and Step Two -->
 			     <!-- Step Three -->
@@ -339,7 +339,7 @@
 				      </p>    
 				  	</div><!--/col-->
 					 <div class="row">
-					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/img/tutorial/mailtype.jpg" class="img-responsive"></div>
+					  <div class="col-lg-10"><img class="wow fadeInRight" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/tutorial/mailtype.jpg" class="img-responsive"></div>
 					</div>	
 										<div style="height:100px"></div>
 				<!-- and Step Three -->

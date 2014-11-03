@@ -86,7 +86,7 @@ ul.main-menu .sub-menu.open {
     position: absolute;
     z-index: 9999;
     background-color: #ececec;
-    margin-top: 46px;
+    margin-top: 20px;
 }
 .left-sidebar.minified {
   width: 40px;

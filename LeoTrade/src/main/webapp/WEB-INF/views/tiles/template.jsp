@@ -202,8 +202,8 @@
 <div class="logged-user">
     <div class="btn-group">
         <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-            <img src="${pageContext.request.contextPath}/resources/assets/img/user-avatar.png" />
-            <span class="name">Stacy Rose</span> <span class="caret"></span>
+            <img src="${pageContext.request.contextPath}/user/img" style="max-height: 30px;max-width: 30px" />
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
             <li>
@@ -219,7 +219,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/signout">
                     <i class="fa fa-power-off"></i>
                     <span class="text">Logout</span>
                 </a>
@@ -267,7 +267,7 @@
             <!-- end left sidebar -->
 
             <!-- content-wrapper -->
-            <div class="col-md-10 content-wrapper expanded" style="margin-top: 40px;">
+            <div class="col-md-10 content-wrapper expanded" style="margin-top: 20px;">
 
 
                 <!-- main -->
