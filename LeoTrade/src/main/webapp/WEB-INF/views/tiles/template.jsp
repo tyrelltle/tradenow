@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon114x114.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon72x72.png">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon57x57.png">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/ico/favicon.png">
 
 
     <script src="${pageContext.request.contextPath}/resources/assets/js/jquery-2.1.0.min.js"></script>

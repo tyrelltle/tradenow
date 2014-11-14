@@ -1,201 +1,121 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!doctype html>
-<html class="no-js" lang="en-US">
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> <![endif]-->
+<!--[if !(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <title>Blank Page | KingAdmin - Admin Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="KingAdmin - Bootstrap Admin Dashboard Theme">
+    <meta name="author" content="The Develovers">
 
-<!--
-	HTML with Open Graph attributes
-	<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
--->
+    <!-- CSS -->
+    <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/application.css" rel="stylesheet" type="text/css">
+    <!-- CSS for demo style switcher. you can remove this -->
 
-<head> 
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${pageContext.request.contextPath}/resources/assets/ico/kingadmin-favicon57x57.png">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/ico/favicon.png">
 
-	<meta charset="UTF-8">
-	<title>All in one</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery-2.1.0.min.js"></script>
 
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/landingpage_assets/img/favicon.png">
+    <!--Internationalization-->
+    <script src="${pageContext.request.contextPath}/resources/assets/js/i18next-1.7.4.js"></script>
 
-	<!-- Add some of The Open Graph protocol -->
-		<!-- Open Graph meta tags -->
-	<!--
-	<meta content="Blog" property="og:title">
-	<meta content="website" property="og:type">
-	<meta content="http://des111gn.com/all-in-1/blog-3.html" property="og:url">
-	<meta content="" property="og:image">
-	<meta content="All in one" property="og:site_name">
-	<meta content="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable [...]" property="og:description">
-	-->
+    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/spin.min.js"></script>
+    <script>var ctx = "${pageContext.request.contextPath}/"</script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/underscore.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/backbone.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/application/notification.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/autocompleteapi.js"></script>
 
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
-
-	<!-- Main CSS Style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/styles.css" type="text/css" />
-
-	<!-- Main CSS Style (in less) delete in real project-->
-	<link rel="stylesheet/less" type="text/css" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/styles.less">
-	<!-- Less -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/less.js" type="text/javascript"></script>
-
-	<!-- Bootstrap Grid Framework -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/bootstrap.css" />
-
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='${pageContext.request.contextPath}/resources/landingpage_assets/text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='${pageContext.request.contextPath}/resources/landingpage_assets/text/css'>
-	
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/font-awesome.css">
-
-	<!-- Dropdown menu -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/slicknav.css">
-
-    <!-- Owl Carousel Assets -->
-    <link href="${pageContext.request.contextPath}/resources/landingpage_assets/css/owl.carousel.css" rel="stylesheet">
-	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/landingpage_assets/css/settings.css" media="screen" />
-    <!-- Animate css -->
-	
-	<!-- Scripts that is required -->
-	<!-- jQuery -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-1.11.1.min.js"></script>
-	<script>var ctx = "${pageContext.request.contextPath}/"</script>
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/underscore.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/backbone.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/application/notification.js"></script>
-	<!--Preaty Photo-->
-	
-	<tiles:insertAttribute name="header" />
-
+    <tiles:insertAttribute name="header" />
 </head>
 
-<body>
-	
+<body class="demo-only-page-blank">
+<!-- WRAPPER -->
+<div class="wrapper">
 
-	<div id="wrap">
+    <!-- TOP GENERAL ALERT -->
+    <div class="alert alert-danger top-general-alert">
+        <span>If you <strong>can't see the logo</strong> on the top left, please reset the style on right style switcher (for upgraded theme only).</span>
+        <a type="button" class="close">&times;</a>
+    </div>
+    <!-- END TOP GENERAL ALERT -->
 
-
-		<!-- Top bar -->
-			<!-- Top bar -->
-		<header>
-			<!-- Dropdown menu -->
-			<nav>
-				
-				<div class="header">
-					<div class="container">
-						<div class="row">
-
-
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <!-- Your logo -->
-                                <div class="logo">
-                                    <a href="${pageContext.request.contextPath}/home">
-                                        <%-- 										<img src="${pageContext.request.contextPath}/resources/landingpage_assets/img/logo.png" alt="All in 1"> --%>
-                                        <h1 style="float:left">Barbarian</h1>
-
-                                    </a>
-                                    <img alt="" src="${pageContext.request.contextPath}/resources/landingpage_assets/img/logo/logo.png" style="
-                                        width: 107px;
-                                        float: right;
-                                        top:0;
-                                        position: fixed;">
-                                </div>
-                                <!-- and Your logo -->
-                            </div>
-							
-							<div class="col-md-5 col-sm-5 col-xs-5">
-								<h2 style="margin: 1px !important;">Complete your profile</h2>
-							</div> <!-- and col-md-10 -->
-							<div class="col-md-3 col-sm-3 col-xs-3">
-								<a href="${pageContext.request.contextPath}/signout">
-									    			Log out <i class="glyphicon glyphicon-log-out"></i>
-								</a>
-							</div>
-						</div> <!-- and row -->
-					</div> <!-- and container -->
-				</div> <!-- and header -->
-
-			</nav> <!-- and Dropdown menu -->
-			
-		</header> <!-- and header -->
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container" style="height: 34px;">
+            <div class="row">
+                <!-- logo -->
+                <div class="col-md-2 logo">
+                    <a href="index.html"><img src="${pageContext.request.contextPath}/resources/assets/img/kingadmin-logo-white.png" alt="KingAdmin - Admin Dashboard" /></a>
+                    <h1 class="sr-only">KingAdmin Admin Dashboard</h1>
+                </div>
+                <!-- end logo -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /top -->
 
 
-
-		
-
-		<!-- main -->
-		<section>
-
-								<tiles:insertAttribute name="left" />
-		
-							   <tiles:insertAttribute name="main" />
-
-		<!-- and main -->
+    <!-- BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
 
 
-		<!-- Bottom bar -->
-		<section>
-			
-			<div class="bottom-bar">
-				<div class="container">
-					<div class="row">
-	
-						<div class="col-md-6 col-sm-6 col-xs-12 col-xs-small copyright">
-							<p>&#169; All Rights Reserved by <a href="#">Trade-Now.ca</a></p>
-						</div>						
-					</div> <!-- and row -->
-				</div> <!-- and container -->
-			</div> <!-- and bottom-bar -->
+                <!-- content-wrapper -->
+                <div class="col-md-10 content-wrapper expanded" style="margin-top: 20px;">
 
-		</section> <!-- and Bottom bar -->
 
-		<a href="#" class="back-to-top"></a>
+                    <!-- main -->
+                    <div class="content">
+                        <tiles:insertAttribute name="main" />
+                    </div><!-- /main -->
+                </div><!-- /content-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div>
+    <!-- END BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+    <div class="push-sticky-footer"></div>
+</div><!-- /wrapper -->
 
-	</div> <!-- and wrap -->
-	
-
-	
-  	<!-- Modernizr -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/modernizr.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+    &copy; 2014 The Develovers
+</footer>
+<!-- END FOOTER -->
 
 
 
-	<!-- Owl carousel -->
-    <script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/owl.carousel.min.js"></script>
+<!-- END STYLE SWITCHER -->
+<div style="display:none">
+    <tiles:insertAttribute name="left" />
+</div>
+<!-- Javascript -->
 
-	<!-- Bootstrap Plagins -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/modernizr.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-tour.custom.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/king-common.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.gritter.min.js"></script>
 
-	<!-- Dropdown menu if screen < 650px -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.slicknav.min.js"></script>
-	
-	<!-- Fixed Dropdown menu if scroll -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<!-- Application Domain scripts -->
+<%--<script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/category.js"></script>--%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/category.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/appscript.js"></script>
 
-	<!-- jQuery -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery-1.7.2.min.js"></script>
-
-	<!-- Animation offset -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/wow.js"></script>
-
-	<!-- Layout Style -->
-	<script src="${pageContext.request.contextPath}/resources/landingpage_assets/js/layout.js"></script>
-	
-	<!-- Application Domain scripts -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/appscript.js"></script>
-	
-	<!-- Other scripts -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/script.js"></script>
-  	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/landingpage_assets/js/jquery.themepunch.revolution.min.js"></script>
-
-	
-  
+<script src="${pageContext.request.contextPath}/resources/application/tour.js"></script>
 
 </body>
 </html>

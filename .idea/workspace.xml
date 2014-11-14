@@ -7,404 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67461f1d-8aa6-47cc-bd15-bd11dd32b20d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/screenshots/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/screenshots/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/screenshots/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/bg_header.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/bg_newsletter.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/close@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/i1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/i2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/i3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/icon_borders.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/iphone2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/loading@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/next@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/prev@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/themes/default/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/nivo-lightbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/nivo-lightbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/wow.min.js" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\bootstrap-tour.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\bootstrap-tour.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-blue.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-brown.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-orange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-pink.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-red.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-turquoise.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\color\style-yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\jquery.bxslider.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\jquery.selectbox.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\navstylechange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\owl.carousel.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\prettyPhoto.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\price-range.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\selectify.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\settings.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\slicknav.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\styles.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\css\styles.less" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\+.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\AjaxLoader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\avatar\1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\avatar\2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\avatar\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\avatar\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\background_image\brickwall.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\background_image\pw_pattern.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\background_image\sos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\background_image\sprinkles.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\background_image\tileable_wood_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\banner\banner-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\banner\banner-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\banner-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-2-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-3-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-normal-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-small-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-small-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-small-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\bl-small-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\blog-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\blog-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\blog-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\blog-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\quote.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\blog\search.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\box.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\brand.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\bx_loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\colors-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\controls.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\corner-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\corner-2-r.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\corner-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\corner.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\defaultusericon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\drop-d.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\favicon - Copy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\bl-small-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\p1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\p3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\p4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\port-sm-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\port-sm-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\port-sm-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\port-sm-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects\port-sm-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\paralax-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\paralax-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-back.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-cl-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-cl-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\features\seo-main.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\header-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\line.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\logo - Copy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\logo\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\logo_small - Copy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\logo_small.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\menu-baner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\new_collection.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\o.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\paral-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pay\pay-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pay\pay-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pay\pay-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pay\pay-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pay\pay-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\phone-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\phone.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\po-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\po-slider.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\po.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\pointer.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\portfolio\9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\btnNext.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\btnPrevious.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\contentPattern.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\default_thumbnail.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_rounded\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\btnNext.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\btnPrevious.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\contentPattern.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\default_thumbnail.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\dark_square\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\default_thumb.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\sprite_next.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\sprite_prev.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\sprite_x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\default\sprite_y.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\btnNext.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\btnPrevious.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\contentPatternBottom.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\contentPatternLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\contentPatternRight.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\contentPatternTop.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\default_thumbnail.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\facebook\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\btnNext.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\btnPrevious.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\default_thumbnail.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_rounded\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\btnNext.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\btnPrevious.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\default_thumbnail.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prettyPhoto\light_square\sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\prodlistitem.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\recent_post\1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\recent_post\2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\recent_post\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\recent_post\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\resp-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\ico-s-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\ico-s-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\ico-s-3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\pad - Copy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\pad.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\sl-2-ico.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\sl-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\sl-3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\sl-code.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-big-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-big-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\rev_slider\slider-big-s.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\search.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\select.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\select.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\1-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\2-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\3-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\4-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\service_icon\4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shakehand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop-ico.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\1-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\1-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\1-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\1-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\2-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\2-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\2-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\2-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\3-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\3-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\4-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\4-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\4-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\5-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\5-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\5-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\r-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\r-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\shop\r-3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\slider-handle.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\slider-range.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\slider-small.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\toggle-sidebar.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\toggle.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\trigger-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\close.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\computer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\letstrade.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\lv.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\mailtype.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\masonry.PNG" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\ps4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\shoe.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\tutorial\xbox.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\twitter-icon-black.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\twoarrow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\x.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\zoom-h.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\zoom.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\appear.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\app.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\autocompleteapi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\browseproduct.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\category.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\homeapp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\iwait.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\newbieapp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\notification.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\product.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\profile.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\tour.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\tradeapp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\tradelist.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\trademessage.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\application\userpageapp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\appscript.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\backbone.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\bootstrap-tour.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\bootstrap-tour.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\i18next-1.7.4.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\i18next-1.7.4.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\imagesloaded.pkgd.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\isotope.pkgd.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery-1.7.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery-1.9.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery-scrolltofixed-min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery-selectify.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.bxslider.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.easing.1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.fitvids.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.parallax-1.1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.prettyPhoto.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.selectbox-0.2.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.slicknav.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.slinky.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.themepunch.plugins.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.themepunch.revolution.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.validate.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\jquery.zoom.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\layout.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\less.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\masonry.pkgd.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\modernizr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\owl.carousel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\placeholder.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\script.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\send-mail.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\spin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\stiky-elements.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\underscore.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\js\wow.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\css\semantic.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\css\semantic.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\basic.icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\basic.icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\basic.icons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\basic.icons.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\icons.otf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\icons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\fonts\icons.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-large-inverted.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-large.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-medium-inverted.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-medium.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-mini-inverted.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-mini.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-small-inverted.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\images\loader-small.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\javascript\semantic.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\semanticui\javascript\semantic.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/animate.css" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/animate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/font-awesome.css" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/close.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/computer.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/letstrade.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/lv.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/mailtype.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/masonry.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/ps4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/shakehand.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/shoe.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/xbox.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tradepath.iws" />
@@ -431,76 +58,28 @@
       <file leaf-file-name="signin.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-37.384617" vertical-offset="303" max-vertical-offset="4352">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.5" vertical-offset="4795" max-vertical-offset="5627">
+              <caret line="292" column="36" selection-start-line="292" selection-start-column="36" selection-end-line="292" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nativelogon.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp">
+      <file leaf-file-name="servlet-context.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7777777" vertical-offset="0" max-vertical-offset="2975">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-              <folding>
-                <element signature="tag#tiles:putAttribute#0;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-                <element signature="tag#tiles:putAttribute#1;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.692307" vertical-offset="853" max-vertical-offset="4760">
-              <caret line="68" column="14" selection-start-line="64" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
-              <folding>
-                <element signature="tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#c:if#0;tag#tiles:putAttribute#2;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-                <element signature="tag#c:if#1;tag#tiles:putAttribute#2;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="king-common.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/king-common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5287" max-vertical-offset="7650">
-              <caret line="320" column="19" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="38" />
+            <state vertical-scroll-proportion="20.56" vertical-offset="514" max-vertical-offset="2414">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css">
+      <file leaf-file-name="spring-security.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/spring-security.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="8585">
-              <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/page.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8293" max-vertical-offset="18241">
-              <caret line="496" column="42" selection-start-line="496" selection-start-column="42" selection-end-line="496" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui-elements.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/ui-elements.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5236" max-vertical-offset="35445">
-              <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="326" selection-end-column="1" />
+            <state vertical-scroll-proportion="9.44" vertical-offset="236" max-vertical-offset="1683">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -509,18 +88,35 @@
       <file leaf-file-name="logintemplate.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.538462" vertical-offset="1036" max-vertical-offset="2159">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.1153846" vertical-offset="318" max-vertical-offset="2159">
+              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newbiehome.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.807693" vertical-offset="366" max-vertical-offset="2295">
+              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bl-small-4.jpg" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="newbietemplate.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.5769231" vertical-offset="2915" max-vertical-offset="3502">
-              <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
+            <state vertical-scroll-proportion="-5.269231" vertical-offset="288" max-vertical-offset="2159">
+              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -529,8 +125,28 @@
       <file leaf-file-name="template.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.269231" vertical-offset="4434" max-vertical-offset="5423">
-              <caret line="275" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.730769" vertical-offset="288" max-vertical-offset="5423">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="493">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1088">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -573,17 +189,17 @@
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/publicuserpage.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/trade/Trade.java" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tradepage.jsp" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/user/UserController.java" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/navigation.css" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" />
       </list>
     </option>
   </component>
@@ -713,7 +329,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="spring" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -743,37 +359,11 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="spring" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tiles" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tradepath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeoTrade" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="appServlet" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -800,10 +390,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landingpage_assets" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -833,11 +419,41 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="landingpage_assets" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tradepath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LeoTrade" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ico" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -861,8 +477,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -872,7 +488,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/zimolo/release0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -884,6 +500,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img\featured-projects" />
+      <recent name="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets\img" />
       <recent name="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\landingpage_assets" />
       <recent name="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\resources\assets\img" />
       <recent name="C:\Users\tyler\tradepath\tradepath\LeoTrade\src\main\webapp\WEB-INF\views\tiles" />
@@ -1241,26 +859,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="10461" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1279,6 +877,26 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="10461" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="tradepath" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.55" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -1402,7 +1020,8 @@
       <workItem from="1415165794212" duration="1109000" />
       <workItem from="1415254054901" duration="3739000" />
       <workItem from="1415344202960" duration="324000" />
-      <workItem from="1415478262754" duration="3870000" />
+      <workItem from="1415478262754" duration="12159000" />
+      <workItem from="1415940290919" duration="1219000" />
     </task>
     <task id="LOCAL-00001" summary="partial new front">
       <created>1414049557488</created>
@@ -1420,11 +1039,15 @@
       <created>1414988493766</created>
       <updated>1414988493766</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="partial new landingpage and login">
+      <created>1415482242919</created>
+      <updated>1415482242919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73179000" />
+    <option name="totallyTimeSpent" value="82687000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1447,11 +1070,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.96778524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.86067706" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1461,13 +1084,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22429305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58255035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.216875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5824468" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15704697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41145834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1480,37 +1103,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33607683" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26542416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16107382" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1528,7 +1120,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="partial new front" />
-    <option name="LAST_COMMIT_MESSAGE" value="partial new front" />
+    <MESSAGE value="partial new landingpage and login" />
+    <option name="LAST_COMMIT_MESSAGE" value="partial new landingpage and login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1540,7 +1133,7 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1548,41 +1141,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/bootstrap-switch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6392">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/jquery-2.1.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="87703" max-vertical-offset="154785">
-          <caret line="5180" column="4" selection-start-line="5180" selection-start-column="4" selection-end-line="5180" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/appscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1068" max-vertical-offset="1819">
-          <caret line="99" column="39" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/king-elements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79881656" vertical-offset="7127" max-vertical-offset="12512">
-          <caret line="451" column="0" selection-start-line="451" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2281" max-vertical-offset="3213">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tradeapp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="1580" max-vertical-offset="4335">
@@ -1766,20 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="1836">
-          <caret line="96" column="103" selection-start-line="96" selection-start-column="103" selection-end-line="96" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/img/kingadmin-logo-white.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1803,20 +1347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1287" max-vertical-offset="2159">
           <caret line="123" column="85" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.692307" vertical-offset="1559" max-vertical-offset="4862">
-          <caret line="105" column="84" selection-start-line="105" selection-start-column="84" selection-end-line="105" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1088">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1849,51 +1379,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="8585">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/king-common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5287" max-vertical-offset="7650">
           <caret line="320" column="19" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.5769231" vertical-offset="2915" max-vertical-offset="3502">
-          <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.269231" vertical-offset="4434" max-vertical-offset="5423">
-          <caret line="275" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.538462" vertical-offset="1036" max-vertical-offset="2159">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.384617" vertical-offset="303" max-vertical-offset="4352">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1901,24 +1390,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.692307" vertical-offset="853" max-vertical-offset="4760">
           <caret line="68" column="14" selection-start-line="64" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
-          <folding>
-            <element signature="tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#c:if#0;tag#tiles:putAttribute#2;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-            <element signature="tag#c:if#1;tag#tiles:putAttribute#2;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7777777" vertical-offset="0" max-vertical-offset="2975">
+        <state vertical-scroll-proportion="-5.6666665" vertical-offset="0" max-vertical-offset="2975">
           <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding>
-            <element signature="tag#tiles:putAttribute#0;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-            <element signature="tag#tiles:putAttribute#1;tag#tiles:insertDefinition#0;tag#jsp:root#0" expanded="false" />
-          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9041297" vertical-offset="1497" max-vertical-offset="4862">
+          <caret line="164" column="22" selection-start-line="100" selection-start-column="16" selection-end-line="164" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="10" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37317073" vertical-offset="7769" max-vertical-offset="8585">
+          <caret line="466" column="17" selection-start-line="466" selection-start-column="17" selection-end-line="466" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5" vertical-offset="4795" max-vertical-offset="5627">
+          <caret line="292" column="36" selection-start-line="292" selection-start-column="36" selection-end-line="292" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.56" vertical-offset="514" max-vertical-offset="2414">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.44" vertical-offset="236" max-vertical-offset="1683">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/ico/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.269231" vertical-offset="288" max-vertical-offset="2159">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.730769" vertical-offset="288" max-vertical-offset="5423">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1153846" vertical-offset="318" max-vertical-offset="2159">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.807693" vertical-offset="366" max-vertical-offset="2295">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
