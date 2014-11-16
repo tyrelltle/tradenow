@@ -133,7 +133,7 @@ var TourManager={
 				  {
 					placement:'top',
 					backdrop: true,
-				    element: "#main",
+				    element: "#prodlist",
 				    title: "Item list",
 				    content: "This is a list of items posted by other users, and it is" +
 				    		" sorted by upload date by default"
@@ -162,6 +162,7 @@ var TourManager={
                   },
                   {
                       backdrop: true,
+                      placement:'bottom',
                       element: "#tolikesbtn",
                       title: "View all favorite items",
                       content: "To view all the items that you have LIKEed, press this little" +

@@ -111,11 +111,30 @@
 <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.gritter.min.js"></script>
 
 <!-- Application Domain scripts -->
-<%--<script type="text/javascript"  id="tmp2" src="${pageContext.request.contextPath}/resources/application/category.js"></script>--%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/category.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/application/appscript.js"></script>
 
 <script src="${pageContext.request.contextPath}/resources/application/tour.js"></script>
+
+<script src="${pageContext.request.contextPath}/resources/assets/js/i18next-1.7.4.min.js"></script>
+
+<script type="text/javascript">
+    i18n.init({
+                fallbackLng: false,
+                load: 'unspecific',
+                resGetPath: "${pageContext.request.contextPath}/resources/locale/__ns__-__lng__.json",
+                ns: {
+                    namespaces: ['translation'],
+                    defaultNs: 'translation'
+                }
+            }, function () {
+                $('.translatee').each(function () {
+                            $(this).i18n();
+                        }
+                );
+            }
+    );
+</script>
+
 
 </body>
 </html>

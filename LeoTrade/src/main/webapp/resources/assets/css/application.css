@@ -2,6 +2,28 @@
 /*	Trade Path application specific CSS  --- not for template!
 
 /*------------------------------------------------*/
+
+#tourbtn{
+    position: fixed;
+    top: 50%;
+    left: -166px;
+    height: 114px;
+    z-index:9999;
+
+}
+#tourbtn button{
+    background-color: white;
+    border: 2px solid;
+}
+#tourbtn button i{
+    margin-left: 10px;
+}
+#tourbtn button,#tourbtn button i{
+    font-size: 28px;
+    color: #b2d231;
+}
+
+
 .modal-category{
     width:800px;
 }

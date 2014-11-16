@@ -62,19 +62,24 @@
 	<tiles:putAttribute name="left">
 	</tiles:putAttribute>
     <tiles:putAttribute name="main">
+
+
+
     <div class="main-content">
         <div class="main-header">
             <h2>Home</h2>
             <em>Discover and Trade!</em>
         </div>
- <%--       <!-- Tour toggle button  -->
+      <!-- Tour toggle button  -->
         <div id="tourbtn"><button>Take A Tour<i class="fa fa-question-circle"></i></button></div>
         <script>
             $('#tourbtn').click(function () {
                         TourManager.startHomeTour(true);
                     }
             );
-        </script>--%>
+        </script>
+
+
    			<c:if test="${not empty catid}">
       			<input id="catid" type="hidden" value="${catid}"/>
     		</c:if>

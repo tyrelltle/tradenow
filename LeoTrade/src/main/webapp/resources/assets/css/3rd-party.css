@@ -3227,7 +3227,7 @@ table.fc-border-separate {
 }
 
 .popover[class*="tour-"] {
-  z-index: 1100;
+  z-index: 9999;
 }
 
 .popover[class*="tour-"] .popover-navigation {

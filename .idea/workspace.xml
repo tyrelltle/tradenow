@@ -7,31 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67461f1d-8aa6-47cc-bd15-bd11dd32b20d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/close.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/computer.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/letstrade.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/lv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/mailtype.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/masonry.PNG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/p4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/port-sm-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/ps4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/shakehand.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/shoe.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/xbox.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/3rd-party.css" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/3rd-party.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/category.js" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/category.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/cuige.iml" afterPath="$PROJECT_DIR$/LeoTrade/cuige.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tour.js" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tour.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-en.json" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-en.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-zh.json" afterPath="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-zh.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tradepath.iws" />
@@ -54,105 +43,126 @@
     <favorites_list name="tradepath" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="signin.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5" vertical-offset="4795" max-vertical-offset="5627">
-              <caret line="292" column="36" selection-start-line="292" selection-start-column="36" selection-end-line="292" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="servlet-context.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="20.56" vertical-offset="514" max-vertical-offset="2414">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-security.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/spring-security.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.44" vertical-offset="236" max-vertical-offset="1683">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logintemplate.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1153846" vertical-offset="318" max-vertical-offset="2159">
-              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newbiehome.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.807693" vertical-offset="366" max-vertical-offset="2295">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bl-small-4.jpg" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newbietemplate.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.269231" vertical-offset="288" max-vertical-offset="2159">
-              <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.730769" vertical-offset="288" max-vertical-offset="5423">
-              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="493">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1088">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.722365">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="nativelogon.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.423077" vertical-offset="383" max-vertical-offset="3213">
+                  <caret line="40" column="145" selection-start-line="40" selection-start-column="99" selection-end-line="40" selection-end-column="145" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logintemplate.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-7.1153846" vertical-offset="1804" max-vertical-offset="2482">
+                  <caret line="117" column="84" selection-start-line="117" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/profile.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4862">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="newbiehome.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-20.73077" vertical-offset="1416" max-vertical-offset="2295">
+                  <caret line="115" column="187" selection-start-line="115" selection-start-column="187" selection-end-line="115" selection-end-column="187" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="newbietemplate.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-12.769231" vertical-offset="1640" max-vertical-offset="2431">
+                  <caret line="116" column="99" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-67.01852" vertical-offset="1124" max-vertical-offset="5015">
+                  <caret line="279" column="39" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="template.jsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-4.814815" vertical-offset="2732" max-vertical-offset="5423">
+                  <caret line="176" column="159" selection-start-line="176" selection-start-column="159" selection-end-line="176" selection-end-column="159" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="notification.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/notification.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="1224">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="category.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/category.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="6.611111" vertical-offset="476" max-vertical-offset="1173">
+                  <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="appscript.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/appscript.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="translation-en.json" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-en.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="9.447369" vertical-offset="865" max-vertical-offset="1683">
+                  <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -174,7 +184,6 @@
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/browseproduct.js" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/homeapp.js" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/notification.js" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/king-common.js" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/appscript.js" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/profile.js" />
@@ -191,15 +200,22 @@
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tradepage.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/user/UserController.java" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/navigation.css" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
-        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/3rd-party.css" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tour.js" />
+        <option value="$PROJECT_DIR$/LeoTrade/sql/batch/deleteuser.bat" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-en.json" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-zh.json" />
         <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp" />
+        <option value="$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/category.js" />
       </list>
     </option>
   </component>
@@ -245,6 +261,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,7 +347,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,37 +377,11 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="appServlet" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tradepath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeoTrade" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="tiles" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,10 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -449,11 +437,37 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="locale" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tradepath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LeoTrade" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ico" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,8 +491,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,7 +500,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Barbarian/LeoTylerTrade2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -859,26 +871,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -897,6 +889,26 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="tradepath" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.55" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -1021,7 +1033,10 @@
       <workItem from="1415254054901" duration="3739000" />
       <workItem from="1415344202960" duration="324000" />
       <workItem from="1415478262754" duration="12159000" />
-      <workItem from="1415940290919" duration="1219000" />
+      <workItem from="1415940290919" duration="2007000" />
+      <workItem from="1415946667552" duration="227000" />
+      <workItem from="1416095696843" duration="9996000" />
+      <workItem from="1416169293714" duration="6937000" />
     </task>
     <task id="LOCAL-00001" summary="partial new front">
       <created>1414049557488</created>
@@ -1043,11 +1058,15 @@
       <created>1415482242919</created>
       <updated>1415482242919</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="partial new landingpage and login">
+      <created>1415941542973</created>
+      <updated>1415941542974</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82687000" />
+    <option name="totallyTimeSpent" value="100635000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1074,23 +1093,24 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.86067706" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.8590604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33607683" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.216875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5824468" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22236504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.914094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41145834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41073826" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1103,6 +1123,38 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8590604" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33607683" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22236504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.914094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41145834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1141,367 +1193,397 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tradeapp.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/EventControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1580" max-vertical-offset="4335">
-          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/components.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.821429" vertical-offset="5385" max-vertical-offset="7208">
-          <caret line="328" column="2" selection-start-line="328" selection-start-column="2" selection-end-line="328" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/product/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3299" max-vertical-offset="6052">
-          <caret line="253" column="37" selection-start-line="253" selection-start-column="37" selection-end-line="253" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/Repo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7112971" vertical-offset="0" max-vertical-offset="717">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/TradeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28591353" vertical-offset="1752" max-vertical-offset="3502">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/repository/product/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3757">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/repository/product/IProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="918">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/SearchTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2329">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/ProductTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="3451">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/NewProductTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25244072" vertical-offset="1672" max-vertical-offset="3060">
-          <caret line="135" column="8" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1627" max-vertical-offset="3060">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/EventControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/ProductTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40725243" vertical-offset="949" max-vertical-offset="1666">
-          <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3451">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/SearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="7734" max-vertical-offset="10370">
-          <caret line="469" column="22" selection-start-line="469" selection-start-column="22" selection-end-line="469" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2329">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/tradelist.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/test/java/com/tianshao/cuige/Repo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.285714" vertical-offset="518" max-vertical-offset="1207">
-          <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="19396" max-vertical-offset="64872">
-          <caret line="1155" column="17" selection-start-line="1155" selection-start-column="17" selection-end-line="1155" selection-end-column="17" />
+        <state vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="476">
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/app.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/resources/log4j.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0669456" vertical-offset="0" max-vertical-offset="1700">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/resources/templates/resetpswEmailTemplate.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/resources/templates/testEmailTemplate.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="221">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/browseproduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/iwait.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38171262" vertical-offset="2780" max-vertical-offset="5423">
-          <caret line="179" column="59" selection-start-line="179" selection-start-column="59" selection-end-line="179" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5423">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/profile.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/homeapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37957612" vertical-offset="177" max-vertical-offset="2261">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="1870">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/userpageapp.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.15028901" vertical-offset="435" max-vertical-offset="1462">
-          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/publicuserpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="4369">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/trade/TradeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="530" max-vertical-offset="1904">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/trade/Trade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65510595" vertical-offset="408" max-vertical-offset="2669">
-          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.0.0.RELEASE/spring-tx-4.0.0.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3625" max-vertical-offset="10234">
-          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.0.0.RELEASE/spring-aop-4.0.0.RELEASE-sources.jar!/org/springframework/aop/support/AopUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.895209" vertical-offset="0" max-vertical-offset="4947">
-          <caret line="321" column="0" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/repository/trade/TradeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="2091">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="1139">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tradepage.jsp">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/notification/Notification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="8024">
-          <caret line="9" column="115" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="115" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/img/kingadmin-logo-white.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/notification/NotificationDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/navigation.css">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/product/ProductImageUrlDTP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45188284" vertical-offset="1172" max-vertical-offset="3451">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/product/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3213">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="717">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6392">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/admin/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52580196" vertical-offset="133" max-vertical-offset="850">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/product/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/product/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="6052">
+          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/product/ProductDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2091">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/user/LogonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4114">
+          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/services/mail/RegconfirmMailer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/domains/mail/Mail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="394" max-vertical-offset="1088">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/trade/TradeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/java/com/tianshao/cuige/appservice/user/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1287" max-vertical-offset="2159">
-          <caret line="123" column="85" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/img/kingadmin-logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8293" max-vertical-offset="18241">
-          <caret line="496" column="42" selection-start-line="496" selection-start-column="42" selection-end-line="496" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="893" max-vertical-offset="2159">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/ui-elements.css">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/newbieapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5236" max-vertical-offset="35445">
-          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="326" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/root-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="694">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/block.rnc">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33262712" vertical-offset="3651" max-vertical-offset="4284">
-          <caret line="224" column="16" selection-start-line="224" selection-start-column="16" selection-end-line="224" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/king-common.js">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/spring-database.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5287" max-vertical-offset="7650">
-          <caret line="320" column="19" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.692307" vertical-offset="853" max-vertical-offset="4760">
-          <caret line="68" column="14" selection-start-line="64" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6666665" vertical-offset="0" max-vertical-offset="2975">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9041297" vertical-offset="1497" max-vertical-offset="4862">
-          <caret line="164" column="22" selection-start-line="100" selection-start-column="16" selection-end-line="164" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/tiles-definitions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="10" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37317073" vertical-offset="7769" max-vertical-offset="8585">
-          <caret line="466" column="17" selection-start-line="466" selection-start-column="17" selection-end-line="466" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/css/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5" vertical-offset="4795" max-vertical-offset="5627">
-          <caret line="292" column="36" selection-start-line="292" selection-start-column="36" selection-end-line="292" selection-end-column="36" />
+        <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="833">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="20.56" vertical-offset="514" max-vertical-offset="2414">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.04" vertical-offset="1745" max-vertical-offset="2414">
+          <caret line="113" column="42" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/spring/appServlet/spring-security.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.44" vertical-offset="236" max-vertical-offset="1683">
+        <state vertical-scroll-proportion="0.12283237" vertical-offset="102" max-vertical-offset="1683">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/js/i18next-1.7.4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/signin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8461537" vertical-offset="5799" max-vertical-offset="6477">
+          <caret line="347" column="61" selection-start-line="347" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/assets/ico/favicon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/nativelogon.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.269231" vertical-offset="288" max-vertical-offset="2159">
-          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        <state vertical-scroll-proportion="-11.423077" vertical-offset="383" max-vertical-offset="3213">
+          <caret line="40" column="145" selection-start-line="40" selection-start-column="99" selection-end-line="40" selection-end-column="145" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.730769" vertical-offset="288" max-vertical-offset="5423">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1153846" vertical-offset="318" max-vertical-offset="2159">
-          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4862">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/newbiehome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.807693" vertical-offset="366" max-vertical-offset="2295">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        <state vertical-scroll-proportion="-20.73077" vertical-offset="1416" max-vertical-offset="2295">
+          <caret line="115" column="187" selection-start-line="115" selection-start-column="187" selection-end-line="115" selection-end-column="187" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/landingpage_assets/img/featured-projects/bl-small-4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/newbietemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.769231" vertical-offset="1640" max-vertical-offset="2431">
+          <caret line="116" column="99" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-67.01852" vertical-offset="1124" max-vertical-offset="5015">
+          <caret line="279" column="39" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/appscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-zh.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77557254" vertical-offset="716" max-vertical-offset="1649">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/locale/translation-en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.447369" vertical-offset="865" max-vertical-offset="1683">
+          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/logintemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1153846" vertical-offset="1804" max-vertical-offset="2482">
+          <caret line="117" column="84" selection-start-line="117" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/WEB-INF/views/tiles/template.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.814815" vertical-offset="2732" max-vertical-offset="5423">
+          <caret line="176" column="159" selection-start-line="176" selection-start-column="159" selection-end-line="176" selection-end-column="159" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="1224">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeoTrade/src/main/webapp/resources/application/category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.611111" vertical-offset="476" max-vertical-offset="1173">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
@@ -1559,7 +1641,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>cuige</last-edited>
+          <last-edited>Spring|cuige</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

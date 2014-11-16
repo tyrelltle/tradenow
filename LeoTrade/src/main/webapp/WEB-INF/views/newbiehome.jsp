@@ -32,8 +32,8 @@
     <tiles:putAttribute name="main">
         <div class="main-content">
             <div class="main-header" style="margin-bottom: 20px">
-                <h2>Complete your profile</h2>
-                <em>Wherecome! Please update your profile</em>
+                <h2 class="translatee" data-i18n="profile.complete">Complete your profile</h2>
+                <em class="translatee" data-i18n="profile.welcome">Wherecome! Please update your profile</em>
             </div>
             <div class="container">
                 <div  class="row">
@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="user-info-left">
-                        <h2>Your Profile Photo</h2>
+                        <h2 class="translatee" data-i18n="profile.photo">Your Profile Photo</h2>
                             <span id="span_uimg">
                                 <img style="max-width: 300px;" class="prodpic" src="${pageContext.request.contextPath}/user/img/userid/{{userid}}" alt="Profile Picture">
                             </span>
@@ -70,25 +70,25 @@
                                 <legend>User Information</legend>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Email</label>
+                                    <label class="translatee col-sm-2 control-label" data-i18n="profile.email">Email</label>
                                     <div class="col-sm-9">
                                         <input type="email" class="form-control" id="email" value="{{email}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">First Name</label>
+                                    <label class="col-sm-2 control-label translatee" data-i18n="profile.firstname">First Name</label>
                                     <div class="col-sm-9">
                                         <input class="form-control" id="fn" value="{{firstname}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Last Name</label>
+                                    <label class="col-sm-2 control-label translatee" data-i18n="profile.lastname">Last Name</label>
                                     <div class="col-sm-9">
                                         <input class="form-control" id="ln" value="{{lastname}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Your City</label>
+                                    <label class="col-sm-2 control-label translatee" data-i18n="profile.city">Your City</label>
                                     <div class="col-sm-9">
                                         <input class="form-control" id="autocomplete" onFocus="geolocate()" placeholder="Please enter your City,Country" value="{{location}}">
                                         <input id="lat" type="hidden" value="{{lat}}" />
@@ -97,7 +97,7 @@
                                 </div>
 
 
-                                <legend>About You</legend>
+                                <legend class="translatee" data-i18n="profile.about">About You</legend>
 
                                 <div class="form-group">
                                     <div class="col-sm-9">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <a id="continue" href="#"><h3 style="margin-top:100px"><i class="glyphicon glyphicon-forward"></i><span id="continuetxt">Continue to the site</span></h3></a>
+                    <a id="continue" href="#"><h3 style="margin-top:100px"><i class="glyphicon glyphicon-forward"></i><span id="continuetxt" class="translatee" data-i18n="profile.continue">Continue to the site</span></h3></a>
                 </div>
             </div>
         </script>

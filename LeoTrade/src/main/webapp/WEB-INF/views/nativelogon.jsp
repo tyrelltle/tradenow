@@ -27,8 +27,8 @@
     <tiles:putAttribute name="main">
         <div class="main-content">
             <div class="main-header">
-                <h2>Signup</h2>
-                <em>Logon with your email</em>
+                <h2 class="translatee" data-i18n="signin.signup">Signup</h2>
+                <em class="translatee" data-i18n="signin.withemail">Logon with your email</em>
             </div>
             <section style="margin-top: 30px;">
                 <div class="blog">
@@ -38,7 +38,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <div class="widget-header"><h3><i class="fa fa-edit"></i>Login with existing account</h3></div>
+                                    <div class="widget-header"><h3><i class="fa fa-edit"></i><span class="translatee" data-i18n="signin.existing">Login with existing account</span></h3></div>
                                     <div class="widget-content">
                                         <form  class="form-horizontal" id="regform" method="POST" action="${pageContext.request.contextPath}/j_spring_security_check" >
                                             <div class="form-group">
@@ -83,7 +83,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <div class="widget-header"><h3><i class="fa fa-edit"></i>Register new account</h3></div>
+                                    <div class="widget-header"><h3><i class="fa fa-edit"></i><span class="translatee" data-i18n="signin.newacc">Register new account</span></h3></div>
                                     <div class="widget-content">
                                         <form:form  class="form-horizontal" id="regform"  method="POST" commandName="userForm" action="nativeregister">
 

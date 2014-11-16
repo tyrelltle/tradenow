@@ -128,7 +128,7 @@
                 <input type="search" class="searchtxt form-control" value="${searchkey}">
             </c:when>
             <c:otherwise>
-                <input type="search" class="searchtxt form-control" placeholder="Searchy By Item Name...">
+                <input type="search" class="searchtxt form-control translatee" data-i18n="[placeholder]menu.searchnm" placeholder="Searchy By Item Name...">
             </c:otherwise>
         </c:choose>
 
@@ -147,7 +147,7 @@
                 <input type="search" class="locsearchtxt form-control" id="autocomplete" onFocus="geolocate()" value="${location}">
             </c:when>
             <c:otherwise>
-                <input type="search" class="locsearchtxt form-control" id="autocomplete" onFocus="geolocate()" placeholder="Searchy By Central Location....">
+                <input type="search" class="locsearchtxt form-control translatee" id="autocomplete" onFocus="geolocate()" data-i18n="[placeholder]menu.searchlc" placeholder="Searchy By Central Location....">
             </c:otherwise>
         </c:choose>
 
@@ -173,8 +173,8 @@
 <!-- responsive menu bar icon -->
 <a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i></a>
 <!-- end responsive menu bar icon -->
-<button type="button" id="btn_cat" class="btn btn-link"><i class="fa fa-th-list"></i> Categories</button>
-<button type="button" id="tolikesbtn" class="likesbtn btn btn-link"><i class="fa fa-heart"></i> Favorites</button>
+<button type="button" id="btn_cat" class="btn btn-link"><i class="fa fa-th-list"></i> <span class="translatee" data-i18n="menu.category">Categories</span></button>
+<button type="button" id="tolikesbtn" class="likesbtn btn btn-link"><i class="fa fa-heart"></i>  <span class="translatee" data-i18n="menu.fav">Favorites</span></button>
 <div class="notifications">
     <ul>
         <!-- notification: general -->
@@ -248,10 +248,10 @@
                 <nav class="main-nav">
 
                     <ul class="main-menu">
-                        <li ><a href="${pageContext.request.contextPath}/home"><i class="fa fa-home fa-fw"></i><span class="text">Home</span></a></li>
-                        <li ><a href="${pageContext.request.contextPath}/user#prodlis"><i class="fa fa-plus-square fa-fw"></i><span class="text">Add Item</span></a></li>
-                        <li ><a href="${pageContext.request.contextPath}/user#tradelis"><i class="fa fa-exchange fa-fw"></i><span class="text">My Previous Trades</span></a></li>
-                        <li ><a href="${pageContext.request.contextPath}/user"><i class="fa fa-user fa-fw"></i><span class="text">My Profile</span></a></li>
+                        <li ><a href="${pageContext.request.contextPath}/home"><i class="fa fa-home fa-fw"></i><span class="text translatee" data-i18n="menu.home">Home</span></a></li>
+                        <li ><a href="${pageContext.request.contextPath}/user#prodlis"><i class="fa fa-plus-square fa-fw"></i><span class="text translatee" data-i18n="menu.additem">Add Item</span></a></li>
+                        <li ><a href="${pageContext.request.contextPath}/user#tradelis"><i class="fa fa-exchange fa-fw"></i><span class="text translatee" data-i18n="menu.prevtrade">My Previous Trades</span></a></li>
+                        <li ><a href="${pageContext.request.contextPath}/user"><i class="fa fa-user fa-fw"></i><span class="text translatee" data-i18n="menu.profile">My Profile</span></a></li>
                         <li ><a href="${pageContext.request.contextPath}/home"><i class="fa fa-question-circle fa-fw"></i><span class="text">FAQ</span></a></li>
 
 

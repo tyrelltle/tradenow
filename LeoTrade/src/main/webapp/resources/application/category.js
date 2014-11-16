@@ -47,7 +47,7 @@ CategoryListItemView=Backbone.View.extend({
 	events:{"click":"clicked"},
 	tagName:"td",
 	render:function(){
-//        this.model.set("name",i18n.t('category.'+this.model.get("name")));
+        this.model.set("name",i18n.t('category.'+this.model.get("name")));
         $(this.el).html(this.template(this.model.toJSON()));
 		if($('#catid').length>0){
 			if(parseInt($('#catid').val()) == this.model.get("catid")){
