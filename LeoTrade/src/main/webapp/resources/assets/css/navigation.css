@@ -87,6 +87,7 @@ ul.main-menu .sub-menu.open {
     z-index: 9999;
     background-color: #ececec;
     margin-top: 20px;
+  position:fixed;
 }
 .left-sidebar.minified {
   width: 40px;

@@ -66,10 +66,7 @@
 
 
     <div class="main-content">
-        <div class="main-header">
-            <h2>Home</h2>
-            <em>Discover and Trade!</em>
-        </div>
+
       <!-- Tour toggle button  -->
         <div id="tourbtn"><button>Take A Tour<i class="fa fa-question-circle"></i></button></div>
         <script>
@@ -133,7 +130,7 @@
 								<div class="blog-item">
 									<img alt="" id="btn_detail" class="btn_detail" src="{{thumurl}}">
 									<div class="blog-item-description">
-										<h3>{{title}}</h3>
+										<h3 style="margin-top:0px">{{title}}</h3>
 										<div class="row">
 											<div class="col-md-4">
 												<a href="user/userid/{{userid}}"><img style="width:50px;border-radius: 12px;" src="{{ownerimgurl}}"/></a>

@@ -98,7 +98,7 @@
 			      		<c:if test="${not empty msg}">
 			      			<input id="srvrmsg" type="hidden" value="${msg}"/>
 			    		</c:if>
-				    <div id="block" class="panel col-md-12">
+				    <div id="block" class="col-md-12">
 				        <div id="userpanel" class="sidepanel col-md-2 col-sm-2 col-xs-2">
 				             <ul class="list-group">
 				              <li class="list-group-item">

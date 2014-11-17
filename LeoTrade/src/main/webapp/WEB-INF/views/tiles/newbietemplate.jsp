@@ -16,6 +16,7 @@
     <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/resources/assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/resources/assets/css/application.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/resources/assets/css/skins/fullbright.css" rel="stylesheet" type="text/css">
     <!-- CSS for demo style switcher. you can remove this -->
 
     <!-- Fav and touch icons -->
@@ -59,7 +60,7 @@
             <div class="row">
                 <!-- logo -->
                 <div class="col-md-2 logo">
-                    <a href="index.html"><img src="${pageContext.request.contextPath}/resources/assets/img/kingadmin-logo-white.png" alt="KingAdmin - Admin Dashboard" /></a>
+                    <a href="index.html"><img src="${pageContext.request.contextPath}/resources/assets/img/kingadmin-logo.png" alt="KingAdmin - Admin Dashboard" /></a>
                     <h1 class="sr-only">KingAdmin Admin Dashboard</h1>
                 </div>
                 <!-- end logo -->
