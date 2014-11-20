@@ -27,7 +27,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.tianshao.cuige" />
+	<context:component-scan base-package="com.tradenow" />
 	
 	
 	
@@ -48,11 +48,11 @@
 	   </beans:props>
 	  </beans:property>
 	 </beans:bean>
-	<beans:bean id="mailer" class="com.tianshao.cuige.services.mail.RegconfirmMailer">
+	<beans:bean id="mailer" class="com.tradenow.services.mail.RegconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>
-	 <beans:bean id="pswmailer" class="com.tianshao.cuige.services.mail.PswResetconfirmMailer">
+	 <beans:bean id="pswmailer" class="com.tradenow.services.mail.PswResetconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>

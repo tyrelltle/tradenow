@@ -10,14 +10,14 @@
         <property name="hibernate.search.default.directory_provider">filesystem</property>
 		<property name="hibernate.search.default.indexBase">c:\hibernate_test2</property>
     	<property name="format_sql">true</property>
-        <mapping class="com.tianshao.cuige.domains.user.User" />
-        <mapping class="com.tianshao.cuige.domains.user.UserRole" />
-		<mapping class="com.tianshao.cuige.domains.product.Category" />
-        <mapping class="com.tianshao.cuige.domains.product.Product" />
-        <mapping class="com.tianshao.cuige.domains.product.Image" />
-        <mapping class="com.tianshao.cuige.domains.trade.Trade" />
-        <mapping class="com.tianshao.cuige.domains.notification.Notification" />
-        <mapping class="com.tianshao.cuige.domains.mail.Regconfirm" />
+        <mapping class="com.tradenow.domains.user.User" />
+        <mapping class="com.tradenow.domains.user.UserRole" />
+		<mapping class="com.tradenow.domains.product.Category" />
+        <mapping class="com.tradenow.domains.product.Product" />
+        <mapping class="com.tradenow.domains.product.Image" />
+        <mapping class="com.tradenow.domains.trade.Trade" />
+        <mapping class="com.tradenow.domains.notification.Notification" />
+        <mapping class="com.tradenow.domains.mail.Regconfirm" />
         
 
     </session-factory>

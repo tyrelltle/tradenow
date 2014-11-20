@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.tianshao.cuige">
+	<logger name="com.tradenow">
 		<level value="info" />
 	</logger>
 	

@@ -47,7 +47,7 @@
 		<!-- Adds social authentication filter to the Spring Security filter chain. -->
         <custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
 	</http>
-	<context:component-scan base-package="com.tianshao.cuige" />
+	<context:component-scan base-package="com.tradenow" />
 
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="userDetailsService" >
