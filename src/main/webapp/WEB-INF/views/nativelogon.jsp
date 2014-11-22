@@ -29,16 +29,9 @@
                 <div class="panel-heading">
                     <div class="translatee panel-title" data-i18n="signin.Sign In">Sign In</div>
                     <div style="float:right; font-size: 80%; position: relative; top:-10px">
-                        <a href="#" onclick="$('.ps_email').show();"><p class="translatee" data-i18n="signin.forgot">Forgot Password?</p></a>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <h5 class="translatee ps_email" style="display:none" data-i18n="signin.sendemail">We will send you an email containing password reset information</h5>
-
-                                <input type="text" style="display:none" class="translatee ps_email form-control" id="ps_email" data-i18n="[placeholder]signin.email" placeholder="Enter your email"/>
-
-                                <button style="display:none;width:25%" id="btn_send_reset_email" class="ps_email btn btn-primary">Send</button>
-                            </div>
-                        </div>
+                        <a href="#" onClick="$('#loginbox').hide(); $('#resetpwdbox').show()" class="translatee" data-i18n="signin.forgot">
+                            forgot your password?
+                        </a>
                     </div>
                 </div>
                 <div style="padding-top: 30px" class="panel-body">
@@ -85,6 +78,27 @@
                 </div>
             </div>
         </div>
+
+        <div id="resetpwdbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+
+                <div class="panel-heading">
+                    <div class="panel-title" data-i18n="signin.forgot">Forgot password</div>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" class="translatee" data-i18n="signin.signin" onclick="$('#resetpwdbox').hide(); $('#loginbox').show()" >Sign In</a></div>
+                </div>
+
+                <div class="panel-body" >
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h5 class="translatee ps_email" data-i18n="signin.sendemail">We will send you an email containing password reset information</h5>
+                            <input type="text" class="translatee ps_email form-control" id="ps_email" data-i18n="[placeholder]signin.email" placeholder="Enter your email"/>
+                            <button style="width:25%;margin-top:10px" id="btn_send_reset_email" class="ps_email btn btn-info">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
 
