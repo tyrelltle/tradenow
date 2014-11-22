@@ -124,6 +124,8 @@
                     </div>
 
                 </div>
+
+
                 <script type="text/javascript">
                     initializeAutocomplete();
                     $("#regform").keypress(function(e){
@@ -150,7 +152,13 @@
 
                     });
 
+                    <c:if test="${not empty forregister}">
+                        $('#signupbox').show();
+                        $('#loginbox').hide();
+                    </c:if>
+
                 </script>
+
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-9">
                         <form:button class="translatee btn btn-info" type="submit" data-i18n="signin.signup"> Sign Up</form:button>

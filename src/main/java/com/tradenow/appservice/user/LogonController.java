@@ -168,7 +168,10 @@ public class LogonController  {
 //=======native register
 		@RequestMapping(value="nativeregister",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
 		public String nativeregister(@ModelAttribute("userForm") @Valid UserRegistrationDTO dto,BindingResult result, @ModelAttribute("signinForm")UserLogonDTO dto2,Model model,HttpServletResponse resp,HttpServletRequest req) throws IOException {
-	        if(result.hasErrors()) {
+
+            //forregister flag is used to tell jsp if the redirected view is for registration or login
+            model.addAttribute("forregister",true);
+            if(result.hasErrors()) {
 	            return "nativelogon";
 	        }
 			try{

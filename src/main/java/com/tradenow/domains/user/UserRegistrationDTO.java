@@ -9,10 +9,7 @@ public class UserRegistrationDTO {
 		@NotEmpty
 		@Size(min = 6, max = 30)
     	private String password;
-    	@NotEmpty
-    	private String lastname;
-    	@NotEmpty
-    	private String firstname;
+
     	private String lat;
     	private String lng;
     	@NotEmpty
@@ -56,18 +53,6 @@ public class UserRegistrationDTO {
 		}
 
 
-		public String getLastname() {
-			return lastname;
-		}
-		public void setLastname(String lastname) {
-			this.lastname = lastname;
-		}
-		public String getFirstname() {
-			return firstname;
-		}
-		public void setFirstname(String firstname) {
-			this.firstname = firstname;
-		}
 		public String getEmail() {
 			return email;
 		}

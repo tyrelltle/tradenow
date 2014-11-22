@@ -107,8 +107,6 @@ public class User implements IEntity{
 		
 		User ret=new User();
 		ret.email=dto.getEmail();
-		ret.firstname=dto.getFirstname();
-		ret.lastname=dto.getLastname();
 		ret.password=dto.getPassword();
 		
 		if(dto.getLat()==null || dto.getLng()==null){
