@@ -336,7 +336,16 @@
 </div>
 <!--////////// FOOTER SECTION ////////// -->
 <footer>
-    <p>© Copyright 2014 Trade-Now.ca - Designed with love by Barbarian Network Ltd.</p>
+    <div class="row">
+        <div class="col-md-5" style="text-align: right;">
+            <h3> © Copyright 2014 Trade-Now.ca</h3>
+            <h3>Designed with love by Barbarian Network Ltd.</h3>
+        </div>
+        <div class="col-md-offset-2 col-md-4" style="text-align: left;">
+            <h3>Contact Us</h3>
+            <h3>Email: tyrelltle@gmail.com</h3>
+        </div>
+    </div>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.tradenow.domains.mail.Regconfirm;
 import com.tradenow.domains.user.User;
-import com.tradenow.services.mail.Mailer;
+import com.tradenow.domains.mail.Mailer;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
