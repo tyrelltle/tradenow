@@ -39,6 +39,7 @@
     <script src="${pageContext.request.contextPath}/resources/application/notification.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/autocompleteapi.js"></script>
+    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/feedback.js"></script>
 
     <tiles:insertAttribute name="header" />
 </head>
@@ -78,6 +79,29 @@
 </div>
 
 </div>
+
+
+<!--feedback modal-->
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Submit a feedback</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please enter your feedback here:</p>
+                <textarea id="feedbacktext" class="form-control" rows="5" cols="30"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="feedback(this,'#feedbacktext','${pageContext.request.contextPath}');">Send feedback</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!--underscore templates -->
 <script type="text/template" id="catlistitemtmp">
@@ -174,6 +198,7 @@
 <!-- responsive menu bar icon -->
 <a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i></a>
 <!-- end responsive menu bar icon -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#feedbackModal"><i class="fa fa-envelope"></i>Feedback</button>
 <button type="button" id="btn_cat" class="btn btn-link"><i class="fa fa-th-list"></i> <span class="translatee" data-i18n="menu.category">Categories</span></button>
 <button type="button" id="tolikesbtn" class="likesbtn btn btn-link"><i class="fa fa-heart"></i>  <span class="translatee" data-i18n="menu.fav">Favorites</span></button>
 <div class="notifications">

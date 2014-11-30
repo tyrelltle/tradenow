@@ -138,7 +138,7 @@
                                             });
 
                                             $('#btn_send_reset_email').click(function(e){
-                                                var btn = $(this)
+                                                var btn = $(this);
                                                 btn.button('loading');
                                                 $.ajax({
                                                     type: "POST",
