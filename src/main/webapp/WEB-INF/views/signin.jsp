@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TradeNow!</title>
     <link href="${pageContext.request.contextPath}/resources/landingpage_assets/css/style.css" rel="stylesheet">
@@ -15,6 +14,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 <div class="doc-loader"></div>
@@ -336,7 +336,16 @@
 </div>
 <!--////////// FOOTER SECTION ////////// -->
 <footer>
-    <p>© Copyright 2014 Trade-Now.ca - Designed with love by Barbarian Network Ltd.</p>
+    <div class="row">
+        <div class="col-md-6" style="text-align: right;">
+            <p>&copy; 2014 Trade-Now.ca</p>
+            <p>Designed with love by Barbarian Network Ltd.</p>
+        </div>
+        <div class="col-md-6" style="text-align: left;">
+            <p>Contact Us</p>
+            <p>Email: tyrelltle@gmail.com</p>
+        </div>
+    </div>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

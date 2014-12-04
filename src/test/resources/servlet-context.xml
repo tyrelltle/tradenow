@@ -43,11 +43,11 @@
 	   </beans:props>
 	  </beans:property>
 	 </beans:bean>
-	<beans:bean id="mailer" class="com.tradenow.services.mail.RegconfirmMailer">
+	<beans:bean id="mailer" class="com.tradenow.domains.mail.RegconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>
-	 <beans:bean id="pswmailer" class="com.tradenow.services.mail.PswResetconfirmMailer">
+	 <beans:bean id="pswmailer" class="com.tradenow.domains.mail.PswResetconfirmMailer">
 	  <beans:property name="mailSender" ref="mailSender" />
 	  <beans:property name="velocityEngine" ref="velocityEngine"/>
 	 </beans:bean>

@@ -33,8 +33,8 @@ import com.tradenow.domains.user.UserRegistrationDTO;
 import com.tradenow.domains.user.UserRole;
 import com.tradenow.repository.mail.IMailRepository;
 import com.tradenow.repository.user.IUserRepository;
-import com.tradenow.services.mail.PswResetconfirmMailer;
-import com.tradenow.services.mail.RegconfirmMailer;
+import com.tradenow.domains.mail.PswResetconfirmMailer;
+import com.tradenow.domains.mail.RegconfirmMailer;
 import com.tradenow.services.user.IUserService;
 import com.tradenow.services.user.UserDetailService;
 

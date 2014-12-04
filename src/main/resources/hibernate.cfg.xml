@@ -10,14 +10,13 @@
 		<property name="hibernate.search.default.indexBase">c:\hibernate_search_index</property>
         <mapping class="com.tradenow.domains.user.User" />
         <mapping class="com.tradenow.domains.user.UserRole" />
-		<mapping class="com.tradenow.domains.product.Category" />
+        <mapping class="com.tradenow.domains.product.Category" />
         <mapping class="com.tradenow.domains.product.Product" />
         <mapping class="com.tradenow.domains.product.Image" />
         <mapping class="com.tradenow.domains.trade.Trade" />
         <mapping class="com.tradenow.domains.trade.Message" />
         <mapping class="com.tradenow.domains.notification.Notification" />
         <mapping class="com.tradenow.domains.mail.Regconfirm" />
-
     </session-factory>
 	    
 </hibernate-configuration>
