@@ -118,6 +118,7 @@ public class TradeController {
 	    	dto.setSuccessMessage("You have accepted the item!");
 	    	if(trade.bothAccepted())
 	    	{
+                tradeService.closeTradeAndPersist(trade);
 	    		notificationService.createTradeCompleteNotif(trade);
 	    	}else{
 		    	notificationService.createTradeProposal_Approval_Notif(trade,side, INotificationService.TRADE_ACTION.APPROVAL);
