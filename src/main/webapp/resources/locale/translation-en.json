@@ -68,8 +68,8 @@
         "additem":"Add Item",
         "category":"Category",
         "fav":"Favorite",
-        "searchnm":"Search Item Name",
-        "searchlc":"Search Item Location",
+        "searchnm":"What are you looking for?",
+        "searchlc":"Near Vancouver",
         "pretrade":"My Previous Trades"
     },
     "category":{

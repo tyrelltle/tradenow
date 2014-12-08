@@ -153,13 +153,13 @@
                 <input type="search" class="searchtxt form-control" value="${searchkey}">
             </c:when>
             <c:otherwise>
-                <input type="search" class="searchtxt form-control translatee" data-i18n="[placeholder]menu.searchnm" placeholder="Searchy By Item Name...">
+                <input type="search" class="searchtxt form-control translatee" data-i18n="[placeholder]menu.searchnm" placeholder="What are you looking for...">
             </c:otherwise>
         </c:choose>
 
-        <span class="input-group-btn">
+        <!--<span class="input-group-btn">
             <button class="searchbtn btn btn-default" type="button"><i class="fa fa-search"></i></button>
-        </span>
+        </span>-->
     </div>
     <!-- end search box -->
 </div>
@@ -172,7 +172,7 @@
                 <input type="search" class="locsearchtxt form-control" id="autocomplete" onFocus="geolocate()" value="${location}">
             </c:when>
             <c:otherwise>
-                <input type="search" class="locsearchtxt form-control translatee" id="autocomplete" onFocus="geolocate()" data-i18n="[placeholder]menu.searchlc" placeholder="Searchy By Central Location....">
+                <input type="search" class="locsearchtxt form-control translatee" id="autocomplete" onFocus="geolocate()" data-i18n="[placeholder]menu.searchlc" placeholder="Near Vancouver, BC">
             </c:otherwise>
         </c:choose>
 
