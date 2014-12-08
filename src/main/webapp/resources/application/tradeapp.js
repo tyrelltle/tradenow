@@ -39,6 +39,15 @@ AppRouter=Backbone.Router.extend({
             $('#btnpropose,#btnaccepted').attr("disabled",false);
         });
         this.initstatus($('#status1').val(),$('#status2').val());
+
+        $('#dealdone').on('shown.bs.modal',function(){
+            $('#one').animate({left:$("#two").offset().left-$("#two").offsetParent().offset().left});
+            $('#two').animate({right:$("#two").offset().left-$('#two').offsetParent().offset().left});
+            $('#twoimg').css({float:'right'});
+            $('#oneimg').css({float:'left'});
+
+
+        });
 	},
 	start:function(){
 		//not put in initialize() because at that time app is not defined yet

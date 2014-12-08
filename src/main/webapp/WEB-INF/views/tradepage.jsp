@@ -109,9 +109,11 @@
 				                 	</a>
 				             </li>
 				             <li class="list-group-item"> Status: <span  id="label_status1" style="color:white"></span></li>
-				              <li class="list-group-item">
-				              	  <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
-				              </li>
+                              <c:if test="${not trade.bothAccepted()}">
+                                  <li class="list-group-item">
+                                      <button type="button" id="choosebtn" class="btn btn-default">Choose Item</button>
+                                  </li>
+                              </c:if>
 				              <li class="list-group-item">
 				                Delivery Method
 
@@ -151,10 +153,10 @@
                                         <input type="hidden" id="h_method2" value="${trade.method2}" placeholder="Last name"/>
 
                                         <input type="hidden" id="side" value="${side}" placeholder="Last name"/>
-		                         						                         			
-		                       			<button  id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success" disabled>Propose!</button>
-				                        <button  id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
-				                        
+                                        <c:if test="${not trade.bothAccepted()}">
+                                            <button  id="btnpropose" class="col-md-12 col-sm-12 col-xs-12 btnsubmit btn btn-success" disabled>Propose!</button>
+				                            <button  id="btnaccepted" style="margin-top: 5px;" class="col-md-12 col-sm-12 col-xs-12 btn btn-success">Accept!</button>
+				                        </c:if>
 				                    </div>
 				                    <div id="prod_right" class="col-md-5 col-sm-5 col-xs-5">
 				                    	<p>${trade.prod2.title}</p>
@@ -189,16 +191,14 @@
 															<div class="message_body col-md-7">
 				                                              <div class="msgdate">Mon 19, 2014</div>
 				                                              <div class="well well-sm">
-				                                                  helloworldddddddddddddddddddddddddddddddddddddddd
-				
+
 				                                              </div>
 				                                            </div>                                        </div>
 				                                        <div class="message row">
 				                                            <div class="message_body col-md-offset-2 col-md-7">
 				                                              <div class="msgdate">Mon 19, 2014</div>
 				                                              <div class="well well-sm">
-				                                                  helloworldddddddddddddddddddddddddddddddddddddddd
-				
+
 				                                              </div>
 				                                            </div>
 				                                            <div class="col-md-2">
@@ -263,6 +263,19 @@
 			      </div>
 			      <div id="div_dealdone" class="modal-body">
 			      	 This trade has been finished because both of you have aceepted the offer!
+                     <div  class="row" style="margin: 100px;margin-top: 33px;position: relative;">
+                         <div id="one" class="col-md-5">
+                             <img id="oneimg" style="float: right;width:200px;position: relative" alt="pic"  class="img-thumbnail" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">
+                         </div>
+                         <img class="col-md-2" src="${pageContext.request.contextPath}/resources/assets/img/twoarrow.png"/>
+                         <div id="two" class="col-md-5">
+                             <img id="twoimg" style="float:left;width:200px;position: relative" alt="pic"  class="img-thumbnail" src="${pageContext.request.contextPath}/${trade.prod2.thumurl}">
+                         </div>
+
+                     </div>
+
+
+
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" id="prod_save" data-dismiss="modal" class="btn btn-primary">Dismiss</button>
@@ -318,12 +331,12 @@
     </div>
 			</script>
 			<script type="text/template" id="imglistitemtmp2">
-	<div class="item">
-      <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
+                <div class="item">
+                  <img class="galimg" src="${pageContext.request.contextPath}/{{url}}" max-width: 500px;margin: 0 auto;" alt="...">
+                  <div class="carousel-caption">
+                    ...
+                  </div>
+                </div>
 			</script>
 	 		
 	 		<script type="text/template" id="prodlisttmp">
