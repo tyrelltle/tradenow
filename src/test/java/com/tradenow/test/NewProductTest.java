@@ -181,12 +181,6 @@ public class NewProductTest{
 	@After
 	public void truncate(){
 	
-		
-		repo.truncateTable("Product");
-		
-		repo.truncateTable("Category");
-        repo.truncateTable("Regconfirm");
-		repo.truncateTable("User");
 
 	}
 }

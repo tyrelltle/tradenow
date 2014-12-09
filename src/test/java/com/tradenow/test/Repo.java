@@ -35,10 +35,7 @@ public  class Repo {
 
 	@Transactional
 	public int truncateTable(String tab){
-		Session session = sessionFactory.getCurrentSession();
-	    String hql = String.format("delete from %s",tab);
-	    Query query = session.createQuery(hql);
-	    return query.executeUpdate();
+        return 0;
 	}
 
 }

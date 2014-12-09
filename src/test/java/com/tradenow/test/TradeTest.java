@@ -203,15 +203,6 @@ public class TradeTest{
     @After
     public void truncate(){
 
-        repo.truncateTable("Trade");
-
-        repo.truncateTable("Product");
-
-        repo.truncateTable("Category");
-
-        repo.truncateTable("Image");
-
-        repo.truncateTable("User");
 
     }
 

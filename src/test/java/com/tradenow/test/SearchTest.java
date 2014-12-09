@@ -137,13 +137,6 @@ public class SearchTest{
 	
 	@After
 	public void truncate(){
-		repo.truncateTable("Notification");
-	
-		
-		repo.truncateTable("Product");
-		
-		repo.truncateTable("Category");
-		repo.truncateTable("User");
 
 	}
 }
