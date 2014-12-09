@@ -259,10 +259,13 @@
 			    <div class="modal-content">
 			      <div class="modalheader modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <div class="modal-title" id="myModalLabel">Congradulations!</div>
+			        <h1 class="modal-title" id="myModalLabel">Congradulations!</h1>
 			      </div>
 			      <div id="div_dealdone" class="modal-body">
-			      	 This trade has been finished because both of you have aceepted the offer!
+                     <div style="text-align: center">
+			      	    <h4>This trade has been finished because both of you have aceepted the offer!</h4>
+                        <h4>Now Both Of You Items Will Go To Each Other's Repository!</h4>
+                     </div>
                      <div  class="row" style="margin: 100px;margin-top: 33px;position: relative;">
                          <div id="one" class="col-md-5">
                              <img id="oneimg" style="float: right;width:200px;position: relative" alt="pic"  class="img-thumbnail" src="${pageContext.request.contextPath}/${trade.prod1.thumurl}">

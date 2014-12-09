@@ -45,8 +45,6 @@ AppRouter=Backbone.Router.extend({
             $('#two').animate({right:$("#two").offset().left-$('#two').offsetParent().offset().left});
             $('#twoimg').css({float:'right'});
             $('#oneimg').css({float:'left'});
-
-
         });
 	},
 	start:function(){
@@ -67,7 +65,7 @@ AppRouter=Backbone.Router.extend({
 			side_=1;
 		message.set({
 			side:side_,
-			message:$('#msgtxt').val(),	
+			message:$('#msgtxt').val()
 		});
 		message.setTradeId($('#tradeid').val());
 		app.messageList.create(message,{success:app.start});
@@ -219,7 +217,7 @@ AppRouter=Backbone.Router.extend({
 		$.ajax({
 			  type: "POST",
 		      contentType: "application/json",
-			  url: url,			
+			  url: url
 			})
 			  .done(function( msg ) {
 					var jstr=JSON.stringify(msg);
