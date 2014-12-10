@@ -4,6 +4,7 @@ import com.tradenow.domains.product.Category;
 import com.tradenow.domains.product.Product;
 import com.tradenow.domains.trade.Trade;
 import com.tradenow.domains.trade.Trade.FROM_TO;
+import com.tradenow.domains.trade.TradePath;
 import com.tradenow.domains.user.User;
 import com.tradenow.repository.product.IProductRepository;
 import com.tradenow.repository.trade.ITradeRepository;
@@ -18,6 +19,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -112,16 +116,30 @@ public class TradePathTest {
 
     @Test
     public void testTradePathAdd() throws Exception{
-
         TradePath tradepath=new TradePath();
-        tradepath.add(prod1);
-        tradepath.add(prod2);
-        tradepath.add(prod3);
-
+        tradepath.addProduct(prod1);
+        tradepath.addProduct(prod2);
+        tradepath.addProduct(prod3);
+        assertEquals(tradepath.getProduct(0).getProd_id(),prod1.getProd_id());
+        assertEquals(tradepath.getProduct(1).getProd_id(),prod2.getProd_id());
+        assertEquals(tradepath.getProduct(2).getProd_id(),prod3.getProd_id());
+        List prodlis=new ArrayList<Product>();
+        prodlis.add(prod1);
+        prodlis.add(prod2);
+        prodlis.add(prod3);
+        tradepath=new TradePath(prodlis);
+        assertEquals(tradepath.getProduct(0).getProd_id(),prod1.getProd_id());
+        assertEquals(tradepath.getProduct(1).getProd_id(),prod2.getProd_id());
+        assertEquals(tradepath.getProduct(2).getProd_id(),prod3.getProd_id());
     }
 
+    /**
+     * TPC: TradePathCollection
+     */
     @Test
-    public void testTradePathCollection(){
+    public void testTPC_Node(){
+
+
         trade1=new Trade();
         trade1.setProd1(prod1);
         trade1.setProd2(prod2);
@@ -139,6 +157,9 @@ public class TradePathTest {
         trade3.setProd2(prod4);
         trade3.setDefaultValues();
         tradeRepository.addNew(trade3);
+
+
+
     }
 
 }
