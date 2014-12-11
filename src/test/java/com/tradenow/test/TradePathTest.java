@@ -5,6 +5,7 @@ import com.tradenow.domains.product.Product;
 import com.tradenow.domains.trade.Trade;
 import com.tradenow.domains.trade.Trade.FROM_TO;
 import com.tradenow.domains.trade.TradePath;
+import com.tradenow.domains.trade.TradePathGenerator;
 import com.tradenow.domains.user.User;
 import com.tradenow.repository.product.IProductRepository;
 import com.tradenow.repository.trade.ITradeRepository;
@@ -12,6 +13,7 @@ import com.tradenow.repository.user.IUserRepository;
 import com.tradenow.services.product.IProductService;
 import com.tradenow.services.trade.ITradeService;
 import com.tradenow.services.user.IUserService;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,6 +55,9 @@ public class TradePathTest {
     User prof;
     User prof2;
     User prof3;
+    User prof4;
+    User prof5;
+    User prof6;
     Category cat;
     private Product prod1;
     private Product prod2;
@@ -64,14 +69,23 @@ public class TradePathTest {
     private Trade trade1;
     private Trade trade2;
 
+
     @Before
     public void init(){
         prof=new User();
         prof2=new User();
         prof3=new User();
+        prof4=new User();
+        prof5=new User();
+        prof6=new User();
+
+
         userRepository.addNew(prof);
         userRepository.addNew(prof2);
         userRepository.addNew(prof3);
+        userRepository.addNew(prof4);
+        userRepository.addNew(prof5);
+        userRepository.addNew(prof6);
 
         cat=new Category();
         cat.setName("testcat");
@@ -89,22 +103,22 @@ public class TradePathTest {
 
         prod3= new Product();
         prod3.setCategory(cat);
-        prod3.setOwner(prof);
+        prod3.setOwner(prof3);
         productRepository.addNew(prod3);
 
         prod4= new Product();
         prod4.setCategory(cat);
-        prod4.setOwner(prof2);
+        prod4.setOwner(prof4);
         productRepository.addNew(prod4);
 
         prod5= new Product();
         prod5.setCategory(cat);
-        prod5.setOwner(prof2);
+        prod5.setOwner(prof5);
         productRepository.addNew(prod5);
 
         prod6= new Product();
         prod6.setCategory(cat);
-        prod6.setOwner(prof);
+        prod6.setOwner(prof6);
         productRepository.addNew(prod6);
 
 
@@ -133,33 +147,128 @@ public class TradePathTest {
         assertEquals(tradepath.getProduct(2).getProd_id(),prod3.getProd_id());
     }
 
-    /**
-     * TPC: TradePathCollection
-     */
+
     @Test
-    public void testTPC_Node(){
+    public void testTradePathGenerator_TraverseMap(){
+
+        TradePathGenerator.TraverseMap map=new TradePathGenerator.TraverseMap();
+        map.putOrCreate(prod1,prod2);
+        map.putOrCreate(prod2,prod3);
+        map.putOrCreate(prod4,prod5);
+        ArrayList<TradePath> lis=map.retrieveTradePaths();
+
+        assertEquals(lis.size(),2);
+
+        TradePath path1,path2;
+        if(lis.get(0).size()==3){
+            path1=lis.get(0);
+            path2=lis.get(1);
+        }else{
+            path1=lis.get(1);
+            path2=lis.get(0);
+        }
+
+        //ensure the map contains correct tradepath
+        assertEquals(path1.getProduct(0).getProd_id(),prod1.getProd_id());
+        assertEquals(path1.getProduct(1).getProd_id(),prod2.getProd_id());
+        assertEquals(path1.getProduct(2).getProd_id(),prod3.getProd_id());
+
+        assertEquals(path2.getProduct(0).getProd_id(),prod4.getProd_id());
+        assertEquals(path2.getProduct(1).getProd_id(),prod5.getProd_id());
+    }
+
+    @Test
+    public void testTradePathGenerator() throws Exception{
+        /**
+         * initialize trades
+         */
+        List<Trade> tradelis=new ArrayList<Trade>();
+
+        Trade t1=createtrade(prod1,prod2);
+        tradelis.add(t1);
+
+        Trade t2=createtrade(prod2,prod3);
+        tradelis.add(t2);
+
+        Trade t3=createtrade(prod3,prod4);
+        tradelis.add(t3);
+
+        Trade t4=createtrade(prod4,prod5);
+        tradelis.add(t4);
 
 
-        trade1=new Trade();
-        trade1.setProd1(prod1);
-        trade1.setProd2(prod2);
-        trade1.setDefaultValues();
-        tradeRepository.addNew(trade1);
+        List<TradePath> paths=TradePathGenerator.generatorFromTrades(prof.getUserid(),tradelis);
 
-        trade2=new Trade();
-        trade2.setProd1(prod2);
-        trade2.setProd2(prod3);
-        trade2.setDefaultValues();
-        tradeRepository.addNew(trade2);
+        assertEquals(paths.size(),1);
+        assertEquals(paths.get(0).size(),5);
+        assertEquals(paths.get(0).getProduct(0).getProd_id(),prod1.getProd_id());
+        assertEquals(paths.get(0).getProduct(1).getProd_id(),prod2.getProd_id());
+        assertEquals(paths.get(0).getProduct(2).getProd_id(),prod3.getProd_id());
+        assertEquals(paths.get(0).getProduct(3).getProd_id(),prod4.getProd_id());
+        assertEquals(paths.get(0).getProduct(4).getProd_id(),prod5.getProd_id());
 
-        trade3=new Trade();
-        trade3.setProd1(prod3);
-        trade3.setProd2(prod4);
-        trade3.setDefaultValues();
-        tradeRepository.addNew(trade3);
+    }
 
+
+    @Test
+    public void testTradePathGenerator_multiplePaths() throws Exception{
+        /**
+         * initialize trades
+         */
+        List<Trade> tradelis=new ArrayList<Trade>();
+
+        //trades that will form user1's tradepath
+        Trade t1=createtrade(prod1,prod2);
+        tradelis.add(t1);
+
+        Trade t2=createtrade(prod2,prod3);
+        tradelis.add(t2);
+
+        Trade t3=createtrade(prod3,prod4);
+        tradelis.add(t3);
+        //create trades for another tradepath of he user
+        prod5.setOwner(prof);
+        productRepository.update(prod5);
+        Trade t4=createtrade(prod5,prod6);
+        tradelis.add(t4);
+
+
+        List<TradePath> paths=TradePathGenerator.generatorFromTrades(prof.getUserid(),tradelis);
+
+        TradePath path1,path2;
+        if(paths.get(0).size()==4){
+            path1=paths.get(0);
+            path2=paths.get(1);
+        }else{
+            path1=paths.get(1);
+            path2=paths.get(0);
+        }
+
+        assertEquals(paths.size(),2);
+        assertEquals(path1.size(),4);
+        assertEquals(path2.size(),2);
+
+        assertEquals(path1.getProduct(0).getProd_id(),prod1.getProd_id());
+        assertEquals(path1.getProduct(1).getProd_id(),prod2.getProd_id());
+        assertEquals(path1.getProduct(2).getProd_id(),prod3.getProd_id());
+        assertEquals(path1.getProduct(3).getProd_id(),prod4.getProd_id());
+
+        assertEquals(path2.getProduct(0).getProd_id(),prod5.getProd_id());
+        assertEquals(path2.getProduct(1).getProd_id(),prod6.getProd_id());
 
 
     }
 
+
+    private Trade createtrade(Product proda,Product prodb) throws Exception {
+        Trade t1=new Trade();
+        t1.setDefaultValues();
+        t1.setProd1(proda);
+        t1.setProd2(prodb);
+        tradeRepository.addNew(t1);
+        t1.setStatus1(Trade.STATUS.ACCEPTED.name());
+        t1.setStatus2(Trade.STATUS.ACCEPTED.name());
+        tradeService.closeTradeAndPersist(t1);
+        return t1;
+    }
 }

@@ -159,9 +159,9 @@ public class Trade implements IEntity{
     }
 
     public Trade.FROM_TO getSideByUserId(int userid){
-        if(this.prod1!=null && prod1.getOwner().getUserid()==userid)
+        if(user1.getUserid()==userid)
             return FROM_TO.FROM;
-        else if(this.prod2!=null && prod2.getOwner().getUserid()==userid)
+        else if(user2.getUserid()==userid)
             return FROM_TO.TO;
         return null;
     }

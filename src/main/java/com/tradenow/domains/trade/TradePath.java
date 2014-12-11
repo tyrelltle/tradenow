@@ -5,6 +5,10 @@ import com.tradenow.domains.product.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * encapsulate the product list of a trade path, for future possible
+ * change of the datastructure (other than arraylist)
+ */
 public class TradePath {
     List<Product> mProdList=new ArrayList<Product>();
 
@@ -22,4 +26,6 @@ public class TradePath {
     public Product getProduct(int i) {
         return mProdList.get(i);
     }
+
+    public int size(){return mProdList.size();}
 }
