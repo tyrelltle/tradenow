@@ -293,16 +293,16 @@ public class User implements IEntity{
 		this.longitude=lng;
 	}
 
-	public static UserDTO toUserDTO(User user) {
+	public UserDTO toDTO() {
 		UserDTO profwrap=new UserDTO();
-        profwrap.setEmail(user.getEmail());
-        profwrap.setFirstname(user.getFirstname());
-        profwrap.setLastname(user.getLastname());
-        profwrap.setLocation(user.getLocation());
-        profwrap.setUserid(user.getUserid());
-        profwrap.setAboutme(user.getAboutme());
-        profwrap.setLat(String.valueOf(user.getLatitude()));
-        profwrap.setLng(String.valueOf(user.getLongitude()));
+        profwrap.setEmail(getEmail());
+        profwrap.setFirstname(getFirstname());
+        profwrap.setLastname(getLastname());
+        profwrap.setLocation(getLocation());
+        profwrap.setUserid(getUserid());
+        profwrap.setAboutme(getAboutme());
+        profwrap.setLat(String.valueOf(getLatitude()));
+        profwrap.setLng(String.valueOf(getLongitude()));
         return profwrap;		
 	}
 

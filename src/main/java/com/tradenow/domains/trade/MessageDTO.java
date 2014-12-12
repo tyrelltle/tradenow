@@ -1,6 +1,8 @@
 package com.tradenow.domains.trade;
 
-public class MessageDTO {
+import com.tradenow.domains.IDTO;
+
+public class MessageDTO implements IDTO{
 	int side;
 	String message;
 	String imgurl;

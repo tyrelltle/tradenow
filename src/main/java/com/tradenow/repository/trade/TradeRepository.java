@@ -68,21 +68,26 @@ public class TradeRepository extends BaseRepository implements ITradeRepository{
 		return lis.get(0);
 
 	}
-	
-	
+
+    /**
+     * get trade by userid
+     * @param profid    userid
+     * @param fromto    FROM: user is trader. TO: user is tradee. BOTH: user is either trader or tradee
+     * @return
+     */
 	@Transactional
 	public List<Trade> getByUserId(int profid,Trade.FROM_TO fromto){
 		String str;
 		String formstr;
 		switch(fromto){
-			case FROM:str="from Trade t where t.prod1.owner.userid= %d";
+			case FROM:str="from Trade t where t.user1.userid= %d";
 					  formstr=String.format(str, profid);
 					  break;
-			case TO: str="from Trade t where t.prod2.owner.userid= %d";
+			case TO: str="from Trade t where t.user2.userid= %d";
 			  		  formstr=String.format(str, profid);
 				      break;
 			case BOTH:
-					 str="from Trade t where  t.prod1.owner.userid= %d or t.prod2.owner.userid=%d";
+					 str="from Trade t where  t.user1.userid= %d or t.user2.userid= %d";
 					 formstr=String.format(str, profid,profid);
 					 break;
 		    default:

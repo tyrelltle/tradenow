@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.tradenow.domains.IDTO;
 import com.tradenow.domains.IEntity;
 @Entity
 @Table(name="category")
@@ -51,5 +52,12 @@ public class Category implements IEntity{
 	}
 
 
+	@Override
+	public IDTO toDTO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 	
 }

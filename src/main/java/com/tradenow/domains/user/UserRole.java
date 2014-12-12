@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.tradenow.domains.IDTO;
 import com.tradenow.domains.IEntity;
 
 
@@ -68,5 +69,11 @@ public class UserRole implements IEntity{
  
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	@Override
+	public IDTO toDTO() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

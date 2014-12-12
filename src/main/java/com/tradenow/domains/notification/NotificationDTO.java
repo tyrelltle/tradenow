@@ -1,6 +1,8 @@
 package com.tradenow.domains.notification;
 
-public class NotificationDTO {
+import com.tradenow.domains.IDTO;
+
+public class NotificationDTO implements IDTO {
 	int id;
 	String message;
 	String url;

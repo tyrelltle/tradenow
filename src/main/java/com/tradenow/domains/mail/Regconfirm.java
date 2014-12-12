@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.tradenow.domains.IDTO;
 import com.tradenow.domains.IEntity;
 import com.tradenow.domains.user.User;
 @Entity
@@ -39,6 +40,12 @@ public class Regconfirm implements IEntity{
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public IDTO toDTO() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

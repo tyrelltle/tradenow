@@ -66,7 +66,7 @@ public class UserController {
 	    	}else{
 	    		user=userRepository.getByUserid(userid);
 	    	}
-	    	return User.toUserDTO(user);
+	    	return user.toDTO();
 	    	
 	    	
 	    	

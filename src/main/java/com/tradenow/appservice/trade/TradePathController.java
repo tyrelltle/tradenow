@@ -18,6 +18,8 @@ import com.tradenow.domains.trade.Trade;
 import com.tradenow.domains.trade.TradeDTO;
 import com.tradenow.domains.trade.TradePageDTO;
 import com.tradenow.domains.trade.Trade.FROM_TO;
+import com.tradenow.domains.trade.TradePath;
+import com.tradenow.domains.trade.TradePathGenerator;
 import com.tradenow.repository.product.IProductRepository;
 import com.tradenow.repository.trade.ITradeRepository;
 import com.tradenow.services.NotificationService.INotificationService;
@@ -27,8 +29,8 @@ import com.tradenow.services.user.IUserService;
 
 
 @Controller
-@RequestMapping("/api/trade")
-public class TradeController {
+@RequestMapping("/api/tradepath")
+public class TradePathController {
 		@Autowired
 		private IUserService userService;
 		@Autowired
@@ -39,10 +41,19 @@ public class TradeController {
 	    private ITradeRepository tradeRepository;
 	    @Autowired
 	    private IProductRepository productRepository;
+	    
+	    
+	    
+	    /*
+	     * get trade path of current logged on user
+	     */
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public @ResponseBody List<TradeDTO> get(HttpServletResponse resp) throws Exception {
+		public @ResponseBody List<TradeDTO> getmine(HttpServletResponse resp) throws Exception {
 
 			List<Trade> t=tradeRepository.getByUserId(userService.currentUser().getUserid(), FROM_TO.BOTH);
+			List<TradePath> tradepaths=TradePathGenerator.generatorFromTrades(userService.currentUser().getUserid(), t);
+			
+			
 			List<TradeDTO> ret=new ArrayList<TradeDTO>();
 			Iterator<Trade> i=t.iterator();
 			while(i.hasNext()){
@@ -53,44 +64,6 @@ public class TradeController {
 		}
 
 		
-		@RequestMapping(value="propose",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")
-	    public @ResponseBody TradePageDTO propose(@RequestBody TradePageDTO dto, 
-	    				   HttpServletResponse resp) throws Exception {
-
-			if(dto.getProd1id()==null || dto.getProd1id().equals("")||dto.getProd1id().equals("-1"))
-			{
-				dto.setErrorMessage("Please choose an item on left hand side!");
-				return dto;
-			}
-	    	Trade trade=null;
-    		boolean firsttime=false;
-	    	trade=tradeRepository.getByTradeid(Integer.valueOf(dto.getTradeid()));
-    		if(trade==null){	
-    			firsttime=true;
-    			trade=new Trade();
-        		trade.setProd1(productRepository.getByProductId(Integer.valueOf(dto.getProd1id())));
-        		trade.setProd2(productRepository.getByProductId(Integer.valueOf(dto.getProd2id())));
-    		}else{
-    			//only from product can be changed
-        		trade.setProd1(productRepository.getByProductId(Integer.valueOf(dto.getProd1id())));
-    		}
-       		trade.setMethodBySide(dto.getMethod(), dto.getSide());	
-
-    		if(firsttime){
-    			trade.setDefaultValues();
-    			tradeRepository.addNew(trade);
-    		}
-    		else{
-    			trade=tradeService.updateProposedTrade(trade, dto.getSide());
-    		}
-	    	dto.setTradeid(String.valueOf(trade.getTrade_id()));
-	    	trade.setMethodBySide(dto.getMethod(), dto.getSide());
-	    	dto.setSuccessMessage("Successfully proposed the item!");
-	    	notificationService.createTradeProposal_Approval_Notif(trade,dto.getSide(), INotificationService.TRADE_ACTION.PROPOSAL);
-	        return dto;
-	    }
-		
-
 
 
 		@RequestMapping(value="accept/tradeid/{tradeid}/side/{side}",method = RequestMethod.POST,headers="Accept=*/*",produces="application/json")

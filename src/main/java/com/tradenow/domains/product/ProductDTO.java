@@ -1,6 +1,8 @@
 package com.tradenow.domains.product;
 
-public class ProductDTO{
+import com.tradenow.domains.IDTO;
+
+public class ProductDTO implements IDTO{
 	int prod_id;
 	
 	

@@ -4,7 +4,7 @@ create table trade(
 	prod2_id int not null,
 	user1_id int not null,
 	user2_id int not null,
-	trans_date	date not null,	
+	trans_date	timestamp not null,	
 	status1	 varchar(10) default 'Pending',
 	status2	 varchar(10) default 'Pending',
 	method1  varchar(10) default 'In Person',

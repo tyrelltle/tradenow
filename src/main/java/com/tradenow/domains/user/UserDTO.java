@@ -1,6 +1,8 @@
 package com.tradenow.domains.user;
 
-public class UserDTO {
+import com.tradenow.domains.IDTO;
+
+public class UserDTO implements IDTO{
 	
     	private int userid;
     	private String aboutme;

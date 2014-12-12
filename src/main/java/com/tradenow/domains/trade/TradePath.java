@@ -1,6 +1,7 @@
 package com.tradenow.domains.trade;
 
 import com.tradenow.domains.product.Product;
+import com.tradenow.domains.product.ProductDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,4 +29,9 @@ public class TradePath {
     }
 
     public int size(){return mProdList.size();}
+    
+    public List<ProductDTO> to_DTO(){
+    	//List
+    	return null;
+    }
 }

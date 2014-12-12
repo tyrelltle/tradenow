@@ -48,7 +48,7 @@ public class ProductController {
 	    private IUserService userService;
 	    
 	    @Autowired
-	    private IProductRepository productRepository;
+		public IProductRepository productRepository;
 	  
 	    
 		@RequestMapping(value="likes",method = RequestMethod.GET, produces="application/json")
@@ -161,7 +161,7 @@ public class ProductController {
 	    		return null;
 	    	}
 	    	
-	    		PROD_TO_DTO(prod, dto);
+	    	dto=prod.toDTO();
 	    		
 	    	return dto;
 	    	
@@ -204,7 +204,7 @@ public class ProductController {
 				Product prod=new Product();
 				prod.setCategory(cat);
 				prod.setOwner(owner);				
-				DTO_to_PROD(dto, prod);
+				prod.from_DTO(dto, this);
 				productRepository.addNew(prod);
 				dto.setUserid(prod.getOwner().getUserid());
 				dto.setProd_id(prod.getProd_id());
@@ -227,7 +227,7 @@ public class ProductController {
 			
 			try {
 				Product prod=productRepository.getByProductId(prod_id);
-				DTO_to_PROD(dto, prod);
+				prod.from_DTO(dto, this);
 				productRepository.update(prod);
 				dto.setProd_id(prod.getProd_id());
 				return dto;
@@ -251,7 +251,7 @@ public class ProductController {
 			
 			try {
 				productRepository.remove(prod);
-				PROD_TO_DTO(prod,ret);
+				ret=prod.toDTO();
 				return ret;
 			} catch (Exception e) {
 				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
@@ -327,7 +327,7 @@ public class ProductController {
 		    	while(i.hasNext()){
 		    		Product prod=i.next();
 		    		ProductDTO dto = new ProductDTO();
-					PROD_TO_DTO(prod, dto);
+		    		dto=prod.toDTO();
 		    		ret.add(dto);
 		    	}
 			}
@@ -343,38 +343,10 @@ public class ProductController {
 		    		Product prod=i.next();
 		    		ProductDTO dto = new ProductDTO();
 		    		
-					PROD_TO_DTO(prod, dto);
+		    		dto=prod.toDTO();
 		    		dto.setLiked(null!=u?(u.likes(prod)?1:0):1);
 					ret.add(dto);
 		    	}
 				
-			}
-			
-			
-			private void DTO_to_PROD(ProductDTO dto, Product prod) {
-				prod.setDetail(dto.getDetail());
-				prod.setPrice(dto.getPrice());
-				prod.setQuantity(dto.getQuantity());
-				prod.setStatus(dto.getStatus());
-				prod.setTitle(dto.getTitle());
-				prod.setTradefor(dto.getTradefor());
-				prod.setThumurl(dto.getThumurl());
-				prod.setCategory(productRepository.getCategory(dto.getCatid()));
-			}		
-		
-			private void PROD_TO_DTO(Product prod, ProductDTO dto) {
-				dto.setDetail(prod.getDetail());
-				dto.setPrice(prod.getPrice());
-				dto.setProd_id(prod.getProd_id());
-				dto.setQuantity(prod.getQuantity());
-				dto.setUserid(prod.getOwner().getUserid());
-				dto.setStatus(prod.getStatus());
-				dto.setCatid(prod.getCategory().getCatid());
-				dto.setTitle(prod.getTitle());
-				dto.setThumurl(prod.getThumurl());
-				dto.setTradefor(prod.getTradefor());
-				dto.setOwneraddr(prod.getOwner().getLocation());
-				dto.setOwnerimgurl("user/img/userid/"+prod.getOwner().getUserid());
-				dto.setOwnernm(prod.getOwner().getFullName());
 			}
 }

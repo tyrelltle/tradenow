@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.tradenow.domains.IEntity;
 import com.tradenow.domains.product.Product;
@@ -51,6 +53,7 @@ public class Trade implements IEntity{
     User user2;
 
     @Column(name="trans_date")
+    @Temporal(TemporalType.TIMESTAMP)
     Date trans_date;
 
     @Column(name="status1")
@@ -197,7 +200,7 @@ public class Trade implements IEntity{
         return null;
     }
 
-    public TradeDTO toTradeDTO(){
+    public TradeDTO toDTO(){
         TradeDTO dto=new TradeDTO();
         dto.setImg1url(prod1.getThumurl());
         dto.setImg2url(prod2.getThumurl());

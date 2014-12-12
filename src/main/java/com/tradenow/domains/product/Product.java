@@ -27,6 +27,7 @@ import org.hibernate.search.annotations.Longitude;
 import org.hibernate.search.annotations.Spatial;
 import org.hibernate.search.annotations.Store;
 
+import com.tradenow.appservice.product.ProductController;
 import com.tradenow.domains.IEntity;
 import com.tradenow.domains.trade.Trade;
 import com.tradenow.domains.user.User;
@@ -264,6 +265,41 @@ public class Product implements IEntity{
 
 	public Set<User> getLikers(){
 		return likers;
+	}
+
+
+
+
+	public void from_DTO(ProductDTO dto, ProductController productController) {
+		setDetail(dto.getDetail());
+		setPrice(dto.getPrice());
+		setQuantity(dto.getQuantity());
+		setStatus(dto.getStatus());
+		setTitle(dto.getTitle());
+		setTradefor(dto.getTradefor());
+		setThumurl(dto.getThumurl());
+		setCategory(productController.productRepository.getCategory(dto.getCatid()));
+	}
+
+
+
+
+	public ProductDTO toDTO() {
+		ProductDTO dto=new ProductDTO();
+		dto.setDetail(getDetail());
+		dto.setPrice(getPrice());
+		dto.setProd_id(getProd_id());
+		dto.setQuantity(getQuantity());
+		dto.setUserid(getOwner().getUserid());
+		dto.setStatus(getStatus());
+		dto.setCatid(getCategory().getCatid());
+		dto.setTitle(getTitle());
+		dto.setThumurl(getThumurl());
+		dto.setTradefor(getTradefor());
+		dto.setOwneraddr(getOwner().getLocation());
+		dto.setOwnerimgurl("user/img/userid/"+getOwner().getUserid());
+		dto.setOwnernm(getOwner().getFullName());
+		return dto;
 	}
 	
 

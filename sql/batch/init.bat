@@ -1,4 +1,8 @@
-use leotradetest;
+drop database leotrade;
+create database leotrade;
+use leotrade;
+
+
 source category.sql;
 source category_init.sql;
 source userconnection.sql;

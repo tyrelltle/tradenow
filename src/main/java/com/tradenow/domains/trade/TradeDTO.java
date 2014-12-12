@@ -1,6 +1,8 @@
 package com.tradenow.domains.trade;
 
-public class TradeDTO {
+import com.tradenow.domains.IDTO;
+
+public class TradeDTO implements IDTO{
 	
     	 int tradeid;
     	 String tradeurl;
