@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.tradenow.domains.trade.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tradenow.domains.trade.Trade;
-import com.tradenow.domains.trade.TradeDTO;
-import com.tradenow.domains.trade.TradePageDTO;
 import com.tradenow.domains.trade.Trade.FROM_TO;
-import com.tradenow.domains.trade.TradePath;
-import com.tradenow.domains.trade.TradePathGenerator;
 import com.tradenow.repository.product.IProductRepository;
 import com.tradenow.repository.trade.ITradeRepository;
 import com.tradenow.services.NotificationService.INotificationService;
@@ -48,19 +44,17 @@ public class TradePathController {
 	     * get trade path of current logged on user
 	     */
 		@RequestMapping(method = RequestMethod.GET,headers="Accept=*/*",produces="application/json")
-		public @ResponseBody List<TradeDTO> getmine(HttpServletResponse resp) throws Exception {
+		public @ResponseBody List<TradePathDTO> getmine(HttpServletResponse resp) throws Exception {
 
 			List<Trade> t=tradeRepository.getByUserId(userService.currentUser().getUserid(), FROM_TO.BOTH);
 			List<TradePath> tradepaths=TradePathGenerator.generatorFromTrades(userService.currentUser().getUserid(), t);
 			
-			
-			List<TradeDTO> ret=new ArrayList<TradeDTO>();
-			Iterator<Trade> i=t.iterator();
+			List<TradePathDTO> ret=new ArrayList<TradePathDTO>();
+			Iterator<TradePath> i=tradepaths.iterator();
 			while(i.hasNext()){
 				ret.add(i.next().toDTO());
 			}
 			return ret;
-	    	
 		}
 
 		

@@ -3,7 +3,6 @@ package com.tradenow.test;
 import com.tradenow.domains.product.Category;
 import com.tradenow.domains.product.Product;
 import com.tradenow.domains.trade.Trade;
-import com.tradenow.domains.trade.Trade.FROM_TO;
 import com.tradenow.domains.trade.TradePath;
 import com.tradenow.domains.trade.TradePathGenerator;
 import com.tradenow.domains.user.User;
@@ -13,20 +12,15 @@ import com.tradenow.repository.user.IUserRepository;
 import com.tradenow.services.product.IProductService;
 import com.tradenow.services.trade.ITradeService;
 import com.tradenow.services.user.IUserService;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:servlet-context.xml"})
@@ -130,37 +124,31 @@ public class TradePathTest {
 
     @Test
     public void testTradePathAdd() throws Exception{
-        TradePath tradepath=new TradePath();
-        tradepath.addProduct(prod1);
-        tradepath.addProduct(prod2);
-        tradepath.addProduct(prod3);
-        assertEquals(tradepath.getProduct(0).getProd_id(),prod1.getProd_id());
-        assertEquals(tradepath.getProduct(1).getProd_id(),prod2.getProd_id());
-        assertEquals(tradepath.getProduct(2).getProd_id(),prod3.getProd_id());
-        List prodlis=new ArrayList<Product>();
-        prodlis.add(prod1);
-        prodlis.add(prod2);
-        prodlis.add(prod3);
-        tradepath=new TradePath(prodlis);
-        assertEquals(tradepath.getProduct(0).getProd_id(),prod1.getProd_id());
-        assertEquals(tradepath.getProduct(1).getProd_id(),prod2.getProd_id());
-        assertEquals(tradepath.getProduct(2).getProd_id(),prod3.getProd_id());
+        Trade dummytrade=new Trade();
+        dummytrade.setTrade_id(1);
+        TradePath tradepath=new TradePath(prod1);
+        tradepath.addNode(prod2,dummytrade);
+        tradepath.addNode(prod3,dummytrade);
+        assertEquals(tradepath.getInitialProduct().getProd_id(),prod1.getProd_id());
+        assertEquals(tradepath.getNode(0).getProduct().getProd_id(),prod2.getProd_id());
+        assertEquals(tradepath.getNode(1).getProduct().getProd_id(),prod3.getProd_id());
     }
 
 
     @Test
     public void testTradePathGenerator_TraverseMap(){
-
+        Trade dummytrade=new Trade();
+        dummytrade.setTrade_id(1);
         TradePathGenerator.TraverseMap map=new TradePathGenerator.TraverseMap();
-        map.putOrCreate(prod1,prod2);
-        map.putOrCreate(prod2,prod3);
-        map.putOrCreate(prod4,prod5);
+        map.putOrCreate(prod1,prod2,dummytrade);
+        map.putOrCreate(prod2,prod3,dummytrade);
+        map.putOrCreate(prod4,prod5,dummytrade);
         ArrayList<TradePath> lis=map.retrieveTradePaths();
 
         assertEquals(lis.size(),2);
 
         TradePath path1,path2;
-        if(lis.get(0).size()==3){
+        if(lis.get(0).size()==2){
             path1=lis.get(0);
             path2=lis.get(1);
         }else{
@@ -169,12 +157,12 @@ public class TradePathTest {
         }
 
         //ensure the map contains correct tradepath
-        assertEquals(path1.getProduct(0).getProd_id(),prod1.getProd_id());
-        assertEquals(path1.getProduct(1).getProd_id(),prod2.getProd_id());
-        assertEquals(path1.getProduct(2).getProd_id(),prod3.getProd_id());
+        assertEquals(path1.getInitialProduct().getProd_id(),prod1.getProd_id());
+        assertEquals(path1.getNode(0).getProduct().getProd_id(),prod2.getProd_id());
+        assertEquals(path1.getNode(1).getProduct().getProd_id(),prod3.getProd_id());
 
-        assertEquals(path2.getProduct(0).getProd_id(),prod4.getProd_id());
-        assertEquals(path2.getProduct(1).getProd_id(),prod5.getProd_id());
+        assertEquals(path2.getInitialProduct().getProd_id(),prod4.getProd_id());
+        assertEquals(path2.getNode(0).getProduct().getProd_id(),prod5.getProd_id());
     }
 
     @Test
@@ -200,12 +188,20 @@ public class TradePathTest {
         List<TradePath> paths=TradePathGenerator.generatorFromTrades(prof.getUserid(),tradelis);
 
         assertEquals(paths.size(),1);
-        assertEquals(paths.get(0).size(),5);
-        assertEquals(paths.get(0).getProduct(0).getProd_id(),prod1.getProd_id());
-        assertEquals(paths.get(0).getProduct(1).getProd_id(),prod2.getProd_id());
-        assertEquals(paths.get(0).getProduct(2).getProd_id(),prod3.getProd_id());
-        assertEquals(paths.get(0).getProduct(3).getProd_id(),prod4.getProd_id());
-        assertEquals(paths.get(0).getProduct(4).getProd_id(),prod5.getProd_id());
+        assertEquals(paths.get(0).size(),4);
+        assertEquals(paths.get(0).getInitialProduct().getProd_id(),prod1.getProd_id());
+
+        assertEquals(paths.get(0).getNode(0).getProduct().getProd_id(),prod2.getProd_id());
+        assertEquals(paths.get(0).getNode(0).getTrade().getTrade_id(),t1.getTrade_id());
+
+        assertEquals(paths.get(0).getNode(1).getProduct().getProd_id(),prod3.getProd_id());
+        assertEquals(paths.get(0).getNode(1).getTrade().getTrade_id(),t2.getTrade_id());
+
+        assertEquals(paths.get(0).getNode(2).getProduct().getProd_id(),prod4.getProd_id());
+        assertEquals(paths.get(0).getNode(2).getTrade().getTrade_id(),t3.getTrade_id());
+
+        assertEquals(paths.get(0).getNode(3).getProduct().getProd_id(),prod5.getProd_id());
+        assertEquals(paths.get(0).getNode(3).getTrade().getTrade_id(),t4.getTrade_id());
 
     }
 
@@ -236,7 +232,7 @@ public class TradePathTest {
         List<TradePath> paths=TradePathGenerator.generatorFromTrades(prof.getUserid(),tradelis);
 
         TradePath path1,path2;
-        if(paths.get(0).size()==4){
+        if(paths.get(0).size()==3){
             path1=paths.get(0);
             path2=paths.get(1);
         }else{
@@ -245,16 +241,23 @@ public class TradePathTest {
         }
 
         assertEquals(paths.size(),2);
-        assertEquals(path1.size(),4);
-        assertEquals(path2.size(),2);
+        assertEquals(path1.size(),3);
+        assertEquals(path2.size(),1);
 
-        assertEquals(path1.getProduct(0).getProd_id(),prod1.getProd_id());
-        assertEquals(path1.getProduct(1).getProd_id(),prod2.getProd_id());
-        assertEquals(path1.getProduct(2).getProd_id(),prod3.getProd_id());
-        assertEquals(path1.getProduct(3).getProd_id(),prod4.getProd_id());
+        assertEquals(path1.getInitialProduct().getProd_id(),prod1.getProd_id());
 
-        assertEquals(path2.getProduct(0).getProd_id(),prod5.getProd_id());
-        assertEquals(path2.getProduct(1).getProd_id(),prod6.getProd_id());
+        assertEquals(path1.getNode(0).getProduct().getProd_id(),prod2.getProd_id());
+        assertEquals(path1.getNode(0).getTrade().getTrade_id(),t1.getTrade_id());
+
+        assertEquals(path1.getNode(1).getProduct().getProd_id(),prod3.getProd_id());
+        assertEquals(path1.getNode(1).getTrade().getTrade_id(),t2.getTrade_id());
+
+        assertEquals(path1.getNode(2).getProduct().getProd_id(),prod4.getProd_id());
+        assertEquals(path1.getNode(2).getTrade().getTrade_id(),t3.getTrade_id());
+
+        assertEquals(path2.getInitialProduct().getProd_id(),prod5.getProd_id());
+        assertEquals(path2.getNode(0).getProduct().getProd_id(),prod6.getProd_id());
+        assertEquals(path2.getNode(0).getTrade().getTrade_id(),t4.getTrade_id());
 
 
     }

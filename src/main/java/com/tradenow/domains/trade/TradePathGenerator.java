@@ -26,16 +26,15 @@ public class TradePathGenerator {
          * if not, create new map entry and insert both mine and tradewith to the map,
          *        set map key to product id of tradewith.
          */
-        public void putOrCreate(Product mine, Product tradewith) {
+        public void putOrCreate(Product mine, Product tradewith, Trade trade) {
             TradePath path;
             if(map.containsKey(mine.getProd_id())){
                 path=map.get(mine.getProd_id());
-                path.addProduct(tradewith);
+                path.addNode(tradewith,trade);
                 map.put(tradewith.getProd_id(),map.remove(mine.getProd_id()));
             }else{
-                path=new TradePath();
-                path.addProduct(mine);
-                path.addProduct(tradewith);
+                path=new TradePath(mine);
+                path.addNode(tradewith,trade);
                 map.put(tradewith.getProd_id(), path);
             }
         }
@@ -59,16 +58,15 @@ public class TradePathGenerator {
     public static List<TradePath> generatorFromTrades(int ownerid,List<Trade> tradelis) {
         TraverseMap map=new TraverseMap();
 
-        FROM_TO side=null;
+        FROM_TO side;
         for(Trade trade : tradelis){
-            //FAIL. use trade.user1/2 id , instead of trade.prod1/2.ownerid
             side=trade.getSideByUserId(ownerid);
             if(null == side)
                 continue;
             switch(side){
-                case FROM:map.putOrCreate(trade.getProd1(), trade.getProd2());
+                case FROM:map.putOrCreate(trade.getProd1(), trade.getProd2(),trade);
                     break;
-                case TO:  map.putOrCreate(trade.getProd2(), trade.getProd1());
+                case TO:  map.putOrCreate(trade.getProd2(), trade.getProd1(),trade);
                     break;
             }
 
