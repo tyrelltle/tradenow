@@ -10,8 +10,15 @@
 	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/masonry.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/assets/js/imagesloaded.pkgd.js"></script>
 	    <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/resources/application/autocompleteapi.js"></script>
-	    
-	    <style type="text/css">	
+        <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.js"></script>
+        <script type="text/javascript"  src="https://code.angularjs.org/1.2.27/angular-route.js"></script>
+        <script type="text/javascript"  src="https://code.angularjs.org/1.2.27/angular-resource.js"></script>
+        <script type="text/javascript"  src="${pageContext.request.contextPath}/resources/application/angular/app.js"></script>
+        <script type="text/javascript"  src="${pageContext.request.contextPath}/resources/application/angular/controllers.js"></script>
+        <script type="text/javascript"  src="${pageContext.request.contextPath}/resources/application/angular/services.js"></script>
+        <link href="${pageContext.request.contextPath}/resources/application/angular/tradepath.css" rel="stylesheet" type="text/css">
+
+        <style type="text/css">
 	    	.tradelis{
 			width:700px;
 			}
@@ -66,10 +73,9 @@
     <!-- END PRODUCT TAB CONTENT -->
 
     <!-- TRADE TAB CONTENT -->
-    <div class="tab-pane settings" id="lC">
-        <div id="tradelist">
-            <ul class="tradelis list-group">
-            </ul>
+    <div class="tab-pane settings" id="lC" ng-app="tradePathApp">
+        <div ng-view>
+
         </div>
 
     </div>
@@ -181,32 +187,7 @@
                         </div>
                     </div>
 			</script>
-			<script type="text/template" id="tradelisttmp">
-						<ul class="tradelis list-group">
 
-						</ul>
-			</script>
-			<script type="text/template" id="tradelistitemtmp">		
-						
-						        	<span id="span_status" class="badge">{{status}}</span>
-						            <div class="row">
-						                <div class="col-md-4"><center>{{title1}}</center></div>
-						              	<div class="col-md-4"><center>{{title2}}</center></div>
-						          	</div>
-						        	<div class="row">						           
-						          		<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{img1url}}"></div>
-						              <span style="z-index:3;position: absolute;margin-top:80px;left: 230px;" class="glyphicon glyphicon-transfer"> </span>
-						              	<div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{img2url}}"></div>
-						                <div class="col-md-4"> 
-											<form action="${pageContext.request.contextPath}/tradepage/{{tradeid}}">
-						                  			<button type="submit" class="gototradepg detailsglyph btn btn-default btn-lg">
-						                  				<span class="glyphicon glyphicon-circle-arrow-right"> </span>
-						                  			</button>  
-											</form>            
-						                </div>
-						          	</div>       
-						 
-			</script>
 			
 			<script type="text/template" id="proddetailtmp">
 			      
@@ -273,8 +254,12 @@
 			 <script type="text/javascript" id="tmp" src="resources/application/product.js"></script>
 			 <script type="text/javascript" id="tmp" src="resources/application/profile.js"></script>
 			 <script type="text/javascript"  id="tmp2" src="resources/application/app.js"></script>
-			 <script type="text/javascript"  id="tmp2" src="resources/application/tradelist.js"></script>
-	<!--end bootstrap dependencies-->
+
+
+
+
+
+    <!--end bootstrap dependencies-->
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>

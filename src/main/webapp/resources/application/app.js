@@ -8,13 +8,10 @@ AppRouter=Backbone.Router.extend({
 		$('#tab_prod').click(function (e){
 			app.navigate("prodlis",true);	
 		});
-		$('#tab_trade').click(function (e){
-			app.navigate("tradelis",true);
-		});
+
 	},
 	routes:{
 		"":"user",
-		"tradelis":"tradelis",
 		"prodlis":"prodlis",
 		"proddetail:prod_id":"prodDetail",
 		"newprod":"newProd"},
@@ -33,18 +30,7 @@ AppRouter=Backbone.Router.extend({
 			}
 		});
 	},
-	tradelis:function(){
-        $('#tab_trade').tab('show');
-		$('#tradelist').empty();
-		this.tradeList = new TradeList();
-		this.tradeListView = new TradeListView({model:this.tradeList});
-		this.tradeList.fetch({
-			success:function(tradeList){
-				$('#tradelist').html(app.tradeListView.render().el);
-			
-			}
-		});
-	},
+
 	prodlis:function(){
 		$('#tab_prod').tab('show');
 		$('#newbtn').click(function(e){

@@ -1,0 +1,22 @@
+
+
+
+
+<ul class="tradelis list-group">
+    <li ng-repeat="tradepath in tradepaths" class="thumbnail phone-listing">
+        <div class="row">
+            <div class="col-md-4"><center>{{tradepath.initialProduct.title}}</center></div>
+            <div class="col-md-4"><center>{{tradepath.nodes[tradepath.nodes.length-1].product.title}}</center></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{tradepath.initialProduct.img1url}}"></div>
+            <span style="z-index:3;position: absolute;margin-top:80px;left: 230px;" class="glyphicon glyphicon-transfer"> </span>
+            <div class="col-md-4"><img alt="pic" class="img-thumbnail" src="{{tradepath.nodes[tradepath.nodes.length-1].product.img2url}}"></div>
+            <div class="col-md-4">
+                    <a href="#tradelis/{{$index}}" class="gototradepg detailsglyph btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-circle-arrow-right"> </span>
+                    </a>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,45 @@
+
+<div class="container">
+
+    <div id="timeline"><div class="row timeline-movement timeline-movement-top">
+
+        <div class="timeline-badge timeline-filter-movement">
+            <a href="#">
+                <span class="glyphicon glyphicon-time"></span>
+            </a>
+        </div>
+
+    </div>
+
+        <!--due -->
+
+        <div class="row timeline-movement" ng-repeat="node in tradepath.nodes">
+
+
+            <div class="timeline-badge">
+                <span class="timeline-balloon-date-month"><i class="glyphicon glyphicon-transfer"></i></span>
+            </div>
+
+            <div ng-class="($index % 2 != 0) ? 'col-sm-offset-6 col-sm-6  timeline-item' : 'col-sm-11'" >
+                <div class="row">
+                    <div ng-class="($index % 2 != 0) ? 'col-sm-offset-1 col-sm-11  timeline-item' : 'col-sm-6  timeline-item'" >
+                        <div ng-class="($index % 2 != 0) ? 'timeline-panel debits' : 'timeline-panel credits'" >
+                            <ul class="timeline-panel-ul">
+                                <li><span class="importo">{{node.product.title}}</span></li>
+                                <li><p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{node.tradedate}} </small></p> </li>
+                                <li>
+                                    <a href="#" class="thumbnail">
+                                        <img class="tradepath_prodimg" src="http://demo.thedevelovers.com/dashboard/kingadmin-v1.3/assets/img/gallery/cuba-cup.jpg" alt="...">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

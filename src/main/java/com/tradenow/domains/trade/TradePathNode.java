@@ -17,6 +17,7 @@ public class TradePathNode implements IEntity {
     public TradePathNodeDTO toDTO() {
         TradePathNodeDTO dto=new TradePathNodeDTO();
         dto.setTradeid(trade.getTrade_id());
+        dto.setTradedate(trade.getTrans_date().toString());
         ProductDTO proddto=new ProductDTO();
         proddto.setCatid(product.getCategory().getCatid());
         proddto.setDetail(product.getDetail());
