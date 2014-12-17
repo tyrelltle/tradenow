@@ -114,3 +114,39 @@
     color: #e2001a;
     font-size: 1.3em;
 }
+
+
+.descright:after {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-left: -11px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: solid 10px #659EC7;
+    border-bottom: solid 10px rgba(118, 102, 102, 0);
+    border-top: solid 10px transparent;
+}
+.descleft:after {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 102%;
+    margin-left: -10px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: solid 10px #659EC7;
+    border-bottom: solid 10px rgba(118, 102, 102, 0);
+    border-top: solid 10px transparent;
+}
+
+.descleft,.descright{
+    display: none;
+}
+
+.tradepath_prodimg{
+    width: 59%;
+}

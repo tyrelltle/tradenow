@@ -14,4 +14,10 @@ tradePathControllers.controller('TradePathDetailCtrl', ['$scope', '$routeParams'
         TradePath.getOne($routeParams.tradepathid).then(function(data){
             $scope.tradepath = data;
         });
+        $scope.prod_onenter=function(index){
+            $('#desc'+index).show();
+        }
+        $scope.prod_onleave=function(index){
+            $('#desc'+index).hide();
+        }
     }]);

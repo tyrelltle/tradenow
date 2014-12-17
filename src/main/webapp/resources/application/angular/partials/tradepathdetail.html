@@ -20,17 +20,31 @@
                 <span class="timeline-balloon-date-month"><i class="glyphicon glyphicon-transfer"></i></span>
             </div>
 
-            <div ng-class="($index % 2 != 0) ? 'col-sm-offset-6 col-sm-6  timeline-item' : 'col-sm-11'" >
+            <div class="col-sm-6 timeline-item" ng-repeat="j in [1,2]"  ng-init="is_description=($index==1 && $parent.$index%2==0) || ($index==0 && $parent.$index%2!=0)">
                 <div class="row">
-                    <div ng-class="($index % 2 != 0) ? 'col-sm-offset-1 col-sm-11  timeline-item' : 'col-sm-6  timeline-item'" >
-                        <div ng-class="($index % 2 != 0) ? 'timeline-panel debits' : 'timeline-panel credits'" >
+                    <div ng-class="($index ==1) ? 'col-sm-offset-1 col-sm-11' : 'col-sm-11'" >
+                        <div ng-attr-id="{{is_description? 'desc'+$parent.$index : $parent.$index}}"
+                             ng-init="myid=$parent.$index"
+                             ng-class="($index == 1) ?       ($parent.$index%2!=0)? 'timeline-panel debits' : 'timeline-panel descright debits'         :        ($parent.$index%2!=0)? 'timeline-panel descleft credits':'timeline-panel credits'" >
                             <ul class="timeline-panel-ul">
                                 <li><span class="importo">{{node.product.title}}</span></li>
                                 <li><p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{node.tradedate}} </small></p> </li>
                                 <li>
-                                    <a href="#" class="thumbnail">
+
+                                    <a ng-if="!is_description"  ng-mouseenter="prod_onenter(myid)"  ng-mouseleave="prod_onleave(myid)" class="thumbnail">
                                         <img class="tradepath_prodimg" src="http://demo.thedevelovers.com/dashboard/kingadmin-v1.3/assets/img/gallery/cuba-cup.jpg" alt="...">
                                     </a>
+                                    <p ng-if="is_description">
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+                                        aslkdjalkjdjdlasjdlksadjlkasdasd<br/>
+
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -38,6 +52,11 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
 
         </div>
 
