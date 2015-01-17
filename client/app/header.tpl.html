@@ -1,8 +1,8 @@
-<div class="header-panel shadow-z-2">
+<div class="header-panel shadow-z-2" ng-controller="HeaderCtrl">
     <div class="container-fluid ">
         <div class="row">
             <div class="col-xs-2">
-                <h1>Trade Now</h1>
+                <h1 ng-click="home()">Trade Now</h1>
             </div>
             <div class="col-xs-2"  style="margin-top:15px;">
                 <input type="text" class="form-control col-lg-8" placeholder="Find Items">
@@ -14,7 +14,7 @@
                 <img src='bower_components/material-design-icons/action/svg/design/ic_search_24px.svg'>
             </div>
              <div class="col-xs-2" style="margin-top:20px;">
-                <img src='bower_components/material-design-icons/action/svg/design/ic_account_box_24px.svg'>
+                <img ng-click="userCenter()" src='bower_components/material-design-icons/action/svg/design/ic_account_box_24px.svg'>
              </div>
         </div>
     </div>

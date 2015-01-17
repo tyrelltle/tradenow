@@ -1,12 +1,27 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('tradeNow', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version',
+  'tradeNow.userCenter'
+  //'myApp.dataServices'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/homepage'});
 }]);
+
+angular.module('tradeNow').controller('HeaderCtrl', ['$scope', '$location', '$route',
+  function ($scope, $location, $route) {
+    $scope.location = $location;
+
+    $scope.home = function () {
+        $location.path('/homepage');
+    };
+
+    $scope.userCenter = function () {
+      $location.path('/usercenter');
+    };
+  }]);
