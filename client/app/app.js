@@ -6,11 +6,13 @@ angular.module('tradeNow', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-  'tradeNow.userCenter'
+  'tradeNow.userCenter',
+  'tradeNow.landing'
+
   //'myApp.dataServices'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/homepage'});
+  $routeProvider.otherwise({redirectTo: '/signin'});
 }]);
 
 angular.module('tradeNow').controller('HeaderCtrl', ['$scope', '$location', '$route',
